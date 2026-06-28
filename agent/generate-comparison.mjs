@@ -189,7 +189,7 @@ let sitemapContent = fs.readFileSync(sitemapPath, "utf8");
 if (!sitemapContent.includes(slug)) {
   sitemapContent = sitemapContent.replace(
     /(\s*\]\s*;?\s*}?\s*$)/,
-    `    { url: \`\${baseUrl}/compare/${slug}\`, lastModified: new Date() },\n$1`
+    `    { url: \`\${baseUrl}/compare/${slug}\`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },\n$1`
   );
   fs.writeFileSync(sitemapPath, sitemapContent, "utf8");
   console.log("✅ Updated sitemap.ts");
