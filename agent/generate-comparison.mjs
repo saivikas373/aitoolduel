@@ -6,6 +6,7 @@ import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
 import { fileURLToPath } from "url";
+import { requestIndexing } from "./search-console.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
@@ -206,6 +207,11 @@ if (GITHUB_TOKEN) {
     const remote = `https://saivikas373:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git`;
     execSync(`git push "${remote}" HEAD:main`, { cwd: ROOT });
     console.log("✅ Pushed to GitHub — Vercel will deploy automatically");
+
+    // Submit to Google Search Console
+    console.log("📡 Submitting to Google Search Console...");
+    await requestIndexing(slug);
+
     console.log(`\n🎉 Done! Live at: https://www.aitoolduel.com/compare/${slug}`);
   } catch (e) {
     console.error("❌ Git push failed:", e.message);
