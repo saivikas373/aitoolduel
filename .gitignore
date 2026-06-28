@@ -1,0 +1,10 @@
+﻿node_modules/
+.next/
+.vercel/
+.env*
+recon_output/
+amass*
+recon.sh
+js_recon.sh
+vuln_test_cases.sh
+.claude/

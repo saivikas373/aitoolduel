@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer components {
+  .adsense-slot {
+    @apply w-full bg-slate-100 border border-dashed border-slate-300 rounded-lg flex items-center justify-center text-slate-400 text-sm font-medium my-6;
+    min-height: 90px;
+    max-height: 120px;
+    overflow: hidden;
+  }
+
+  .adsense-slot::before {
+    content: "Advertisement";
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-colors duration-200 no-underline;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-slate-50 text-slate-900 font-semibold rounded-lg border border-slate-200 transition-colors duration-200 no-underline;
+  }
+
+  .card {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden;
+  }
+
+  .section-heading {
+    @apply text-2xl font-bold text-slate-900 mb-4;
+  }
+
+  .prose-content p {
+    @apply text-slate-700 leading-relaxed mb-4 text-base;
+  }
+
+  .prose-content h2 {
+    @apply text-2xl font-bold text-slate-900 mt-8 mb-4;
+  }
+
+  .prose-content h3 {
+    @apply text-xl font-semibold text-slate-900 mt-6 mb-3;
+  }
+}
