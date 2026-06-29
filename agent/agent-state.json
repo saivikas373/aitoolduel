@@ -54,6 +54,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "jasper-vs-chatgpt"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "gemini-3-ultra-release-june-2026"
     }
   ],
   "publishedComparisons": [
@@ -69,6 +74,7 @@
     "ai-tools-weekly-news-june-29-2026",
     "ai-tool-news-weekly-roundup-june-29-2026",
     "ai-tools-weekly-news-june-29-2026",
-    "ai-tools-weekly-news-june-29-2026"
+    "ai-tools-weekly-news-june-29-2026",
+    "gemini-3-ultra-release-june-2026"
   ]
 }
