@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "ai-tools-weekly-news-june-29-2026",
+    "title": "AI Weekly: Major Model Drops & Pricing Wars Heat Up",
+    "metaTitle": "AI Tools Weekly News Roundup – June 29, 2026",
+    "metaDescription": "This week in AI: OpenAI, Anthropic, Google, and Meta all made major moves with new model releases, pricing cuts, and product announcements. Full roundup inside.",
+    "date": "2026-06-29",
+    "category": "Weekly Roundup",
+    "badge": "Weekly Roundup",
+    "summary": "The last week of June 2026 proved to be one of the most competitive stretches in AI history, with OpenAI, Anthropic, Google DeepMind, and Meta all racing to outmaneuver one another with new model launches, aggressive pricing changes, and bold product expansions. From frontier reasoning models to consumer-facing AI assistants getting major upgrades, the industry showed no signs of slowing down heading into Q3. Here is everything you need to know from the past seven days.",
+    "sections": [
+      {
+        "h2": "OpenAI Launches GPT-5 Turbo With Aggressive New Pricing",
+        "paragraphs": [
+          "OpenAI made waves on June 23, 2026, officially releasing GPT-5 Turbo, a distilled and optimized variant of its flagship GPT-5 model that the company claims delivers 94% of GPT-5's benchmark performance at roughly one-third of the cost. The new model is priced at $1.50 per million input tokens and $4.00 per million output tokens via the API, undercutting GPT-5's previous rate of $5.00 and $15.00 respectively. The move is widely interpreted as a direct response to Anthropic's Claude 3.7 Sonnet, which had been gaining significant enterprise market share throughout Q2.",
+          "GPT-5 Turbo is also being rolled out natively inside ChatGPT as the default model for Plus subscribers at $20 per month, replacing GPT-4o in that tier. OpenAI CEO Sam Altman announced on X that the company will keep GPT-4o available in a legacy access tier for users who prefer it, though it will no longer receive feature updates after July 31, 2026. Benchmark results shared by OpenAI show GPT-5 Turbo scoring 87.4 on MMLU, 72.1 on MATH-500, and achieving a new high of 63.2 on the GPQA Diamond set, outperforming all previously released models in its price bracket.",
+          "Enterprise and API customers received immediate access starting June 23, while the broader ChatGPT rollout is expected to complete globally by July 5, 2026. OpenAI also confirmed that GPT-5 Turbo supports a 256K context window and includes native tool use, structured outputs, and real-time web search as built-in capabilities — features that previously required additional configuration. Industry analysts at Andreessen Horowitz described the release as 'a significant commoditization inflection point,' predicting it will force competitors to accelerate their own pricing adjustments within 60 days."
+        ]
+      },
+      {
+        "h2": "Anthropic Unveils Claude 4 Opus and Expands Claude.ai Features",
+        "paragraphs": [
+          "Not to be outdone, Anthropic used its annual developer summit on June 25, 2026 to announce Claude 4 Opus, its most capable model to date and the first in the Claude 4 family. The company describes Claude 4 Opus as a 'frontier-class reasoning model' with extended thinking capabilities that can spend up to 30 minutes working through complex multi-step problems before generating a response. Early access benchmarks shared by Anthropic show the model achieving a 91.2 on MMLU and a remarkable 79.8 on GPQA Diamond, which the company says represents the highest score any publicly released model has achieved on that dataset as of June 2026.",
+          "Claude 4 Opus is initially available only through the Claude.ai Pro plan at $20 per month and through the API at $18.00 per million input tokens and $54.00 per million output tokens, reflecting its position as a premium frontier offering. Anthropic also simultaneously launched Claude 4 Sonnet at $3.00 per million input tokens and $9.00 per million output tokens, targeting the mid-tier enterprise use case. The company said Claude 4 Haiku, the lightweight and fastest variant, will arrive in late July 2026 and is expected to be priced below $0.50 per million input tokens, matching or undercutting GPT-5 Turbo in the value tier.",
+          "Alongside the model announcements, Anthropic shipped several major updates to Claude.ai, including a persistent Projects memory system that allows Claude to remember context across all conversations within a workspace — a feature that had been in beta since March 2026. The platform also introduced Claude Artifacts 2.0, an enhanced version of its interactive code and document generation feature that now supports real-time collaborative editing with up to five users simultaneously. Anthropic's VP of Product, Zack Witten, described the summit announcements as 'the beginning of Claude's transition from a chat interface to a full collaborative intelligence platform.'"
+        ]
+      },
+      {
+        "h2": "Google DeepMind's Gemini 2.5 Ultra Goes GA, Veo 3 Expands Access",
+        "paragraphs": [
+          "Google DeepMind announced on June 24, 2026 that Gemini 2.5 Ultra has officially exited preview and is now generally available to all Google AI Studio users and enterprise customers via Vertex AI. The model, which first appeared in limited preview in April 2026, features a native 1 million token context window — the largest of any commercially available model — and supports multimodal inputs including text, images, audio, video, and documents simultaneously in a single prompt. Google confirmed API pricing for Gemini 2.5 Ultra at $3.50 per million input tokens and $10.50 per million output tokens, a 15% reduction from its preview pricing that positions it competitively against Claude 4 Sonnet.",
+          "Google also made a significant consumer-side announcement by expanding Veo 3, its text-to-video generation model, to all Google One AI Premium subscribers in the United States, United Kingdom, Canada, and Australia. Veo 3, which had been limited to a small waitlist since its debut at Google I/O 2026 in May, can now generate video clips up to 60 seconds in length at 1080p resolution with synchronized AI-generated audio. The expansion was accompanied by a new Veo 3 Fast variant available in Google Workspace, designed for quicker turnaround on shorter clips for business presentations and marketing materials.",
+          "In a further competitive move, Google updated its Gemini app on Android and iOS to integrate Gemini 2.5 Ultra as the default model for all Google One AI Premium subscribers, who pay $19.99 per month. The app update also introduced a new 'Deep Research Pro' mode powered by Gemini 2.5 Ultra that can autonomously browse the web, synthesize findings across dozens of sources, and produce structured research reports with citations in under five minutes. Google's SVP of AI Products, Sissie Hsiao, stated in a blog post that over 35 million users are now active monthly on the Gemini platform, up from 22 million reported in January 2026."
+        ]
+      },
+      {
+        "h2": "Meta Releases Llama 4 Scout and Maverick in Open Weights Format",
+        "paragraphs": [
+          "Meta made its biggest open-source AI move of 2026 on June 26, releasing two new members of its Llama 4 family — Llama 4 Scout and Llama 4 Maverick — as fully open weights models available for download on Hugging Face and Meta's AI portal. Llama 4 Scout is a 17-billion active parameter model using a mixture-of-experts architecture with a 10 million token context window, which Meta claims is the largest context window ever shipped in an open weights model. Llama 4 Maverick is a larger 400-billion parameter MoE model with 128 billion active parameters, designed for users and enterprises who need frontier-level performance without the cost of closed-source API access.",
+          "Benchmark results published by Meta show Llama 4 Maverick outperforming GPT-4o and Claude 3.7 Sonnet on several standard evaluations, including MMLU (88.6), HumanEval (79.1), and MATH-500 (73.2), placing it among the most capable open-source models ever released. Meta CEO Mark Zuckerberg called the launch 'the most important open-source AI release in the company's history' and framed it as a deliberate strategic effort to prevent proprietary AI companies from locking up intelligence behind expensive APIs. Both models are released under the Llama 4 Community License, which permits commercial use for applications with fewer than 700 million monthly active users.",
+          "The release immediately sent ripples through the developer and enterprise communities, with Hugging Face reporting over 180,000 downloads of Llama 4 Maverick within the first 24 hours of availability — breaking the previous record set by Llama 3.1 405B. Several AI infrastructure providers including Together AI, Groq, and Fireworks AI announced same-day hosted inference support, with Groq offering Llama 4 Maverick at $0.20 per million input tokens leveraging its LPU hardware — dramatically below any comparable closed-source alternative. The open-weights release is expected to accelerate fine-tuning and specialization across industries including healthcare, legal, and financial services throughout the second half of 2026."
+        ]
+      },
+      {
+        "h2": "Cursor, Perplexity, and Midjourney Drop Significant Product Updates",
+        "paragraphs": [
+          "AI coding tool Cursor shipped version 0.50 on June 27, 2026, introducing its most requested feature to date: Cursor Background Agent, an autonomous coding agent that can execute long-running development tasks in a sandboxed cloud environment without requiring the user to keep the application open. The agent can clone repositories, run tests, fix failing builds, and open pull requests on GitHub autonomously, with users receiving notifications upon task completion. Cursor also announced it has surpassed 3 million paying subscribers as of June 2026, up from 1.2 million reported in January, making it one of the fastest-growing developer tools in history by revenue trajectory.",
+          "Perplexity AI launched Perplexity Deep Research Pro on June 24, 2026, a premium research feature available exclusively to its $20-per-month Pro subscribers that can execute research tasks lasting up to 45 minutes, browsing hundreds of sources and generating publication-ready reports with inline citations and structured data visualizations. The company also quietly updated its API to include access to Perplexity's proprietary Sonar Pro Large model, priced at $1.00 per million tokens for online-enabled search queries. Perplexity also confirmed a new partnership with Marriott International to deploy its AI search inside Marriott's hotel booking and concierge platforms, marking one of the largest hospitality AI deployments announced to date.",
+          "Midjourney made headlines on June 25, 2026 by releasing Midjourney V7 Web, a major redesign of its web interface that for the first time brings the full image generation experience out of Discord and into a standalone browser application with a polished UI. V7 Web includes a new 'Style Tuner Pro' feature that allows users to create, save, and share custom visual style profiles derived from their own image libraries, and a new video-to-image feature that extracts keyframes from uploaded video clips to use as generation references. Midjourney CEO David Holz announced that the web platform already has over 800,000 registered users from its first week of open beta access, and teased that Midjourney Video, a text-to-video product, will enter closed beta by August 2026."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-5 Turbo and how much does it cost via the API?",
+        "answer": "GPT-5 Turbo is OpenAI's optimized and lower-cost variant of its flagship GPT-5 model, released on June 23, 2026. It is priced at $1.50 per million input tokens and $4.00 per million output tokens via the API, making it significantly cheaper than full GPT-5. It is also the new default model for ChatGPT Plus subscribers at $20 per month and features a 256K context window with native web search and tool use."
+      },
+      {
+        "question": "What did Anthropic announce at its June 2026 developer summit?",
+        "answer": "Anthropic announced Claude 4 Opus and Claude 4 Sonnet at its developer summit on June 25, 2026. Claude 4 Opus is the company's most capable model yet, priced at $18 per million input tokens, with extended thinking capabilities and an GPQA Diamond score of 79.8. Anthropic also launched Claude Artifacts 2.0 with real-time collaborative editing and a persistent Projects memory system inside Claude.ai."
+      },
+      {
+        "question": "Is Google's Gemini 2.5 Ultra now publicly available and what does it cost?",
+        "answer": "Yes, Gemini 2.5 Ultra became generally available on June 24, 2026, after exiting preview. It is accessible through Google AI Studio and Vertex AI, priced at $3.50 per million input tokens and $10.50 per million output tokens — a 15% price reduction from its preview pricing. It features a 1 million token context window and supports multimodal inputs including text, images, audio, and video."
+      },
+      {
+        "question": "What are Meta's Llama 4 Scout and Maverick models, and can they be used commercially?",
+        "answer": "Llama 4 Scout and Llama 4 Maverick are open-weights AI models released by Meta on June 26, 2026. Scout is a 17B active parameter model with a 10 million token context window, while Maverick is a 400B parameter mixture-of-experts model with 128B active parameters targeting frontier performance. Both are released under the Llama 4 Community License, which allows commercial use for products with fewer than 700 million monthly active users."
+      },
+      {
+        "question": "What is the Cursor Background Agent and when was it released?",
+        "answer": "The Cursor Background Agent is an autonomous coding feature released with Cursor version 0.50 on June 27, 2026. It allows the AI coding assistant to execute long-running development tasks — such as fixing bugs, running tests, and opening pull requests on GitHub — in a sandboxed cloud environment without requiring the user to keep the application open. Users receive notifications when tasks are completed, enabling a fully asynchronous development workflow."
+      }
+    ]
+  },
+
+  {
     "slug": "ai-tool-news-weekly-roundup-june-29-2026",
     "title": "AI Weekly: OpenAI, Google & Anthropic Shake Up June 2026",
     "metaTitle": "AI Tool News Weekly Roundup – June 29, 2026",

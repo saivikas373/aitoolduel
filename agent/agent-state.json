@@ -9,10 +9,16 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "ai-tool-news-weekly-roundup-june-29-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "notion-ai-vs-chatgpt"
     }
   ],
   "publishedComparisons": [
-    "claude vs gpt-4o"
+    "claude vs gpt-4o",
+    "notion ai vs chatgpt"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026"
