@@ -149,6 +149,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "gemini-3-ultra-release-june-2026-1"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "claude-vs-mistral"
     }
   ],
   "publishedComparisons": [
@@ -169,7 +174,8 @@
     "chatgpt vs wolfram alpha",
     "notion ai vs jasper",
     "writesonic vs jasper",
-    "copy ai vs jasper"
+    "copy ai vs jasper",
+    "claude vs mistral"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
