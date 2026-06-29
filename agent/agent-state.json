@@ -79,6 +79,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "anthropic-claude-4-opus-release-june-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "stable-diffusion-vs-midjourney"
     }
   ],
   "publishedComparisons": [
@@ -89,7 +94,8 @@
     "runway vs pika",
     "jasper vs chatgpt",
     "grammarly vs chatgpt",
-    "adobe firefly vs midjourney"
+    "adobe firefly vs midjourney",
+    "stable diffusion vs midjourney"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
