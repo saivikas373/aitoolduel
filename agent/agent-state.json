@@ -134,6 +134,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "notion-ai-vs-jasper"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "writesonic-vs-jasper"
     }
   ],
   "publishedComparisons": [
@@ -152,7 +157,8 @@
     "claude vs copilot",
     "gemini vs copilot",
     "chatgpt vs wolfram alpha",
-    "notion ai vs jasper"
+    "notion ai vs jasper",
+    "writesonic vs jasper"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
