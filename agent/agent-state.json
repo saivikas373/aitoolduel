@@ -64,6 +64,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "grammarly-vs-chatgpt"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "gemini-2-5-ultra-release-june-2026"
     }
   ],
   "publishedComparisons": [
@@ -81,6 +86,7 @@
     "ai-tool-news-weekly-roundup-june-29-2026",
     "ai-tools-weekly-news-june-29-2026",
     "ai-tools-weekly-news-june-29-2026",
-    "gemini-3-ultra-release-june-2026"
+    "gemini-3-ultra-release-june-2026",
+    "gemini-2-5-ultra-release-june-2026"
   ]
 }
