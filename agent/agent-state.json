@@ -44,6 +44,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "runway-vs-pika"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "ai-tools-weekly-news-june-29-2026"
     }
   ],
   "publishedComparisons": [
@@ -57,6 +62,7 @@
     "ai-tool-news-weekly-roundup-june-29-2026",
     "ai-tools-weekly-news-june-29-2026",
     "ai-tool-news-weekly-roundup-june-29-2026",
+    "ai-tools-weekly-news-june-29-2026",
     "ai-tools-weekly-news-june-29-2026"
   ]
 }
