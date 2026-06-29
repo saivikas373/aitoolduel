@@ -109,6 +109,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "claude-vs-copilot"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "gemini-vs-copilot"
     }
   ],
   "publishedComparisons": [
@@ -124,7 +129,8 @@
     "google bard vs chatgpt",
     "bing ai vs chatgpt",
     "character ai vs chatgpt",
-    "claude vs copilot"
+    "claude vs copilot",
+    "gemini vs copilot"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
