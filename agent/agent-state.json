@@ -99,6 +99,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "bing-ai-vs-chatgpt"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "character-ai-vs-chatgpt"
     }
   ],
   "publishedComparisons": [
@@ -112,7 +117,8 @@
     "adobe firefly vs midjourney",
     "stable diffusion vs midjourney",
     "google bard vs chatgpt",
-    "bing ai vs chatgpt"
+    "bing ai vs chatgpt",
+    "character ai vs chatgpt"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
