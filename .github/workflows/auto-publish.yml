@@ -1,0 +1,71 @@
+name: Auto Publish Content
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'   # Monday 8am UTC
+    - cron: '0 8 * * 3'   # Wednesday 8am UTC
+    - cron: '0 8 * * 5'   # Friday 8am UTC
+  workflow_dispatch:       # Allow manual trigger from GitHub UI
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run master agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node agent/master-agent.mjs
+
+      - name: Send success email
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          subject: "✅ AIToolDuel: New content published successfully"
+          to: saivikasreddy95@gmail.com
+          from: AI Agent <${{ secrets.EMAIL_USER }}>
+          body: |
+            Your AI agent just published new content on aitoolduel.com!
+
+            Check your site: https://www.aitoolduel.com
+
+            The agent ran automatically on schedule. No action needed.
+
+      - name: Send failure email
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USER }}
+          password: ${{ secrets.EMAIL_PASS }}
+          subject: "❌ AIToolDuel: Agent failed - action needed"
+          to: saivikasreddy95@gmail.com
+          from: AI Agent <${{ secrets.EMAIL_USER }}>
+          body: |
+            Your AI agent failed to publish content today.
+
+            Check the error logs here:
+            https://github.com/saivikas373/aitoolduel/actions
+
+            You may need to check your API keys or fix an error.

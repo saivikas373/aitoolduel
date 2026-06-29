@@ -253,7 +253,7 @@ function pushToGitHub(message) {
     execSync(`git add -A`, { cwd: ROOT });
     execSync(`git commit -m "${message}"`, { cwd: ROOT });
     const remote = `https://saivikas373:${GITHUB_TOKEN}@github.com/${GITHUB_REPO}.git`;
-    execSync(`git push "${remote}" HEAD:main`, { cwd: ROOT });
+    execSync(`git push "${remote}" HEAD:main 2>&1`, { cwd: ROOT });
     console.log("✅ Pushed to GitHub — Vercel deploying...");
     return true;
   } catch (e) {
