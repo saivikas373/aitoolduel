@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "ai-tool-news-weekly-roundup-june-29-2026",
+    "title": "AI Weekly: OpenAI, Google & Anthropic Shake Up June 2026",
+    "metaTitle": "AI Tool News Weekly Roundup – June 29, 2026",
+    "metaDescription": "This week's biggest AI news: OpenAI GPT-5 Pro updates, Google Gemini Ultra 2.5, Anthropic Claude 4 pricing, Cursor 1.2, and Midjourney V7 launch in June 2026.",
+    "date": "2026-06-29",
+    "category": "Weekly Roundup",
+    "badge": "Weekly Roundup",
+    "summary": "The final week of June 2026 delivered a torrent of major AI announcements, with OpenAI, Google, and Anthropic all making moves that are reshaping the competitive landscape for developers and enterprises alike. From surprise model upgrades to aggressive pricing restructures and a significant acquisition in the AI coding space, this week proved that the pace of innovation in artificial intelligence shows no sign of slowing. Here is everything that mattered in AI tools from June 23 to June 29, 2026.",
+    "sections": [
+      {
+        "h2": "OpenAI Rolls Out GPT-5 Pro Tier and Slashes API Pricing",
+        "paragraphs": [
+          "OpenAI sent shockwaves through the developer community on June 24, 2026, by announcing a new 'GPT-5 Pro' access tier within ChatGPT, priced at $49 per month for individual subscribers — sitting above the existing ChatGPT Plus plan at $20 per month and the ChatGPT Team plan at $30 per user per month. The Pro tier unlocks extended context windows of up to 512K tokens, priority inference speed, and early access to experimental reasoning features that OpenAI is internally calling 'o3-Next,' a successor to its o3 reasoning model family. The announcement came alongside a major update to the GPT-5 base model that improves factual grounding and dramatically reduces hallucination rates in long-document summarization tasks.",
+          "Simultaneously, OpenAI cut API pricing for GPT-5 by an average of 40 percent, with input tokens now running at $2.50 per million and output tokens at $10.00 per million — down from $4.00 and $16.00 respectively, which had been in place since the model's initial API release in March 2026. The company framed the reduction as a response to growing competition from Google and Anthropic, both of whom have been aggressively targeting enterprise API customers with discounted contracts. OpenAI's developer evangelist team published a detailed blog post on June 25 confirming that the new pricing takes effect immediately for all existing API customers with no contractual renegotiation required.",
+          "The pricing announcement was accompanied by the release of GPT-5-mini-2026-06, a refreshed version of OpenAI's cost-optimized model that now outperforms the original GPT-4o on several coding and math benchmarks according to OpenAI's internal evaluations. GPT-5-mini-2026-06 is priced at $0.15 per million input tokens and $0.60 per million output tokens, making it one of the most affordable frontier-class models currently available via API. Analysts at Bernstein Research noted in a June 27 note that the pricing moves signal OpenAI's intent to defend market share ahead of what is widely anticipated to be a Gemini Ultra 2.5 enterprise push from Google later this summer."
+        ]
+      },
+      {
+        "h2": "Google DeepMind Launches Gemini Ultra 2.5 With Native Video Generation",
+        "paragraphs": [
+          "Google DeepMind officially launched Gemini Ultra 2.5 on June 26, 2026, marking the most significant update to the Gemini model family since Gemini 2.0 Ultra debuted in January. The new model introduces native, end-to-end video generation and understanding capabilities without relying on a separate Veo model call — a technical consolidation that Google says reduces latency by up to 60 percent for multimodal workflows. Gemini Ultra 2.5 is available immediately to Google One AI Premium subscribers at $19.99 per month and via Google Cloud's Vertex AI, where enterprise pricing starts at $12.00 per million input tokens for text and $0.065 per second for video input processing.",
+          "In benchmark testing published alongside the launch, Google claims Gemini Ultra 2.5 achieves a score of 92.4 on the MMLU Pro evaluation and sets a new state-of-the-art on the VideoMME benchmark with a score of 84.7, surpassing both GPT-5 and Anthropic's Claude 4 Opus on video-based reasoning tasks. The model also features a confirmed 2 million token context window, which Google is positioning as a key differentiator for legal, financial, and scientific research use cases where processing entire document archives in a single prompt is increasingly critical. Google Workspace integration for Gemini Ultra 2.5 is expected to roll out to enterprise customers beginning July 7, 2026.",
+          "Perhaps most intriguingly, Google announced Project Astra Live, a real-time agentic assistant layer built on Gemini Ultra 2.5 that is now entering public beta for users in the United States, United Kingdom, and Japan. Project Astra Live allows the model to maintain persistent awareness of a user's screen, active applications, and calendar in real time, acting proactively on tasks without waiting for explicit prompts. Privacy advocates have already raised concerns, and Google confirmed that all Astra Live processing is handled on-device for sensitive data categories including health and financial information, with a full privacy whitepaper released on June 27 to address regulatory scrutiny ahead of anticipated EU review."
+        ]
+      },
+      {
+        "h2": "Anthropic Releases Claude 4 Haiku and Restructures Claude Pro Pricing",
+        "paragraphs": [
+          "Anthropic rounded out its Claude 4 model family on June 23, 2026, with the official general availability launch of Claude 4 Haiku, the lightweight member of the Claude 4 generation following the earlier releases of Claude 4 Sonnet in April and Claude 4 Opus in May. Claude 4 Haiku is designed for high-throughput, latency-sensitive applications and is priced at $0.08 per million input tokens and $0.25 per million output tokens via the Anthropic API — a pricing point that undercuts Google's Gemini 1.5 Flash and positions Haiku as a direct competitor to GPT-5-mini for production deployments where cost efficiency is paramount. The model supports a 200K token context window and, according to Anthropic's published benchmarks, achieves performance on par with Claude 3 Opus on most standard reasoning tasks.",
+          "Alongside the Haiku launch, Anthropic announced a restructured pricing model for Claude.ai Pro subscribers, raising the monthly subscription from $20 to $25 effective August 1, 2026, while simultaneously bundling in access to Claude 4 Sonnet with no usage cap and a new 'extended thinking' mode for Claude 4 Opus that was previously gated behind the Claude.ai Max plan at $100 per month. The company framed the restructure as simplification rather than a price hike, noting that the $25 Pro plan now delivers more value than the prior $100 Max plan did at launch in early 2025. Existing annual subscribers will be grandfathered at their current rate through the end of their billing cycle.",
+          "Anthropic also made headlines on June 25 with the announcement of Claude for Enterprise 2.0, a revamped enterprise product that introduces role-based access controls, audit logging, custom system prompt libraries, and a new compliance dashboard designed to help organizations meet ISO 27001 and SOC 2 Type II requirements. The enterprise offering is now available with a minimum contract of $60 per user per month for teams of 10 or more, and Anthropic confirmed that Thomson Reuters, Bridgewater Associates, and a Fortune 100 pharmaceutical company — not yet named publicly — have already signed multi-year agreements under the new framework. CEO Dario Amodei noted in a post on X that Claude 4 Opus continues to hold the top position on Anthropic's internal safety evaluations, with no instance of catastrophic capability elicitation observed across more than 10 million red-team test cases conducted this quarter."
+        ]
+      },
+      {
+        "h2": "Cursor Acquires Codeium and Releases Cursor 1.2 With Agent Mode",
+        "paragraphs": [
+          "In arguably the most consequential business development of the week, AI coding editor Cursor confirmed on June 24, 2026, that it has acquired Codeium, the enterprise-focused AI coding assistant, in an all-stock deal valued at approximately $1.25 billion based on Cursor's most recent $9.9 billion valuation from its Series C round in February 2026. The acquisition is expected to close by August 31, 2026, pending standard regulatory review. The deal immediately expands Cursor's addressable market into large enterprise accounts — Codeium had secured contracts with over 700 enterprise customers including Goldman Sachs, Uber, and Dell — while giving Cursor access to Codeium's proprietary low-latency code completion infrastructure, which processes over 2 billion code completions per day.",
+          "Coinciding with the acquisition announcement, Cursor released version 1.2 of its editor on June 26, 2026, introducing a long-awaited Agent Mode that allows the AI to autonomously execute multi-step coding tasks including writing files, running terminal commands, installing dependencies, and iterating based on test results without requiring manual approval at each step. Agent Mode is available to Cursor Pro subscribers at $20 per month and Cursor Business subscribers at $40 per user per month, with a daily agent action limit of 200 autonomous steps for Pro and unlimited for Business. Early user reports on X and Hacker News describe the feature as a significant leap over GitHub Copilot Workspace, which launched a similar agentic workflow feature in March 2026.",
+          "Cursor 1.2 also introduces support for OpenAI's GPT-5 Pro model, Anthropic Claude 4 Opus, and Google Gemini Ultra 2.5 as selectable base models within the editor — a significant expansion from the previous version, which only supported GPT-4o-class models and Claude 3.5 Sonnet as primary backends. The update includes a new 'Model Router' feature that automatically selects the optimal model based on task type, token budget, and user-defined latency preferences. Cursor co-founder Michael Truell confirmed in an interview with The Verge on June 27 that the Codeium team will be fully integrated into Cursor's engineering organization and that Codeium's standalone product will continue to receive updates through at least December 2026 to support existing enterprise contracts."
+        ]
+      },
+      {
+        "h2": "Midjourney V7 Launches Publicly, Perplexity Adds Real-Time Web Tools",
+        "paragraphs": [
+          "Midjourney officially released V7 to all subscribers on June 25, 2026, ending a three-month alpha period during which access was restricted to users with more than 10,000 lifetime GPU hours on the platform. V7 introduces a fundamentally redesigned diffusion architecture that the company says delivers a 3x improvement in photorealistic detail, significantly more coherent multi-character compositions, and a new 'Style DNA' feature that allows users to define a persistent visual style guide that applies consistently across all images in a project. The model also dramatically reduces the incidence of anatomical errors in human figures, a persistent criticism of earlier Midjourney versions that had largely been addressed by competitors like Flux and Ideogram 3.0.",
+          "Pricing for Midjourney remains unchanged with V7: Basic at $10 per month, Standard at $30, Pro at $60, and Mega at $120, with V7 available across all tiers. However, Midjourney also quietly launched a new 'Turbo Mode' for V7 that consumes GPU minutes at 4x the standard rate but delivers image generation in under three seconds — a response to real-time generation capabilities demonstrated by Ideogram's API. The company also teased a forthcoming Midjourney Web 2.0 interface, with a screenshot shared in its official Discord server on June 27 showing a project-based workspace, integrated mood boarding tools, and what appears to be a timeline feature suggesting video generation capabilities are in development.",
+          "Meanwhile, Perplexity AI released a major update to its AI search platform on June 23, marking the debut of Perplexity Pro Tools — a suite of integrations allowing the assistant to book travel, execute code, manage calendar events, and place orders through supported e-commerce partners directly within the Perplexity interface. The feature is available exclusively to Perplexity Pro subscribers at $20 per month and represents the company's most direct challenge yet to OpenAI's ChatGPT operator ecosystem. Perplexity also confirmed this week that its underlying answer model has been upgraded to a custom fine-tune built on top of Gemini Ultra 2.5 for factual question answering, while retaining its proprietary retrieval-augmented generation pipeline — a notable strategic shift away from the Mistral-based architecture that had powered Perplexity's answers through most of 2025."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the new price of OpenAI's GPT-5 API as of June 2026?",
+        "answer": "As of June 24, 2026, OpenAI reduced GPT-5 API pricing by approximately 40 percent. Input tokens now cost $2.50 per million and output tokens cost $10.00 per million. The cheaper GPT-5-mini-2026-06 variant is priced at $0.15 per million input tokens and $0.60 per million output tokens. The new pricing applies immediately to all existing API customers."
+      },
+      {
+        "question": "What new features does Gemini Ultra 2.5 include and how much does it cost?",
+        "answer": "Launched on June 26, 2026, Gemini Ultra 2.5 introduces native end-to-end video generation, a 2 million token context window, and the Project Astra Live real-time agentic assistant. For consumers, it is available via Google One AI Premium at $19.99 per month. Enterprise access through Google Cloud Vertex AI starts at $12.00 per million input tokens for text and $0.065 per second for video input processing."
+      },
+      {
+        "question": "Why did Cursor acquire Codeium and what does it mean for users?",
+        "answer": "Cursor acquired Codeium in an all-stock deal worth approximately $1.25 billion, announced June 24, 2026, to expand into enterprise markets and gain access to Codeium's high-speed code completion infrastructure. For existing Codeium enterprise users, the standalone product will continue receiving updates through at least December 2026. Cursor users gain access to new Agent Mode capabilities in Cursor 1.2 and broader model support including GPT-5 Pro, Claude 4 Opus, and Gemini Ultra 2.5."
+      },
+      {
+        "question": "How has Anthropic changed Claude.ai Pro pricing and what do subscribers get now?",
+        "answer": "Anthropic is raising Claude.ai Pro from $20 to $25 per month effective August 1, 2026. However, the updated plan now includes unlimited access to Claude 4 Sonnet and the extended thinking mode for Claude 4 Opus, features previously reserved for the $100 per month Max plan. Existing annual subscribers will be grandfathered at their current rate through the end of their billing period."
+      },
+      {
+        "question": "What is new in Midjourney V7 and who can access it?",
+        "answer": "Midjourney V7, publicly released on June 25, 2026, features a redesigned diffusion architecture with 3x improved photorealistic detail, better multi-character scene coherence, a new Style DNA feature for consistent project-wide aesthetics, and significantly reduced anatomical errors in human figures. V7 is available to all Midjourney subscribers from the $10 per month Basic plan upward, with a new Turbo Mode for sub-three-second generation available at 4x the standard GPU minute consumption rate."
+      }
+    ]
+  },
+
+  {
     "slug": "ai-tools-weekly-roundup-june-29-2026",
     "title": "AI Weekly: GPT-5 Turbo, Claude 4, Gemini 2.5 Ultra Drop",
     "metaTitle": "AI Tools Weekly Roundup June 2026 | GPT-5, Claude 4 News",

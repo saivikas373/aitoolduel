@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "claude-vs-gpt-4o"
+    }
+  ],
+  "publishedComparisons": [
+    "claude vs gpt-4o"
+  ],
+  "publishedNews": []
+}
