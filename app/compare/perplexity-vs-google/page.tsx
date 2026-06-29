@@ -8,20 +8,9 @@ const data = getComparison("perplexity-vs-google")!;
 export const metadata: Metadata = {
   title: data.metaTitle,
   description: data.metaDescription,
-  openGraph: {
-    title: data.metaTitle,
-    description: data.metaDescription,
-    url: `https://www.aitoolduel.com${data.canonicalPath}`,
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: data.metaTitle,
-    description: data.metaDescription,
-  },
-  alternates: {
-    canonical: `https://www.aitoolduel.com${data.canonicalPath}`,
-  },
+  openGraph: { title: data.metaTitle, description: data.metaDescription, url: `https://www.aitoolduel.com${data.canonicalPath}`, type: "article" },
+  twitter: { card: "summary_large_image", title: data.metaTitle, description: data.metaDescription },
+  alternates: { canonical: `https://www.aitoolduel.com${data.canonicalPath}` },
 };
 
 export default function Page() {

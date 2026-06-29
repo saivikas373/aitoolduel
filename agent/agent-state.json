@@ -164,6 +164,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "chatgpt-vs-google-docs"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "claude-vs-cursor"
     }
   ],
   "publishedComparisons": [
@@ -187,7 +192,8 @@
     "copy ai vs jasper",
     "claude vs mistral",
     "gpt-4o mini vs claude haiku",
-    "chatgpt vs google docs"
+    "chatgpt vs google docs",
+    "claude vs cursor"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
