@@ -159,7 +159,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
-    },    { url: `${baseUrl}/compare/gemini-vs-grok`, lastModified: new Date() },
+    },    { url: `${baseUrl}/compare/gemini-vs-grok`, lastModified: new Date() },    { url: `${baseUrl}/news/ai-tools-weekly-roundup-june-29-2026`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },    { url: `${baseUrl}/news`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+
+
 
   ]
 }
