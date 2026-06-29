@@ -154,6 +154,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "claude-vs-mistral"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "gpt-4o-mini-vs-claude-haiku"
     }
   ],
   "publishedComparisons": [
@@ -175,7 +180,8 @@
     "notion ai vs jasper",
     "writesonic vs jasper",
     "copy ai vs jasper",
-    "claude vs mistral"
+    "claude vs mistral",
+    "gpt-4o mini vs claude haiku"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
