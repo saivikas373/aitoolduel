@@ -29,12 +29,18 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "ai-tool-news-weekly-roundup-june-29-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "perplexity-vs-claude"
     }
   ],
   "publishedComparisons": [
     "claude vs gpt-4o",
     "notion ai vs chatgpt",
-    "copilot vs chatgpt"
+    "copilot vs chatgpt",
+    "perplexity vs claude"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
