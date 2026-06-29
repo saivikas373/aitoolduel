@@ -84,6 +84,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "stable-diffusion-vs-midjourney"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "gemini-2-5-ultra-release-june-2026-1"
     }
   ],
   "publishedComparisons": [
@@ -105,6 +110,7 @@
     "ai-tools-weekly-news-june-29-2026",
     "gemini-3-ultra-release-june-2026",
     "gemini-2-5-ultra-release-june-2026",
-    "anthropic-claude-4-opus-release-june-2026"
+    "anthropic-claude-4-opus-release-june-2026",
+    "gemini-2-5-ultra-release-june-2026-1"
   ]
 }
