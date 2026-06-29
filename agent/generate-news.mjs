@@ -35,6 +35,12 @@ console.log("🔍 Researching latest AI news...\n");
 
 const today = new Date().toISOString().split("T")[0];
 
+// Generate a unique slug suffix based on existing news count
+const newsPath2 = path.join(ROOT, "lib", "news.ts");
+const existingNews = fs.readFileSync(newsPath2, "utf8");
+const existingCount = (existingNews.match(/slug:/g) || []).length;
+const slugSuffix = existingCount > 0 ? `-${existingCount}` : "";
+
 const researchPrompt = `You are an AI industry journalist. Today is ${today}.
 
 Write a comprehensive news article about the most important and trending AI tool news from the past 7 days.
@@ -44,7 +50,7 @@ Focus on: new model releases, major product updates, pricing changes, acquisitio
 Respond with ONLY valid JSON matching this interface — no markdown, no explanation:
 
 {
-  "slug": "string (kebab-case, e.g. 'gpt5-release-june-2026')",
+  "slug": "string (kebab-case, MUST be unique and specific to this article's topic, e.g. 'claude-4-launch-june-2026' or 'gpt5-pricing-update-june-2026' — NOT a generic roundup name)",
   "title": "string (compelling headline under 70 chars)",
   "metaTitle": "string (SEO title under 65 chars, include year)",
   "metaDescription": "string (140-160 chars, include keywords)",
@@ -93,8 +99,12 @@ try {
 const newsPath = path.join(ROOT, "lib", "news.ts");
 let newsContent = fs.readFileSync(newsPath, "utf8");
 
+// Ensure slug is unique by appending count if needed
 if (newsContent.includes(`slug: "${articleData.slug}"`)) {
-  console.log(`⚠️  Article "${articleData.slug}" already exists.`);
+  articleData.slug = `${articleData.slug}-${existingCount}`;
+}
+if (newsContent.includes(`slug: "${articleData.slug}"`)) {
+  console.log(`⚠️  Article "${articleData.slug}" already exists, skipping.`);
   process.exit(0);
 }
 
