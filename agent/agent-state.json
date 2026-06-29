@@ -89,6 +89,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "gemini-2-5-ultra-release-june-2026-1"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "google-bard-vs-chatgpt"
     }
   ],
   "publishedComparisons": [
@@ -100,7 +105,8 @@
     "jasper vs chatgpt",
     "grammarly vs chatgpt",
     "adobe firefly vs midjourney",
-    "stable diffusion vs midjourney"
+    "stable diffusion vs midjourney",
+    "google bard vs chatgpt"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
