@@ -19,11 +19,17 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "ai-tools-weekly-news-june-29-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "copilot-vs-chatgpt"
     }
   ],
   "publishedComparisons": [
     "claude vs gpt-4o",
-    "notion ai vs chatgpt"
+    "notion ai vs chatgpt",
+    "copilot vs chatgpt"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
