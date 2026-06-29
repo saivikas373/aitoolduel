@@ -129,6 +129,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "anthropic-claude-4-opus-release-june-2026-1"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "notion-ai-vs-jasper"
     }
   ],
   "publishedComparisons": [
@@ -146,7 +151,8 @@
     "character ai vs chatgpt",
     "claude vs copilot",
     "gemini vs copilot",
-    "chatgpt vs wolfram alpha"
+    "chatgpt vs wolfram alpha",
+    "notion ai vs jasper"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
