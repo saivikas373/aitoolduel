@@ -169,6 +169,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "claude-vs-cursor"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "perplexity-vs-google"
     }
   ],
   "publishedComparisons": [
@@ -193,7 +198,8 @@
     "claude vs mistral",
     "gpt-4o mini vs claude haiku",
     "chatgpt vs google docs",
-    "claude vs cursor"
+    "claude vs cursor",
+    "perplexity vs google"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
