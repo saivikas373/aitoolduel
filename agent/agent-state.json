@@ -119,6 +119,11 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "gemini-25-ultra-release-june-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "chatgpt-vs-wolfram-alpha"
     }
   ],
   "publishedComparisons": [
@@ -135,7 +140,8 @@
     "bing ai vs chatgpt",
     "character ai vs chatgpt",
     "claude vs copilot",
-    "gemini vs copilot"
+    "gemini vs copilot",
+    "chatgpt vs wolfram alpha"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
