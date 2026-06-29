@@ -124,6 +124,23 @@ recommendationSummary (2-3 sentences), faqs (5 FAQs with question + answer).`,
   let jsonText = message.content[0].text.trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   const data = JSON.parse(jsonText);
 
+  // ── Sanitize field names before writing ──
+  if (typeof data.tool1?.freeTier === "boolean") data.tool1.freeTier = data.tool1.freeTier ? "Yes — free tier available" : "No free tier";
+  if (typeof data.tool2?.freeTier === "boolean") data.tool2.freeTier = data.tool2.freeTier ? "Yes — free tier available" : "No free tier";
+  const fixSecs = secs => (secs || []).map(s => {
+    const out = {};
+    out.h2 = s.h2 || s.heading || s.sectionTitle || s.title || "Overview";
+    if (Array.isArray(s.paragraphs)) out.paragraphs = s.paragraphs;
+    else {
+      const text = s.content || s.body || s.text || "";
+      const parts = text.split(/(?<=\. )/); const mid = Math.ceil(parts.length / 2);
+      out.paragraphs = [parts.slice(0,mid).join(""), parts.slice(mid).join("")].filter(Boolean);
+    }
+    return out;
+  });
+  data.introSections = fixSecs(data.introSections);
+  data.deepDiveSections = fixSecs(data.deepDiveSections);
+
   // Add to comparisons.ts
   const comparisonsPath = path.join(ROOT, "lib", "comparisons.ts");
   let content = fs.readFileSync(comparisonsPath, "utf8");
