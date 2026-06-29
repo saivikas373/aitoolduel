@@ -4,10 +4,17 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "claude-vs-gpt-4o"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "ai-tool-news-weekly-roundup-june-29-2026"
     }
   ],
   "publishedComparisons": [
     "claude vs gpt-4o"
   ],
-  "publishedNews": []
+  "publishedNews": [
+    "ai-tool-news-weekly-roundup-june-29-2026"
+  ]
 }
