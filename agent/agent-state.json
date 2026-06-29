@@ -114,6 +114,11 @@
       "date": "2026-06-29",
       "action": "comparison",
       "slug": "gemini-vs-copilot"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "news",
+      "slug": "gemini-25-ultra-release-june-2026"
     }
   ],
   "publishedComparisons": [
@@ -141,6 +146,7 @@
     "gemini-3-ultra-release-june-2026",
     "gemini-2-5-ultra-release-june-2026",
     "anthropic-claude-4-opus-release-june-2026",
-    "gemini-2-5-ultra-release-june-2026-1"
+    "gemini-2-5-ultra-release-june-2026-1",
+    "gemini-25-ultra-release-june-2026"
   ]
 }
