@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const navLinks = [
+  { href: "/news", label: "AI News" },
   { href: "/tools", label: "Tools Directory" },
   { href: "/tools/ai-detector", label: "AI Detector" },
   { href: "/tools/prompt-generator", label: "Prompt Generator" },
