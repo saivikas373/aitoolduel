@@ -39,13 +39,19 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "ai-tools-weekly-news-june-29-2026"
+    },
+    {
+      "date": "2026-06-29",
+      "action": "comparison",
+      "slug": "runway-vs-pika"
     }
   ],
   "publishedComparisons": [
     "claude vs gpt-4o",
     "notion ai vs chatgpt",
     "copilot vs chatgpt",
-    "perplexity vs claude"
+    "perplexity vs claude",
+    "runway vs pika"
   ],
   "publishedNews": [
     "ai-tool-news-weekly-roundup-june-29-2026",
