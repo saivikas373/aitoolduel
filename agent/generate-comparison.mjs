@@ -119,6 +119,33 @@ try {
   process.exit(1);
 }
 
+// ─── Validate and fix field names before writing ─────────────────────────────
+
+// Fix freeTier if boolean was returned
+if (typeof comparisonData.tool1?.freeTier === "boolean")
+  comparisonData.tool1.freeTier = comparisonData.tool1.freeTier ? "Yes — free tier available" : "No free tier";
+if (typeof comparisonData.tool2?.freeTier === "boolean")
+  comparisonData.tool2.freeTier = comparisonData.tool2.freeTier ? "Yes — free tier available" : "No free tier";
+
+// Fix sections that used "heading"/"content" instead of "h2"/"paragraphs"
+function fixSections(sections) {
+  if (!Array.isArray(sections)) return sections;
+  return sections.map(s => {
+    const fixed = { ...s };
+    if (fixed.heading && !fixed.h2) { fixed.h2 = fixed.heading; delete fixed.heading; }
+    if (typeof fixed.content === "string" && !fixed.paragraphs) {
+      const parts = fixed.content.split(/(?<=\.) /);
+      const mid = Math.ceil(parts.length / 2);
+      fixed.paragraphs = [parts.slice(0, mid).join(" "), parts.slice(mid).join(" ")].filter(Boolean);
+      delete fixed.content;
+    }
+    return fixed;
+  });
+}
+comparisonData.introSections = fixSections(comparisonData.introSections);
+comparisonData.deepDiveSections = fixSections(comparisonData.deepDiveSections);
+console.log("✅ Field validation passed");
+
 // ─── Step 2: Add to comparisons.ts ──────────────────────────────────────────
 
 const comparisonsPath = path.join(ROOT, "lib", "comparisons.ts");
