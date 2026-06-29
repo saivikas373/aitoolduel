@@ -35,22 +35,35 @@ console.log("🔍 Researching latest AI news...\n");
 
 const today = new Date().toISOString().split("T")[0];
 
-// Generate a unique slug suffix based on existing news count
+// Read existing news slugs to avoid duplicates
 const newsPath2 = path.join(ROOT, "lib", "news.ts");
 const existingNews = fs.readFileSync(newsPath2, "utf8");
 const existingCount = (existingNews.match(/slug:/g) || []).length;
-const slugSuffix = existingCount > 0 ? `-${existingCount}` : "";
+const existingSlugs = [...existingNews.matchAll(/slug:\s*["']([^"']+)["']/g)].map(m => m[1]);
+
+// Pick a unique topic angle based on run count
+const topicAngles = [
+  "Focus on the biggest model release or version update this week",
+  "Focus on AI coding tools and developer productivity news this week",
+  "Focus on AI image/video generation tool updates this week",
+  "Focus on AI pricing changes and business/enterprise news this week",
+  "Focus on new AI tools launched or major feature updates this week",
+  "Focus on AI safety, regulation, or policy news this week",
+  "Focus on AI search and research tool updates this week",
+];
+const topicAngle = topicAngles[existingCount % topicAngles.length];
 
 const researchPrompt = `You are an AI industry journalist. Today is ${today}.
 
-Write a comprehensive news article about the most important and trending AI tool news from the past 7 days.
+Write a news article with this specific focus: ${topicAngle}
 
-Focus on: new model releases, major product updates, pricing changes, acquisitions, or industry-shifting announcements related to AI tools like ChatGPT, Claude, Gemini, Copilot, Cursor, Midjourney, Perplexity, etc.
+IMPORTANT: Your slug MUST be different from ALL of these already-published slugs:
+${existingSlugs.map(s => `- ${s}`).join("\n")}
 
 Respond with ONLY valid JSON matching this interface — no markdown, no explanation:
 
 {
-  "slug": "string (kebab-case, MUST be unique and specific to this article's topic, e.g. 'claude-4-launch-june-2026' or 'gpt5-pricing-update-june-2026' — NOT a generic roundup name)",
+  "slug": "string (kebab-case, topic-specific, e.g. 'gpt5-coding-update-june-2026' or 'midjourney-v7-launch-june-2026' — NEVER a generic 'weekly-roundup' name, MUST NOT match any slug listed above)",
   "title": "string (compelling headline under 70 chars)",
   "metaTitle": "string (SEO title under 65 chars, include year)",
   "metaDescription": "string (140-160 chars, include keywords)",
