@@ -33,39 +33,24 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: node agent/master-agent.mjs
 
-      - name: Send success email
+      - name: Notify success via GitHub issue
         if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USER }}
-          password: ${{ secrets.EMAIL_PASS }}
-          subject: "✅ AIToolDuel: New content published successfully"
-          to: saivikasreddy95@gmail.com
-          from: AI Agent <${{ secrets.EMAIL_USER }}>
-          body: |
-            Your AI agent just published new content on aitoolduel.com!
+        run: |
+          gh issue create \
+            --title "✅ Agent published new content - $(date +%Y-%m-%d)" \
+            --body "New content was published automatically on aitoolduel.com. Check: https://www.aitoolduel.com" \
+            --label "auto-publish" \
+            --repo saivikas373/aitoolduel || true
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-            Check your site: https://www.aitoolduel.com
-
-            The agent ran automatically on schedule. No action needed.
-
-      - name: Send failure email
+      - name: Notify failure via GitHub issue
         if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USER }}
-          password: ${{ secrets.EMAIL_PASS }}
-          subject: "❌ AIToolDuel: Agent failed - action needed"
-          to: saivikasreddy95@gmail.com
-          from: AI Agent <${{ secrets.EMAIL_USER }}>
-          body: |
-            Your AI agent failed to publish content today.
-
-            Check the error logs here:
-            https://github.com/saivikas373/aitoolduel/actions
-
-            You may need to check your API keys or fix an error.
+        run: |
+          gh issue create \
+            --title "❌ Agent FAILED - $(date +%Y-%m-%d) - ACTION NEEDED" \
+            --body "The auto-publish agent failed today. Check logs: https://github.com/saivikas373/aitoolduel/actions" \
+            --label "bug" \
+            --repo saivikas373/aitoolduel || true
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

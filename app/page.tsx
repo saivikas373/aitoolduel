@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSenseAd from "@/components/AdSenseAd";
+import { getLatestArticles } from "@/lib/news";
 
 export const metadata: Metadata = {
   title: "AI Tool Duel – Honest AI Tool Comparisons",
@@ -189,6 +190,7 @@ const whyPoints = [
 ];
 
 export default function HomePage() {
+  const latestNews = getLatestArticles(3);
   return (
     <>
       {/* ── HERO ── */}
@@ -399,6 +401,28 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* ── LATEST NEWS ── */}
+        {latestNews.length > 0 && (
+          <section className="py-12 border-t border-slate-200">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-extrabold text-slate-900">Latest AI News</h2>
+              <Link href="/news" className="text-orange-500 hover:text-orange-600 font-semibold text-sm">
+                All news →
+              </Link>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {latestNews.map((article) => (
+                <Link key={article.slug} href={`/news/${article.slug}`} className="group block border border-slate-200 rounded-xl p-5 hover:shadow-md hover:border-orange-200 transition-all">
+                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded-full mb-2">{article.badge}</span>
+                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">{article.title}</h3>
+                  <p className="text-slate-500 text-sm line-clamp-2">{article.summary}</p>
+                  <p className="text-xs text-slate-400 mt-3">{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── AdSense: BOTTOM ── */}
         <AdSenseAd slot="auto" />
