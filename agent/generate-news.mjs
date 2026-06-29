@@ -114,11 +114,12 @@ let newsContent = fs.readFileSync(newsPath, "utf8");
 
 // Ensure slug is unique by appending count if needed
 if (newsContent.includes(`slug: "${articleData.slug}"`)) {
-  articleData.slug = `${articleData.slug}-${existingCount}`;
+  // Try appending count to make unique
+  articleData.slug = `${articleData.slug}-v${existingCount + 1}`;
 }
 if (newsContent.includes(`slug: "${articleData.slug}"`)) {
-  console.log(`⚠️  Article "${articleData.slug}" already exists, skipping.`);
-  process.exit(0);
+  console.log(`⚠️  Article slug still duplicate after suffix. Skipping.`);
+  process.exit(2); // exit 2 = skip signal to master-agent
 }
 
 const newEntry = `\n  ${JSON.stringify(articleData, null, 2).replace(/^/gm, "  ").trim()},\n`;

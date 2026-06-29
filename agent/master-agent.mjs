@@ -148,45 +148,69 @@ export default function Page() {
 async function publishNews() {
   console.log(`\n📰 Publishing news article for ${today}...`);
 
+  // Read existing slugs to avoid duplicates
+  const newsPath = path.join(ROOT, "lib", "news.ts");
+  let newsContent = fs.readFileSync(newsPath, "utf8");
+  const existingSlugs = [...newsContent.matchAll(/slug:\s*["']([^"']+)["']/g)].map(m => m[1]);
+
+  // Pick a topic angle based on existing count to ensure variety
+  const topicAngles = [
+    "the biggest AI model release or major version update this week (e.g. GPT-5, Claude 4, Gemini Ultra)",
+    "AI coding tools and developer productivity news (Cursor, Copilot, Codex, Claude Code updates)",
+    "AI image and video generation tools (Midjourney, Runway, Sora, DALL-E, Pika updates)",
+    "AI business news: pricing changes, funding rounds, acquisitions, enterprise deals",
+    "new AI tools launched this week and major feature updates across the AI ecosystem",
+    "AI search and research tools (Perplexity, ChatGPT search, Google AI Overviews updates)",
+  ];
+  const angle = topicAngles[existingSlugs.length % topicAngles.length];
+
   const message = await client.messages.create({
     model: "claude-sonnet-4-6",
     max_tokens: 6000,
     messages: [{ role: "user", content: `You are an AI industry journalist. Today is ${today}.
-Write a comprehensive weekly news article about the most important trending AI tool news from the past 7 days.
-Focus on: new model releases, product updates, pricing changes, acquisitions, or major announcements from OpenAI, Anthropic, Google, Microsoft, Meta, Mistral, Perplexity, Cursor, Midjourney, etc.
 
-Respond with ONLY valid JSON (no markdown) matching this structure:
+Write a news article focused on: ${angle}
+
+CRITICAL: Your slug MUST be specific to this topic (e.g. "cursor-vs-copilot-june-2026" or "midjourney-v7-update-june-2026").
+NEVER use generic names like "weekly-roundup" or "news-roundup".
+These slugs already exist — DO NOT use them: ${existingSlugs.join(", ")}
+
+Respond with ONLY valid JSON (no markdown):
 {
-  "slug": "kebab-case-slug-with-date",
-  "title": "compelling headline under 70 chars",
-  "metaTitle": "SEO title under 65 chars with year",
+  "slug": "topic-specific-kebab-slug-${today}",
+  "title": "compelling specific headline under 70 chars",
+  "metaTitle": "SEO title under 65 chars with year 2026",
   "metaDescription": "140-160 chars with keywords",
   "date": "${today}",
-  "category": "Weekly Roundup",
-  "badge": "Weekly Roundup",
-  "summary": "2-3 sentence intro",
-  "sections": [{"h2": "string", "paragraphs": ["p1","p2","p3"]}],
+  "category": "Industry News",
+  "badge": "Hot",
+  "summary": "2-3 sentence intro paragraph",
+  "sections": [{"h2": "section heading", "paragraphs": ["paragraph 1","paragraph 2","paragraph 3"]}],
   "faqs": [{"question": "string", "answer": "string"}]
 }
-Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs. Be specific with model names, pricing, dates.` }],
+Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs. Use real model names, specific details, dates.` }],
   });
 
   let jsonText = message.content[0].text.trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   const article = JSON.parse(jsonText);
 
-  // Add to news.ts
-  const newsPath = path.join(ROOT, "lib", "news.ts");
-  let newsContent = fs.readFileSync(newsPath, "utf8");
-
-  if (!newsContent.includes(`"slug": "${article.slug}"`) && !newsContent.includes(`slug: "${article.slug}"`)) {
-    const newEntry = `\n  ${JSON.stringify(article, null, 2).replace(/^/gm, "  ").trim()},\n`;
-    if (newsContent.includes("newsArticles: NewsArticle[] = [];")) {
-      newsContent = newsContent.replace("newsArticles: NewsArticle[] = [];", `newsArticles: NewsArticle[] = [${newEntry}];`);
-    } else {
-      newsContent = newsContent.replace(/export const newsArticles: NewsArticle\[] = \[/, `export const newsArticles: NewsArticle[] = [${newEntry}`);
-    }
-    fs.writeFileSync(newsPath, newsContent);
+  // Ensure slug is unique
+  if (newsContent.includes(`"${article.slug}"`) || newsContent.includes(`'${article.slug}'`)) {
+    article.slug = `${article.slug}-${existingSlugs.length + 1}`;
   }
+  if (newsContent.includes(`"${article.slug}"`) || newsContent.includes(`'${article.slug}'`)) {
+    console.log(`⚠️  News slug still duplicate, skipping news this run.`);
+    return null;
+  }
+
+  // Add to news.ts
+  const newEntry = `\n  ${JSON.stringify(article, null, 2).replace(/^/gm, "  ").trim()},\n`;
+  if (newsContent.includes("newsArticles: NewsArticle[] = [];")) {
+    newsContent = newsContent.replace("newsArticles: NewsArticle[] = [];", `newsArticles: NewsArticle[] = [${newEntry}];`);
+  } else {
+    newsContent = newsContent.replace(/export const newsArticles: NewsArticle\[] = \[/, `export const newsArticles: NewsArticle[] = [${newEntry}`);
+  }
+  fs.writeFileSync(newsPath, newsContent);
 
   updateSitemap(`/news/${article.slug}`, 0.8);
   console.log(`✅ News article ready: /news/${article.slug}`);
@@ -300,8 +324,19 @@ if (action.type === "comparison" && action.topic) {
   commitMsg = `feat: add comparison - ${action.topic}`;
 } else if (action.type === "news") {
   publishedSlug = await publishNews();
-  state.publishedNews.push(publishedSlug);
-  commitMsg = `feat: add weekly AI news - ${today}`;
+  if (!publishedSlug) {
+    // News was duplicate — fall back to publishing a comparison instead
+    console.log("⚠️  News skipped, publishing a comparison instead...");
+    const fallbackTopic = COMPARISON_QUEUE.find(t => !state.publishedComparisons.includes(t));
+    if (fallbackTopic) {
+      publishedSlug = await publishComparison(fallbackTopic);
+      state.publishedComparisons.push(fallbackTopic);
+      commitMsg = `feat: add comparison - ${fallbackTopic}`;
+    }
+  } else {
+    state.publishedNews.push(publishedSlug);
+    commitMsg = `feat: add weekly AI news - ${today}`;
+  }
 } else {
   console.log("✅ All comparisons published! Switching to news-only mode.");
   publishedSlug = await publishNews();
