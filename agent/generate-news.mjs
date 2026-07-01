@@ -167,8 +167,8 @@ if (GITHUB_TOKEN) {
     execSync(`git push "${remote}" HEAD:main`, { cwd: ROOT });
     console.log("✅ Pushed to GitHub — Vercel will deploy automatically");
 
-    console.log("📡 Pinging Google & Bing...");
-    await requestIndexing(`../news/${articleData.slug}`);
+    console.log("📡 Notifying search engines...");
+    await requestIndexing(`/news/${articleData.slug}`);
 
     console.log(`\n🎉 Done! Live at: https://www.aitoolduel.com/news/${articleData.slug}`);
   } catch (e) {

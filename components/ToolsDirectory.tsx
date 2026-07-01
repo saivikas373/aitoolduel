@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import StarRating from "./StarRating";
 import { tools, allCategories, categoryColors, type ToolCategory } from "@/lib/tools";
 
 const FREE_TOOLS = [
@@ -24,24 +25,6 @@ const FREE_TOOLS = [
     badge: "Free Tool",
   },
 ];
-
-function StarRating({ rating }: { rating: number }) {
-  const full = Math.floor(rating);
-  const hasHalf = rating % 1 >= 0.5;
-  const empty = 5 - full - (hasHalf ? 1 : 0);
-  return (
-    <span className="flex items-center gap-0.5" aria-label={`${rating} out of 5`}>
-      {Array.from({ length: full }).map((_, i) => (
-        <span key={`f${i}`} className="text-orange-400 text-sm">★</span>
-      ))}
-      {hasHalf && <span className="text-orange-300 text-sm">★</span>}
-      {Array.from({ length: empty }).map((_, i) => (
-        <span key={`e${i}`} className="text-slate-600 text-sm">★</span>
-      ))}
-      <span className="ml-1 text-xs font-semibold text-slate-300">{rating}</span>
-    </span>
-  );
-}
 
 export default function ToolsDirectory() {
   const [query, setQuery] = useState("");

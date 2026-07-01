@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSenseAd from "@/components/AdSenseAd";
 import Newsletter from "@/components/Newsletter";
+import ToolQuiz from "@/components/ToolQuiz";
 import { getLatestArticles } from "@/lib/news";
 
 export const metadata: Metadata = {
@@ -220,6 +221,11 @@ export default function HomePage() {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* ── TOOL QUIZ ── */}
+        <section id="quiz" className="py-10 scroll-mt-20">
+          <ToolQuiz />
+        </section>
+
         {/* ── AdSense: TOP ── */}
         <AdSenseAd slot="auto" />
 

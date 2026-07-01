@@ -247,7 +247,7 @@ for (const launch of launches) {
   publishedSlugs.push(slug);
 
   const pushed = pushToGitHub(`feat: add news article - ${launch.provider} ${launch.modelName} launch`);
-  if (pushed) await requestIndexing(slug);
+  if (pushed) await requestIndexing(`/news/${slug}`);
 }
 
 state.runs.push({ date: today, action: "launch-check", found: launches.length, published: publishedSlugs });

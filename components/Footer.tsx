@@ -90,6 +90,11 @@ export default function Footer() {
                   Prompt Generator
                 </Link>
               </li>
+              <li>
+                <Link href="/quiz" className="hover:text-orange-400 transition-colors">
+                  Which AI Tool Quiz
+                </Link>
+              </li>
             </ul>
           </div>
 

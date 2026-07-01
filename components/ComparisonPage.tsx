@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AdSenseAd from "./AdSenseAd";
+import StarRating from "./StarRating";
 import type { ComparisonData } from "@/lib/comparisons";
 
 /* ── Brand favicon domains (Google favicon service) ─────────────────── */
@@ -71,24 +72,6 @@ function ToolAvatar({ name }: { name: string }) {
         </span>
       )}
     </div>
-  );
-}
-
-function StarRating({ rating }: { rating: number }) {
-  const full = Math.floor(rating);
-  const hasHalf = rating % 1 >= 0.5;
-  const empty = 5 - full - (hasHalf ? 1 : 0);
-  return (
-    <span className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
-      {Array.from({ length: full }).map((_, i) => (
-        <span key={`f-${i}`} className="text-orange-400 text-lg">★</span>
-      ))}
-      {hasHalf && <span className="text-orange-300 text-lg">★</span>}
-      {Array.from({ length: empty }).map((_, i) => (
-        <span key={`e-${i}`} className="text-slate-600 text-lg">★</span>
-      ))}
-      <span className="ml-1 text-sm font-semibold text-slate-300">{rating}/5</span>
-    </span>
   );
 }
 
@@ -250,8 +233,8 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
                 />
                 <TableRow
                   label="Rating"
-                  val1={<StarRating rating={tool1.rating} />}
-                  val2={<StarRating rating={tool2.rating} />}
+                  val1={<StarRating rating={tool1.rating} size="lg" />}
+                  val2={<StarRating rating={tool2.rating} size="lg" />}
                   striped={false}
                 />
               </tbody>

@@ -208,17 +208,14 @@
     "sora vs runway"
   ],
   "publishedNews": [
-    "ai-tool-news-weekly-roundup-june-29-2026",
-    "ai-tools-weekly-news-june-29-2026",
-    "ai-tool-news-weekly-roundup-june-29-2026",
-    "ai-tools-weekly-news-june-29-2026",
-    "ai-tools-weekly-news-june-29-2026",
+    "ai-tools-weekly-roundup-june-29-2026",
     "gemini-3-ultra-release-june-2026",
     "gemini-2-5-ultra-release-june-2026",
-    "anthropic-claude-4-opus-release-june-2026",
-    "gemini-2-5-ultra-release-june-2026-1",
-    "gemini-25-ultra-release-june-2026",
-    "anthropic-claude-4-opus-release-june-2026-1",
-    "gemini-3-ultra-release-june-2026-1"
+    "anthropic-claude-4-opus-release-june-2026"
+  ],
+  "publishedLaunches": [
+    { "provider": "Google", "modelName": "Gemini 3 Ultra", "date": "2026-06-27", "slug": "gemini-3-ultra-release-june-2026" },
+    { "provider": "Google", "modelName": "Gemini 2.5 Ultra", "date": "2026-06-26", "slug": "gemini-2-5-ultra-release-june-2026" },
+    { "provider": "Anthropic", "modelName": "Claude 4 Opus", "date": "2026-06-26", "slug": "anthropic-claude-4-opus-release-june-2026" }
   ]
 }
