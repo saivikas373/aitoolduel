@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "anthropic-claude-sonnet-5-agentic-model-launch-2026",
+    "title": "Anthropic Launches Claude Sonnet 5, Its Most Agentic Model Yet",
+    "metaTitle": "Anthropic Claude Sonnet 5 Launch 2026 | Most Agentic Sonnet",
+    "metaDescription": "Anthropic launches Claude Sonnet 5 on June 30, 2026, bringing Opus-level agentic capabilities to Free and Pro users at a lower cost than Opus 4.8.",
+    "date": "2026-06-30",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Anthropic officially launched Claude Sonnet 5 on June 30, 2026, marking its most capable mid-tier model release to date. The new model brings advanced agentic abilities — including multi-step planning, browser and terminal tool use, and autonomous task completion — that previously required an Opus-class model. Claude Sonnet 5 is now the default model for both Free and Pro tier users, while remaining substantially cheaper than Opus 4.8.",
+    "sections": [
+      {
+        "h2": "A New Bar for Mid-Tier Agentic AI",
+        "paragraphs": [
+          "Anthropic's Claude Sonnet 5 represents a meaningful shift in what users can expect from the company's mid-tier model line. Where previous Sonnet models excelled at single-turn reasoning and conversation, Sonnet 5 has been explicitly designed around agentic use cases — tasks that require a model to plan across multiple steps, use tools, and make sequential decisions without constant human intervention.",
+          "The model supports browser and terminal tool use, enabling it to navigate web pages, execute commands, and interact with external systems as part of a longer task chain. This capability set was previously considered the domain of Anthropic's flagship Opus models, making Sonnet 5's positioning notable within the company's own lineup.",
+          "Anthropic describes Sonnet 5 as its most agentic Sonnet model yet, a characterization that signals a deliberate effort to push autonomous task completion further down the cost curve and into wider accessibility."
+        ]
+      },
+      {
+        "h2": "Closing the Gap With Opus 4.8",
+        "paragraphs": [
+          "One of the most significant claims Anthropic makes about Sonnet 5 is that it narrows the performance gap with Opus 4.8, the company's current top-tier model. While the company has not provided specific benchmark figures in the launch announcement, the framing suggests Sonnet 5 achieves results on complex agentic tasks that meaningfully approach Opus 4.8 territory.",
+          "This convergence in capability, if it holds up to real-world testing, has practical implications for developers and enterprises. Teams that previously had to route difficult multi-step tasks to Opus-class models for reliability may find Sonnet 5 sufficient for a broader share of their workloads.",
+          "The gap-narrowing dynamic also reflects a broader industry pattern: each generation of mid-tier models tends to match or exceed the prior generation's flagship performance. Sonnet 5 appears to be following that trajectory within Anthropic's own portfolio."
+        ]
+      },
+      {
+        "h2": "Pricing Advantage Kept Intact",
+        "paragraphs": [
+          "Despite its upgraded capabilities, Anthropic has positioned Claude Sonnet 5 as significantly cheaper than Opus 4.8. This cost differential has historically been one of the primary reasons developers choose Sonnet-class models over Opus, and Anthropic appears to have preserved that economic distinction with this release.",
+          "For businesses running high-volume agentic pipelines, the cost gap between a Sonnet and an Opus model can translate into substantial savings at scale. Sonnet 5's ability to handle tasks that once required Opus therefore represents not just a capability upgrade but a potential reduction in operating costs for certain workloads.",
+          "Anthropic has not disclosed specific per-token pricing in the launch materials summarized here, but the company's consistent positioning of Sonnet as a more affordable alternative to Opus suggests the pricing structure follows its established tiered model."
+        ]
+      },
+      {
+        "h2": "Default Model for Free and Pro Users",
+        "paragraphs": [
+          "Perhaps the most immediate impact of the Sonnet 5 launch is its designation as the default model for Anthropic's Free and Pro subscription tiers. This means millions of everyday Claude users will interact with the new model as their standard experience, without needing to manually select it.",
+          "Making a highly agentic model the default represents a calculated move by Anthropic. It exposes a much larger user base to autonomous task completion features like browser use and terminal access, potentially accelerating adoption of these capabilities beyond the developer community that typically experiments with them first.",
+          "The decision also signals Anthropic's confidence in Sonnet 5's reliability and safety at scale. Deploying an agentic model as the default for non-technical Free tier users requires a higher threshold of predictability than reserving it for API-only developer access."
+        ]
+      },
+      {
+        "h2": "What This Means for Anthropic's Model Strategy",
+        "paragraphs": [
+          "Sonnet 5's launch offers a clear window into how Anthropic is thinking about its model family. The company appears to be deliberately engineering each tier to encroach on the capabilities of the tier above it, keeping Opus models relevant by pushing the frontier further while bringing advanced features to Sonnet at lower cost.",
+          "For competitors, Sonnet 5 raises the stakes in the mid-tier segment of the AI model market. Models in this category are increasingly evaluated not just on reasoning quality but on their ability to complete multi-step, tool-using tasks autonomously — a benchmark on which Sonnet 5 is now explicitly competing.",
+          "Looking ahead, the trajectory of Sonnet 5 will likely be watched closely by developers building agentic applications. If the model reliably handles complex autonomous workflows at Sonnet pricing, it could shift spending patterns across the industry and further cement Anthropic's position as a leading provider of enterprise-grade AI infrastructure."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Claude Sonnet 5?",
+        "answer": "Claude Sonnet 5 is Anthropic's latest mid-tier AI model, launched on June 30, 2026. It is the most agentic Sonnet model Anthropic has released, capable of multi-step planning, browser and terminal tool use, and autonomous task completion."
+      },
+      {
+        "question": "How does Claude Sonnet 5 compare to Opus 4.8?",
+        "answer": "Anthropic says Sonnet 5 narrows the performance gap with Opus 4.8, its current flagship model. Sonnet 5 can handle agentic tasks that previously required an Opus-class model, while remaining significantly cheaper than Opus 4.8."
+      },
+      {
+        "question": "Who gets access to Claude Sonnet 5?",
+        "answer": "Claude Sonnet 5 is the new default model for Anthropic's Free and Pro subscription tiers, meaning it is available to all Claude users on those plans automatically, in addition to being accessible via Anthropic's API."
+      },
+      {
+        "question": "What kinds of tasks can Claude Sonnet 5 perform autonomously?",
+        "answer": "Claude Sonnet 5 supports multi-step planning, browser use, terminal tool use, and autonomous task completion. These capabilities allow it to navigate web pages, execute commands, and carry out complex workflows with reduced need for human intervention at each step."
+      },
+      {
+        "question": "Is Claude Sonnet 5 cheaper than Claude Opus 4.8?",
+        "answer": "Yes. Anthropic has positioned Claude Sonnet 5 as significantly cheaper than Opus 4.8, maintaining the cost advantage that the Sonnet tier has historically offered over the Opus tier, even as Sonnet 5 closes the performance gap."
+      }
+    ]
+  },
+
+  {
     "slug": "anthropic-claude-4-opus-release-june-2026",
     "title": "Anthropic Drops Claude 4 Opus: A New AI Frontier",
     "metaTitle": "Anthropic Claude 4 Opus Released June 2026 | AI News",
