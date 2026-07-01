@@ -213,7 +213,7 @@ function ScoreCircle({ score }: { score: number }) {
   return (
     <div className="flex flex-col items-center gap-2">
       <svg width="140" height="140" viewBox="0 0 140 140">
-        <circle cx="70" cy="70" r={radius} fill="none" stroke="#e2e8f0" strokeWidth="12" />
+        <circle cx="70" cy="70" r={radius} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="12" />
         <circle
           cx="70" cy="70" r={radius} fill="none"
           stroke={color} strokeWidth="12"
@@ -225,7 +225,7 @@ function ScoreCircle({ score }: { score: number }) {
         />
         <text x="70" y="70" textAnchor="middle" dominantBaseline="central"
           fontSize="28" fontWeight="bold" fill={color}>{score}</text>
-        <text x="70" y="92" textAnchor="middle" fontSize="11" fill="#94a3b8">AI Score</text>
+        <text x="70" y="92" textAnchor="middle" fontSize="11" fill="#cbd5e1">AI Score</text>
       </svg>
     </div>
   );
@@ -239,13 +239,13 @@ function SignalBar({ label, value, isAiSignal }: { label: string; value: number;
   return (
     <div className="mb-3">
       <div className="flex justify-between text-sm mb-1">
-        <span className="text-slate-700 font-medium">{label}</span>
-        <span className="text-slate-500">{value}%</span>
+        <span className="text-slate-300 font-medium">{label}</span>
+        <span className="text-slate-400">{value}%</span>
       </div>
-      <div className="w-full bg-slate-100 rounded-full h-2">
+      <div className="w-full bg-white/10 rounded-full h-2">
         <div className={`${barColor} h-2 rounded-full transition-all duration-700`} style={{ width: `${value}%` }} />
       </div>
-      <div className="text-xs text-slate-400 mt-0.5">
+      <div className="text-xs text-slate-500 mt-0.5">
         {isAiSignal ? "Higher = more AI-like" : "Higher = more human-like"}
       </div>
     </div>
@@ -271,9 +271,9 @@ export default function AiDetector() {
   };
 
   const getVerdict = (score: number) => {
-    if (score <= 30) return { text: "✅ Likely Human Written", className: "text-green-600" };
-    if (score <= 55) return { text: "⚠️ Uncertain", className: "text-amber-500" };
-    return { text: "🤖 Likely AI Generated", className: "text-orange-600" };
+    if (score <= 30) return { text: "✅ Likely Human Written", className: "text-emerald-400" };
+    if (score <= 55) return { text: "⚠️ Uncertain", className: "text-amber-400" };
+    return { text: "🤖 Likely AI Generated", className: "text-orange-400" };
   };
 
   const getVerdictDescription = (score: number) => {
@@ -285,8 +285,8 @@ export default function AiDetector() {
   return (
     <div>
       {/* Input Form */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
-        <label htmlFor="ai-detector-textarea" className="block text-sm font-semibold text-slate-700 mb-2">
+      <div className="card p-6 mb-6">
+        <label htmlFor="ai-detector-textarea" className="block text-sm font-semibold text-slate-300 mb-2">
           Paste your text below
         </label>
         <textarea
@@ -295,19 +295,19 @@ export default function AiDetector() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Paste your text here to check if it was written by AI or a human..."
-          className="w-full border border-slate-200 rounded-xl p-4 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-400 resize-y"
+          className="glass-input w-full p-4 text-sm resize-y"
         />
         <div className="flex items-center justify-between mt-2 mb-4">
-          <span className="text-sm text-slate-500">{wordCount} words</span>
+          <span className="text-sm text-slate-400">{wordCount} words</span>
           {!hasEnoughWords && wordCount > 0 && (
-            <span className="text-sm text-amber-500 font-medium">Minimum 50 words required</span>
+            <span className="text-sm text-amber-400 font-medium">Minimum 50 words required</span>
           )}
         </div>
         <button
           onClick={handleAnalyze}
           disabled={!hasEnoughWords || isAnalyzing}
           className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-white text-sm transition-colors ${
-            hasEnoughWords && !isAnalyzing ? "bg-orange-500 hover:bg-orange-600" : "bg-slate-300 cursor-not-allowed"
+            hasEnoughWords && !isAnalyzing ? "bg-orange-500 hover:bg-orange-600" : "bg-white/10 text-slate-500 cursor-not-allowed"
           }`}
         >
           {isAnalyzing ? "Analyzing..." : "Detect AI Content"}
@@ -315,13 +315,11 @@ export default function AiDetector() {
       </div>
 
       {/* AdSense placeholder */}
-      <div style={{ height: "90px", background: "#f8f9fa", border: "1px dashed #dee2e6", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", color: "#adb5bd", fontSize: "12px" }}>
-        Advertisement
-      </div>
+      <div className="adsense-slot min-h-[90px]" />
 
       {/* Results */}
       {result && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+        <div className="card p-6">
           {/* Score + Verdict */}
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
             <ScoreCircle score={result.score} />
@@ -329,13 +327,13 @@ export default function AiDetector() {
               <div className={`text-3xl font-extrabold mb-1 ${getVerdict(result.score).className}`}>
                 {getVerdict(result.score).text}
               </div>
-              <p className="text-slate-500 text-sm max-w-xs">{getVerdictDescription(result.score)}</p>
+              <p className="text-slate-400 text-sm max-w-xs">{getVerdictDescription(result.score)}</p>
             </div>
           </div>
 
           {/* Signal Bars — 8 signals */}
           <div className="mb-6">
-            <h3 className="font-bold text-slate-900 mb-4">Signal Breakdown</h3>
+            <h3 className="font-bold text-white mb-4">Signal Breakdown</h3>
             <SignalBar label="Predictability (Pseudo-Perplexity)" value={result.pseudoPerplexity} isAiSignal={true} />
             <SignalBar label="Sentence Burstiness" value={result.burstiness} isAiSignal={true} />
             <SignalBar label="Vocabulary Diversity" value={100 - result.vocabularyDiversity} isAiSignal={false} />
@@ -349,10 +347,10 @@ export default function AiDetector() {
           {/* Highlighted Phrases */}
           {result.foundPhrases.length > 0 && (
             <div className="mb-6">
-              <h3 className="font-bold text-slate-900 mb-3">AI Phrases Found:</h3>
+              <h3 className="font-bold text-white mb-3">AI Phrases Found:</h3>
               <div className="flex flex-wrap gap-2">
                 {result.foundPhrases.map((phrase) => (
-                  <span key={phrase} className="bg-orange-100 text-orange-700 border border-orange-200 text-sm font-medium px-3 py-1 rounded-full">
+                  <span key={phrase} className="bg-orange-500/15 text-orange-300 border border-orange-400/20 text-sm font-medium px-3 py-1 rounded-full">
                     &ldquo;{phrase}&rdquo;
                   </span>
                 ))}
@@ -361,14 +359,12 @@ export default function AiDetector() {
           )}
 
           {/* Disclaimer */}
-          <div className="text-xs text-slate-500 bg-slate-50 rounded-xl p-4 border border-slate-200">
+          <div className="text-xs text-slate-400 bg-white/5 rounded-xl p-4 border border-white/10">
             ⚠️ Best accuracy on formal writing (essays, blog posts, reports). Casual AI responses may score lower. No detector is 100% accurate — use results as a guide, not final verdict.
           </div>
 
           {/* AdSense placeholder */}
-          <div style={{ height: "90px", background: "#f8f9fa", border: "1px dashed #dee2e6", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", marginTop: "24px", color: "#adb5bd", fontSize: "12px" }}>
-            Advertisement
-          </div>
+          <div className="adsense-slot min-h-[90px] mt-6" />
         </div>
       )}
     </div>

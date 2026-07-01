@@ -1,0 +1,55 @@
+name: AI Model Launch Watch
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'   # every 6 hours
+  workflow_dispatch:          # allow manual trigger from GitHub UI
+
+jobs:
+  check-launches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for new model launches and publish
+        id: check
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: node agent/check-model-launches.mjs
+
+      - name: Notify published article via GitHub issue
+        if: steps.check.outputs.published == 'true'
+        run: |
+          gh issue create \
+            --title "📰 New model launch article published - $(date +%Y-%m-%d)" \
+            --body "The launch-watch agent found a new AI model release and published: ${{ steps.check.outputs.slug }}. Check: https://www.aitoolduel.com/news/${{ steps.check.outputs.slug }}" \
+            --label "auto-publish" \
+            --repo saivikas373/aitoolduel || true
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Notify failure via GitHub issue
+        if: failure()
+        run: |
+          gh issue create \
+            --title "❌ Model launch watch FAILED - $(date +%Y-%m-%d)" \
+            --body "The model-launch-watch agent failed. Check logs: https://github.com/saivikas373/aitoolduel/actions" \
+            --label "bug" \
+            --repo saivikas373/aitoolduel || true
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

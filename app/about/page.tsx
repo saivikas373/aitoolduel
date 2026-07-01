@@ -16,21 +16,21 @@ export default function AboutPage() {
 
       {/* Hero */}
       <div className="mb-12">
-        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 border border-orange-200 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
+        <div className="inline-flex items-center gap-2 bg-orange-500/15 text-orange-300 border border-orange-400/20 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
           Independent · Unbiased · Founded 2026
         </div>
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-4">
+        <h1 className="text-4xl font-extrabold text-white mb-4">
           About AI Tool Duel
         </h1>
-        <p className="text-xl text-slate-600 leading-relaxed">
+        <p className="text-xl text-slate-400 leading-relaxed">
           We test, compare, and review AI tools so you can make confident decisions — without wading through hype, paid placements, or vague "it depends" answers.
         </p>
       </div>
 
-      <div className="space-y-10 text-slate-700 leading-relaxed">
+      <div className="space-y-10 text-slate-300 leading-relaxed">
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Who We Are</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Who We Are</h2>
           <p>
             AI Tool Duel is an independent AI tool review and comparison website founded in
             2026. We are a small, dedicated team of writers, researchers, and technology
@@ -46,7 +46,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Our Mission</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Our Mission</h2>
           <p>
             The AI tools landscape is moving faster than any individual can track. New
             models launch weekly, pricing changes constantly, and the marketing from AI
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">What We Do</h2>
+          <h2 className="text-xl font-bold text-white mb-3">What We Do</h2>
           <p>
             For each comparison on AI Tool Duel, we put both tools through a structured
             evaluation covering the scenarios that matter most to real users: writing
@@ -88,7 +88,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Why Trust Us</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Why Trust Us</h2>
           <ul className="space-y-3">
             <li className="flex gap-3">
               <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
@@ -113,8 +113,8 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <section className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Get in Touch</h2>
+        <section className="card p-6">
+          <h2 className="text-xl font-bold text-white mb-3">Get in Touch</h2>
           <p>
             Have a question, spotted something incorrect, or want to suggest a
             comparison we haven't covered yet? We'd love to hear from you.
@@ -123,7 +123,7 @@ export default function AboutPage() {
             Email us at{" "}
             <a
               href="mailto:hello@aitoolduel.com"
-              className="text-orange-500 hover:text-orange-600 font-semibold"
+              className="text-orange-400 hover:text-orange-300 font-semibold"
             >
               hello@aitoolduel.com
             </a>{" "}
@@ -132,13 +132,13 @@ export default function AboutPage() {
           <div className="mt-4 flex flex-wrap gap-3">
             <Link
               href="/compare/chatgpt-vs-claude"
-              className="inline-flex items-center gap-1.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="btn-primary text-sm px-4 py-2"
             >
               Browse Comparisons →
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 border border-slate-300 hover:border-orange-400 text-slate-700 hover:text-orange-600 text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="btn-secondary text-sm px-4 py-2"
             >
               Contact Us
             </Link>

@@ -353,10 +353,12 @@ console.log("=".repeat(50));
 const state = getState();
 const action = await decideTodaysAction(state);
 let publishedSlug = null;
+let publishedType = null; // "comparison" | "news"
 let commitMsg = "";
 
 if (action.type === "comparison" && action.topic) {
   publishedSlug = await publishComparison(action.topic);
+  publishedType = "comparison";
   state.publishedComparisons.push(action.topic);
   commitMsg = `feat: add comparison - ${action.topic}`;
 } else if (action.type === "news") {
@@ -367,16 +369,19 @@ if (action.type === "comparison" && action.topic) {
     const fallbackTopic = COMPARISON_QUEUE.find(t => !state.publishedComparisons.includes(t));
     if (fallbackTopic) {
       publishedSlug = await publishComparison(fallbackTopic);
+      publishedType = "comparison";
       state.publishedComparisons.push(fallbackTopic);
       commitMsg = `feat: add comparison - ${fallbackTopic}`;
     }
   } else {
+    publishedType = "news";
     state.publishedNews.push(publishedSlug);
     commitMsg = `feat: add weekly AI news - ${today}`;
   }
 } else {
   console.log("✅ All comparisons published! Switching to news-only mode.");
   publishedSlug = await publishNews();
+  publishedType = "news";
   commitMsg = `feat: add weekly AI news - ${today}`;
 }
 
@@ -385,8 +390,8 @@ await improveSEO();
 const pushed = pushToGitHub(commitMsg);
 
 if (pushed && publishedSlug) {
-  console.log("\n📡 Pinging search engines...");
-  await requestIndexing(publishedSlug);
+  console.log("\n📡 Notifying search engines...");
+  await requestIndexing(`/${publishedType === "news" ? "news" : "compare"}/${publishedSlug}`);
 }
 
 state.runs.push({ date: today, action: action.type, slug: publishedSlug });

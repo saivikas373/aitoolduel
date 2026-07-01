@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AdSenseAd from "./AdSenseAd";
+import StarRating from "./StarRating";
 import type { ComparisonData } from "@/lib/comparisons";
 
 /* ── Brand favicon domains (Google favicon service) ─────────────────── */
@@ -74,24 +75,6 @@ function ToolAvatar({ name }: { name: string }) {
   );
 }
 
-function StarRating({ rating }: { rating: number }) {
-  const full = Math.floor(rating);
-  const hasHalf = rating % 1 >= 0.5;
-  const empty = 5 - full - (hasHalf ? 1 : 0);
-  return (
-    <span className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
-      {Array.from({ length: full }).map((_, i) => (
-        <span key={`f-${i}`} className="text-orange-400 text-lg">★</span>
-      ))}
-      {hasHalf && <span className="text-orange-300 text-lg">★</span>}
-      {Array.from({ length: empty }).map((_, i) => (
-        <span key={`e-${i}`} className="text-slate-300 text-lg">★</span>
-      ))}
-      <span className="ml-1 text-sm font-semibold text-slate-700">{rating}/5</span>
-    </span>
-  );
-}
-
 function TableRow({
   label,
   val1,
@@ -104,12 +87,12 @@ function TableRow({
   striped: boolean;
 }) {
   return (
-    <tr className={striped ? "bg-slate-50" : "bg-white"}>
-      <td className="py-3 px-4 text-sm font-semibold text-slate-600 w-32 sm:w-40">
+    <tr className={striped ? "bg-white/[0.03]" : "bg-transparent"}>
+      <td className="py-3 px-4 text-sm font-semibold text-slate-400 w-32 sm:w-40">
         {label}
       </td>
-      <td className="py-3 px-4 text-sm text-slate-800">{val1}</td>
-      <td className="py-3 px-4 text-sm text-slate-800">{val2}</td>
+      <td className="py-3 px-4 text-sm text-slate-200">{val1}</td>
+      <td className="py-3 px-4 text-sm text-slate-200">{val2}</td>
     </tr>
   );
 }
@@ -118,9 +101,9 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
   const { tool1, tool2 } = data;
 
   const verdictColors: Record<string, string> = {
-    tool1: "bg-blue-100 text-blue-800 border-blue-200",
-    tool2: "bg-purple-100 text-purple-800 border-purple-200",
-    tie: "bg-slate-100 text-slate-700 border-slate-200",
+    tool1: "bg-blue-500/15 text-blue-300 border-blue-400/25",
+    tool2: "bg-purple-500/15 text-purple-300 border-purple-400/25",
+    tie: "bg-white/10 text-slate-300 border-white/15",
   };
 
   const articleJsonLd = {
@@ -214,16 +197,16 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
         {/* ── COMPARISON TABLE ── */}
         <section className="mb-10">
           <h2 className="section-heading">Quick Comparison: {tool1.name} vs {tool2.name}</h2>
-          <div className="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-white/10 backdrop-blur-xl bg-white/[0.03] shadow-xl shadow-black/20">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-900 text-white">
+                <tr className="bg-white/5 text-white">
                   <th className="py-3 px-4 text-sm font-semibold w-32 sm:w-40">Feature</th>
                   <th className="py-3 px-4 text-sm font-semibold">{tool1.name}</th>
                   <th className="py-3 px-4 text-sm font-semibold">{tool2.name}</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-white/10">
                 <TableRow
                   label="Pricing"
                   val1={tool1.pricing}
@@ -250,8 +233,8 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
                 />
                 <TableRow
                   label="Rating"
-                  val1={<StarRating rating={tool1.rating} />}
-                  val2={<StarRating rating={tool2.rating} />}
+                  val1={<StarRating rating={tool1.rating} size="lg" />}
+                  val2={<StarRating rating={tool2.rating} size="lg" />}
                   striped={false}
                 />
               </tbody>
@@ -265,26 +248,26 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
           <div className="grid sm:grid-cols-2 gap-6">
             {/* Tool 1 */}
             <div className="card p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-blue-400"></span>
                 {tool1.name}
               </h3>
               <div className="mb-4">
-                <p className="text-xs font-semibold text-green-700 uppercase tracking-wide mb-2">Pros</p>
+                <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">Pros</p>
                 <ul className="space-y-1.5">
                   {tool1.pros.map((p) => (
-                    <li key={p} className="flex gap-2 text-sm text-slate-700">
-                      <span className="text-green-500 shrink-0 mt-0.5">✓</span>
+                    <li key={p} className="flex gap-2 text-sm text-slate-300">
+                      <span className="text-emerald-400 shrink-0 mt-0.5">✓</span>
                       {p}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-2">Cons</p>
+                <p className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-2">Cons</p>
                 <ul className="space-y-1.5">
                   {tool1.cons.map((c) => (
-                    <li key={c} className="flex gap-2 text-sm text-slate-700">
+                    <li key={c} className="flex gap-2 text-sm text-slate-300">
                       <span className="text-red-400 shrink-0 mt-0.5">✗</span>
                       {c}
                     </li>
@@ -295,26 +278,26 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
 
             {/* Tool 2 */}
             <div className="card p-6">
-              <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-purple-400"></span>
                 {tool2.name}
               </h3>
               <div className="mb-4">
-                <p className="text-xs font-semibold text-green-700 uppercase tracking-wide mb-2">Pros</p>
+                <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wide mb-2">Pros</p>
                 <ul className="space-y-1.5">
                   {tool2.pros.map((p) => (
-                    <li key={p} className="flex gap-2 text-sm text-slate-700">
-                      <span className="text-green-500 shrink-0 mt-0.5">✓</span>
+                    <li key={p} className="flex gap-2 text-sm text-slate-300">
+                      <span className="text-emerald-400 shrink-0 mt-0.5">✓</span>
                       {p}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <p className="text-xs font-semibold text-red-700 uppercase tracking-wide mb-2">Cons</p>
+                <p className="text-xs font-semibold text-red-400 uppercase tracking-wide mb-2">Cons</p>
                 <ul className="space-y-1.5">
                   {tool2.cons.map((c) => (
-                    <li key={c} className="flex gap-2 text-sm text-slate-700">
+                    <li key={c} className="flex gap-2 text-sm text-slate-300">
                       <span className="text-red-400 shrink-0 mt-0.5">✗</span>
                       {c}
                     </li>
@@ -344,12 +327,12 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
         <section className="mb-10">
           <h2 className="section-heading">Which Should You Pick?</h2>
           <div className="grid sm:grid-cols-2 gap-6 mb-6">
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-              <h3 className="font-bold text-blue-900 mb-3">{data.pickTool1.heading}</h3>
+            <div className="bg-blue-500/10 border border-blue-400/20 rounded-xl p-6 backdrop-blur-xl">
+              <h3 className="font-bold text-blue-200 mb-3">{data.pickTool1.heading}</h3>
               <ul className="space-y-2">
                 {data.pickTool1.reasons.map((r) => (
-                  <li key={r} className="flex gap-2 text-sm text-blue-800">
-                    <span className="text-blue-500 shrink-0 mt-0.5">→</span>
+                  <li key={r} className="flex gap-2 text-sm text-blue-200/90">
+                    <span className="text-blue-400 shrink-0 mt-0.5">→</span>
                     {r}
                   </li>
                 ))}
@@ -364,12 +347,12 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
               </Link>
             </div>
 
-            <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-              <h3 className="font-bold text-purple-900 mb-3">{data.pickTool2.heading}</h3>
+            <div className="bg-purple-500/10 border border-purple-400/20 rounded-xl p-6 backdrop-blur-xl">
+              <h3 className="font-bold text-purple-200 mb-3">{data.pickTool2.heading}</h3>
               <ul className="space-y-2">
                 {data.pickTool2.reasons.map((r) => (
-                  <li key={r} className="flex gap-2 text-sm text-purple-800">
-                    <span className="text-purple-500 shrink-0 mt-0.5">→</span>
+                  <li key={r} className="flex gap-2 text-sm text-purple-200/90">
+                    <span className="text-purple-400 shrink-0 mt-0.5">→</span>
                     {r}
                   </li>
                 ))}
@@ -385,11 +368,11 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
             </div>
           </div>
 
-          <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-            <h3 className="font-semibold text-orange-900 mb-2 text-sm uppercase tracking-wide">
+          <div className="bg-orange-500/10 border border-orange-400/20 rounded-xl p-6 backdrop-blur-xl">
+            <h3 className="font-semibold text-orange-300 mb-2 text-sm uppercase tracking-wide">
               Bottom Line
             </h3>
-            <p className="text-slate-800 text-sm leading-relaxed">{data.recommendationSummary}</p>
+            <p className="text-slate-300 text-sm leading-relaxed">{data.recommendationSummary}</p>
           </div>
         </section>
 
@@ -399,10 +382,10 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
           <div className="space-y-4">
             {data.faqs.map((faq, i) => (
               <div key={i} className="card p-6">
-                <h3 className="font-semibold text-slate-900 mb-2 text-base">
+                <h3 className="font-semibold text-white mb-2 text-base">
                   {faq.question}
                 </h3>
-                <p className="text-slate-700 text-sm leading-relaxed">{faq.answer}</p>
+                <p className="text-slate-300 text-sm leading-relaxed">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -413,7 +396,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
 
         {/* ── BACK LINK ── */}
         <div className="text-center mt-8">
-          <Link href="/" className="text-orange-500 hover:text-orange-600 font-medium text-sm transition-colors">
+          <Link href="/" className="text-orange-400 hover:text-orange-300 font-medium text-sm transition-colors">
             ← See all AI tool comparisons
           </Link>
         </div>

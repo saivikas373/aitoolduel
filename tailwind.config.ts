@@ -24,6 +24,10 @@ const config: Config = {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
       },
+      boxShadow: {
+        glow: "0 0 40px -8px rgba(249, 115, 22, 0.35)",
+        "glow-lg": "0 0 80px -12px rgba(249, 115, 22, 0.3)",
+      },
     },
   },
   plugins: [],
