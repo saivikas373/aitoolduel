@@ -1,6 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import { kv } from "@vercel/kv";
 
+// The Vercel Marketplace Upstash integration sets UPSTASH_REDIS_REST_URL/TOKEN
+// rather than the KV_REST_API_* names @vercel/kv reads by default — alias them
+// so this works regardless of which naming convention shows up.
+if (!process.env.KV_REST_API_URL && process.env.UPSTASH_REDIS_REST_URL) {
+  process.env.KV_REST_API_URL = process.env.UPSTASH_REDIS_REST_URL;
+}
+if (!process.env.KV_REST_API_TOKEN && process.env.UPSTASH_REDIS_REST_TOKEN) {
+  process.env.KV_REST_API_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN;
+}
+
 const KV_CONFIGURED = Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
 
 function voteKey(slug: string) {
