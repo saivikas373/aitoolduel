@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-14">
-      <h1 className="text-4xl font-extrabold text-slate-900 mb-2">Privacy Policy</h1>
+      <h1 className="text-4xl font-extrabold text-white mb-2">Privacy Policy</h1>
       <p className="text-slate-500 text-sm mb-10">Last updated: April 2026</p>
 
-      <div className="prose prose-slate max-w-none space-y-10 text-slate-700 leading-relaxed">
+      <div className="prose prose-invert max-w-none space-y-10 text-slate-300 leading-relaxed">
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Introduction</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Introduction</h2>
           <p>
             Welcome to AI Tool Duel ("we," "us," or "our"), accessible at{" "}
             <strong>www.aitoolduel.com</strong>. This Privacy Policy explains how we
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Information We Collect</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Information We Collect</h2>
           <p>
             AI Tool Duel does not require you to create an account, log in, or submit
             any personal information to use the site. We do not collect your name, email
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Google AdSense &amp; Cookies</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Google AdSense &amp; Cookies</h2>
           <p>
             AI Tool Duel uses Google AdSense to display advertisements. Google AdSense
             is an advertising service provided by Google LLC. To serve relevant ads,
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
               href="https://www.google.com/settings/ads"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 hover:text-orange-600 underline"
+              className="text-orange-400 hover:text-orange-300 underline"
             >
               Google's Ad Settings
             </a>
@@ -98,7 +98,7 @@ export default function PrivacyPolicyPage() {
               href="https://www.networkadvertising.org/choices/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 hover:text-orange-600 underline"
+              className="text-orange-400 hover:text-orange-300 underline"
             >
               Network Advertising Initiative opt-out page
             </a>
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
               href="https://policies.google.com/technologies/partner-sites"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-orange-500 hover:text-orange-600 underline"
+              className="text-orange-400 hover:text-orange-300 underline"
             >
               Google's Privacy &amp; Terms
             </a>
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Affiliate Links</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Affiliate Links</h2>
           <p>
             Some links on AI Tool Duel are affiliate links. This means that if you
             click on a link and subsequently make a purchase or sign up for a service,
@@ -139,7 +139,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Third-Party Links</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Third-Party Links</h2>
           <p>
             Our website contains links to external websites and services, including the
             AI tools we review and compare. These third-party sites have their own
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Children's Privacy</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Children's Privacy</h2>
           <p>
             AI Tool Duel is not directed at children under the age of 13. We do not
             knowingly collect personal information from children. If you are a parent
@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Changes to This Policy</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Changes to This Policy</h2>
           <p>
             We reserve the right to update or modify this Privacy Policy at any time.
             When we make changes, we will update the "Last updated" date at the top of
@@ -184,18 +184,18 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-slate-900 mb-3">Contact Us</h2>
+          <h2 className="text-xl font-bold text-white mb-3">Contact Us</h2>
           <p>
             If you have any questions, concerns, or requests regarding this Privacy
             Policy or our data practices, please contact us:
           </p>
-          <div className="mt-3 bg-slate-50 border border-slate-200 rounded-xl p-5">
-            <p className="font-semibold text-slate-900">AI Tool Duel</p>
+          <div className="mt-3 card p-5">
+            <p className="font-semibold text-white">AI Tool Duel</p>
             <p className="mt-1">
               Email:{" "}
               <a
                 href="mailto:hello@aitoolduel.com"
-                className="text-orange-500 hover:text-orange-600"
+                className="text-orange-400 hover:text-orange-300"
               >
                 hello@aitoolduel.com
               </a>

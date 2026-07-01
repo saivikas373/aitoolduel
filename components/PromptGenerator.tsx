@@ -705,10 +705,10 @@ export default function PromptGenerator() {
   return (
     <div className="space-y-6">
       {/* ── Step 1: Select AI Tool ── */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
           <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
-          <h2 className="font-bold text-slate-900 text-base">Select AI Tool</h2>
+          <h2 className="font-bold text-white text-base">Select AI Tool</h2>
         </div>
         <div className="flex flex-wrap gap-2">
           {AI_TOOLS.map((tool) => (
@@ -717,8 +717,8 @@ export default function PromptGenerator() {
               onClick={() => setSelectedTool(tool)}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-all ${
                 selectedTool === tool
-                  ? "border-orange-500 bg-orange-50 text-orange-700"
-                  : "border-slate-200 bg-white text-slate-700 hover:border-orange-300"
+                  ? "border-orange-400 bg-orange-500/15 text-orange-300"
+                  : "border-white/10 bg-white/5 text-slate-300 hover:border-orange-400/40"
               }`}
             >
               <span className={`w-5 h-5 rounded-md ${TOOL_COLORS[tool]} text-white text-xs font-bold flex items-center justify-center`}>
@@ -731,10 +731,10 @@ export default function PromptGenerator() {
       </div>
 
       {/* ── Step 2: Select Use Case ── */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
           <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
-          <h2 className="font-bold text-slate-900 text-base">Select Use Case</h2>
+          <h2 className="font-bold text-white text-base">Select Use Case</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
           {USE_CASES.map((uc) => (
@@ -743,8 +743,8 @@ export default function PromptGenerator() {
               onClick={() => setSelectedUseCase(uc)}
               className={`px-3 py-2 rounded-xl border-2 text-sm font-semibold transition-all text-center ${
                 selectedUseCase === uc
-                  ? "border-orange-500 bg-orange-50 text-orange-700"
-                  : "border-slate-200 bg-white text-slate-700 hover:border-orange-300"
+                  ? "border-orange-400 bg-orange-500/15 text-orange-300"
+                  : "border-white/10 bg-white/5 text-slate-300 hover:border-orange-400/40"
               }`}
             >
               {uc}
@@ -754,10 +754,10 @@ export default function PromptGenerator() {
       </div>
 
       {/* ── Step 3: Description ── */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
           <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
-          <h2 className="font-bold text-slate-900 text-base">Describe What You Need</h2>
+          <h2 className="font-bold text-white text-base">Describe What You Need</h2>
         </div>
         <input
           type="text"
@@ -777,9 +777,9 @@ export default function PromptGenerator() {
             selectedUseCase === "SEO" ? "e.g. best project management software" :
             "Write a brief description of what you need..."
           }
-          className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-orange-400"
+          className="glass-input w-full px-4 py-3 text-sm"
         />
-        <p className="text-xs text-slate-400 mt-2">Tip: Be specific for better results. Min 5 characters.</p>
+        <p className="text-xs text-slate-500 mt-2">Tip: Be specific for better results. Min 5 characters.</p>
       </div>
 
       {/* ── Generate Button ── */}
@@ -789,7 +789,7 @@ export default function PromptGenerator() {
         className={`w-full py-4 rounded-xl font-bold text-white text-base transition-all ${
           canGenerate && !isGenerating
             ? "bg-orange-500 hover:bg-orange-600 shadow-md hover:shadow-lg"
-            : "bg-slate-300 cursor-not-allowed"
+            : "bg-white/10 text-slate-500 cursor-not-allowed"
         }`}
       >
         {isGenerating ? "Generating..." : "Generate Prompt ✨"}
@@ -849,12 +849,8 @@ export default function PromptGenerator() {
       {/* ── AdSense placeholders — only shown after generation ── */}
       {generated && (
         <>
-          <div style={{ height: "90px", background: "#f8f9fa", border: "1px dashed #dee2e6", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "24px", color: "#adb5bd", fontSize: "12px" }}>
-            Advertisement
-          </div>
-          <div style={{ height: "90px", background: "#f8f9fa", border: "1px dashed #dee2e6", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", color: "#adb5bd", fontSize: "12px" }}>
-            Advertisement
-          </div>
+          <div className="adsense-slot min-h-[90px]" />
+          <div className="adsense-slot min-h-[90px] my-0" />
         </>
       )}
     </div>

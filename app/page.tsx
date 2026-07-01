@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AdSenseAd from "@/components/AdSenseAd";
+import Newsletter from "@/components/Newsletter";
 import { getLatestArticles } from "@/lib/news";
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ const comparisons = [
     description:
       "OpenAI's flagship vs Anthropic's thoughtful alternative. Who wins for writing, coding, and everyday AI tasks?",
     badge: "Most Popular",
-    badgeColor: "bg-orange-100 text-orange-800",
+    badgeColor: "bg-orange-500/15 text-orange-300 border border-orange-400/20",
     tags: ["Writing", "Coding", "Chat"],
   },
   {
@@ -35,7 +36,7 @@ const comparisons = [
     description:
       "Google's AI powerhouse vs the chatbot that started it all. Which AI assistant delivers more value in 2025?",
     badge: "Hot",
-    badgeColor: "bg-red-100 text-red-800",
+    badgeColor: "bg-red-500/15 text-red-300 border border-red-400/20",
     tags: ["Google", "Multimodal", "Search"],
   },
   {
@@ -44,7 +45,7 @@ const comparisons = [
     description:
       "The battle for AI image generation supremacy. Artistic quality vs ease of use — which image AI should you use?",
     badge: "Creative",
-    badgeColor: "bg-purple-100 text-purple-800",
+    badgeColor: "bg-purple-500/15 text-purple-300 border border-purple-400/20",
     tags: ["Images", "Art", "Design"],
   },
   {
@@ -53,7 +54,7 @@ const comparisons = [
     description:
       "Two AI coding assistants, two different philosophies. Which one will make you a faster, better developer?",
     badge: "For Devs",
-    badgeColor: "bg-blue-100 text-blue-800",
+    badgeColor: "bg-blue-500/15 text-blue-300 border border-blue-400/20",
     tags: ["Coding", "IDE", "AI Dev"],
   },
   {
@@ -62,7 +63,7 @@ const comparisons = [
     description:
       "AI-native search vs the king of search engines. Is Perplexity finally good enough to replace Google?",
     badge: "Search",
-    badgeColor: "bg-green-100 text-green-800",
+    badgeColor: "bg-green-500/15 text-green-300 border border-green-400/20",
     tags: ["Search", "Research", "Answers"],
   },
   {
@@ -71,7 +72,7 @@ const comparisons = [
     description:
       "Anthropic's writing powerhouse vs Google's deeply integrated AI. Which is better for serious work in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Writing", "Workspace", "Work"],
   },
   {
@@ -80,7 +81,7 @@ const comparisons = [
     description:
       "AI-synthesized answers vs the world's biggest search index. Can ChatGPT actually replace Google?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Search", "AI", "Research"],
   },
   {
@@ -89,7 +90,7 @@ const comparisons = [
     description:
       "The AI-native editor vs the universal coding assistant. Which tool makes developers most productive in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Coding", "IDE", "Agent"],
   },
   {
@@ -98,7 +99,7 @@ const comparisons = [
     description:
       "Anthropic's agentic CLI coder vs OpenAI's cloud coding agent. Which AI coding agent handles real engineering tasks better?",
     badge: "Trending",
-    badgeColor: "bg-rose-100 text-rose-800",
+    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
     tags: ["Coding", "Agents", "CLI"],
   },
   {
@@ -107,7 +108,7 @@ const comparisons = [
     description:
       "xAI's real-time X-integrated chatbot vs OpenAI's market leader. Which wins for daily AI tasks in April 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-100 text-rose-800",
+    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
     tags: ["Chat", "Real-Time", "X/Twitter"],
   },
   {
@@ -116,7 +117,7 @@ const comparisons = [
     description:
       "China's open-source cost-killer vs the world's most popular AI. Which delivers more value for money in 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-100 text-rose-800",
+    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
     tags: ["Open Source", "Cost", "Reasoning"],
   },
   {
@@ -125,7 +126,7 @@ const comparisons = [
     description:
       "The two most powerful AI frontier models of 2026 head-to-head. Which flagship wins for coding, writing, and reasoning?",
     badge: "Trending",
-    badgeColor: "bg-rose-100 text-rose-800",
+    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
     tags: ["Frontier", "Coding", "Writing"],
   },
   {
@@ -134,7 +135,7 @@ const comparisons = [
     description:
       "Meta's open-source powerhouse vs OpenAI's commercial king. Which AI model is right for your workflow in 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-100 text-rose-800",
+    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
     tags: ["Open Source", "Privacy", "Self-Host"],
   },
   {
@@ -143,7 +144,7 @@ const comparisons = [
     description:
       "OpenAI's multimodal omni model vs Anthropic's best-value writer. Two $20/month models — which delivers more for your work?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Multimodal", "Writing", "Coding"],
   },
   {
@@ -152,7 +153,7 @@ const comparisons = [
     description:
       "The AI you pay for vs the AI already on your phone. Is Meta's free Llama 4-powered assistant good enough to replace ChatGPT?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Free", "WhatsApp", "Casual Use"],
   },
   {
@@ -161,7 +162,7 @@ const comparisons = [
     description:
       "AI search with cited sources vs AI chat that creates. Which tool wins for research, work, and daily questions in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-100 text-teal-800",
+    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
     tags: ["Search", "Research", "Citations"],
   },
 ];
@@ -227,7 +228,7 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <Link
               href="/tools"
-              className="group flex items-center gap-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-5 hover:from-slate-800 hover:to-slate-700 transition-all"
+              className="group flex items-center gap-4 bg-gradient-to-br from-slate-900/80 to-slate-800/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-orange-400/30 transition-all"
             >
               <div className="text-3xl shrink-0">🗂️</div>
               <div>
@@ -241,7 +242,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/best-ai-tools"
-              className="group flex items-center gap-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl p-5 hover:from-orange-600 hover:to-orange-700 transition-all"
+              className="group flex items-center gap-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl p-5 shadow-lg shadow-orange-500/20 hover:shadow-orange-400/30 transition-all"
             >
               <div className="text-3xl shrink-0">🏆</div>
               <div>
@@ -255,7 +256,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/tools/ai-detector"
-              className="group flex items-center gap-4 bg-gradient-to-br from-slate-800 to-slate-700 text-white rounded-2xl p-5 hover:from-slate-700 hover:to-slate-600 transition-all"
+              className="group flex items-center gap-4 bg-gradient-to-br from-slate-800/80 to-slate-700/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-orange-400/30 transition-all"
             >
               <div className="text-3xl shrink-0">🔍</div>
               <div>
@@ -269,7 +270,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/tools/prompt-generator"
-              className="group flex items-center gap-4 bg-gradient-to-br from-purple-900 to-purple-800 text-white rounded-2xl p-5 hover:from-purple-800 hover:to-purple-700 transition-all"
+              className="group flex items-center gap-4 bg-gradient-to-br from-purple-900/80 to-purple-800/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-purple-400/30 transition-all"
             >
               <div className="text-3xl shrink-0">✨</div>
               <div>
@@ -287,10 +288,10 @@ export default function HomePage() {
         {/* ── COMPARISONS GRID ── */}
         <section id="comparisons" className="py-12">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
+            <h2 className="text-3xl font-extrabold text-white mb-3">
               All Comparisons
             </h2>
-            <p className="text-slate-500 text-lg">
+            <p className="text-slate-400 text-lg">
               Pick a matchup to get the full breakdown
             </p>
           </div>
@@ -300,7 +301,7 @@ export default function HomePage() {
               <Link
                 key={c.href}
                 href={c.href}
-                className="group card p-6 hover:shadow-md hover:border-orange-200 transition-all duration-200"
+                className="group card p-6 hover:border-orange-400/30 hover:shadow-orange-500/10 transition-all duration-200"
               >
                 <div className="flex items-start justify-between mb-3">
                   <span
@@ -308,15 +309,15 @@ export default function HomePage() {
                   >
                     {c.badge}
                   </span>
-                  <span className="text-slate-300 group-hover:text-orange-500 transition-colors text-xl">
+                  <span className="text-slate-500 group-hover:text-orange-400 transition-colors text-xl">
                     →
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
                   {c.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                <p className="text-slate-400 text-sm leading-relaxed mb-4">
                   {c.description}
                 </p>
 
@@ -324,15 +325,15 @@ export default function HomePage() {
                   {c.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md"
+                      className="text-xs text-slate-400 bg-white/10 px-2 py-0.5 rounded-md"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-4 pt-4 border-t border-slate-100">
-                  <span className="text-orange-500 font-semibold text-sm group-hover:text-orange-600 transition-colors">
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <span className="text-orange-400 font-semibold text-sm group-hover:text-orange-300 transition-colors">
                     Compare Now →
                   </span>
                 </div>
@@ -341,13 +342,18 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ── NEWSLETTER ── */}
+        <section className="py-12">
+          <Newsletter />
+        </section>
+
         {/* ── WHY USE THIS SITE ── */}
-        <section className="py-12 border-t border-slate-200">
+        <section className="py-12 border-t border-white/10">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
+            <h2 className="text-3xl font-extrabold text-white mb-3">
               Why Use AI Tool Duel?
             </h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
               There&apos;s a lot of noise in the AI space. We&apos;re here to give you
               signal.
             </p>
@@ -357,11 +363,11 @@ export default function HomePage() {
             {whyPoints.map((point) => (
               <div
                 key={point.title}
-                className="bg-white rounded-xl border border-slate-200 p-6 text-center"
+                className="card p-6 text-center"
               >
                 <div className="text-4xl mb-3">{point.icon}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{point.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <h3 className="font-bold text-white mb-2">{point.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
                   {point.body}
                 </p>
               </div>
@@ -370,32 +376,32 @@ export default function HomePage() {
         </section>
 
         {/* ── FEATURED PICKS ── */}
-        <section className="py-12 border-t border-slate-200">
-          <h2 className="text-2xl font-extrabold text-slate-900 mb-6 text-center">
+        <section className="py-12 border-t border-white/10">
+          <h2 className="text-2xl font-extrabold text-white mb-6 text-center">
             Our Top Picks Right Now
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-6">
-              <div className="text-sm font-semibold text-blue-600 mb-2">Best for Writing</div>
-              <div className="text-2xl font-extrabold text-slate-900 mb-1">Claude</div>
-              <p className="text-sm text-slate-600">Beats ChatGPT for long-form writing, nuanced prose, and large document analysis.</p>
-              <Link href="/compare/chatgpt-vs-claude" className="mt-3 inline-block text-blue-600 font-semibold text-sm hover:underline">
+            <div className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-400/20 backdrop-blur-xl rounded-xl p-6">
+              <div className="text-sm font-semibold text-blue-300 mb-2">Best for Writing</div>
+              <div className="text-2xl font-extrabold text-white mb-1">Claude</div>
+              <p className="text-sm text-slate-400">Beats ChatGPT for long-form writing, nuanced prose, and large document analysis.</p>
+              <Link href="/compare/chatgpt-vs-claude" className="mt-3 inline-block text-blue-300 font-semibold text-sm hover:underline">
                 See full comparison →
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-6">
-              <div className="text-sm font-semibold text-purple-600 mb-2">Best for AI Images</div>
-              <div className="text-2xl font-extrabold text-slate-900 mb-1">Midjourney</div>
-              <p className="text-sm text-slate-600">Consistently produces the most visually stunning AI artwork of any image generator.</p>
-              <Link href="/compare/midjourney-vs-dalle" className="mt-3 inline-block text-purple-600 font-semibold text-sm hover:underline">
+            <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-400/20 backdrop-blur-xl rounded-xl p-6">
+              <div className="text-sm font-semibold text-purple-300 mb-2">Best for AI Images</div>
+              <div className="text-2xl font-extrabold text-white mb-1">Midjourney</div>
+              <p className="text-sm text-slate-400">Consistently produces the most visually stunning AI artwork of any image generator.</p>
+              <Link href="/compare/midjourney-vs-dalle" className="mt-3 inline-block text-purple-300 font-semibold text-sm hover:underline">
                 See full comparison →
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-6">
-              <div className="text-sm font-semibold text-green-600 mb-2">Best for Coding</div>
-              <div className="text-2xl font-extrabold text-slate-900 mb-1">Cursor</div>
-              <p className="text-sm text-slate-600">Agent mode can plan and execute multi-file changes — a step above Copilot for power users.</p>
-              <Link href="/compare/github-copilot-vs-cursor" className="mt-3 inline-block text-green-600 font-semibold text-sm hover:underline">
+            <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-400/20 backdrop-blur-xl rounded-xl p-6">
+              <div className="text-sm font-semibold text-green-300 mb-2">Best for Coding</div>
+              <div className="text-2xl font-extrabold text-white mb-1">Cursor</div>
+              <p className="text-sm text-slate-400">Agent mode can plan and execute multi-file changes — a step above Copilot for power users.</p>
+              <Link href="/compare/github-copilot-vs-cursor" className="mt-3 inline-block text-green-300 font-semibold text-sm hover:underline">
                 See full comparison →
               </Link>
             </div>
@@ -404,20 +410,20 @@ export default function HomePage() {
 
         {/* ── LATEST NEWS ── */}
         {latestNews.length > 0 && (
-          <section className="py-12 border-t border-slate-200">
+          <section className="py-12 border-t border-white/10">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-extrabold text-slate-900">Latest AI News</h2>
-              <Link href="/news" className="text-orange-500 hover:text-orange-600 font-semibold text-sm">
+              <h2 className="text-2xl font-extrabold text-white">Latest AI News</h2>
+              <Link href="/news" className="text-orange-400 hover:text-orange-300 font-semibold text-sm">
                 All news →
               </Link>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {latestNews.map((article) => (
-                <Link key={article.slug} href={`/news/${article.slug}`} className="group block border border-slate-200 rounded-xl p-5 hover:shadow-md hover:border-orange-200 transition-all">
-                  <span className="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2 py-0.5 rounded-full mb-2">{article.badge}</span>
-                  <h3 className="font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors line-clamp-2">{article.title}</h3>
-                  <p className="text-slate-500 text-sm line-clamp-2">{article.summary}</p>
-                  <p className="text-xs text-slate-400 mt-3">{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
+                <Link key={article.slug} href={`/news/${article.slug}`} className="group card block p-5 hover:border-orange-400/30 transition-all">
+                  <span className="inline-block bg-blue-500/15 text-blue-300 border border-blue-400/20 text-xs font-semibold px-2 py-0.5 rounded-full mb-2">{article.badge}</span>
+                  <h3 className="font-bold text-white mb-2 group-hover:text-orange-400 transition-colors line-clamp-2">{article.title}</h3>
+                  <p className="text-slate-400 text-sm line-clamp-2">{article.summary}</p>
+                  <p className="text-xs text-slate-500 mt-3">{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
                 </Link>
               ))}
             </div>

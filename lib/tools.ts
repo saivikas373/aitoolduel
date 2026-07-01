@@ -266,14 +266,14 @@ export const tools: AiTool[] = [
 ];
 
 export const categoryColors: Record<ToolCategory, string> = {
-  Writing: "bg-orange-100 text-orange-800",
-  Coding: "bg-blue-100 text-blue-800",
-  Image: "bg-purple-100 text-purple-800",
-  Search: "bg-green-100 text-green-800",
-  Video: "bg-red-100 text-red-800",
-  Audio: "bg-yellow-100 text-yellow-800",
-  Productivity: "bg-slate-100 text-slate-700",
-  Design: "bg-pink-100 text-pink-800",
+  Writing: "bg-orange-500/15 text-orange-300 border border-orange-400/20",
+  Coding: "bg-blue-500/15 text-blue-300 border border-blue-400/20",
+  Image: "bg-purple-500/15 text-purple-300 border border-purple-400/20",
+  Search: "bg-green-500/15 text-green-300 border border-green-400/20",
+  Video: "bg-red-500/15 text-red-300 border border-red-400/20",
+  Audio: "bg-yellow-500/15 text-yellow-300 border border-yellow-400/20",
+  Productivity: "bg-white/10 text-slate-300 border border-white/15",
+  Design: "bg-pink-500/15 text-pink-300 border border-pink-400/20",
 };
 
 export const allCategories: ToolCategory[] = [

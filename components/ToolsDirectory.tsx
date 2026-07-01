@@ -36,9 +36,9 @@ function StarRating({ rating }: { rating: number }) {
       ))}
       {hasHalf && <span className="text-orange-300 text-sm">★</span>}
       {Array.from({ length: empty }).map((_, i) => (
-        <span key={`e${i}`} className="text-slate-300 text-sm">★</span>
+        <span key={`e${i}`} className="text-slate-600 text-sm">★</span>
       ))}
-      <span className="ml-1 text-xs font-semibold text-slate-600">{rating}</span>
+      <span className="ml-1 text-xs font-semibold text-slate-300">{rating}</span>
     </span>
   );
 }
@@ -68,15 +68,15 @@ export default function ToolsDirectory() {
           placeholder="Search AI tools..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-orange-400 text-sm"
+          className="glass-input w-full px-4 py-3 text-sm"
         />
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setActiveCategory("All")}
             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
               activeCategory === "All"
-                ? "bg-slate-900 text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                ? "bg-orange-500 text-white"
+                : "bg-white/8 text-slate-300 hover:bg-white/15"
             }`}
           >
             All ({tools.length})
@@ -89,8 +89,8 @@ export default function ToolsDirectory() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
                   activeCategory === cat
-                    ? "bg-slate-900 text-white"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-orange-500 text-white"
+                    : "bg-white/8 text-slate-300 hover:bg-white/15"
                 }`}
               >
                 {cat} ({count})
@@ -102,13 +102,13 @@ export default function ToolsDirectory() {
 
       {/* Free Tools */}
       <div className="mb-8">
-        <h2 className="text-sm font-bold text-slate-500 uppercase tracking-wide mb-3">Free Tools</h2>
+        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Free Tools</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {FREE_TOOLS.map((t) => (
             <Link
               key={t.slug}
               href={t.href}
-              className="flex items-center gap-4 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-xl p-4 hover:from-slate-800 hover:to-slate-700 transition-all group"
+              className="flex items-center gap-4 card p-4 hover:border-orange-400/30 transition-all group"
             >
               <div className={`${t.color} w-10 h-10 rounded-lg flex items-center justify-center text-xl shrink-0`}>
                 {t.icon}
@@ -127,15 +127,15 @@ export default function ToolsDirectory() {
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-slate-500 mb-6">
-        Showing <span className="font-semibold text-slate-700">{filtered.length}</span> tools
+      <p className="text-sm text-slate-400 mb-6">
+        Showing <span className="font-semibold text-slate-200">{filtered.length}</span> tools
         {activeCategory !== "All" && ` in ${activeCategory}`}
         {query && ` matching "${query}"`}
       </p>
 
       {/* Grid */}
       {filtered.length === 0 ? (
-        <div className="text-center py-16 text-slate-500">
+        <div className="text-center py-16 text-slate-400">
           No tools found. Try a different search or category.
         </div>
       ) : (
@@ -143,7 +143,7 @@ export default function ToolsDirectory() {
           {filtered.map((tool) => (
             <div
               key={tool.slug}
-              className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-orange-200 transition-all duration-200 flex flex-col"
+              className="card hover:border-orange-400/30 transition-all duration-200 flex flex-col"
             >
               {/* Card header */}
               <div className="p-5 flex-1">
@@ -155,7 +155,7 @@ export default function ToolsDirectory() {
                     {tool.name[0]}
                   </div>
                   <div className="min-w-0">
-                    <h3 className="font-bold text-slate-900 text-base leading-tight">
+                    <h3 className="font-bold text-white text-base leading-tight">
                       {tool.name}
                     </h3>
                     <span
@@ -166,7 +166,7 @@ export default function ToolsDirectory() {
                   </div>
                 </div>
 
-                <p className="text-slate-600 text-sm leading-relaxed mb-3">
+                <p className="text-slate-400 text-sm leading-relaxed mb-3">
                   {tool.tagline}
                 </p>
 
@@ -179,7 +179,7 @@ export default function ToolsDirectory() {
                   href={tool.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold py-2 rounded-lg transition-colors"
+                  className="btn-primary w-full justify-center text-sm py-2"
                 >
                   {tool.ctaLabel}
                 </a>
@@ -190,7 +190,7 @@ export default function ToolsDirectory() {
                       <Link
                         key={c.href}
                         href={c.href}
-                        className="text-xs text-orange-600 hover:text-orange-700 hover:underline transition-colors"
+                        className="text-xs text-orange-300 hover:text-orange-200 hover:underline transition-colors"
                       >
                         See {c.label} →
                       </Link>

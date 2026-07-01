@@ -194,7 +194,7 @@ const sections: CategorySection[] = [
 
 function ToolCard({ tool, rank }: { tool: ToolPick; rank: number }) {
   return (
-    <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <div className="card p-6">
       <div className="flex items-start gap-4 mb-4">
         <div className="shrink-0 flex flex-col items-center gap-1">
           <div
@@ -202,31 +202,31 @@ function ToolCard({ tool, rank }: { tool: ToolPick; rank: number }) {
           >
             {tool.name[0]}
           </div>
-          <span className="text-xs font-bold text-slate-400">#{rank}</span>
+          <span className="text-xs font-bold text-slate-500">#{rank}</span>
         </div>
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-lg font-bold text-slate-900">{tool.name}</h3>
-            <span className="text-xs font-semibold bg-orange-100 text-orange-800 px-2.5 py-0.5 rounded-full">
+            <h3 className="text-lg font-bold text-white">{tool.name}</h3>
+            <span className="text-xs font-semibold bg-orange-500/15 text-orange-300 border border-orange-400/20 px-2.5 py-0.5 rounded-full">
               {tool.badge}
             </span>
           </div>
         </div>
       </div>
-      <p className="text-slate-700 text-sm leading-relaxed mb-5">{tool.why}</p>
+      <p className="text-slate-300 text-sm leading-relaxed mb-5">{tool.why}</p>
       <div className="flex flex-wrap gap-3">
         <a
           href={tool.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          className="btn-primary text-sm px-4 py-2"
         >
           {tool.ctaLabel}
         </a>
         {tool.comparison && (
           <Link
             href={tool.comparison.href}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-orange-600 hover:text-orange-700 border border-orange-200 hover:border-orange-400 px-4 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-orange-300 hover:text-orange-200 border border-orange-400/20 hover:border-orange-400/40 px-4 py-2 rounded-lg transition-colors"
           >
             {tool.comparison.label} →
           </Link>
@@ -273,10 +273,10 @@ export default function BestAiToolsPage() {
         {sections.map((section, si) => (
           <section key={section.id} id={section.id} className="mb-16 scroll-mt-20">
             <div className="mb-6">
-              <h2 className="text-3xl font-extrabold text-slate-900 mb-3">
+              <h2 className="text-3xl font-extrabold text-white mb-3">
                 {section.icon} {section.heading}
               </h2>
-              <p className="text-slate-600 leading-relaxed">{section.intro}</p>
+              <p className="text-slate-400 leading-relaxed">{section.intro}</p>
             </div>
 
             <div className="space-y-5">
@@ -290,7 +290,7 @@ export default function BestAiToolsPage() {
         ))}
 
         {/* Browse all tools CTA */}
-        <div className="bg-slate-900 rounded-2xl p-8 text-center text-white mt-8">
+        <div className="glass-panel rounded-2xl p-8 text-center text-white mt-8">
           <h2 className="text-2xl font-extrabold mb-3">
             Looking for more AI tools?
           </h2>
@@ -299,7 +299,7 @@ export default function BestAiToolsPage() {
           </p>
           <Link
             href="/tools"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+            className="btn-primary"
           >
             Browse AI Tools Directory →
           </Link>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Newsletter from "./Newsletter";
 
 const comparisons = [
   { href: "/compare/chatgpt-vs-claude", label: "ChatGPT vs Claude" },
@@ -13,8 +14,13 @@ const comparisons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 mt-16">
+    <footer className="border-t border-white/10 bg-white/[0.02] backdrop-blur-xl text-slate-400 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* AI Weekly newsletter */}
+        <div className="mb-12">
+          <Newsletter />
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
@@ -28,7 +34,7 @@ export default function Footer() {
               Honest, in-depth comparisons of the most popular AI tools. We
               help you cut through the hype and find what actually works.
             </p>
-            <p className="text-xs mt-4 text-slate-600">
+            <p className="text-xs mt-4 text-slate-500">
               Some links on this site are affiliate links. We may earn a
               commission at no extra cost to you.
             </p>
@@ -109,7 +115,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-slate-600 text-xs">
+                <span className="text-slate-500 text-xs">
                   Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
                 </span>
               </li>
@@ -117,7 +123,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-800 text-xs text-slate-600 text-center">
+        <div className="mt-8 pt-8 border-t border-white/10 text-xs text-slate-500 text-center">
           © {new Date().getFullYear()} AIToolDuel.com · All comparisons are
           based on independent research and testing.
         </div>
