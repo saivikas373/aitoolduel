@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AdSenseAd from "./AdSenseAd";
 import StarRating from "./StarRating";
+import DuelVote from "./DuelVote";
 import type { ComparisonData } from "@/lib/comparisons";
 
 /* ── Brand favicon domains (Google favicon service) ─────────────────── */
@@ -183,6 +184,11 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
       </section>
 
       <div className="max-w-4xl mx-auto px-4 py-10">
+
+        {/* ── VOTE ── */}
+        <div className="mb-10">
+          <DuelVote slug={data.slug} tool1Name={tool1.name} tool2Name={tool2.name} />
+        </div>
 
         {/* ── INTRO ── */}
         {data.introSections.map((section) => (
