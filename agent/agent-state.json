@@ -179,6 +179,14 @@
       "date": "2026-06-29",
       "action": "news",
       "slug": "sora-vs-runway"
+    },
+    {
+      "date": "2026-07-01",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "anthropic-claude-sonnet-5-agentic-model-launch-2026"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -211,11 +219,33 @@
     "ai-tools-weekly-roundup-june-29-2026",
     "gemini-3-ultra-release-june-2026",
     "gemini-2-5-ultra-release-june-2026",
-    "anthropic-claude-4-opus-release-june-2026"
+    "anthropic-claude-4-opus-release-june-2026",
+    "anthropic-claude-sonnet-5-agentic-model-launch-2026"
   ],
   "publishedLaunches": [
-    { "provider": "Google", "modelName": "Gemini 3 Ultra", "date": "2026-06-27", "slug": "gemini-3-ultra-release-june-2026" },
-    { "provider": "Google", "modelName": "Gemini 2.5 Ultra", "date": "2026-06-26", "slug": "gemini-2-5-ultra-release-june-2026" },
-    { "provider": "Anthropic", "modelName": "Claude 4 Opus", "date": "2026-06-26", "slug": "anthropic-claude-4-opus-release-june-2026" }
+    {
+      "provider": "Google",
+      "modelName": "Gemini 3 Ultra",
+      "date": "2026-06-27",
+      "slug": "gemini-3-ultra-release-june-2026"
+    },
+    {
+      "provider": "Google",
+      "modelName": "Gemini 2.5 Ultra",
+      "date": "2026-06-26",
+      "slug": "gemini-2-5-ultra-release-june-2026"
+    },
+    {
+      "provider": "Anthropic",
+      "modelName": "Claude 4 Opus",
+      "date": "2026-06-26",
+      "slug": "anthropic-claude-4-opus-release-june-2026"
+    },
+    {
+      "provider": "Anthropic",
+      "modelName": "Claude Sonnet 5",
+      "date": "2026-06-30",
+      "slug": "anthropic-claude-sonnet-5-agentic-model-launch-2026"
+    }
   ]
 }
