@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "xai-grok-4-5-private-beta-spacex-tesla-2026-07-02",
+    "title": "xAI Launches Grok 4.5 in Private Beta at SpaceX and Tesla",
+    "metaTitle": "xAI Grok 4.5 Private Beta Launch 2026 | SpaceX & Tesla",
+    "metaDescription": "xAI launches Grok 4.5 in private beta at SpaceX and Tesla. Built on V9 foundation with 1.5 trillion parameters and enhanced coding via Cursor training data.",
+    "date": "2026-06-28",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "xAI has entered a new phase in its AI development roadmap with the private beta launch of Grok 4.5, announced by Elon Musk on June 28, 2026. The model is built on xAI's new V9 foundation architecture and features approximately 1.5 trillion parameters — roughly three times the scale of prior Grok 4 variants. Initial access has been limited to SpaceX and Tesla, with no public release date yet announced.",
+    "sections": [
+      {
+        "h2": "A Significant Scale Jump Over Grok 4",
+        "paragraphs": [
+          "Grok 4.5 represents a substantial leap in model size compared to its predecessors. At approximately 1.5 trillion parameters, the new model is roughly three times larger than prior Grok 4 variants, according to Elon Musk's announcement. This scale increase places Grok 4.5 among the largest publicly acknowledged language models in the industry.",
+          "The model is built on xAI's new V9 foundation, a next-generation architecture that the company has been developing as the backbone for its latest generation of AI systems. While xAI has not disclosed detailed architectural specifics publicly, the V9 designation suggests a significant internal engineering milestone for the company.",
+          "This level of parameter growth typically brings with it improved reasoning, broader knowledge retention, and stronger performance across complex tasks — though xAI has not released official benchmark results for Grok 4.5 at this stage of its private beta rollout."
+        ]
+      },
+      {
+        "h2": "Enhanced Coding Capabilities via Cursor Training Data",
+        "paragraphs": [
+          "One of the notable additions in Grok 4.5's training pipeline is the incorporation of supplemental data from Cursor, the AI-powered coding environment. This data was used to specifically improve the model's coding capabilities, signaling xAI's intent to compete more directly in the increasingly competitive AI coding assistant market.",
+          "Cursor has become a widely used tool among software developers, making its data particularly valuable for training models to understand real-world coding workflows, debugging patterns, and developer intent. The inclusion of this data suggests Grok 4.5 may be positioned for strong performance on software development tasks.",
+          "The coding focus aligns with xAI's deployment strategy of initially releasing the model within SpaceX and Tesla — two engineering-heavy organizations where advanced code generation and technical reasoning tools could provide immediate practical value."
+        ]
+      },
+      {
+        "h2": "Private Beta Deployment at SpaceX and Tesla",
+        "paragraphs": [
+          "Rather than a broad public rollout, xAI has chosen to debut Grok 4.5 in a controlled private beta limited to SpaceX and Tesla. Both companies are led by Elon Musk and represent two of the most technically demanding operational environments in the world, making them natural first proving grounds for a new frontier model.",
+          "This deployment approach allows xAI to gather high-quality feedback from sophisticated engineering and research teams before a wider release. Private beta testing at organizations of this scale can surface edge cases, reliability issues, and performance gaps that would be difficult to identify in more general testing environments.",
+          "The decision also underscores the close operational relationship between xAI and Musk's other ventures. Using SpaceX and Tesla as early adopters effectively gives xAI real-world enterprise validation while keeping the model out of public scrutiny during its earliest and potentially most unstable phase."
+        ]
+      },
+      {
+        "h2": "No Public Release Date Announced",
+        "paragraphs": [
+          "As of the announcement on June 28, 2026, xAI has not set a public release date for Grok 4.5. The company has not indicated how long the private beta period will last or what milestones would need to be met before broader access is granted to external developers or consumers.",
+          "This measured rollout strategy stands in contrast to some competitors who have moved toward more rapid public releases following internal testing. xAI appears to be prioritizing stability and iterative refinement over speed-to-market with this particular model generation.",
+          "Industry observers will be watching closely for any signals about public availability, pricing tiers, and API access — none of which have been announced. Given the model's scale and the engineering profile of its initial deployment partners, enterprise and developer-focused access tiers seem like a likely eventual pathway."
+        ]
+      },
+      {
+        "h2": "What Grok 4.5 Means for xAI's Competitive Position",
+        "paragraphs": [
+          "The launch of Grok 4.5 reinforces xAI's ambition to compete at the very top tier of the AI model landscape. A 1.5 trillion parameter model built on a new foundation architecture positions the company alongside the handful of organizations developing frontier-scale systems, a group that includes OpenAI, Google DeepMind, and Anthropic.",
+          "The emphasis on coding performance through Cursor training data is strategically significant. The AI coding assistant market has become one of the most commercially active segments of the broader AI industry, and a model with strong coding capabilities at frontier scale could be a compelling offering for enterprise software teams.",
+          "With Grok 4.5 still in private beta, xAI retains the ability to refine the model before facing direct public comparison to rivals. How the company chooses to position and release the model in the coming months will be a key indicator of its broader go-to-market strategy for the second half of 2026."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Grok 4.5?",
+        "answer": "Grok 4.5 is xAI's latest large language model, announced on June 28, 2026. It is built on xAI's new V9 foundation architecture and features approximately 1.5 trillion parameters, making it roughly three times larger than prior Grok 4 variants. It also incorporates supplemental Cursor data training for improved coding performance."
+      },
+      {
+        "question": "Who currently has access to Grok 4.5?",
+        "answer": "As of the announcement, Grok 4.5 is in private beta and access is limited to SpaceX and Tesla. No public release date has been set, and xAI has not announced when or how broader access will be provided."
+      },
+      {
+        "question": "Why is Grok 4.5 being tested at SpaceX and Tesla first?",
+        "answer": "SpaceX and Tesla are both led by Elon Musk and represent technically demanding engineering organizations. Using them as initial private beta partners allows xAI to gather high-quality, real-world feedback from sophisticated teams before a wider release."
+      },
+      {
+        "question": "What role did Cursor data play in training Grok 4.5?",
+        "answer": "Supplemental training data from Cursor, an AI-powered coding environment, was incorporated into Grok 4.5's training to enhance its coding capabilities. This is intended to improve the model's performance on software development tasks and real-world coding workflows."
+      },
+      {
+        "question": "How does Grok 4.5 compare to previous Grok models?",
+        "answer": "Grok 4.5 is approximately three times larger than prior Grok 4 variants by parameter count, with roughly 1.5 trillion parameters. It is also built on a new V9 foundation architecture, representing a significant internal engineering step forward for xAI compared to earlier model generations."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt-5-6-sol-terra-luna-preview-2026-07-02",
     "title": "OpenAI Previews GPT-5.6 Family: Sol, Terra, and Luna",
     "metaTitle": "OpenAI GPT-5.6 Sol Terra Luna Preview 2026",
