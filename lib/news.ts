@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "meituan-longcat-2-open-source-moe-coding-model-2026-07-02",
+    "title": "Meituan Unveils LongCat-2.0: 1.6T Open-Source Coding Giant",
+    "metaTitle": "Meituan LongCat-2.0: 1.6T MoE Coding Model (2026)",
+    "metaDescription": "Meituan open-sources LongCat-2.0, a 1.6-trillion-parameter MoE model for agentic coding trained entirely on Chinese chips, with a 1M-token context window.",
+    "date": "2026-06-30",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Chinese food-delivery and tech giant Meituan officially unveiled LongCat-2.0 on June 29–30, 2026, a 1.6-trillion-parameter open-source mixture-of-experts model purpose-built for agentic coding tasks. The model features a one-million-token context window and carries a landmark distinction: it is the first frontier-scale AI model to complete both pre-training and inference entirely without Nvidia GPUs, relying instead on a fleet of more than 50,000 domestic Chinese ASICs. In a striking reveal, LongCat-2.0 had already been quietly operating on the OpenRouter platform under the anonymous alias 'Owl Alpha,' where it climbed to a top-three global ranking by daily token volume before Meituan disclosed its true identity.",
+    "sections": [
+      {
+        "h2": "A Frontier Model Built on Chinese Silicon",
+        "paragraphs": [
+          "LongCat-2.0 represents a significant milestone in the global AI hardware race. Meituan trained the model end-to-end on a cluster of more than 50,000 domestic Chinese AI accelerator chips — ASICs purpose-built for large-scale deep learning workloads — without any reliance on Nvidia GPUs at any stage of pre-training or inference.",
+          "This accomplishment is broadly seen as a proof point for China's domestic semiconductor ecosystem. At frontier scale — 1.6 trillion parameters — completing the full training pipeline on non-Nvidia hardware had not previously been publicly demonstrated by any major AI lab, making LongCat-2.0 a notable benchmark for the viability of Chinese chip alternatives.",
+          "The achievement arrives amid continued U.S. export restrictions on advanced AI chips to China, a policy environment that has accelerated domestic investment in homegrown semiconductor development. Meituan's success with LongCat-2.0 suggests that at least some Chinese technology companies have reached sufficient hardware capability to compete at the frontier without access to restricted Nvidia products."
+        ]
+      },
+      {
+        "h2": "Architecture and Design: MoE at 1.6 Trillion Parameters",
+        "paragraphs": [
+          "LongCat-2.0 is built on a mixture-of-experts (MoE) architecture, a design paradigm that activates only a subset of the model's total parameters for any given inference pass. This approach allows models to scale to very large total parameter counts while keeping the computational cost of individual forward passes more manageable — a pattern also seen in other large-scale open-source releases in recent years.",
+          "One of the model's headline technical features is its one-million-token context window, which positions it for tasks that require reasoning over extremely long documents, codebases, or multi-turn agentic sessions. For agentic coding workflows in particular — where a model may need to read, plan, edit, and verify code across many files simultaneously — extended context is a practical necessity rather than a marketing feature.",
+          "The model is explicitly designed around agentic coding use cases, suggesting that Meituan optimized training data, instruction tuning, and evaluation around multi-step software development tasks rather than general-purpose chat or retrieval. This specialization places LongCat-2.0 in direct competition with other code-focused frontier models from providers including Anthropic, Google, and a range of open-source contributors."
+        ]
+      },
+      {
+        "h2": "The 'Owl Alpha' Reveal: A Stealth Launch on OpenRouter",
+        "paragraphs": [
+          "Before its official announcement, LongCat-2.0 had been available on OpenRouter — a popular API aggregation platform that allows developers to access multiple AI models through a unified interface — operating under the pseudonym 'Owl Alpha.' The model attracted substantial organic usage, reaching a top-three global ranking by daily token volume without any public disclosure of its origins or developer.",
+          "The decision to launch anonymously allowed Meituan to gather real-world usage data and stress-test the model's inference infrastructure at scale before making a formal public claim. The approach also provided an independent signal of the model's practical utility: users and developers chose to use Owl Alpha based purely on its performance characteristics, without the influence of brand recognition or marketing.",
+          "When Meituan revealed that Owl Alpha and LongCat-2.0 were one and the same, it added a layer of credibility to the launch that purely benchmark-driven announcements often lack. The model had effectively competed — and ranked highly — in an open market before its identity was known, a fact Meituan highlighted as part of its announcement narrative."
+        ]
+      },
+      {
+        "h2": "Open-Source Release and Broader Implications",
+        "paragraphs": [
+          "Meituan has released LongCat-2.0 as an open-source model, making its weights publicly available. This positions the release within a broader trend of frontier-capable open-source AI development that has accelerated significantly since 2024, with major contributions from Meta, Mistral, DeepSeek, and others challenging the dominance of closed, API-only model providers.",
+          "For the global developer community, an open-source 1.6-trillion-parameter model with a million-token context window and demonstrated strong performance in agentic coding represents a meaningful addition to the available toolkit. Organizations that require on-premise deployment, fine-tuning flexibility, or avoidance of third-party API dependencies stand to benefit from access to a model at this capability level.",
+          "The open-source release also carries geopolitical significance. A frontier-scale model developed and trained entirely within China, released openly to international developers, intensifies ongoing discussions about AI competitiveness, technology diffusion, and the long-term effectiveness of export controls as a tool for maintaining capability gaps between nations."
+        ]
+      },
+      {
+        "h2": "Meituan's Expansion into Frontier AI",
+        "paragraphs": [
+          "Meituan is best known internationally as one of China's dominant food delivery and local services platforms, making the LongCat-2.0 announcement a striking illustration of how broadly Chinese internet companies have invested in foundational AI research and infrastructure. The scale of the compute cluster used — more than 50,000 ASICs — signals a substantial and sustained capital commitment to AI development beyond the company's core business operations.",
+          "LongCat-2.0 appears to be a significant step up in ambition and scale from any prior public AI research output associated with Meituan, reflecting an industry-wide pattern in which large Chinese technology companies have moved aggressively to establish credible AI research organizations capable of producing frontier models.",
+          "The timing of the release, coming in the first half of 2026, places Meituan in a competitive cohort alongside other Chinese AI developers who have released or are preparing to release frontier-scale models. The combination of open-source availability, demonstrated real-world usage under the Owl Alpha alias, and the hardware independence claim gives LongCat-2.0 a distinctive profile within that group."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is LongCat-2.0 and who made it?",
+        "answer": "LongCat-2.0 is a 1.6-trillion-parameter open-source mixture-of-experts AI model developed by Meituan, the Chinese technology and food-delivery company. It is designed specifically for agentic coding tasks and features a one-million-token context window. Meituan officially announced the model on June 29–30, 2026."
+      },
+      {
+        "question": "What makes LongCat-2.0 significant from a hardware perspective?",
+        "answer": "LongCat-2.0 is reported to be the first frontier-scale AI model to complete both pre-training and inference entirely without Nvidia GPUs. It was trained on a cluster of more than 50,000 domestic Chinese AI ASICs, demonstrating that China's homegrown semiconductor ecosystem can support frontier-scale model development."
+      },
+      {
+        "question": "What was 'Owl Alpha' and how does it relate to LongCat-2.0?",
+        "answer": "Owl Alpha was the anonymous name under which LongCat-2.0 operated on OpenRouter, the AI model aggregation platform, prior to Meituan's official announcement. Under that alias, the model reached a top-three global ranking by daily token volume. Meituan revealed during the official launch that Owl Alpha and LongCat-2.0 are the same model."
+      },
+      {
+        "question": "Is LongCat-2.0 available as open source?",
+        "answer": "Yes. Meituan released LongCat-2.0 as an open-source model, making its weights publicly available. This allows developers and organizations to download, deploy, and fine-tune the model independently, without relying on a proprietary API."
+      },
+      {
+        "question": "What is the context window size of LongCat-2.0 and why does it matter for coding?",
+        "answer": "LongCat-2.0 supports a one-million-token context window. For agentic coding use cases, this is particularly valuable because it allows the model to reason over large codebases, long conversation histories, and multi-file projects simultaneously — capabilities that are essential for autonomous software development agents that must plan, write, and verify code across complex repositories."
+      }
+    ]
+  },
+
+  {
     "slug": "xai-grok-4-5-private-beta-spacex-tesla-2026-07-02",
     "title": "xAI Launches Grok 4.5 in Private Beta at SpaceX and Tesla",
     "metaTitle": "xAI Grok 4.5 Private Beta Launch 2026 | SpaceX & Tesla",
