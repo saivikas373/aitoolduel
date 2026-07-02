@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-5-6-sol-terra-luna-preview-2026-07-02",
+    "title": "OpenAI Previews GPT-5.6 Family: Sol, Terra, and Luna",
+    "metaTitle": "OpenAI GPT-5.6 Sol Terra Luna Preview 2026",
+    "metaDescription": "OpenAI unveils GPT-5.6, a three-model family featuring Sol, Terra, and Luna with new reasoning modes and advances in coding, biology, and cybersecurity.",
+    "date": "2026-06-26",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI has previewed GPT-5.6, a next-generation model family consisting of three distinct variants — Sol, Terra, and Luna — each targeting different performance and cost profiles. The release introduces new 'max' and 'ultra' reasoning modes and claims meaningful advances in domains including coding, biology, and cybersecurity. Initial access is limited to approximately 20 government-approved trusted partners through OpenAI's API and Codex platform, with broader rollout expected in the coming weeks.",
+    "sections": [
+      {
+        "h2": "A Three-Tier Model Family for Different Use Cases",
+        "paragraphs": [
+          "OpenAI's GPT-5.6 launch marks a deliberate move toward a segmented model family rather than a single flagship release. The three variants — Sol, Terra, and Luna — are positioned along a performance-to-cost spectrum, with Sol serving as the flagship offering, Terra occupying a balanced middle tier, and Luna designed for speed and affordability.",
+          "This tiered approach mirrors a broader industry trend in which AI providers offer multiple model sizes under a unified brand to serve enterprise, developer, and consumer audiences simultaneously. By differentiating on capability and cost, OpenAI can address use cases ranging from complex, long-horizon reasoning tasks handled by Sol to high-throughput, latency-sensitive workloads better suited to Luna.",
+          "The naming scheme — Sol, Terra, Luna — evokes celestial and terrestrial imagery, a departure from OpenAI's previous numeric and letter-based suffixes. While the branding is new, the underlying architecture continues the GPT-5 lineage, suggesting iterative improvements rather than a ground-up redesign."
+        ]
+      },
+      {
+        "h2": "New Reasoning Modes: Max and Ultra",
+        "paragraphs": [
+          "One of the headline features of GPT-5.6 is the introduction of two new reasoning modes: 'max' and 'ultra.' These modes appear to extend the model's ability to allocate additional compute toward complex inference tasks, building on reasoning capabilities that OpenAI has been developing through its o-series models and integrating more tightly into the GPT product line.",
+          "The distinction between max and ultra modes suggests a graduated approach to reasoning depth, likely allowing developers and enterprise users to dial up computational effort for problems that demand it while defaulting to faster, lower-cost inference for routine tasks. This kind of adaptive reasoning has become increasingly important as AI deployments move into high-stakes domains.",
+          "OpenAI has not publicly detailed the precise technical mechanisms underlying these modes, but the framing implies that they involve extended chain-of-thought processing or similar techniques that have characterized recent advances in large language model reasoning. The inclusion of these modes across a three-model family suggests they are available in some form to Sol, Terra, and Luna, though capability levels may vary by tier."
+        ]
+      },
+      {
+        "h2": "Advances in Coding, Biology, and Cybersecurity",
+        "paragraphs": [
+          "OpenAI specifically highlighted coding, biology, and cybersecurity as domains where GPT-5.6 delivers notable advances. The emphasis on coding aligns with OpenAI's continued investment in Codex, its developer-focused platform, which serves as one of the two primary access points for the initial GPT-5.6 rollout.",
+          "Biology and cybersecurity are more striking inclusions, pointing toward OpenAI's ambitions in scientific and national-security-adjacent applications. Advances in biological reasoning could support drug discovery, genomics analysis, or other life-sciences workflows, while improved cybersecurity capabilities may include vulnerability detection, threat modeling, or secure code generation — all areas of intense interest to government and enterprise customers.",
+          "The simultaneous focus on three distinct high-stakes domains suggests that GPT-5.6 is positioned not merely as a general-purpose improvement but as a model family with deliberate capability investments in areas of strategic importance. This framing also helps explain why the initial access is restricted to vetted government partners rather than released broadly to the public."
+        ]
+      },
+      {
+        "h2": "Restricted Launch: Trusted Partners and Government Access",
+        "paragraphs": [
+          "In a notable departure from typical model launches, OpenAI is making GPT-5.6 available initially to approximately 20 government-approved trusted partners. Access is provided through the OpenAI API and the Codex platform, suggesting that early adopters are primarily technical organizations capable of integrating the model into existing workflows rather than end-user consumer applications.",
+          "The restricted rollout reflects both the sensitive nature of some of GPT-5.6's claimed capabilities and OpenAI's ongoing engagement with government bodies around responsible AI deployment. By limiting early access to vetted partners, OpenAI can gather real-world feedback, monitor for misuse, and refine the model's behavior before a wider release introduces it to a less controlled environment.",
+          "OpenAI has indicated that broader availability is planned for the coming weeks, though no specific date has been confirmed. This phased approach has become increasingly common for high-capability AI systems, allowing providers to manage both technical risk and public perception as models with advanced reasoning and domain-specific strengths are introduced to the market."
+        ]
+      },
+      {
+        "h2": "What GPT-5.6 Means for the AI Landscape",
+        "paragraphs": [
+          "GPT-5.6 arrives at a moment of intense competition among frontier AI providers, with Google, Anthropic, and others releasing capable models in rapid succession throughout 2025 and 2026. OpenAI's decision to release a family of three models simultaneously — rather than a single flagship — signals a maturing product strategy aimed at capturing a wider range of enterprise and government use cases.",
+          "The explicit focus on reasoning modes and domain-specific advances in biology and cybersecurity also reflects a shift in how OpenAI is marketing its models. Rather than leading with general benchmark performance, the GPT-5.6 preview emphasizes practical capability in high-value verticals, a framing more likely to resonate with the government and enterprise buyers who constitute the initial access cohort.",
+          "Broader public access to GPT-5.6 will be a key moment to watch. Once Sol, Terra, and Luna are available through standard API channels and consumer-facing products, the AI community will have an opportunity to evaluate the real-world impact of the new reasoning modes and domain advances that OpenAI has previewed. Until then, the model family remains a closely watched but largely inaccessible development in the ongoing evolution of large language models."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-5.6 and what are Sol, Terra, and Luna?",
+        "answer": "GPT-5.6 is OpenAI's next-generation model family, announced on June 26, 2026. It comprises three variants: Sol, the flagship high-capability model; Terra, a balanced mid-tier option; and Luna, a fast and affordable model designed for high-throughput or cost-sensitive applications."
+      },
+      {
+        "question": "What are the 'max' and 'ultra' reasoning modes in GPT-5.6?",
+        "answer": "OpenAI introduced two new reasoning modes — max and ultra — with GPT-5.6. These modes allow the model to allocate greater computational effort toward complex inference tasks, enabling deeper reasoning for demanding use cases while standard modes remain available for routine workloads. OpenAI has not publicly detailed the exact technical mechanisms."
+      },
+      {
+        "question": "Who can access GPT-5.6 right now?",
+        "answer": "As of the June 26, 2026 announcement, GPT-5.6 is restricted to approximately 20 government-approved trusted partners via OpenAI's API and Codex platform. Broader availability is planned for the coming weeks but no specific public release date has been confirmed."
+      },
+      {
+        "question": "What domains does GPT-5.6 target with its capability advances?",
+        "answer": "OpenAI highlighted coding, biology, and cybersecurity as areas where GPT-5.6 delivers meaningful advances. These domains reflect both the model's integration with the Codex developer platform and its positioning for high-stakes enterprise and government applications."
+      },
+      {
+        "question": "How does GPT-5.6 differ from previous OpenAI models?",
+        "answer": "GPT-5.6 extends the GPT-5 lineage with a structured three-model family (Sol, Terra, Luna), new max and ultra reasoning modes, and targeted capability improvements in coding, biology, and cybersecurity. It also represents a more deliberate tiered product strategy compared to earlier single-flagship releases, and its initial restricted rollout to government-approved partners is more cautious than previous launches."
+      }
+    ]
+  },
+
+  {
     "slug": "anthropic-claude-sonnet-5-agentic-model-launch-2026",
     "title": "Anthropic Launches Claude Sonnet 5, Its Most Agentic Model Yet",
     "metaTitle": "Anthropic Claude Sonnet 5 Launch 2026 | Most Agentic Sonnet",
