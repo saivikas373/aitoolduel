@@ -3,7 +3,7 @@
 // Setup: node agent/master-agent.mjs --setup-scheduler
 // Manual run: node agent/master-agent.mjs
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -22,15 +22,25 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
+const MODEL = "gemini-2.0-flash";
 
-if (!ANTHROPIC_API_KEY) { console.error("❌ Missing ANTHROPIC_API_KEY"); process.exit(1); }
+if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
 
-const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
+
+async function askGemini(prompt, systemInstruction) {
+  const response = await ai.models.generateContent({
+    model: MODEL,
+    contents: prompt,
+    config: { responseMimeType: "application/json", ...(systemInstruction ? { systemInstruction } : {}) },
+  });
+  return JSON.parse(response.text);
+}
 
 // ─── State management ────────────────────────────────────────────────────────
 
@@ -109,20 +119,15 @@ async function publishComparison(topic) {
   const [tool1Name, tool2Name] = topic.split(/\s+vs\s+/i).map(s => s.trim());
   const slug = `${tool1Name.toLowerCase().replace(/\s+/g, "-")}-vs-${tool2Name.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const message = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 8000,
-    system: `You are an expert AI tool reviewer. Generate detailed, honest, SEO-optimized comparison data.
+  const data = await askGemini(
+    `Generate ComparisonData JSON for: "${tool1Name} vs ${tool2Name}"\nslug: "${slug}"\ncanonicalPath: "/compare/${slug}"`,
+    `You are an expert AI tool reviewer. Generate detailed, honest, SEO-optimized comparison data.
 Respond with ONLY valid JSON — no markdown. Match this exact structure with these fields:
 slug, metaTitle (under 65 chars with 2026), metaDescription (140-160 chars), canonicalPath, h1, verdict, verdictWinner ("tool1"|"tool2"|"tie"),
 tool1 and tool2 each with: name, tagline, pricing, freeTier, speed, bestFor, rating (1-5), pros (6-8 items), cons (4-6 items), ctaUrl, ctaLabel,
 introSections (1 section, 3 paragraphs), deepDiveSections (3-4 sections), pickTool1 (heading + 4-5 reasons), pickTool2 (heading + 4-5 reasons),
-recommendationSummary (2-3 sentences), faqs (5 FAQs with question + answer).`,
-    messages: [{ role: "user", content: `Generate ComparisonData JSON for: "${tool1Name} vs ${tool2Name}"\nslug: "${slug}"\ncanonicalPath: "/compare/${slug}"` }],
-  });
-
-  let jsonText = message.content[0].text.trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  const data = JSON.parse(jsonText);
+recommendationSummary (2-3 sentences), faqs (5 FAQs with question + answer).`
+  );
 
   // ── Sanitize field names before writing ──
   if (typeof data.tool1?.freeTier === "boolean") data.tool1.freeTier = data.tool1.freeTier ? "Yes — free tier available" : "No free tier";
@@ -201,10 +206,7 @@ async function publishNews() {
   ];
   const angle = topicAngles[existingSlugs.length % topicAngles.length];
 
-  const message = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 6000,
-    messages: [{ role: "user", content: `You are an AI industry journalist. Today is ${today}.
+  const article = await askGemini(`You are an AI industry journalist. Today is ${today}.
 
 Write a news article focused on: ${angle}
 
@@ -225,11 +227,7 @@ Respond with ONLY valid JSON (no markdown):
   "sections": [{"h2": "section heading", "paragraphs": ["paragraph 1","paragraph 2","paragraph 3"]}],
   "faqs": [{"question": "string", "answer": "string"}]
 }
-Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs. Use real model names, specific details, dates.` }],
-  });
-
-  let jsonText = message.content[0].text.trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  const article = JSON.parse(jsonText);
+Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs. Use real model names, specific details, dates.`);
 
   // Ensure slug is unique
   if (newsContent.includes(`"${article.slug}"`) || newsContent.includes(`'${article.slug}'`)) {
@@ -350,54 +348,59 @@ Write-Host "✅ Master agent scheduled: Mon/Wed/Fri at 8am"`;
 console.log(`\n🚀 Master Traffic Agent — ${today}`);
 console.log("=".repeat(50));
 
-const state = getState();
-const action = await decideTodaysAction(state);
-let publishedSlug = null;
-let publishedType = null; // "comparison" | "news"
-let commitMsg = "";
+try {
+  const state = getState();
+  const action = await decideTodaysAction(state);
+  let publishedSlug = null;
+  let publishedType = null; // "comparison" | "news"
+  let commitMsg = "";
 
-if (action.type === "comparison" && action.topic) {
-  publishedSlug = await publishComparison(action.topic);
-  publishedType = "comparison";
-  state.publishedComparisons.push(action.topic);
-  commitMsg = `feat: add comparison - ${action.topic}`;
-} else if (action.type === "news") {
-  publishedSlug = await publishNews();
-  if (!publishedSlug) {
-    // News was duplicate — fall back to publishing a comparison instead
-    console.log("⚠️  News skipped, publishing a comparison instead...");
-    const fallbackTopic = COMPARISON_QUEUE.find(t => !state.publishedComparisons.includes(t));
-    if (fallbackTopic) {
-      publishedSlug = await publishComparison(fallbackTopic);
-      publishedType = "comparison";
-      state.publishedComparisons.push(fallbackTopic);
-      commitMsg = `feat: add comparison - ${fallbackTopic}`;
+  if (action.type === "comparison" && action.topic) {
+    publishedSlug = await publishComparison(action.topic);
+    publishedType = "comparison";
+    state.publishedComparisons.push(action.topic);
+    commitMsg = `feat: add comparison - ${action.topic}`;
+  } else if (action.type === "news") {
+    publishedSlug = await publishNews();
+    if (!publishedSlug) {
+      // News was duplicate — fall back to publishing a comparison instead
+      console.log("⚠️  News skipped, publishing a comparison instead...");
+      const fallbackTopic = COMPARISON_QUEUE.find(t => !state.publishedComparisons.includes(t));
+      if (fallbackTopic) {
+        publishedSlug = await publishComparison(fallbackTopic);
+        publishedType = "comparison";
+        state.publishedComparisons.push(fallbackTopic);
+        commitMsg = `feat: add comparison - ${fallbackTopic}`;
+      }
+    } else {
+      publishedType = "news";
+      state.publishedNews.push(publishedSlug);
+      commitMsg = `feat: add weekly AI news - ${today}`;
     }
   } else {
+    console.log("✅ All comparisons published! Switching to news-only mode.");
+    publishedSlug = await publishNews();
     publishedType = "news";
-    state.publishedNews.push(publishedSlug);
     commitMsg = `feat: add weekly AI news - ${today}`;
   }
-} else {
-  console.log("✅ All comparisons published! Switching to news-only mode.");
-  publishedSlug = await publishNews();
-  publishedType = "news";
-  commitMsg = `feat: add weekly AI news - ${today}`;
+
+  await improveSEO();
+
+  const pushed = pushToGitHub(commitMsg);
+
+  if (pushed && publishedSlug) {
+    console.log("\n📡 Notifying search engines...");
+    await requestIndexing(`/${publishedType === "news" ? "news" : "compare"}/${publishedSlug}`);
+  }
+
+  state.runs.push({ date: today, action: action.type, slug: publishedSlug });
+  saveState(state);
+
+  console.log(`\n✅ Master agent complete!`);
+  console.log(`📊 Total runs: ${state.runs.length}`);
+  console.log(`📝 Comparisons published: ${state.publishedComparisons.length}`);
+  console.log(`📰 News articles published: ${state.publishedNews.length}`);
+} catch (e) {
+  console.error("❌ Master agent failed:", e.message);
+  process.exit(1);
 }
-
-await improveSEO();
-
-const pushed = pushToGitHub(commitMsg);
-
-if (pushed && publishedSlug) {
-  console.log("\n📡 Notifying search engines...");
-  await requestIndexing(`/${publishedType === "news" ? "news" : "compare"}/${publishedSlug}`);
-}
-
-state.runs.push({ date: today, action: action.type, slug: publishedSlug });
-saveState(state);
-
-console.log(`\n✅ Master agent complete!`);
-console.log(`📊 Total runs: ${state.runs.length}`);
-console.log(`📝 Comparisons published: ${state.publishedComparisons.length}`);
-console.log(`📰 News articles published: ${state.publishedNews.length}`);
