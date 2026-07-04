@@ -1,13 +1,16 @@
-// AI MODEL LAUNCH WATCH AGENT
-// Uses Claude's web search tool to detect genuine, newly-announced major AI
-// model launches (new flagship models / major version bumps) from any
-// provider, and publishes a factual news article for each one it hasn't
-// covered yet. No-ops quietly when nothing new is found.
+// AI MODEL LAUNCH WATCH AGENT (free-tier)
+// Detects genuinely new major AI model launches by reading real, free
+// sources — RSS feeds from major AI labs' own blogs, plus Hacker News —
+// then uses Gemini (free tier) only to classify which headlines are
+// genuine flagship launches and to write a factual article for each new
+// one. No paid search tool, no Anthropic dependency, no API cost for the
+// detection step at all.
 //
 // Manual run: node agent/check-model-launches.mjs
 // Auto: triggered by GitHub Actions every 6 hours (.github/workflows/model-launch-watch.yml)
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
+import Parser from "rss-parser";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -26,15 +29,23 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
+const MODEL = "gemini-2.0-flash";
 
-if (!ANTHROPIC_API_KEY) { console.error("❌ Missing ANTHROPIC_API_KEY"); process.exit(1); }
+if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
 
-const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
+
+const RSS_SOURCES = [
+  { name: "OpenAI", url: "https://openai.com/news/rss.xml" },
+  { name: "Anthropic", url: "https://www.anthropic.com/news/rss.xml" },
+  { name: "Google AI", url: "https://blog.google/technology/ai/rss/" },
+  { name: "Meta AI", url: "https://ai.meta.com/blog/rss/" },
+];
 
 function getState() {
   if (!fs.existsSync(STATE_FILE)) return { runs: [], publishedComparisons: [], publishedNews: [], publishedLaunches: [] };
@@ -55,59 +66,109 @@ function launchKey(provider, modelName) {
   return `${provider}:${modelName}`.toLowerCase().replace(/[^a-z0-9:]+/g, "-");
 }
 
-// ─── Step 1: Search for genuine major launches ───────────────────────────────
+async function askGemini(prompt) {
+  const response = await ai.models.generateContent({
+    model: MODEL,
+    contents: prompt,
+    config: { responseMimeType: "application/json" },
+  });
+  return JSON.parse(response.text);
+}
 
-async function findNewLaunches(state) {
-  console.log("🔍 Searching for major AI model launches...");
+// ─── Step 1: Gather raw signals from free sources ────────────────────────────
 
-  const alreadyCovered = state.publishedLaunches.map(l => `${l.provider} ${l.modelName} (${l.date})`).join("; ") || "none yet";
+async function fetchRssSignals() {
+  const parser = new Parser({ timeout: 10000 });
+  const cutoff = Date.now() - 4 * 24 * 60 * 60 * 1000; // last 4 days
+  const signals = [];
 
-  const message = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 4000,
-    tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 8 }],
-    messages: [{
-      role: "user",
-      content: `Today is ${today}. Use web search to find genuinely new MAJOR AI model launches announced in the last 3 days — new flagship models or major version releases (e.g. a new GPT, Claude, Gemini, Llama, Grok, Mistral, or similar generation) from any AI lab: OpenAI, Anthropic, Google/DeepMind, Meta, xAI, Mistral AI, Amazon, Microsoft, Cohere, Stability AI, Perplexity, ElevenLabs, Midjourney, or comparable major providers.
+  for (const source of RSS_SOURCES) {
+    try {
+      const feed = await parser.parseURL(source.url);
+      for (const item of feed.items.slice(0, 15)) {
+        const pubDate = item.pubDate || item.isoDate;
+        const ts = pubDate ? new Date(pubDate).getTime() : Date.now();
+        if (Number.isNaN(ts) || ts < cutoff) continue;
+        signals.push({
+          source: source.name,
+          title: item.title,
+          url: item.link,
+          date: new Date(ts).toISOString().split("T")[0],
+        });
+      }
+    } catch (e) {
+      console.log(`⚠️  Could not fetch RSS for ${source.name}: ${e.message}`);
+    }
+  }
+  return signals;
+}
 
-Only include launches confirmed by an official company announcement, blog post, or credible major tech news source — never rumors, leaks, or speculation. EXCLUDE minor point releases, small feature updates, UI changes, or pricing changes — only genuinely new flagship models or major version bumps count.
+async function fetchHackerNewsSignals() {
+  const KEYWORDS = /gpt|claude|gemini|llama|grok|mistral|copilot|midjourney|dall-?e|deepseek|qwen|command ?r/i;
+  const LAUNCH_WORDS = /launch|release|introduc|announc|unveil|debut|drops?\b/i;
+
+  try {
+    const topIds = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json").then((r) => r.json());
+    const items = await Promise.all(
+      topIds.slice(0, 80).map((id) =>
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
+          .then((r) => r.json())
+          .catch(() => null)
+      )
+    );
+    const cutoffSec = Date.now() / 1000 - 4 * 24 * 60 * 60;
+    return items
+      .filter((it) => it && it.title && it.time > cutoffSec && KEYWORDS.test(it.title) && LAUNCH_WORDS.test(it.title))
+      .map((it) => ({
+        source: "Hacker News",
+        title: it.title,
+        url: it.url || `https://news.ycombinator.com/item?id=${it.id}`,
+        date: new Date(it.time * 1000).toISOString().split("T")[0],
+      }));
+  } catch (e) {
+    console.log(`⚠️  Could not fetch Hacker News: ${e.message}`);
+    return [];
+  }
+}
+
+// ─── Step 2: Ask Gemini to classify genuine major launches ───────────────────
+
+async function classifyLaunches(signals, state) {
+  if (signals.length === 0) return [];
+
+  const alreadyCovered = state.publishedLaunches.map((l) => `${l.provider} ${l.modelName} (${l.date})`).join("; ") || "none yet";
+
+  const prompt = `Today is ${today}. Here are real headlines gathered from AI lab blogs and Hacker News in the last few days:
+
+${signals.map((s, i) => `${i + 1}. [${s.source}] "${s.title}" — ${s.url} (${s.date})`).join("\n")}
+
+From these, identify ONLY genuine MAJOR AI model launches — new flagship models or major version releases (e.g. a new GPT, Claude, Gemini, Llama, Grok, Mistral generation) from a major AI lab. Exclude minor point releases, feature updates, pricing news, or anything that isn't clearly a new model launch. If a headline is ambiguous, exclude it rather than guess.
 
 Already covered — do NOT re-report these: ${alreadyCovered}
 
-After searching, respond with ONLY a JSON object on the last line of your response (no markdown fences), in exactly this shape:
-{"launches":[{"provider":"string","modelName":"string","announcementDate":"YYYY-MM-DD","sourceUrl":"string","summary":"1-2 sentence factual summary of what's new, based on what you found"}]}
-If you find no genuine new major launches, respond with {"launches":[]}`,
-    }],
-  });
-
-  const textBlocks = message.content.filter(b => b.type === "text").map(b => b.text);
-  const fullText = textBlocks.join("\n").trim();
-  const jsonMatch = fullText.match(/\{[\s\S]*\}\s*$/);
-  if (!jsonMatch) {
-    console.log("⚠️  Could not find JSON in response, treating as no launches found.");
-    return [];
-  }
+Respond with ONLY this JSON shape: {"launches":[{"provider":"string","modelName":"string","announcementDate":"YYYY-MM-DD","sourceUrl":"string","summary":"1-2 sentence factual summary based only on the headline given"}]}
+If none qualify, respond {"launches":[]}`;
 
   let parsed;
   try {
-    parsed = JSON.parse(jsonMatch[0]);
+    parsed = await askGemini(prompt);
   } catch (e) {
-    console.log("⚠️  Failed to parse launches JSON, treating as no launches found:", e.message);
+    console.log("⚠️  Failed to classify launches:", e.message);
     return [];
   }
 
   const launches = Array.isArray(parsed.launches) ? parsed.launches : [];
-  const coveredKeys = new Set(state.publishedLaunches.map(l => launchKey(l.provider, l.modelName)));
-  const fresh = launches.filter(l => l.provider && l.modelName && !coveredKeys.has(launchKey(l.provider, l.modelName)));
+  const coveredKeys = new Set(state.publishedLaunches.map((l) => launchKey(l.provider, l.modelName)));
+  const fresh = launches.filter((l) => l.provider && l.modelName && !coveredKeys.has(launchKey(l.provider, l.modelName)));
 
   console.log(`📋 Found ${launches.length} candidate launch(es), ${fresh.length} not yet covered.`);
   return fresh;
 }
 
-// ─── Step 2: Write a factual article for a launch ────────────────────────────
+// ─── Step 3: Write a factual article for a launch ────────────────────────────
 
 function fixSections(secs) {
-  return (secs || []).map(s => {
+  return (secs || []).map((s) => {
     const out = {};
     out.h2 = s.h2 || s.heading || s.sectionTitle || s.title || "Overview";
     if (Array.isArray(s.paragraphs)) out.paragraphs = s.paragraphs;
@@ -124,12 +185,7 @@ function fixSections(secs) {
 async function writeLaunchArticle(launch, existingSlugs) {
   console.log(`\n📝 Writing article: ${launch.provider} ${launch.modelName}`);
 
-  const message = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 6000,
-    messages: [{
-      role: "user",
-      content: `You are an AI industry journalist. Today is ${today}. Write a factual news article about this real, confirmed AI model launch:
+  const prompt = `You are an AI industry journalist. Today is ${today}. Write a factual news article about this real, confirmed AI model launch:
 
 Provider: ${launch.provider}
 Model: ${launch.modelName}
@@ -141,7 +197,7 @@ Base the article strictly on the facts above — do not invent pricing, benchmar
 
 Your slug MUST NOT match any of these existing slugs: ${existingSlugs.join(", ")}
 
-Respond with ONLY valid JSON (no markdown):
+Respond with ONLY valid JSON:
 {
   "slug": "kebab-case-slug-specific-to-this-model-${today}",
   "title": "compelling specific headline under 70 chars",
@@ -154,12 +210,9 @@ Respond with ONLY valid JSON (no markdown):
   "sections": [{"h2": "section heading", "paragraphs": ["paragraph 1","paragraph 2","paragraph 3"]}],
   "faqs": [{"question": "string", "answer": "string"}]
 }
-Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs, all grounded in the facts given above.`,
-    }],
-  });
+Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs, all grounded in the facts given above.`;
 
-  let jsonText = message.content.find(b => b.type === "text").text.trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  const article = JSON.parse(jsonText);
+  const article = await askGemini(prompt);
   article.sections = fixSections(article.sections);
 
   // Ensure slug uniqueness
@@ -197,7 +250,7 @@ function updateSitemap(slug) {
   }
 }
 
-// ─── Step 3: Commit & push ────────────────────────────────────────────────────
+// ─── Step 4: Commit & push ────────────────────────────────────────────────────
 
 function pushToGitHub(message) {
   if (!GITHUB_TOKEN) { console.log("⚠️  No GITHUB_TOKEN — skipping push"); return false; }
@@ -219,11 +272,16 @@ function pushToGitHub(message) {
 
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
-console.log(`\n🛰️  Model Launch Watch — ${today}`);
+console.log(`\n🛰️  Model Launch Watch (free RSS/HN + Gemini) — ${today}`);
 console.log("=".repeat(50));
 
 const state = getState();
-const launches = await findNewLaunches(state);
+
+const [rssSignals, hnSignals] = await Promise.all([fetchRssSignals(), fetchHackerNewsSignals()]);
+const signals = [...rssSignals, ...hnSignals];
+console.log(`📡 Gathered ${signals.length} raw signal(s) from ${RSS_SOURCES.length} RSS feeds + Hacker News.`);
+
+const launches = await classifyLaunches(signals, state);
 
 if (launches.length === 0) {
   console.log("✅ No new major launches found this run. Nothing to publish.");
@@ -237,9 +295,15 @@ const publishedSlugs = [];
 
 for (const launch of launches) {
   const newsPath = path.join(ROOT, "lib", "news.ts");
-  const existingSlugs = [...fs.readFileSync(newsPath, "utf8").matchAll(/slug:\s*["']([^"']+)["']/g)].map(m => m[1]);
+  const existingSlugs = [...fs.readFileSync(newsPath, "utf8").matchAll(/slug:\s*["']([^"']+)["']/g)].map((m) => m[1]);
 
-  const slug = await writeLaunchArticle(launch, existingSlugs);
+  let slug = null;
+  try {
+    slug = await writeLaunchArticle(launch, existingSlugs);
+  } catch (e) {
+    console.error(`❌ Failed to write article for ${launch.provider} ${launch.modelName}:`, e.message);
+    continue;
+  }
   if (!slug) continue;
 
   state.publishedLaunches.push({ provider: launch.provider, modelName: launch.modelName, date: launch.announcementDate, slug });
