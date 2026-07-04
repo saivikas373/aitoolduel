@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import StarRating from "./StarRating";
+import GithubStars from "./GithubStars";
 import { tools, allCategories, categoryColors, type ToolCategory } from "@/lib/tools";
 
 const FREE_TOOLS = [
@@ -153,7 +154,10 @@ export default function ToolsDirectory() {
                   {tool.tagline}
                 </p>
 
-                <StarRating rating={tool.rating} />
+                <div className="flex items-center gap-2 flex-wrap">
+                  <StarRating rating={tool.rating} />
+                  <GithubStars toolName={tool.name} />
+                </div>
               </div>
 
               {/* Card footer */}

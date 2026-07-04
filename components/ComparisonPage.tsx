@@ -2,6 +2,7 @@ import Link from "next/link";
 import AdSenseAd from "./AdSenseAd";
 import StarRating from "./StarRating";
 import DuelVote from "./DuelVote";
+import GithubStars from "./GithubStars";
 import type { ComparisonData } from "@/lib/comparisons";
 
 /* ── Brand favicon domains (Google favicon service) ─────────────────── */
@@ -162,12 +163,14 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
               <ToolAvatar name={tool1.name} />
               <span className="text-xl sm:text-3xl font-extrabold">{tool1.name}</span>
               <p className="text-slate-400 text-xs mt-1 hidden sm:block">{tool1.tagline}</p>
+              <div className="mt-2 flex justify-center"><GithubStars toolName={tool1.name} /></div>
             </div>
             <span className="text-orange-500 font-black text-3xl sm:text-5xl shrink-0">VS</span>
             <div className="text-center">
               <ToolAvatar name={tool2.name} />
               <span className="text-xl sm:text-3xl font-extrabold">{tool2.name}</span>
               <p className="text-slate-400 text-xs mt-1 hidden sm:block">{tool2.tagline}</p>
+              <div className="mt-2 flex justify-center"><GithubStars toolName={tool2.name} /></div>
             </div>
           </div>
 
