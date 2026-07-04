@@ -28,7 +28,7 @@ jobs:
       - name: Check for new model launches and publish
         id: check
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: node agent/check-model-launches.mjs
 
