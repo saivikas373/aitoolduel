@@ -1,7 +1,7 @@
 // AI Agent: Researches recent AI news and publishes a news article
 // Usage: node agent/generate-news.mjs
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -20,13 +20,14 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
+const MODEL = "gemini-2.0-flash";
 
-if (!ANTHROPIC_API_KEY) { console.error("❌ Missing ANTHROPIC_API_KEY"); process.exit(1); }
+if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
 
-const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
 console.log("\n🤖 AI News Agent starting...");
 console.log("🔍 Researching latest AI news...\n");
@@ -87,23 +88,17 @@ Requirements:
 - Include specific details: model names, pricing, dates, company names
 - Make it genuinely useful for someone following AI tools`;
 
-const message = await client.messages.create({
-  model: "claude-sonnet-4-6",
-  max_tokens: 6000,
-  messages: [{ role: "user", content: researchPrompt }],
-});
-
-let jsonText = message.content[0].text.trim();
-if (jsonText.startsWith("```")) {
-  jsonText = jsonText.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-}
-
 let articleData;
 try {
-  articleData = JSON.parse(jsonText);
+  const response = await ai.models.generateContent({
+    model: MODEL,
+    contents: researchPrompt,
+    config: { responseMimeType: "application/json" },
+  });
+  articleData = JSON.parse(response.text);
   console.log(`✅ Article generated: "${articleData.title}"`);
 } catch (e) {
-  console.error("❌ Failed to parse JSON:", e.message);
+  console.error("❌ Failed to generate/parse article:", e.message);
   process.exit(1);
 }
 
