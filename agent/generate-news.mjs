@@ -1,7 +1,7 @@
 // AI Agent: Researches recent AI news and publishes a news article
 // Usage: node agent/generate-news.mjs
 
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -20,14 +20,14 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GROK_API_KEY = process.env.GROK_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "gemini-2.0-flash";
+const MODEL = "grok-4";
 
-if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
+if (!GROK_API_KEY) { console.error("❌ Missing GROK_API_KEY"); process.exit(1); }
 
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+const grok = new OpenAI({ apiKey: GROK_API_KEY, baseURL: "https://api.x.ai/v1" });
 
 console.log("\n🤖 AI News Agent starting...");
 console.log("🔍 Researching latest AI news...\n");
@@ -90,12 +90,14 @@ Requirements:
 
 let articleData;
 try {
-  const response = await ai.models.generateContent({
+  const completion = await grok.chat.completions.create({
     model: MODEL,
-    contents: researchPrompt,
-    config: { responseMimeType: "application/json" },
+    messages: [{ role: "user", content: researchPrompt }],
+    response_format: { type: "json_object" },
   });
-  articleData = JSON.parse(response.text);
+  let text = completion.choices[0].message.content.trim();
+  text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  articleData = JSON.parse(text);
   console.log(`✅ Article generated: "${articleData.title}"`);
 } catch (e) {
   console.error("❌ Failed to generate/parse article:", e.message);

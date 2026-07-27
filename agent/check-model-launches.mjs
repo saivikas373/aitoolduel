@@ -1,15 +1,14 @@
 // AI MODEL LAUNCH WATCH AGENT (free-tier)
 // Detects genuinely new major AI model launches by reading real, free
 // sources — RSS feeds from major AI labs' own blogs, plus Hacker News —
-// then uses Gemini (free tier) only to classify which headlines are
-// genuine flagship launches and to write a factual article for each new
-// one. No paid search tool, no Anthropic dependency, no API cost for the
-// detection step at all.
+// then uses xAI's Grok only to classify which headlines are genuine
+// flagship launches and to write a factual article for each new one.
+// No paid search tool, no API cost for the detection step at all.
 //
 // Manual run: node agent/check-model-launches.mjs
 // Auto: triggered by GitHub Actions every 6 hours (.github/workflows/model-launch-watch.yml)
 
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 import Parser from "rss-parser";
 import fs from "fs";
 import path from "path";
@@ -29,14 +28,14 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GROK_API_KEY = process.env.GROK_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "gemini-2.0-flash";
+const MODEL = "grok-4";
 
-if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
+if (!GROK_API_KEY) { console.error("❌ Missing GROK_API_KEY"); process.exit(1); }
 
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+const grok = new OpenAI({ apiKey: GROK_API_KEY, baseURL: "https://api.x.ai/v1" });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
 
@@ -66,13 +65,15 @@ function launchKey(provider, modelName) {
   return `${provider}:${modelName}`.toLowerCase().replace(/[^a-z0-9:]+/g, "-");
 }
 
-async function askGemini(prompt) {
-  const response = await ai.models.generateContent({
+async function askGrok(prompt) {
+  const completion = await grok.chat.completions.create({
     model: MODEL,
-    contents: prompt,
-    config: { responseMimeType: "application/json" },
+    messages: [{ role: "user", content: prompt }],
+    response_format: { type: "json_object" },
   });
-  return JSON.parse(response.text);
+  let text = completion.choices[0].message.content.trim();
+  text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  return JSON.parse(text);
 }
 
 // ─── Step 1: Gather raw signals from free sources ────────────────────────────
@@ -131,7 +132,13 @@ async function fetchHackerNewsSignals() {
   }
 }
 
-// ─── Step 2: Ask Gemini to classify genuine major launches ───────────────────
+// ─── Step 2: Ask Grok to classify genuine major launches ─────────────────────
+//
+// Note: this does NOT catch errors from askGrok — a real API failure (bad
+// key, quota exhausted, etc.) must propagate up and fail the run loudly.
+// Only "the model returned zero genuine launches" is a valid, silent no-op;
+// an API call that never succeeded is a different thing and should never be
+// reported as "no launches found."
 
 async function classifyLaunches(signals, state) {
   if (signals.length === 0) return [];
@@ -149,13 +156,7 @@ Already covered — do NOT re-report these: ${alreadyCovered}
 Respond with ONLY this JSON shape: {"launches":[{"provider":"string","modelName":"string","announcementDate":"YYYY-MM-DD","sourceUrl":"string","summary":"1-2 sentence factual summary based only on the headline given"}]}
 If none qualify, respond {"launches":[]}`;
 
-  let parsed;
-  try {
-    parsed = await askGemini(prompt);
-  } catch (e) {
-    console.log("⚠️  Failed to classify launches:", e.message);
-    return [];
-  }
+  const parsed = await askGrok(prompt);
 
   const launches = Array.isArray(parsed.launches) ? parsed.launches : [];
   const coveredKeys = new Set(state.publishedLaunches.map((l) => launchKey(l.provider, l.modelName)));
@@ -212,7 +213,7 @@ Respond with ONLY valid JSON:
 }
 Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs, all grounded in the facts given above.`;
 
-  const article = await askGemini(prompt);
+  const article = await askGrok(prompt);
   article.sections = fixSections(article.sections);
 
   // Ensure slug uniqueness
@@ -272,53 +273,59 @@ function pushToGitHub(message) {
 
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
-console.log(`\n🛰️  Model Launch Watch (free RSS/HN + Gemini) — ${today}`);
+console.log(`\n🛰️  Model Launch Watch (free RSS/HN + Grok) — ${today}`);
 console.log("=".repeat(50));
 
-const state = getState();
+try {
+  const state = getState();
 
-const [rssSignals, hnSignals] = await Promise.all([fetchRssSignals(), fetchHackerNewsSignals()]);
-const signals = [...rssSignals, ...hnSignals];
-console.log(`📡 Gathered ${signals.length} raw signal(s) from ${RSS_SOURCES.length} RSS feeds + Hacker News.`);
+  const [rssSignals, hnSignals] = await Promise.all([fetchRssSignals(), fetchHackerNewsSignals()]);
+  const signals = [...rssSignals, ...hnSignals];
+  console.log(`📡 Gathered ${signals.length} raw signal(s) from ${RSS_SOURCES.length} RSS feeds + Hacker News.`);
 
-const launches = await classifyLaunches(signals, state);
+  const launches = await classifyLaunches(signals, state);
 
-if (launches.length === 0) {
-  console.log("✅ No new major launches found this run. Nothing to publish.");
-  state.runs.push({ date: today, action: "launch-check", found: 0 });
-  saveState(state);
-  setGithubOutput("published", "false");
-  process.exit(0);
-}
-
-const publishedSlugs = [];
-
-for (const launch of launches) {
-  const newsPath = path.join(ROOT, "lib", "news.ts");
-  const existingSlugs = [...fs.readFileSync(newsPath, "utf8").matchAll(/slug:\s*["']([^"']+)["']/g)].map((m) => m[1]);
-
-  let slug = null;
-  try {
-    slug = await writeLaunchArticle(launch, existingSlugs);
-  } catch (e) {
-    console.error(`❌ Failed to write article for ${launch.provider} ${launch.modelName}:`, e.message);
-    continue;
+  if (launches.length === 0) {
+    console.log("✅ No new major launches found this run. Nothing to publish.");
+    state.runs.push({ date: today, action: "launch-check", found: 0 });
+    saveState(state);
+    setGithubOutput("published", "false");
+    process.exit(0);
   }
-  if (!slug) continue;
 
-  state.publishedLaunches.push({ provider: launch.provider, modelName: launch.modelName, date: launch.announcementDate, slug });
-  state.publishedNews.push(slug);
-  publishedSlugs.push(slug);
+  const publishedSlugs = [];
 
-  const pushed = pushToGitHub(`feat: add news article - ${launch.provider} ${launch.modelName} launch`);
-  if (pushed) await requestIndexing(`/news/${slug}`);
+  for (const launch of launches) {
+    const newsPath = path.join(ROOT, "lib", "news.ts");
+    const existingSlugs = [...fs.readFileSync(newsPath, "utf8").matchAll(/slug:\s*["']([^"']+)["']/g)].map((m) => m[1]);
+
+    let slug = null;
+    try {
+      slug = await writeLaunchArticle(launch, existingSlugs);
+    } catch (e) {
+      console.error(`❌ Failed to write article for ${launch.provider} ${launch.modelName}:`, e.message);
+      continue;
+    }
+    if (!slug) continue;
+
+    state.publishedLaunches.push({ provider: launch.provider, modelName: launch.modelName, date: launch.announcementDate, slug });
+    state.publishedNews.push(slug);
+    publishedSlugs.push(slug);
+
+    const pushed = pushToGitHub(`feat: add news article - ${launch.provider} ${launch.modelName} launch`);
+    if (pushed) await requestIndexing(`/news/${slug}`);
+  }
+
+  state.runs.push({ date: today, action: "launch-check", found: launches.length, published: publishedSlugs });
+  saveState(state);
+  pushToGitHub(`chore: update agent state after launch watch - ${today}`);
+
+  setGithubOutput("published", publishedSlugs.length > 0 ? "true" : "false");
+  setGithubOutput("slug", publishedSlugs[0] || "");
+
+  console.log(`\n✅ Launch watch complete! Published ${publishedSlugs.length} article(s).`);
+} catch (e) {
+  console.error("❌ Model launch watch failed:", e.message);
+  setGithubOutput("published", "false");
+  process.exit(1);
 }
-
-state.runs.push({ date: today, action: "launch-check", found: launches.length, published: publishedSlugs });
-saveState(state);
-pushToGitHub(`chore: update agent state after launch watch - ${today}`);
-
-setGithubOutput("published", publishedSlugs.length > 0 ? "true" : "false");
-setGithubOutput("slug", publishedSlugs[0] || "");
-
-console.log(`\n✅ Launch watch complete! Published ${publishedSlugs.length} article(s).`);

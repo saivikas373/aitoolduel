@@ -3,7 +3,7 @@
 // Setup: node agent/master-agent.mjs --setup-scheduler
 // Manual run: node agent/master-agent.mjs
 
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -22,24 +22,30 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GROK_API_KEY = process.env.GROK_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "gemini-2.0-flash";
+const MODEL = "grok-4";
 
-if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
+if (!GROK_API_KEY) { console.error("❌ Missing GROK_API_KEY"); process.exit(1); }
 
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+const grok = new OpenAI({ apiKey: GROK_API_KEY, baseURL: "https://api.x.ai/v1" });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
 
-async function askGemini(prompt, systemInstruction) {
-  const response = await ai.models.generateContent({
+async function askGrok(prompt, systemInstruction) {
+  const messages = [];
+  if (systemInstruction) messages.push({ role: "system", content: systemInstruction });
+  messages.push({ role: "user", content: prompt });
+
+  const completion = await grok.chat.completions.create({
     model: MODEL,
-    contents: prompt,
-    config: { responseMimeType: "application/json", ...(systemInstruction ? { systemInstruction } : {}) },
+    messages,
+    response_format: { type: "json_object" },
   });
-  return JSON.parse(response.text);
+  let text = completion.choices[0].message.content.trim();
+  text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  return JSON.parse(text);
 }
 
 // ─── State management ────────────────────────────────────────────────────────
@@ -119,7 +125,7 @@ async function publishComparison(topic) {
   const [tool1Name, tool2Name] = topic.split(/\s+vs\s+/i).map(s => s.trim());
   const slug = `${tool1Name.toLowerCase().replace(/\s+/g, "-")}-vs-${tool2Name.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const data = await askGemini(
+  const data = await askGrok(
     `Generate ComparisonData JSON for: "${tool1Name} vs ${tool2Name}"\nslug: "${slug}"\ncanonicalPath: "/compare/${slug}"`,
     `You are an expert AI tool reviewer. Generate detailed, honest, SEO-optimized comparison data.
 Respond with ONLY valid JSON — no markdown. Match this exact structure with these fields:
@@ -206,7 +212,7 @@ async function publishNews() {
   ];
   const angle = topicAngles[existingSlugs.length % topicAngles.length];
 
-  const article = await askGemini(`You are an AI industry journalist. Today is ${today}.
+  const article = await askGrok(`You are an AI industry journalist. Today is ${today}.
 
 Write a news article focused on: ${angle}
 
