@@ -6,7 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import nodemailer from "nodemailer";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -23,10 +23,16 @@ if (fs.existsSync(envFile)) {
 
 const EMAIL_USER = process.env.EMAIL_USER || "saivikasreddy95@gmail.com";
 const EMAIL_PASS = process.env.EMAIL_PASS;
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const SITE = "https://www.aitoolduel.com";
+// "openrouter/free" always resolves to whatever free-tier models
+// currently exist on OpenRouter, so it doesn't go stale like a specific
+// "<model>:free" slug does when that model rotates out of the free lineup.
+const MODEL = "openrouter/free";
 
-const client = new Anthropic({ apiKey: ANTHROPIC_API_KEY });
+if (!OPENROUTER_API_KEY) { console.error("❌ Missing OPENROUTER_API_KEY"); process.exit(1); }
+
+const llm = new OpenAI({ apiKey: OPENROUTER_API_KEY, baseURL: "https://openrouter.ai/api/v1" });
 
 // ─── Gather all site data ─────────────────────────────────────────────────────
 
@@ -92,13 +98,12 @@ Write a professional weekly report email with these sections:
 Write in a clear, honest tone. Don't exaggerate. The owner wants real answers, not fluff.
 Keep it under 600 words total. Use emojis for section headers.`;
 
-  const response = await client.messages.create({
-    model: "claude-sonnet-4-6",
-    max_tokens: 1200,
+  const completion = await llm.chat.completions.create({
+    model: MODEL,
     messages: [{ role: "user", content: prompt }],
   });
 
-  return response.content[0].text;
+  return completion.choices[0].message.content;
 }
 
 // ─── Send email ───────────────────────────────────────────────────────────────
@@ -176,11 +181,16 @@ ${data.allComparisons.map(s => `<div class="pages"><a href="${SITE}/compare/${s}
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-console.log("📊 Generating weekly report...");
-const data = getSiteData();
-console.log(`📄 ${data.totalComparisons} comparisons, ${data.totalNews} news articles, ${data.recentRuns.length} published this week`);
+try {
+  console.log("📊 Generating weekly report...");
+  const data = getSiteData();
+  console.log(`📄 ${data.totalComparisons} comparisons, ${data.totalNews} news articles, ${data.recentRuns.length} published this week`);
 
-const report = await generateReport(data);
-await sendReport(report, data);
+  const report = await generateReport(data);
+  await sendReport(report, data);
 
-console.log("✅ Weekly report done!");
+  console.log("✅ Weekly report done!");
+} catch (e) {
+  console.error("❌ Weekly report failed:", e.message);
+  process.exit(1);
+}
