@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import StarRating from "./StarRating";
 import GithubStars from "./GithubStars";
+import { StaggerContainer, StaggerItem, HoverLift } from "./motion";
 import { tools, allCategories, categoryColors, type ToolCategory } from "@/lib/tools";
 
 const FREE_TOOLS = [
@@ -123,71 +124,72 @@ export default function ToolsDirectory() {
           No tools found. Try a different search or category.
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filtered.map((tool) => (
-            <div
-              key={tool.slug}
-              className="card hover:border-orange-400/30 transition-all duration-200 flex flex-col"
-            >
-              {/* Card header */}
-              <div className="p-5 flex-1">
-                <div className="flex items-start gap-3 mb-3">
-                  {/* Logo placeholder */}
-                  <div
-                    className={`${tool.color} w-10 h-10 rounded-lg flex items-center justify-center text-white font-extrabold text-lg shrink-0`}
-                  >
-                    {tool.name[0]}
-                  </div>
-                  <div className="min-w-0">
-                    <h3 className="font-bold text-white text-base leading-tight">
-                      {tool.name}
-                    </h3>
-                    <span
-                      className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mt-1 ${categoryColors[tool.category]}`}
-                    >
-                      {tool.category}
-                    </span>
-                  </div>
-                </div>
-
-                <p className="text-slate-400 text-sm leading-relaxed mb-3">
-                  {tool.tagline}
-                </p>
-
-                <div className="flex items-center gap-2 flex-wrap">
-                  <StarRating rating={tool.rating} />
-                  <GithubStars toolName={tool.name} />
-                </div>
-              </div>
-
-              {/* Card footer */}
-              <div className="px-5 pb-5 space-y-2">
-                <a
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary w-full justify-center text-sm py-2"
-                >
-                  {tool.ctaLabel}
-                </a>
-
-                {tool.comparisons.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {tool.comparisons.map((c) => (
-                      <Link
-                        key={c.href}
-                        href={c.href}
-                        className="text-xs text-orange-300 hover:text-orange-200 hover:underline transition-colors"
+            <StaggerItem key={tool.slug}>
+              <HoverLift className="h-full">
+                <div className="card hover:border-orange-400/30 transition-all duration-200 flex flex-col h-full">
+                  {/* Card header */}
+                  <div className="p-5 flex-1">
+                    <div className="flex items-start gap-3 mb-3">
+                      {/* Logo placeholder */}
+                      <div
+                        className={`${tool.color} w-10 h-10 rounded-lg flex items-center justify-center text-white font-extrabold text-lg shrink-0`}
                       >
-                        See {c.label} →
-                      </Link>
-                    ))}
+                        {tool.name[0]}
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="font-bold text-white text-base leading-tight">
+                          {tool.name}
+                        </h3>
+                        <span
+                          className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mt-1 ${categoryColors[tool.category]}`}
+                        >
+                          {tool.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                      {tool.tagline}
+                    </p>
+
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <StarRating rating={tool.rating} />
+                      <GithubStars toolName={tool.name} />
+                    </div>
                   </div>
-                )}
-              </div>
-            </div>
+
+                  {/* Card footer */}
+                  <div className="px-5 pb-5 space-y-2">
+                    <a
+                      href={tool.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary w-full justify-center text-sm py-2"
+                    >
+                      {tool.ctaLabel}
+                    </a>
+
+                    {tool.comparisons.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {tool.comparisons.map((c) => (
+                          <Link
+                            key={c.href}
+                            href={c.href}
+                            className="text-xs text-orange-300 hover:text-orange-200 hover:underline transition-colors"
+                          >
+                            See {c.label} →
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </HoverLift>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       )}
     </div>
   );
