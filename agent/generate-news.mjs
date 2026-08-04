@@ -1,7 +1,7 @@
 // AI Agent: Researches recent AI news and publishes a news article
 // Usage: node agent/generate-news.mjs
 
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
@@ -20,14 +20,16 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "gemini-2.0-flash";
+// MUST keep the ":free" suffix — that's what makes OpenRouter route this
+// at no cost. Dropping it would silently start billing the account.
+const MODEL = "meta-llama/llama-3.3-70b-instruct:free";
 
-if (!GEMINI_API_KEY) { console.error("❌ Missing GEMINI_API_KEY"); process.exit(1); }
+if (!OPENROUTER_API_KEY) { console.error("❌ Missing OPENROUTER_API_KEY"); process.exit(1); }
 
-const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+const llm = new OpenAI({ apiKey: OPENROUTER_API_KEY, baseURL: "https://openrouter.ai/api/v1" });
 
 console.log("\n🤖 AI News Agent starting...");
 console.log("🔍 Researching latest AI news...\n");
@@ -90,12 +92,14 @@ Requirements:
 
 let articleData;
 try {
-  const response = await ai.models.generateContent({
+  const completion = await llm.chat.completions.create({
     model: MODEL,
-    contents: researchPrompt,
-    config: { responseMimeType: "application/json" },
+    messages: [{ role: "user", content: researchPrompt }],
+    response_format: { type: "json_object" },
   });
-  articleData = JSON.parse(response.text);
+  let text = completion.choices[0].message.content.trim();
+  text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  articleData = JSON.parse(text);
   console.log(`✅ Article generated: "${articleData.title}"`);
 } catch (e) {
   console.error("❌ Failed to generate/parse article:", e.message);

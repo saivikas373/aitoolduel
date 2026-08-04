@@ -28,7 +28,7 @@ jobs:
       - name: Check for new model launches and publish
         id: check
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: node agent/check-model-launches.mjs
 
