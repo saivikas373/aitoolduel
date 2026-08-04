@@ -31,9 +31,11 @@ if (fs.existsSync(envFile)) {
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-// MUST keep the ":free" suffix — that's what makes OpenRouter route this
-// at no cost. Dropping it would silently start billing the account.
-const MODEL = "meta-llama/llama-3.3-70b-instruct:free";
+// "openrouter/free" is OpenRouter's own router slug — it always resolves
+// to whatever free-tier models currently exist, so it doesn't go stale
+// the way a specific "<model>:free" slug does when that model rotates
+// out of the free lineup.
+const MODEL = "openrouter/free";
 
 if (!OPENROUTER_API_KEY) { console.error("❌ Missing OPENROUTER_API_KEY"); process.exit(1); }
 
