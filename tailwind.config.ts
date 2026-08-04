@@ -22,7 +22,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         glow: "0 0 40px -8px rgba(249, 115, 22, 0.35)",

@@ -3,6 +3,7 @@ import AdSenseAd from "./AdSenseAd";
 import StarRating from "./StarRating";
 import DuelVote from "./DuelVote";
 import GithubStars from "./GithubStars";
+import { FadeIn, HoverLift } from "./motion";
 import type { ComparisonData } from "@/lib/comparisons";
 
 /* ── Brand favicon domains (Google favicon service) ─────────────────── */
@@ -157,7 +158,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
 
       {/* ── HERO ── */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-14">
-        <div className="max-w-4xl mx-auto px-4 text-center">
+        <FadeIn className="max-w-4xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-3 sm:gap-8 mb-6">
             <div className="text-center">
               <ToolAvatar name={tool1.name} />
@@ -183,7 +184,7 @@ export default function ComparisonPage({ data }: { data: ComparisonData }) {
           >
             Our Verdict: {data.verdict}
           </span>
-        </div>
+        </FadeIn>
       </section>
 
       <div className="max-w-4xl mx-auto px-4 py-10">
