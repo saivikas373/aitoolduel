@@ -1,9 +1,9 @@
 // AI MODEL LAUNCH WATCH AGENT (free-tier)
 // Detects genuinely new major AI model launches by reading real, free
 // sources — RSS feeds from major AI labs' own blogs, plus Hacker News —
-// then uses xAI's Grok only to classify which headlines are genuine
-// flagship launches and to write a factual article for each new one.
-// No paid search tool, no API cost for the detection step at all.
+// then uses a free LLM (via OpenRouter) only to classify which headlines
+// are genuine flagship launches and to write a factual article for each
+// new one. No paid search tool, no API cost for the detection step at all.
 //
 // Manual run: node agent/check-model-launches.mjs
 // Auto: triggered by GitHub Actions every 6 hours (.github/workflows/model-launch-watch.yml)
@@ -28,14 +28,16 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GROK_API_KEY = process.env.GROK_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "grok-4";
+// MUST keep the ":free" suffix — that's what makes OpenRouter route this
+// at no cost. Dropping it would silently start billing the account.
+const MODEL = "meta-llama/llama-3.3-70b-instruct:free";
 
-if (!GROK_API_KEY) { console.error("❌ Missing GROK_API_KEY"); process.exit(1); }
+if (!OPENROUTER_API_KEY) { console.error("❌ Missing OPENROUTER_API_KEY"); process.exit(1); }
 
-const grok = new OpenAI({ apiKey: GROK_API_KEY, baseURL: "https://api.x.ai/v1" });
+const llm = new OpenAI({ apiKey: OPENROUTER_API_KEY, baseURL: "https://openrouter.ai/api/v1" });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
 
@@ -65,8 +67,8 @@ function launchKey(provider, modelName) {
   return `${provider}:${modelName}`.toLowerCase().replace(/[^a-z0-9:]+/g, "-");
 }
 
-async function askGrok(prompt) {
-  const completion = await grok.chat.completions.create({
+async function askLLM(prompt) {
+  const completion = await llm.chat.completions.create({
     model: MODEL,
     messages: [{ role: "user", content: prompt }],
     response_format: { type: "json_object" },
@@ -132,9 +134,9 @@ async function fetchHackerNewsSignals() {
   }
 }
 
-// ─── Step 2: Ask Grok to classify genuine major launches ─────────────────────
+// ─── Step 2: Ask the LLM to classify genuine major launches ──────────────────
 //
-// Note: this does NOT catch errors from askGrok — a real API failure (bad
+// Note: this does NOT catch errors from askLLM — a real API failure (bad
 // key, quota exhausted, etc.) must propagate up and fail the run loudly.
 // Only "the model returned zero genuine launches" is a valid, silent no-op;
 // an API call that never succeeded is a different thing and should never be
@@ -156,7 +158,7 @@ Already covered — do NOT re-report these: ${alreadyCovered}
 Respond with ONLY this JSON shape: {"launches":[{"provider":"string","modelName":"string","announcementDate":"YYYY-MM-DD","sourceUrl":"string","summary":"1-2 sentence factual summary based only on the headline given"}]}
 If none qualify, respond {"launches":[]}`;
 
-  const parsed = await askGrok(prompt);
+  const parsed = await askLLM(prompt);
 
   const launches = Array.isArray(parsed.launches) ? parsed.launches : [];
   const coveredKeys = new Set(state.publishedLaunches.map((l) => launchKey(l.provider, l.modelName)));
@@ -213,7 +215,7 @@ Respond with ONLY valid JSON:
 }
 Requirements: 4-5 sections, 3 paragraphs each, 5 FAQs, all grounded in the facts given above.`;
 
-  const article = await askGrok(prompt);
+  const article = await askLLM(prompt);
   article.sections = fixSections(article.sections);
 
   // Ensure slug uniqueness
@@ -273,7 +275,7 @@ function pushToGitHub(message) {
 
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 
-console.log(`\n🛰️  Model Launch Watch (free RSS/HN + Grok) — ${today}`);
+console.log(`\n🛰️  Model Launch Watch (free RSS/HN + OpenRouter) — ${today}`);
 console.log("=".repeat(50));
 
 try {

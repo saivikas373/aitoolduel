@@ -22,23 +22,25 @@ if (fs.existsSync(envFile)) {
   }
 }
 
-const GROK_API_KEY = process.env.GROK_API_KEY;
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const GITHUB_REPO = "saivikas373/aitoolduel";
-const MODEL = "grok-4";
+// MUST keep the ":free" suffix — that's what makes OpenRouter route this
+// at no cost. Dropping it would silently start billing the account.
+const MODEL = "meta-llama/llama-3.3-70b-instruct:free";
 
-if (!GROK_API_KEY) { console.error("❌ Missing GROK_API_KEY"); process.exit(1); }
+if (!OPENROUTER_API_KEY) { console.error("❌ Missing OPENROUTER_API_KEY"); process.exit(1); }
 
-const grok = new OpenAI({ apiKey: GROK_API_KEY, baseURL: "https://api.x.ai/v1" });
+const llm = new OpenAI({ apiKey: OPENROUTER_API_KEY, baseURL: "https://openrouter.ai/api/v1" });
 const today = new Date().toISOString().split("T")[0];
 const STATE_FILE = path.join(__dirname, "agent-state.json");
 
-async function askGrok(prompt, systemInstruction) {
+async function askLLM(prompt, systemInstruction) {
   const messages = [];
   if (systemInstruction) messages.push({ role: "system", content: systemInstruction });
   messages.push({ role: "user", content: prompt });
 
-  const completion = await grok.chat.completions.create({
+  const completion = await llm.chat.completions.create({
     model: MODEL,
     messages,
     response_format: { type: "json_object" },
@@ -125,7 +127,7 @@ async function publishComparison(topic) {
   const [tool1Name, tool2Name] = topic.split(/\s+vs\s+/i).map(s => s.trim());
   const slug = `${tool1Name.toLowerCase().replace(/\s+/g, "-")}-vs-${tool2Name.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const data = await askGrok(
+  const data = await askLLM(
     `Generate ComparisonData JSON for: "${tool1Name} vs ${tool2Name}"\nslug: "${slug}"\ncanonicalPath: "/compare/${slug}"`,
     `You are an expert AI tool reviewer. Generate detailed, honest, SEO-optimized comparison data.
 Respond with ONLY valid JSON — no markdown. Match this exact structure with these fields:
@@ -212,7 +214,7 @@ async function publishNews() {
   ];
   const angle = topicAngles[existingSlugs.length % topicAngles.length];
 
-  const article = await askGrok(`You are an AI industry journalist. Today is ${today}.
+  const article = await askLLM(`You are an AI industry journalist. Today is ${today}.
 
 Write a news article focused on: ${angle}
 
