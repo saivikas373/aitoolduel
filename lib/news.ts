@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "google-ai-amie-research-model-2026-08-13",
+    "title": "Google AI Unveils AMIE, First Real‑Time Video Consultation Model",
+    "metaTitle": "Google AI AMIE Launch 2026 – First Real‑Time Video Consultation",
+    "metaDescription": "Google AI's new AMIE model demonstrates real‑time clinical video consultations in a first‑of‑its‑kind study, marking a milestone in medical AI.",
+    "date": "2026-08-11",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Google AI has announced AMIE, a research medical AI system that showcases real‑time clinical video consultation capabilities. In a first‑of‑its‑kind study, AMIE demonstrates the feasibility of live video interactions between patients and clinicians using AI assistance. The launch marks a significant step toward integrating AI into routine medical practice.",
+    "sections": [
+      {
+        "h2": "Background",
+        "paragraphs": [
+          "Google AI, a division of Alphabet, has a history of developing large language models and AI research. The company announced AMIE on August 11, 2026, as part of its ongoing efforts to apply AI to healthcare. AMIE is positioned as a research prototype rather than a commercial product.",
+          "The model is designed to support real‑time clinical video consultations, a capability that had not been demonstrated in a controlled study before. It builds on Google AI's expertise in computer vision and natural language processing. The research team highlighted that AMIE can process video streams and generate clinical insights during live interactions.",
+          "The announcement was accompanied by a blog post on Google AI's official site, detailing the study design and objectives. The study involved a limited cohort of clinicians and patients to evaluate the system's performance. The results were presented as a proof of concept for future development."
+        ]
+      },
+      {
+        "h2": "Technical Overview",
+        "paragraphs": [
+          "AMIE integrates multimodal inputs, combining visual data from video feeds with textual prompts from clinicians. The system processes frames in real time, applying computer vision algorithms to identify relevant anatomical features. It then generates contextual responses to support clinical decision making.",
+          "The model leverages Google AI's existing infrastructure for low‑latency inference, ensuring that video streams are analyzed without perceptible delay. It also incorporates privacy safeguards, such as on‑device processing of sensitive data. The research team emphasized that the system is not yet fully validated for clinical deployment.",
+          "While the exact architecture details are proprietary, the study notes that AMIE uses a combination of transformer‑based models and vision encoders. The system is trained on a curated dataset of medical video recordings and associated clinical notes. The training process was conducted in a secure environment to protect patient confidentiality."
+        ]
+      },
+      {
+        "h2": "Study Results",
+        "paragraphs": [
+          "In the first‑of‑its‑kind study, AMIE successfully facilitated live video consultations between patients and clinicians. The system was able to maintain real‑time performance throughout the sessions. The study demonstrated that AI can assist clinicians during video encounters without interrupting the flow of conversation.",
+          "Participants reported that the AI's suggestions were timely and relevant to the clinical context. The research team collected qualitative feedback on usability and perceived usefulness. No adverse events were reported during the study period.",
+          "The study's findings suggest that real‑time AI assistance in video consultations is technically feasible. However, the research team cautions that further validation is required before the system can be deployed in routine care. The next phase will involve larger trials and regulatory review."
+        ]
+      },
+      {
+        "h2": "Implications and Next Steps",
+        "paragraphs": [
+          "AMIE's launch signals a potential shift toward AI‑augmented telemedicine. The research demonstrates that AI can be integrated into live video encounters, opening possibilities for remote diagnostics and triage. The study lays groundwork for future commercial offerings.",
+          "Google AI plans to continue refining the model, focusing on accuracy, safety, and user experience. The company will likely conduct additional studies to assess performance across diverse patient populations. Collaboration with healthcare partners will be essential for scaling the technology.",
+          "Regulatory pathways for AI in medicine remain complex, and the research team acknowledges that compliance will be a critical factor. The team is exploring partnerships with clinical institutions to facilitate data collection and validation. The long‑term vision is to support clinicians with AI tools that enhance patient care."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is AMIE?",
+        "answer": "AMIE is a research medical AI system developed by Google AI that demonstrates real‑time clinical video consultation capabilities in a first‑of‑its‑kind study."
+      },
+      {
+        "question": "When was AMIE announced?",
+        "answer": "AMIE was announced on August 11, 2026, as part of Google AI's public blog post."
+      },
+      {
+        "question": "Is AMIE available for clinical use?",
+        "answer": "No, AMIE is a research prototype and has not yet been approved or released for commercial clinical use."
+      },
+      {
+        "question": "What does the study show?",
+        "answer": "The study shows that AMIE can facilitate live video consultations with real‑time performance and that AI can support clinicians during video encounters."
+      },
+      {
+        "question": "What are the next steps for AMIE?",
+        "answer": "Google AI plans to conduct larger trials, engage regulatory review, and explore partnerships with healthcare institutions to further validate and potentially commercialize the technology."
+      }
+    ]
+  },
+
+  {
     "slug": "claude-4-release-august-2026",
     "title": "Anthropic Unveils Claude 4: A Quantum Leap in Conversational AI",
     "metaTitle": "Claude 4 Launch 2026: Anthropic's New AI Model",
