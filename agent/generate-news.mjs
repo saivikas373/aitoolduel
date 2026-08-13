@@ -92,6 +92,18 @@ Requirements:
 - Include specific details: model names, pricing, dates, company names
 - Make it genuinely useful for someone following AI tools`;
 
+// openrouter/free routes to whichever free model is live at that moment,
+// and not all of them honor response_format: json_object — some prepend a
+// safety tag or a chatty preamble before the actual JSON. Strip anything
+// outside the outermost { } before parsing instead of trusting the model
+// to return pure JSON.
+function extractJson(text) {
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start === -1 || end === -1 || end < start) return text;
+  return text.slice(start, end + 1);
+}
+
 let articleData;
 try {
   const completion = await llm.chat.completions.create({
@@ -101,7 +113,7 @@ try {
   });
   let text = completion.choices[0].message.content.trim();
   text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  articleData = JSON.parse(text);
+  articleData = JSON.parse(extractJson(text));
   console.log(`✅ Article generated: "${articleData.title}"`);
 } catch (e) {
   console.error("❌ Failed to generate/parse article:", e.message);

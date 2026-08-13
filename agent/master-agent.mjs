@@ -49,7 +49,19 @@ async function askLLM(prompt, systemInstruction) {
   });
   let text = completion.choices[0].message.content.trim();
   text = text.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
-  return JSON.parse(text);
+  return JSON.parse(extractJson(text));
+}
+
+// openrouter/free routes to whichever free model is live at that moment,
+// and not all of them honor response_format: json_object — some prepend a
+// safety tag or a chatty preamble before the actual JSON. Strip anything
+// outside the outermost { } before parsing instead of trusting the model
+// to return pure JSON.
+function extractJson(text) {
+  const start = text.indexOf("{");
+  const end = text.lastIndexOf("}");
+  if (start === -1 || end === -1 || end < start) return text;
+  return text.slice(start, end + 1);
 }
 
 // ─── State management ────────────────────────────────────────────────────────
