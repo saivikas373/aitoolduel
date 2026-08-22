@@ -212,6 +212,12 @@
       "published": [
         "google-ai-amie-research-model-2026-08-13"
       ]
+    },
+    {
+      "date": "2026-08-22",
+      "action": "launch-check",
+      "found": 1,
+      "published": []
     }
   ],
   "publishedComparisons": [
