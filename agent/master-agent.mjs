@@ -417,6 +417,7 @@ try {
 
   state.runs.push({ date: today, action: action.type, slug: publishedSlug });
   saveState(state);
+  pushToGitHub(`chore: update agent state after master agent run - ${today}`);
 
   console.log(`\n✅ Master agent complete!`);
   console.log(`📊 Total runs: ${state.runs.length}`);
