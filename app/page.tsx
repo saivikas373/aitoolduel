@@ -29,7 +29,7 @@ const comparisons = [
     description:
       "OpenAI's flagship vs Anthropic's thoughtful alternative. Who wins for writing, coding, and everyday AI tasks?",
     badge: "Most Popular",
-    badgeColor: "bg-orange-500/15 text-orange-300 border border-orange-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Writing", "Coding", "Chat"],
   },
   {
@@ -38,7 +38,7 @@ const comparisons = [
     description:
       "Google's AI powerhouse vs the chatbot that started it all. Which AI assistant delivers more value in 2025?",
     badge: "Hot",
-    badgeColor: "bg-red-500/15 text-red-300 border border-red-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Google", "Multimodal", "Search"],
   },
   {
@@ -47,7 +47,7 @@ const comparisons = [
     description:
       "The battle for AI image generation supremacy. Artistic quality vs ease of use — which image AI should you use?",
     badge: "Creative",
-    badgeColor: "bg-purple-500/15 text-purple-300 border border-purple-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Images", "Art", "Design"],
   },
   {
@@ -56,7 +56,7 @@ const comparisons = [
     description:
       "Two AI coding assistants, two different philosophies. Which one will make you a faster, better developer?",
     badge: "For Devs",
-    badgeColor: "bg-blue-500/15 text-blue-300 border border-blue-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Coding", "IDE", "AI Dev"],
   },
   {
@@ -65,7 +65,7 @@ const comparisons = [
     description:
       "AI-native search vs the king of search engines. Is Perplexity finally good enough to replace Google?",
     badge: "Search",
-    badgeColor: "bg-green-500/15 text-green-300 border border-green-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Search", "Research", "Answers"],
   },
   {
@@ -74,7 +74,7 @@ const comparisons = [
     description:
       "Anthropic's writing powerhouse vs Google's deeply integrated AI. Which is better for serious work in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Writing", "Workspace", "Work"],
   },
   {
@@ -83,7 +83,7 @@ const comparisons = [
     description:
       "AI-synthesized answers vs the world's biggest search index. Can ChatGPT actually replace Google?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Search", "AI", "Research"],
   },
   {
@@ -92,7 +92,7 @@ const comparisons = [
     description:
       "The AI-native editor vs the universal coding assistant. Which tool makes developers most productive in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Coding", "IDE", "Agent"],
   },
   {
@@ -101,7 +101,7 @@ const comparisons = [
     description:
       "Anthropic's agentic CLI coder vs OpenAI's cloud coding agent. Which AI coding agent handles real engineering tasks better?",
     badge: "Trending",
-    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Coding", "Agents", "CLI"],
   },
   {
@@ -110,7 +110,7 @@ const comparisons = [
     description:
       "xAI's real-time X-integrated chatbot vs OpenAI's market leader. Which wins for daily AI tasks in April 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Chat", "Real-Time", "X/Twitter"],
   },
   {
@@ -119,7 +119,7 @@ const comparisons = [
     description:
       "China's open-source cost-killer vs the world's most popular AI. Which delivers more value for money in 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Open Source", "Cost", "Reasoning"],
   },
   {
@@ -128,7 +128,7 @@ const comparisons = [
     description:
       "The two most powerful AI frontier models of 2026 head-to-head. Which flagship wins for coding, writing, and reasoning?",
     badge: "Trending",
-    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Frontier", "Coding", "Writing"],
   },
   {
@@ -137,7 +137,7 @@ const comparisons = [
     description:
       "Meta's open-source powerhouse vs OpenAI's commercial king. Which AI model is right for your workflow in 2026?",
     badge: "Trending",
-    badgeColor: "bg-rose-500/15 text-rose-300 border border-rose-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Open Source", "Privacy", "Self-Host"],
   },
   {
@@ -146,7 +146,7 @@ const comparisons = [
     description:
       "OpenAI's multimodal omni model vs Anthropic's best-value writer. Two $20/month models — which delivers more for your work?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Multimodal", "Writing", "Coding"],
   },
   {
@@ -155,7 +155,7 @@ const comparisons = [
     description:
       "The AI you pay for vs the AI already on your phone. Is Meta's free Llama 4-powered assistant good enough to replace ChatGPT?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Free", "WhatsApp", "Casual Use"],
   },
   {
@@ -164,7 +164,7 @@ const comparisons = [
     description:
       "AI search with cited sources vs AI chat that creates. Which tool wins for research, work, and daily questions in 2026?",
     badge: "New",
-    badgeColor: "bg-teal-500/15 text-teal-300 border border-teal-400/20",
+    badgeColor: "bg-parchment text-ink-muted-80 border border-hairline",
     tags: ["Search", "Research", "Citations"],
   },
 ];
@@ -197,24 +197,24 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 px-4">
+      <section className="bg-tile1 text-white py-20 px-4">
         <FadeIn className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 border border-white/15 rounded-pill px-4 py-1.5 text-sm font-semibold mb-6">
             <span>⚔</span> 16 Comparisons · 25+ Tools Reviewed
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-5">
-            AI Tool <span className="text-orange-500">Duel</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5 tracking-tight">
+            AI Tool <span className="text-primary-on-dark">Duel</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-slate-300 font-medium mb-3">
+          <p className="text-xl sm:text-2xl text-white/80 font-semibold mb-3">
             Find the Best AI Tool for You
           </p>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8">
             Honest, in-depth comparisons of the most popular AI tools. We cut
             through the hype so you can pick the right tool with confidence.
           </p>
           <a
             href="#comparisons"
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-focus text-white font-bold px-8 py-4 rounded-pill text-lg transition-colors"
           >
             Browse Comparisons ↓
           </a>
@@ -237,14 +237,14 @@ export default function HomePage() {
               <HoverLift>
                 <Link
                   href="/tools"
-                  className="group flex items-center gap-4 bg-gradient-to-br from-slate-900/80 to-slate-800/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-orange-400/30 transition-all"
+                  className="group flex items-center gap-4 card p-5 hover:border-primary/30 transition-colors"
                 >
                   <div className="text-3xl shrink-0">🗂️</div>
                   <div>
-                    <div className="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-1">Browse All</div>
-                    <h2 className="text-base font-extrabold mb-1">AI Tools Directory</h2>
-                    <p className="text-slate-400 text-xs">20+ tools rated and filterable.</p>
-                    <span className="mt-2 inline-block text-orange-400 text-xs font-semibold group-hover:text-orange-300 transition-colors">
+                    <div className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Browse All</div>
+                    <h2 className="text-base font-bold mb-1 text-ink">AI Tools Directory</h2>
+                    <p className="text-ink-muted-48 text-xs">20+ tools rated and filterable.</p>
+                    <span className="mt-2 inline-block text-primary text-xs font-semibold transition-colors">
                       Explore →
                     </span>
                   </div>
@@ -255,14 +255,14 @@ export default function HomePage() {
               <HoverLift>
                 <Link
                   href="/best-ai-tools"
-                  className="group flex items-center gap-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl p-5 shadow-lg shadow-orange-500/20 hover:shadow-orange-400/30 transition-all"
+                  className="group flex items-center gap-4 bg-primary text-white rounded-lg p-5 transition-colors hover:bg-primary-focus"
                 >
                   <div className="text-3xl shrink-0">🏆</div>
                   <div>
-                    <div className="text-xs font-semibold text-orange-100 uppercase tracking-wide mb-1">Top Picks</div>
-                    <h2 className="text-base font-extrabold mb-1">Best AI Tools 2026</h2>
-                    <p className="text-orange-100 text-xs">Our top picks by category.</p>
-                    <span className="mt-2 inline-block text-white text-xs font-semibold group-hover:text-orange-100 transition-colors">
+                    <div className="text-xs font-semibold text-white/70 uppercase tracking-wide mb-1">Top Picks</div>
+                    <h2 className="text-base font-bold mb-1">Best AI Tools 2026</h2>
+                    <p className="text-white/70 text-xs">Our top picks by category.</p>
+                    <span className="mt-2 inline-block text-white text-xs font-semibold transition-colors">
                       See picks →
                     </span>
                   </div>
@@ -273,14 +273,14 @@ export default function HomePage() {
               <HoverLift>
                 <Link
                   href="/tools/ai-detector"
-                  className="group flex items-center gap-4 bg-gradient-to-br from-slate-800/80 to-slate-700/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-orange-400/30 transition-all"
+                  className="group flex items-center gap-4 card p-5 hover:border-primary/30 transition-colors"
                 >
                   <div className="text-3xl shrink-0">🔍</div>
                   <div>
-                    <div className="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-1">Free Tool</div>
-                    <h2 className="text-base font-extrabold mb-1">AI Text Detector</h2>
-                    <p className="text-slate-400 text-xs">Check if text was written by AI.</p>
-                    <span className="mt-2 inline-block text-orange-400 text-xs font-semibold group-hover:text-orange-300 transition-colors">
+                    <div className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Free Tool</div>
+                    <h2 className="text-base font-bold mb-1 text-ink">AI Text Detector</h2>
+                    <p className="text-ink-muted-48 text-xs">Check if text was written by AI.</p>
+                    <span className="mt-2 inline-block text-primary text-xs font-semibold transition-colors">
                       Try free →
                     </span>
                   </div>
@@ -291,14 +291,14 @@ export default function HomePage() {
               <HoverLift>
                 <Link
                   href="/tools/prompt-generator"
-                  className="group flex items-center gap-4 bg-gradient-to-br from-purple-900/80 to-purple-800/80 border border-white/10 backdrop-blur-xl text-white rounded-2xl p-5 hover:border-purple-400/30 transition-all"
+                  className="group flex items-center gap-4 card p-5 hover:border-primary/30 transition-colors"
                 >
                   <div className="text-3xl shrink-0">✨</div>
                   <div>
-                    <div className="text-xs font-semibold text-purple-300 uppercase tracking-wide mb-1">Free Tool</div>
-                    <h2 className="text-base font-extrabold mb-1">Prompt Generator</h2>
-                    <p className="text-purple-200 text-xs">50+ templates for any AI tool.</p>
-                    <span className="mt-2 inline-block text-purple-300 text-xs font-semibold group-hover:text-purple-200 transition-colors">
+                    <div className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Free Tool</div>
+                    <h2 className="text-base font-bold mb-1 text-ink">Prompt Generator</h2>
+                    <p className="text-ink-muted-48 text-xs">50+ templates for any AI tool.</p>
+                    <span className="mt-2 inline-block text-primary text-xs font-semibold transition-colors">
                       Generate →
                     </span>
                   </div>
@@ -311,10 +311,10 @@ export default function HomePage() {
         {/* ── COMPARISONS GRID ── */}
         <section id="comparisons" className="py-12">
           <FadeIn className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-white mb-3">
+            <h2 className="text-3xl font-bold text-ink mb-3">
               All Comparisons
             </h2>
-            <p className="text-slate-400 text-lg">
+            <p className="text-ink-muted-48 text-lg">
               Pick a matchup to get the full breakdown
             </p>
           </FadeIn>
@@ -325,23 +325,23 @@ export default function HomePage() {
                 <HoverLift>
                   <Link
                     href={c.href}
-                    className="group card p-6 hover:border-orange-400/30 hover:shadow-orange-500/10 transition-all duration-200 block"
+                    className="group card p-6 hover:border-primary/30 transition-colors duration-200 block"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <span
-                        className={`text-xs font-semibold px-2.5 py-1 rounded-full ${c.badgeColor}`}
+                        className={`text-xs font-semibold px-2.5 py-1 rounded-pill ${c.badgeColor}`}
                       >
                         {c.badge}
                       </span>
-                      <span className="text-slate-500 group-hover:text-orange-400 transition-colors text-xl">
+                      <span className="text-ink-muted-48 group-hover:text-primary transition-colors text-xl">
                         →
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
+                    <h3 className="text-xl font-bold text-ink mb-2 group-hover:text-primary transition-colors">
                       {c.title}
                     </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                    <p className="text-ink-muted-80 text-sm leading-relaxed mb-4">
                       {c.description}
                     </p>
 
@@ -349,15 +349,15 @@ export default function HomePage() {
                       {c.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="text-xs text-slate-400 bg-white/10 px-2 py-0.5 rounded-md"
+                          className="text-xs text-ink-muted-80 bg-parchment px-2 py-0.5 rounded-md"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="mt-4 pt-4 border-t border-white/10">
-                      <span className="text-orange-400 font-semibold text-sm group-hover:text-orange-300 transition-colors">
+                    <div className="mt-4 pt-4 border-t border-hairline">
+                      <span className="text-primary font-semibold text-sm transition-colors">
                         Compare Now →
                       </span>
                     </div>
@@ -374,12 +374,12 @@ export default function HomePage() {
         </section>
 
         {/* ── WHY USE THIS SITE ── */}
-        <section className="py-12 border-t border-white/10">
+        <section className="py-12 border-t border-hairline bg-parchment -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
           <FadeIn className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-white mb-3">
+            <h2 className="text-3xl font-bold text-ink mb-3">
               Why Use AI Tool Duel?
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            <p className="text-ink-muted-48 text-lg max-w-2xl mx-auto">
               There&apos;s a lot of noise in the AI space. We&apos;re here to give you
               signal.
             </p>
@@ -390,8 +390,8 @@ export default function HomePage() {
               <StaggerItem key={point.title}>
                 <div className="card p-6 text-center h-full">
                   <div className="text-4xl mb-3">{point.icon}</div>
-                  <h3 className="font-bold text-white mb-2">{point.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed">
+                  <h3 className="font-bold text-ink mb-2">{point.title}</h3>
+                  <p className="text-ink-muted-48 text-sm leading-relaxed">
                     {point.body}
                   </p>
                 </div>
@@ -401,20 +401,20 @@ export default function HomePage() {
         </section>
 
         {/* ── FEATURED PICKS ── */}
-        <section className="py-12 border-t border-white/10">
+        <section className="py-12 border-t border-hairline">
           <FadeIn>
-            <h2 className="text-2xl font-extrabold text-white mb-6 text-center">
+            <h2 className="text-2xl font-bold text-ink mb-6 text-center">
               Our Top Picks Right Now
             </h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-3 gap-6">
             <StaggerItem>
               <HoverLift className="h-full">
-                <div className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-400/20 backdrop-blur-xl rounded-xl p-6 h-full">
-                  <div className="text-sm font-semibold text-blue-300 mb-2">Best for Writing</div>
-                  <div className="text-2xl font-extrabold text-white mb-1">Claude</div>
-                  <p className="text-sm text-slate-400">Beats ChatGPT for long-form writing, nuanced prose, and large document analysis.</p>
-                  <Link href="/compare/chatgpt-vs-claude" className="mt-3 inline-block text-blue-300 font-semibold text-sm hover:underline">
+                <div className="card p-6 h-full">
+                  <div className="text-sm font-semibold text-primary mb-2">Best for Writing</div>
+                  <div className="text-2xl font-bold text-ink mb-1">Claude</div>
+                  <p className="text-sm text-ink-muted-48">Beats ChatGPT for long-form writing, nuanced prose, and large document analysis.</p>
+                  <Link href="/compare/chatgpt-vs-claude" className="mt-3 inline-block text-primary font-semibold text-sm hover:underline">
                     See full comparison →
                   </Link>
                 </div>
@@ -422,11 +422,11 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <HoverLift className="h-full">
-                <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-400/20 backdrop-blur-xl rounded-xl p-6 h-full">
-                  <div className="text-sm font-semibold text-purple-300 mb-2">Best for AI Images</div>
-                  <div className="text-2xl font-extrabold text-white mb-1">Midjourney</div>
-                  <p className="text-sm text-slate-400">Consistently produces the most visually stunning AI artwork of any image generator.</p>
-                  <Link href="/compare/midjourney-vs-dalle" className="mt-3 inline-block text-purple-300 font-semibold text-sm hover:underline">
+                <div className="card p-6 h-full">
+                  <div className="text-sm font-semibold text-primary mb-2">Best for AI Images</div>
+                  <div className="text-2xl font-bold text-ink mb-1">Midjourney</div>
+                  <p className="text-sm text-ink-muted-48">Consistently produces the most visually stunning AI artwork of any image generator.</p>
+                  <Link href="/compare/midjourney-vs-dalle" className="mt-3 inline-block text-primary font-semibold text-sm hover:underline">
                     See full comparison →
                   </Link>
                 </div>
@@ -434,11 +434,11 @@ export default function HomePage() {
             </StaggerItem>
             <StaggerItem>
               <HoverLift className="h-full">
-                <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 border border-green-400/20 backdrop-blur-xl rounded-xl p-6 h-full">
-                  <div className="text-sm font-semibold text-green-300 mb-2">Best for Coding</div>
-                  <div className="text-2xl font-extrabold text-white mb-1">Cursor</div>
-                  <p className="text-sm text-slate-400">Agent mode can plan and execute multi-file changes — a step above Copilot for power users.</p>
-                  <Link href="/compare/github-copilot-vs-cursor" className="mt-3 inline-block text-green-300 font-semibold text-sm hover:underline">
+                <div className="card p-6 h-full">
+                  <div className="text-sm font-semibold text-primary mb-2">Best for Coding</div>
+                  <div className="text-2xl font-bold text-ink mb-1">Cursor</div>
+                  <p className="text-sm text-ink-muted-48">Agent mode can plan and execute multi-file changes — a step above Copilot for power users.</p>
+                  <Link href="/compare/github-copilot-vs-cursor" className="mt-3 inline-block text-primary font-semibold text-sm hover:underline">
                     See full comparison →
                   </Link>
                 </div>
@@ -449,10 +449,10 @@ export default function HomePage() {
 
         {/* ── LATEST NEWS ── */}
         {latestNews.length > 0 && (
-          <section className="py-12 border-t border-white/10">
+          <section className="py-12 border-t border-hairline">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-extrabold text-white">Latest AI News</h2>
-              <Link href="/news" className="text-orange-400 hover:text-orange-300 font-semibold text-sm">
+              <h2 className="text-2xl font-bold text-ink">Latest AI News</h2>
+              <Link href="/news" className="text-primary hover:underline font-semibold text-sm">
                 All news →
               </Link>
             </div>
@@ -460,11 +460,11 @@ export default function HomePage() {
               {latestNews.map((article) => (
                 <StaggerItem key={article.slug}>
                   <HoverLift>
-                    <Link href={`/news/${article.slug}`} className="group card block p-5 hover:border-orange-400/30 transition-all">
-                      <span className="inline-block bg-blue-500/15 text-blue-300 border border-blue-400/20 text-xs font-semibold px-2 py-0.5 rounded-full mb-2">{article.badge}</span>
-                      <h3 className="font-bold text-white mb-2 group-hover:text-orange-400 transition-colors line-clamp-2">{article.title}</h3>
-                      <p className="text-slate-400 text-sm line-clamp-2">{article.summary}</p>
-                      <p className="text-xs text-slate-500 mt-3">{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
+                    <Link href={`/news/${article.slug}`} className="group card block p-5 hover:border-primary/30 transition-colors">
+                      <span className="inline-block bg-parchment text-ink-muted-80 border border-hairline text-xs font-semibold px-2 py-0.5 rounded-pill mb-2">{article.badge}</span>
+                      <h3 className="font-bold text-ink mb-2 group-hover:text-primary transition-colors line-clamp-2">{article.title}</h3>
+                      <p className="text-ink-muted-48 text-sm line-clamp-2">{article.summary}</p>
+                      <p className="text-xs text-ink-muted-48 mt-3">{new Date(article.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</p>
                     </Link>
                   </HoverLift>
                 </StaggerItem>

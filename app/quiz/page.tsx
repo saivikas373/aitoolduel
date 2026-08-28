@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function QuizPage() {
   return (
-    <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-14 px-4">
+    <section className="bg-tile1 text-ink py-14 px-4">
       <div className="max-w-3xl mx-auto">
         <ToolQuiz />
       </div>

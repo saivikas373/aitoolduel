@@ -29,14 +29,14 @@ const navLinks = [
 
 export default function Header() {
   return (
-    <header className="bg-slate-950/60 text-white sticky top-0 z-50 border-b border-white/10 backdrop-blur-xl">
+    <header className="bg-void text-white sticky top-0 z-50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-orange-500 font-extrabold text-xl">⚔</span>
-            <span className="font-extrabold text-lg tracking-tight">
-              AI Tool <span className="text-orange-500">Duel</span>
+            <span className="text-primary-on-dark font-bold text-xl">⚔</span>
+            <span className="font-bold text-lg tracking-tight">
+              AI Tool <span className="text-primary-on-dark">Duel</span>
             </span>
           </Link>
 
@@ -46,7 +46,7 @@ export default function Header() {
               <Link
                 key={c.href}
                 href={c.href}
-                className="text-slate-300 hover:text-orange-400 hover:bg-white/5 text-xs font-medium px-2.5 py-2 rounded-md transition-colors whitespace-nowrap"
+                className="text-white/70 hover:text-primary-on-dark hover:bg-white/5 text-xs font-semibold px-2.5 py-2 rounded-md transition-colors whitespace-nowrap"
               >
                 {c.label}
               </Link>
@@ -55,10 +55,10 @@ export default function Header() {
 
           {/* Mobile: show key links */}
           <div className="flex lg:hidden items-center gap-3">
-            <Link href="/tools" className="text-slate-300 hover:text-orange-400 text-sm font-medium transition-colors">
+            <Link href="/tools" className="text-white/70 hover:text-primary-on-dark text-sm font-semibold transition-colors">
               Tools
             </Link>
-            <Link href="/best-ai-tools" className="text-orange-400 hover:text-orange-300 text-sm font-semibold transition-colors">
+            <Link href="/best-ai-tools" className="text-primary-on-dark hover:text-white text-sm font-semibold transition-colors">
               Best Tools
             </Link>
           </div>

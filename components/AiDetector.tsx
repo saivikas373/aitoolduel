@@ -206,14 +206,14 @@ function ScoreCircle({ score }: { score: number }) {
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (score / 100) * circumference;
 
-  let color = "#22c55e"; // green ≤30
-  if (score > 55) color = "#f97316"; // orange >55
-  else if (score > 30) color = "#eab308"; // yellow 31-55
+  let color = "#34c759"; // success ≤30
+  if (score > 55) color = "#ff3b30"; // danger >55
+  else if (score > 30) color = "#ff9500"; // warning 31-55
 
   return (
     <div className="flex flex-col items-center gap-2">
       <svg width="140" height="140" viewBox="0 0 140 140">
-        <circle cx="70" cy="70" r={radius} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="12" />
+        <circle cx="70" cy="70" r={radius} fill="none" stroke="#e0e0e0" strokeWidth="12" />
         <circle
           cx="70" cy="70" r={radius} fill="none"
           stroke={color} strokeWidth="12"
@@ -225,27 +225,27 @@ function ScoreCircle({ score }: { score: number }) {
         />
         <text x="70" y="70" textAnchor="middle" dominantBaseline="central"
           fontSize="28" fontWeight="bold" fill={color}>{score}</text>
-        <text x="70" y="92" textAnchor="middle" fontSize="11" fill="#cbd5e1">AI Score</text>
+        <text x="70" y="92" textAnchor="middle" fontSize="11" fill="#7a7a7a">AI Score</text>
       </svg>
     </div>
   );
 }
 
 function SignalBar({ label, value, isAiSignal }: { label: string; value: number; isAiSignal: boolean }) {
-  let barColor = "bg-green-400";
-  if (value > 55) barColor = "bg-orange-500";
-  else if (value > 30) barColor = "bg-yellow-400";
+  let barColor = "bg-success";
+  if (value > 55) barColor = "bg-danger";
+  else if (value > 30) barColor = "bg-warning";
 
   return (
     <div className="mb-3">
       <div className="flex justify-between text-sm mb-1">
-        <span className="text-slate-300 font-medium">{label}</span>
-        <span className="text-slate-400">{value}%</span>
+        <span className="text-ink-muted-80 font-semibold">{label}</span>
+        <span className="text-ink-muted-48">{value}%</span>
       </div>
       <div className="w-full bg-white/10 rounded-full h-2">
         <div className={`${barColor} h-2 rounded-full transition-all duration-700`} style={{ width: `${value}%` }} />
       </div>
-      <div className="text-xs text-slate-500 mt-0.5">
+      <div className="text-xs text-ink-muted-48 mt-0.5">
         {isAiSignal ? "Higher = more AI-like" : "Higher = more human-like"}
       </div>
     </div>
@@ -271,9 +271,9 @@ export default function AiDetector() {
   };
 
   const getVerdict = (score: number) => {
-    if (score <= 30) return { text: "✅ Likely Human Written", className: "text-emerald-400" };
-    if (score <= 55) return { text: "⚠️ Uncertain", className: "text-amber-400" };
-    return { text: "🤖 Likely AI Generated", className: "text-orange-400" };
+    if (score <= 30) return { text: "✅ Likely Human Written", className: "text-success" };
+    if (score <= 55) return { text: "⚠️ Uncertain", className: "text-warning" };
+    return { text: "🤖 Likely AI Generated", className: "text-danger" };
   };
 
   const getVerdictDescription = (score: number) => {
@@ -286,7 +286,7 @@ export default function AiDetector() {
     <div>
       {/* Input Form */}
       <div className="card p-6 mb-6">
-        <label htmlFor="ai-detector-textarea" className="block text-sm font-semibold text-slate-300 mb-2">
+        <label htmlFor="ai-detector-textarea" className="block text-sm font-semibold text-ink-muted-80 mb-2">
           Paste your text below
         </label>
         <textarea
@@ -298,16 +298,16 @@ export default function AiDetector() {
           className="glass-input w-full p-4 text-sm resize-y"
         />
         <div className="flex items-center justify-between mt-2 mb-4">
-          <span className="text-sm text-slate-400">{wordCount} words</span>
+          <span className="text-sm text-ink-muted-48">{wordCount} words</span>
           {!hasEnoughWords && wordCount > 0 && (
-            <span className="text-sm text-amber-400 font-medium">Minimum 50 words required</span>
+            <span className="text-sm text-warning font-semibold">Minimum 50 words required</span>
           )}
         </div>
         <button
           onClick={handleAnalyze}
           disabled={!hasEnoughWords || isAnalyzing}
           className={`w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-white text-sm transition-colors ${
-            hasEnoughWords && !isAnalyzing ? "bg-orange-500 hover:bg-orange-600" : "bg-white/10 text-slate-500 cursor-not-allowed"
+            hasEnoughWords && !isAnalyzing ? "bg-primary hover:bg-primary-focus" : "bg-parchment text-ink-muted-48 cursor-not-allowed"
           }`}
         >
           {isAnalyzing ? "Analyzing..." : "Detect AI Content"}
@@ -324,16 +324,16 @@ export default function AiDetector() {
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-8">
             <ScoreCircle score={result.score} />
             <div>
-              <div className={`text-3xl font-extrabold mb-1 ${getVerdict(result.score).className}`}>
+              <div className={`text-3xl font-bold mb-1 ${getVerdict(result.score).className}`}>
                 {getVerdict(result.score).text}
               </div>
-              <p className="text-slate-400 text-sm max-w-xs">{getVerdictDescription(result.score)}</p>
+              <p className="text-ink-muted-48 text-sm max-w-xs">{getVerdictDescription(result.score)}</p>
             </div>
           </div>
 
           {/* Signal Bars — 8 signals */}
           <div className="mb-6">
-            <h3 className="font-bold text-white mb-4">Signal Breakdown</h3>
+            <h3 className="font-bold text-ink mb-4">Signal Breakdown</h3>
             <SignalBar label="Predictability (Pseudo-Perplexity)" value={result.pseudoPerplexity} isAiSignal={true} />
             <SignalBar label="Sentence Burstiness" value={result.burstiness} isAiSignal={true} />
             <SignalBar label="Vocabulary Diversity" value={100 - result.vocabularyDiversity} isAiSignal={false} />
@@ -347,10 +347,10 @@ export default function AiDetector() {
           {/* Highlighted Phrases */}
           {result.foundPhrases.length > 0 && (
             <div className="mb-6">
-              <h3 className="font-bold text-white mb-3">AI Phrases Found:</h3>
+              <h3 className="font-bold text-ink mb-3">AI Phrases Found:</h3>
               <div className="flex flex-wrap gap-2">
                 {result.foundPhrases.map((phrase) => (
-                  <span key={phrase} className="bg-orange-500/15 text-orange-300 border border-orange-400/20 text-sm font-medium px-3 py-1 rounded-full">
+                  <span key={phrase} className="bg-parchment text-ink-muted-80 border border-hairline text-sm font-semibold px-3 py-1 rounded-full">
                     &ldquo;{phrase}&rdquo;
                   </span>
                 ))}
@@ -359,7 +359,7 @@ export default function AiDetector() {
           )}
 
           {/* Disclaimer */}
-          <div className="text-xs text-slate-400 bg-white/5 rounded-xl p-4 border border-white/10">
+          <div className="text-xs text-ink-muted-48 bg-parchment rounded-lg p-4 border border-hairline">
             ⚠️ Best accuracy on formal writing (essays, blog posts, reports). Casual AI responses may score lower. No detector is 100% accurate — use results as a guide, not final verdict.
           </div>
 

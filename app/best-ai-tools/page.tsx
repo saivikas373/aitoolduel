@@ -198,22 +198,22 @@ function ToolCard({ tool, rank }: { tool: ToolPick; rank: number }) {
       <div className="flex items-start gap-4 mb-4">
         <div className="shrink-0 flex flex-col items-center gap-1">
           <div
-            className={`${tool.color} w-11 h-11 rounded-xl flex items-center justify-center text-white font-extrabold text-xl`}
+            className={`${tool.color} w-11 h-11 rounded-xl flex items-center justify-center text-ink font-bold text-xl`}
           >
             {tool.name[0]}
           </div>
-          <span className="text-xs font-bold text-slate-500">#{rank}</span>
+          <span className="text-xs font-bold text-ink-muted-48">#{rank}</span>
         </div>
         <div>
           <div className="flex items-center gap-2 flex-wrap">
-            <h3 className="text-lg font-bold text-white">{tool.name}</h3>
-            <span className="text-xs font-semibold bg-orange-500/15 text-orange-300 border border-orange-400/20 px-2.5 py-0.5 rounded-full">
+            <h3 className="text-lg font-bold text-ink">{tool.name}</h3>
+            <span className="text-xs font-semibold bg-parchment text-ink-muted-80 border border-hairline px-2.5 py-0.5 rounded-full">
               {tool.badge}
             </span>
           </div>
         </div>
       </div>
-      <p className="text-slate-300 text-sm leading-relaxed mb-5">{tool.why}</p>
+      <p className="text-ink-muted-80 text-sm leading-relaxed mb-5">{tool.why}</p>
       <div className="flex flex-wrap gap-3">
         <a
           href={tool.url}
@@ -226,7 +226,7 @@ function ToolCard({ tool, rank }: { tool: ToolPick; rank: number }) {
         {tool.comparison && (
           <Link
             href={tool.comparison.href}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-orange-300 hover:text-orange-200 border border-orange-400/20 hover:border-orange-400/40 px-4 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary border border-hairline hover:border-primary/40 px-4 py-2 rounded-pill transition-colors"
           >
             {tool.comparison.label} →
           </Link>
@@ -240,15 +240,15 @@ export default function BestAiToolsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-14 px-4">
+      <section className="bg-tile1 text-ink py-14 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-500/20 text-orange-400 border border-orange-500/30 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
+          <div className="inline-flex items-center gap-2 bg-white/10 text-white/80 border border-white/15 rounded-pill px-4 py-1.5 text-sm font-semibold mb-5">
             Updated April 2026
           </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             Best AI Tools 2026
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Our top picks for writing, coding, image generation, and productivity.
             Every recommendation is based on real testing — not sponsored rankings.
           </p>
@@ -258,7 +258,7 @@ export default function BestAiToolsPage() {
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="text-sm font-semibold bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full transition-colors"
+                className="text-sm font-semibold bg-white/10 hover:bg-white/20 text-ink px-4 py-2 rounded-full transition-colors"
               >
                 {s.icon} {s.heading.replace("Best AI Tools for ", "")}
               </a>
@@ -273,10 +273,10 @@ export default function BestAiToolsPage() {
         {sections.map((section, si) => (
           <section key={section.id} id={section.id} className="mb-16 scroll-mt-20">
             <div className="mb-6">
-              <h2 className="text-3xl font-extrabold text-white mb-3">
+              <h2 className="text-3xl font-bold text-ink mb-3">
                 {section.icon} {section.heading}
               </h2>
-              <p className="text-slate-400 leading-relaxed">{section.intro}</p>
+              <p className="text-ink-muted-48 leading-relaxed">{section.intro}</p>
             </div>
 
             <div className="space-y-5">
@@ -290,11 +290,11 @@ export default function BestAiToolsPage() {
         ))}
 
         {/* Browse all tools CTA */}
-        <div className="glass-panel rounded-2xl p-8 text-center text-white mt-8">
-          <h2 className="text-2xl font-extrabold mb-3">
+        <div className="glass-panel rounded-2xl p-8 text-center text-ink mt-8">
+          <h2 className="text-2xl font-bold mb-3">
             Looking for more AI tools?
           </h2>
-          <p className="text-slate-400 mb-6">
+          <p className="text-ink-muted-48 mb-6">
             Browse our full directory of 20+ AI tools, filterable by category.
           </p>
           <Link

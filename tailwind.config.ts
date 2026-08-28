@@ -9,24 +9,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          900: "#0a0f1e",
-          800: "#0f172a",
-          700: "#1e293b",
-          600: "#2d3f5c",
-        },
-        brand: {
-          orange: "#f97316",
-          "orange-dark": "#ea580c",
-          "orange-light": "#fb923c",
-        },
+        // Apple design system — one accent, ever.
+        primary: "#0066cc",
+        "primary-focus": "#0071e3",
+        "primary-on-dark": "#2997ff",
+        ink: "#1d1d1f",
+        "ink-muted-80": "#333333",
+        "ink-muted-48": "#7a7a7a",
+        "divider-soft": "#f0f0f0",
+        hairline: "#e0e0e0",
+        canvas: "#ffffff",
+        parchment: "#f5f5f7",
+        pearl: "#fafafc",
+        tile1: "#272729",
+        tile2: "#2a2a2c",
+        tile3: "#252527",
+        void: "#000000",
+        danger: "#ff3b30",
+        success: "#34c759",
+        warning: "#ff9500",
       },
       fontFamily: {
         sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
+      borderRadius: {
+        pill: "999px",
+      },
       boxShadow: {
-        glow: "0 0 40px -8px rgba(249, 115, 22, 0.35)",
-        "glow-lg": "0 0 80px -12px rgba(249, 115, 22, 0.3)",
+        // The one exception to "no chrome shadows" — hero/product imagery only.
+        hero: "0 20px 40px -12px rgba(0, 0, 0, 0.18)",
       },
     },
   },

@@ -14,7 +14,7 @@ const comparisons = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-white/[0.02] backdrop-blur-xl text-slate-400 mt-16">
+    <footer className="border-t border-white/10 bg-void text-white/60 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* AI Weekly newsletter */}
         <div className="mb-12">
@@ -25,16 +25,16 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-orange-500 font-extrabold text-xl">⚔</span>
-              <span className="font-extrabold text-white text-lg">
-                AI Tool <span className="text-orange-500">Duel</span>
+              <span className="text-primary-on-dark font-bold text-xl">⚔</span>
+              <span className="font-bold text-white text-lg">
+                AI Tool <span className="text-primary-on-dark">Duel</span>
               </span>
             </div>
             <p className="text-sm leading-relaxed">
               Honest, in-depth comparisons of the most popular AI tools. We
               help you cut through the hype and find what actually works.
             </p>
-            <p className="text-xs mt-4 text-slate-500">
+            <p className="text-xs mt-4 text-white/40">
               Some links on this site are affiliate links. We may earn a
               commission at no extra cost to you.
             </p>
@@ -50,7 +50,7 @@ export default function Footer() {
                 <li key={c.href}>
                   <Link
                     href={c.href}
-                    className="text-sm hover:text-orange-400 transition-colors"
+                    className="text-sm hover:text-primary-on-dark transition-colors"
                   >
                     {c.label}
                   </Link>
@@ -66,32 +66,32 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="hover:text-orange-400 transition-colors">
+                <Link href="/" className="hover:text-primary-on-dark transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/tools" className="hover:text-orange-400 transition-colors">
+                <Link href="/tools" className="hover:text-primary-on-dark transition-colors">
                   AI Tools Directory
                 </Link>
               </li>
               <li>
-                <Link href="/best-ai-tools" className="hover:text-orange-400 transition-colors">
+                <Link href="/best-ai-tools" className="hover:text-primary-on-dark transition-colors">
                   Best AI Tools 2026
                 </Link>
               </li>
               <li>
-                <Link href="/tools/ai-detector" className="hover:text-orange-400 transition-colors">
+                <Link href="/tools/ai-detector" className="hover:text-primary-on-dark transition-colors">
                   AI Text Detector
                 </Link>
               </li>
               <li>
-                <Link href="/tools/prompt-generator" className="hover:text-orange-400 transition-colors">
+                <Link href="/tools/prompt-generator" className="hover:text-primary-on-dark transition-colors">
                   Prompt Generator
                 </Link>
               </li>
               <li>
-                <Link href="/quiz" className="hover:text-orange-400 transition-colors">
+                <Link href="/quiz" className="hover:text-primary-on-dark transition-colors">
                   Which AI Tool Quiz
                 </Link>
               </li>
@@ -105,22 +105,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/about" className="hover:text-orange-400 transition-colors">
+                <Link href="/about" className="hover:text-primary-on-dark transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-orange-400 transition-colors">
+                <Link href="/contact" className="hover:text-primary-on-dark transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy-policy" className="hover:text-orange-400 transition-colors">
+                <Link href="/privacy-policy" className="hover:text-primary-on-dark transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <span className="text-slate-500 text-xs">
+                <span className="text-white/40 text-xs">
                   Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
                 </span>
               </li>
@@ -128,7 +128,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/10 text-xs text-slate-500 text-center">
+        <div className="mt-8 pt-8 border-t border-white/10 text-xs text-white/40 text-center">
           © {new Date().getFullYear()} AIToolDuel.com · All comparisons are
           based on independent research and testing.
         </div>

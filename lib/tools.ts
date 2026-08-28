@@ -265,15 +265,17 @@ export const tools: AiTool[] = [
   },
 ];
 
+// One accent, ever — category badges are neutral, not color-coded, per the
+// Apple design system's "no second brand color" rule.
 export const categoryColors: Record<ToolCategory, string> = {
-  Writing: "bg-orange-500/15 text-orange-300 border border-orange-400/20",
-  Coding: "bg-blue-500/15 text-blue-300 border border-blue-400/20",
-  Image: "bg-purple-500/15 text-purple-300 border border-purple-400/20",
-  Search: "bg-green-500/15 text-green-300 border border-green-400/20",
-  Video: "bg-red-500/15 text-red-300 border border-red-400/20",
-  Audio: "bg-yellow-500/15 text-yellow-300 border border-yellow-400/20",
-  Productivity: "bg-white/10 text-slate-300 border border-white/15",
-  Design: "bg-pink-500/15 text-pink-300 border border-pink-400/20",
+  Writing: "bg-parchment text-ink-muted-80 border border-hairline",
+  Coding: "bg-parchment text-ink-muted-80 border border-hairline",
+  Image: "bg-parchment text-ink-muted-80 border border-hairline",
+  Search: "bg-parchment text-ink-muted-80 border border-hairline",
+  Video: "bg-parchment text-ink-muted-80 border border-hairline",
+  Audio: "bg-parchment text-ink-muted-80 border border-hairline",
+  Productivity: "bg-parchment text-ink-muted-80 border border-hairline",
+  Design: "bg-parchment text-ink-muted-80 border border-hairline",
 };
 
 export const allCategories: ToolCategory[] = [

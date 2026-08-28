@@ -26,17 +26,17 @@ export default function ToolQuiz() {
   const runnerUps = matches.slice(1, 3);
 
   return (
-    <div className="glass-panel rounded-2xl p-6 sm:p-8">
+    <div className="glass-panel rounded-lg p-6 sm:p-8">
       {!category ? (
         <>
           <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-orange-500/15 text-orange-300 border border-orange-400/20 rounded-full px-3 py-1 text-xs font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 bg-canvas text-ink-muted-80 border border-hairline rounded-pill px-3 py-1 text-xs font-semibold mb-3">
               ⚔ 30-Second Quiz
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+            <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-2">
               Which AI Tool Is Right For You?
             </h2>
-            <p className="text-slate-400 max-w-md mx-auto">
+            <p className="text-ink-muted-48 max-w-md mx-auto">
               Pick what you need AI for and we&apos;ll match you with our top-rated pick.
             </p>
           </div>
@@ -45,10 +45,10 @@ export default function ToolQuiz() {
               <button
                 key={opt.category}
                 onClick={() => setCategory(opt.category)}
-                className="flex flex-col items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-orange-400/40 rounded-xl py-5 px-3 transition-all"
+                className="flex flex-col items-center gap-2 bg-canvas hover:bg-parchment border border-hairline hover:border-primary/40 rounded-lg py-5 px-3 transition-all"
               >
                 <span className="text-3xl">{opt.icon}</span>
-                <span className="text-sm font-semibold text-slate-200 text-center">{opt.label}</span>
+                <span className="text-sm font-semibold text-ink text-center">{opt.label}</span>
               </button>
             ))}
           </div>
@@ -57,31 +57,31 @@ export default function ToolQuiz() {
         <>
           <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-xs font-semibold text-orange-400 uppercase tracking-wide mb-1">
+              <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">
                 Your match for {CATEGORY_OPTIONS.find((o) => o.category === category)?.label}
               </p>
-              <h2 className="text-2xl font-extrabold text-white">Here&apos;s our top pick</h2>
+              <h2 className="text-2xl font-bold text-ink">Here&apos;s our top pick</h2>
             </div>
             <button
               onClick={() => setCategory(null)}
-              className="text-sm font-semibold text-slate-400 hover:text-orange-400 transition-colors whitespace-nowrap"
+              className="text-sm font-semibold text-ink-muted-48 hover:text-primary transition-colors whitespace-nowrap"
             >
               ↻ Try again
             </button>
           </div>
 
           {topPick && (
-            <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 border border-orange-400/20 rounded-xl p-6 mb-4">
+            <div className="bg-parchment border border-hairline rounded-lg p-6 mb-4">
               <div className="flex items-start gap-4">
-                <div className={`${topPick.color} w-14 h-14 rounded-xl flex items-center justify-center text-white font-extrabold text-2xl shrink-0`}>
+                <div className={`${topPick.color} w-14 h-14 rounded-lg flex items-center justify-center text-white font-bold text-2xl shrink-0`}>
                   {topPick.name[0]}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap mb-1">
-                    <h3 className="text-xl font-bold text-white">{topPick.name}</h3>
+                    <h3 className="text-xl font-bold text-ink">{topPick.name}</h3>
                     <StarRating rating={topPick.rating} />
                   </div>
-                  <p className="text-slate-300 text-sm mb-4">{topPick.tagline}</p>
+                  <p className="text-ink-muted-80 text-sm mb-4">{topPick.tagline}</p>
                   <div className="flex flex-wrap gap-3">
                     <a href={topPick.url} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm px-4 py-2">
                       {topPick.ctaLabel}
@@ -106,10 +106,10 @@ export default function ToolQuiz() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-white text-sm">{t.name}</span>
+                      <span className="font-semibold text-ink text-sm">{t.name}</span>
                       <StarRating rating={t.rating} />
                     </div>
-                    <p className="text-slate-400 text-xs truncate">{t.tagline}</p>
+                    <p className="text-ink-muted-48 text-xs truncate">{t.tagline}</p>
                   </div>
                 </div>
               ))}
@@ -117,7 +117,7 @@ export default function ToolQuiz() {
           )}
 
           <div className="text-center mt-5">
-            <Link href="/tools" className="text-orange-400 hover:text-orange-300 font-medium text-sm">
+            <Link href="/tools" className="text-primary hover:underline font-semibold text-sm">
               Browse all {category} tools →
             </Link>
           </div>
