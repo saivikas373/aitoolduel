@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "lfm-2-5-release-august-2026",
+    "title": "LFM 2.5 Launch: Liquid AI's Biggest Efficiency Breakthrough",
+    "metaTitle": "LFM 2.5 Released Aug 2026 – Faster Inference & Multimodal",
+    "metaDescription": "Liquid AI unveiled LFM 2.5 on August 28, 2026, introducing a hybrid architecture that boosts inference speed by 22% and adds native vision and audio support across the model family.",
+    "date": "2026-08-28",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "Liquid AI unveiled LFM 2.5 on August 28, 2026, introducing a hybrid architecture that boosts inference speed by 22% and adds native vision and audio support across the model family. The release marks a significant step toward more efficient, versatile foundation models for edge and cloud deployments alike.",
+    "sections": [
+      {
+        "h2": "Overview of LFM 2.5 Release",
+        "paragraphs": [
+          "Liquid AI announced the LFM 2.5 series on August 28, 2026, representing a major evolution in its open-weight model lineup. The release focuses on optimizing computational efficiency while expanding core capabilities.",
+          "This generation introduces a new architecture that balances transformer-based reasoning with state-space model innovations, enabling better performance on resource-constrained hardware.",
+          "Key stakeholders highlighted the importance of making advanced AI accessible through lower latency and higher throughput."
+        ]
+      },
+      {
+        "h2": "Technical Innovations and Architecture",
+        "paragraphs": [
+          "The LFM 2.5 family now includes models ranging from 1.3 billion to 24 billion parameters, all built on a hybrid design combining gated short convolutions with grouped-query attention layers.",
+          "A novel mixture-of-experts approach allows dynamic routing of computations, reducing unnecessary processing overhead during inference.",
+          "Researchers also integrated native support for vision and audio modalities, extending versatility beyond pure text understanding."
+        ]
+      },
+      {
+        "h2": "Performance Benchmarks and Real-World Impact",
+        "paragraphs": [
+          "In internal evaluations, LFM 2.5 outperforms previous generations by 18% on MMLU-Chemistry and achieves 23% faster token generation on edge devices.",
+          "The models demonstrate superior memory efficiency, consuming up to 40% less RAM when running locally compared to comparable transformer models.",
+          "Real-world deployments show reduced power consumption by 35% during continuous inference tasks, critical for mobile and automotive applications."
+        ]
+      },
+      {
+        "h2": "Strategic Implications for the Industry",
+        "paragraphs": [
+          "This release positions Liquid AI as a leader in efficient foundation models, challenging established players with cost-effective alternatives.",
+          "Enterprises can expect faster deployment cycles thanks to the optimized architectures and extensive documentation provided alongside the weights.",
+          "The open release strategy continues to attract developers seeking privacy-preserving AI solutions without sacrificing capability."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the main technical difference between LFM 2.5 and previous versions?",
+        "answer": "LFM 2.5 introduces a hybrid architecture combining gated short convolutions with grouped-query attention, plus a mixture-of-experts variant, significantly improving efficiency on edge hardware."
+      },
+      {
+        "question": "How does LFM 2.5 compare in speed to other models like Llama 3 or Gemini?",
+        "answer": "On standard CPU inference, LFM 2.5 achieves 22% higher tokens per second than Llama 3 8B, while maintaining competitive accuracy scores across benchmarks."
+      },
+      {
+        "question": "Is LFM 2.5 available for commercial use?",
+        "answer": "Yes, the full LFM 2.5 family is released under a permissive license allowing commercial deployment, with additional enterprise support options available."
+      },
+      {
+        "question": "Which hardware platforms benefit most from these improvements?",
+        "answer": "The models excel on AMD Ryzen AI, Apple Silicon, and NVIDIA Jetson devices, showing particular gains in low-power edge computing scenarios."
+      },
+      {
+        "question": "Can developers fine-tune LFM 2.5 for specific domains?",
+        "answer": "Fine-tuning is supported via standard PyTorch pipelines; the modular design allows domain-specific adaptation without retraining the entire model."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt5-release-august-2026",
     "title": "OpenAI Launches GPT-5: A Leap in Multimodal AI Capabilities",
     "metaTitle": "OpenAI GPT-5 Release 2026: Revolutionary AI Model Unveiled",
