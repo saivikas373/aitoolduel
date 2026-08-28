@@ -7,25 +7,20 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply text-slate-200 antialiased;
-    background-color: #090c16;
-    background-image:
-      radial-gradient(circle at 12% 8%, rgba(249, 115, 22, 0.16), transparent 42%),
-      radial-gradient(circle at 88% 4%, rgba(139, 92, 246, 0.18), transparent 45%),
-      radial-gradient(circle at 50% 100%, rgba(56, 189, 248, 0.14), transparent 50%);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    @apply text-ink antialiased bg-canvas;
   }
 
   ::selection {
-    background-color: rgba(249, 115, 22, 0.35);
+    background-color: rgba(0, 102, 204, 0.2);
   }
 }
 
 @layer components {
+  /* Elevation in this system comes from surface-color change and hairlines,
+     never shadows or blur — see tokens.md "Elevation". */
+
   .adsense-slot {
-    @apply w-full bg-white/5 backdrop-blur-sm border border-dashed border-white/15 rounded-lg flex items-center justify-center text-slate-500 text-sm font-medium my-6;
+    @apply w-full bg-parchment border border-dashed border-hairline rounded-md flex items-center justify-center text-ink-muted-48 text-sm font-normal my-6;
     min-height: 90px;
     max-height: 120px;
     overflow: hidden;
@@ -36,38 +31,42 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-semibold rounded-xl transition-all duration-200 no-underline shadow-lg shadow-orange-500/25 hover:shadow-orange-400/30;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-focus text-white font-semibold rounded-pill transition-colors duration-200 no-underline;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-white/[0.07] hover:bg-white/[0.14] text-white font-semibold rounded-xl border border-white/15 backdrop-blur-md transition-all duration-200 no-underline;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-pearl hover:bg-parchment text-ink font-semibold rounded-pill border border-hairline transition-colors duration-200 no-underline;
   }
 
   .card {
-    @apply bg-white/[0.05] backdrop-blur-xl rounded-2xl border border-white/10 shadow-xl shadow-black/30 overflow-hidden;
+    @apply bg-canvas rounded-lg border border-hairline overflow-hidden;
+  }
+
+  .card-dark {
+    @apply bg-tile1 rounded-lg border border-white/10 overflow-hidden;
   }
 
   .glass-panel {
-    @apply bg-white/[0.04] backdrop-blur-xl border border-white/10 shadow-xl shadow-black/30;
+    @apply bg-parchment border border-hairline;
   }
 
   .glass-input {
-    @apply bg-white/5 border border-white/15 rounded-xl text-white placeholder-slate-500 backdrop-blur-md transition-colors focus:outline-none focus:ring-2 focus:ring-orange-400/60 focus:border-orange-400/40;
+    @apply bg-canvas border border-hairline rounded-pill text-ink placeholder-ink-muted-48 transition-colors focus:outline-none focus:border-primary;
   }
 
   .section-heading {
-    @apply text-2xl font-bold text-white mb-4;
+    @apply text-2xl font-bold text-ink mb-4;
   }
 
   .prose-content p {
-    @apply text-slate-300 leading-relaxed mb-4 text-base;
+    @apply text-ink-muted-80 leading-relaxed mb-4 text-base;
   }
 
   .prose-content h2 {
-    @apply text-2xl font-bold text-white mt-8 mb-4;
+    @apply text-2xl font-bold text-ink mt-8 mb-4;
   }
 
   .prose-content h3 {
-    @apply text-xl font-semibold text-white mt-6 mb-3;
+    @apply text-xl font-semibold text-ink mt-6 mb-3;
   }
 }

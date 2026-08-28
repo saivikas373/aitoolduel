@@ -16,21 +16,21 @@ export default function AboutPage() {
 
       {/* Hero */}
       <div className="mb-12">
-        <div className="inline-flex items-center gap-2 bg-orange-500/15 text-orange-300 border border-orange-400/20 rounded-full px-4 py-1.5 text-sm font-medium mb-5">
+        <div className="inline-flex items-center gap-2 bg-parchment text-ink-muted-80 border border-hairline rounded-pill px-4 py-1.5 text-sm font-semibold mb-5">
           Independent · Unbiased · Founded 2026
         </div>
-        <h1 className="text-4xl font-extrabold text-white mb-4">
+        <h1 className="text-4xl font-bold text-ink mb-4">
           About AI Tool Duel
         </h1>
-        <p className="text-xl text-slate-400 leading-relaxed">
+        <p className="text-xl text-ink-muted-48 leading-relaxed">
           We test, compare, and review AI tools so you can make confident decisions — without wading through hype, paid placements, or vague "it depends" answers.
         </p>
       </div>
 
-      <div className="space-y-10 text-slate-300 leading-relaxed">
+      <div className="space-y-10 text-ink-muted-80 leading-relaxed">
 
         <section>
-          <h2 className="text-xl font-bold text-white mb-3">Who We Are</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Who We Are</h2>
           <p>
             AI Tool Duel is an independent AI tool review and comparison website founded in
             2026. We are a small, dedicated team of writers, researchers, and technology
@@ -46,7 +46,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-white mb-3">Our Mission</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Our Mission</h2>
           <p>
             The AI tools landscape is moving faster than any individual can track. New
             models launch weekly, pricing changes constantly, and the marketing from AI
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-white mb-3">What We Do</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">What We Do</h2>
           <p>
             For each comparison on AI Tool Duel, we put both tools through a structured
             evaluation covering the scenarios that matter most to real users: writing
@@ -88,33 +88,33 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-xl font-bold text-white mb-3">Why Trust Us</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Why Trust Us</h2>
           <ul className="space-y-3">
             <li className="flex gap-3">
-              <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
+              <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
               <span><strong>No paid placements.</strong> We don't accept money to feature or rank any tool. Our recommendations are earned, not bought.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
+              <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
               <span><strong>Hands-on testing.</strong> Every comparison reflects real usage across dozens of tasks, not just a summary of marketing materials.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
+              <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
               <span><strong>Transparent affiliate relationships.</strong> Some links on the site are affiliate links — we earn a small commission if you sign up through them, at no cost to you. This is disclosed clearly, and it never affects our ratings or verdicts.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
+              <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
               <span><strong>Clear verdicts.</strong> We give you a direct answer. No endless "it depends" hedging — we tell you which tool wins for which user, with reasons.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-orange-500 font-bold shrink-0 mt-0.5">✓</span>
+              <span className="text-primary font-bold shrink-0 mt-0.5">✓</span>
               <span><strong>Kept current.</strong> We update comparisons when tools change significantly — so you're always reading current information.</span>
             </li>
           </ul>
         </section>
 
         <section className="card p-6">
-          <h2 className="text-xl font-bold text-white mb-3">Get in Touch</h2>
+          <h2 className="text-xl font-bold text-ink mb-3">Get in Touch</h2>
           <p>
             Have a question, spotted something incorrect, or want to suggest a
             comparison we haven't covered yet? We'd love to hear from you.
@@ -123,7 +123,7 @@ export default function AboutPage() {
             Email us at{" "}
             <a
               href="mailto:hello@aitoolduel.com"
-              className="text-orange-400 hover:text-orange-300 font-semibold"
+              className="text-primary hover:text-primary font-semibold"
             >
               hello@aitoolduel.com
             </a>{" "}

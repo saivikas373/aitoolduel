@@ -707,18 +707,18 @@ export default function PromptGenerator() {
       {/* ── Step 1: Select AI Tool ── */}
       <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
-          <h2 className="font-bold text-white text-base">Select AI Tool</h2>
+          <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">1</span>
+          <h2 className="font-bold text-ink text-base">Select AI Tool</h2>
         </div>
         <div className="flex flex-wrap gap-2">
           {AI_TOOLS.map((tool) => (
             <button
               key={tool}
               onClick={() => setSelectedTool(tool)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-all ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-semibold transition-all ${
                 selectedTool === tool
-                  ? "border-orange-400 bg-orange-500/15 text-orange-300"
-                  : "border-white/10 bg-white/5 text-slate-300 hover:border-orange-400/40"
+                  ? "border-primary bg-parchment text-primary"
+                  : "border-hairline bg-canvas text-ink-muted-80 hover:border-primary/40"
               }`}
             >
               <span className={`w-5 h-5 rounded-md ${TOOL_COLORS[tool]} text-white text-xs font-bold flex items-center justify-center`}>
@@ -733,18 +733,18 @@ export default function PromptGenerator() {
       {/* ── Step 2: Select Use Case ── */}
       <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
-          <h2 className="font-bold text-white text-base">Select Use Case</h2>
+          <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">2</span>
+          <h2 className="font-bold text-ink text-base">Select Use Case</h2>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
           {USE_CASES.map((uc) => (
             <button
               key={uc}
               onClick={() => setSelectedUseCase(uc)}
-              className={`px-3 py-2 rounded-xl border-2 text-sm font-semibold transition-all text-center ${
+              className={`px-3 py-2 rounded-lg border text-sm font-semibold transition-all text-center ${
                 selectedUseCase === uc
-                  ? "border-orange-400 bg-orange-500/15 text-orange-300"
-                  : "border-white/10 bg-white/5 text-slate-300 hover:border-orange-400/40"
+                  ? "border-primary bg-parchment text-primary"
+                  : "border-hairline bg-canvas text-ink-muted-80 hover:border-primary/40"
               }`}
             >
               {uc}
@@ -756,8 +756,8 @@ export default function PromptGenerator() {
       {/* ── Step 3: Description ── */}
       <div className="card p-6">
         <div className="flex items-center gap-2 mb-4">
-          <span className="w-6 h-6 rounded-full bg-orange-500 text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
-          <h2 className="font-bold text-white text-base">Describe What You Need</h2>
+          <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center shrink-0">3</span>
+          <h2 className="font-bold text-ink text-base">Describe What You Need</h2>
         </div>
         <input
           type="text"
@@ -779,17 +779,17 @@ export default function PromptGenerator() {
           }
           className="glass-input w-full px-4 py-3 text-sm"
         />
-        <p className="text-xs text-slate-500 mt-2">Tip: Be specific for better results. Min 5 characters.</p>
+        <p className="text-xs text-ink-muted-48 mt-2">Tip: Be specific for better results. Min 5 characters.</p>
       </div>
 
       {/* ── Generate Button ── */}
       <button
         onClick={() => generate(0)}
         disabled={!canGenerate || isGenerating}
-        className={`w-full py-4 rounded-xl font-bold text-white text-base transition-all ${
+        className={`w-full py-4 rounded-pill font-bold text-white text-base transition-all ${
           canGenerate && !isGenerating
-            ? "bg-orange-500 hover:bg-orange-600 shadow-md hover:shadow-lg"
-            : "bg-white/10 text-slate-500 cursor-not-allowed"
+            ? "bg-primary hover:bg-primary-focus"
+            : "bg-parchment text-ink-muted-48 cursor-not-allowed"
         }`}
       >
         {isGenerating ? "Generating..." : "Generate Prompt ✨"}
@@ -797,13 +797,13 @@ export default function PromptGenerator() {
 
       {/* ── Output ── */}
       {generated && (
-        <div className="bg-slate-900 rounded-2xl border border-slate-700 p-6">
+        <div className="bg-tile1 rounded-lg border border-white/10 p-6">
           {/* Header */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <span className="text-orange-400 font-bold text-sm">Generated Prompt</span>
+              <span className="text-primary-on-dark font-bold text-sm">Generated Prompt</span>
               {selectedUseCase && (
-                <span className="bg-orange-500/20 text-orange-400 border border-orange-500/30 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                <span className="bg-white/10 text-white/80 border border-white/15 text-xs font-semibold px-2.5 py-0.5 rounded-pill">
                   {selectedTool} · {selectedUseCase}
                 </span>
               )}
@@ -812,8 +812,8 @@ export default function PromptGenerator() {
               onClick={copyToClipboard}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
                 copied
-                  ? "bg-green-500 text-white"
-                  : "bg-slate-700 hover:bg-slate-600 text-white"
+                  ? "bg-success text-white"
+                  : "bg-white/10 hover:bg-white/15 text-white"
               }`}
             >
               {copied ? "✓ Copied!" : "Copy"}
@@ -821,24 +821,24 @@ export default function PromptGenerator() {
           </div>
 
           {/* Prompt text */}
-          <pre className="text-slate-200 text-sm whitespace-pre-wrap leading-relaxed font-sans">
+          <pre className="text-white/80 text-sm whitespace-pre-wrap leading-relaxed font-sans">
             {generated}
           </pre>
 
           {/* Actions */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-slate-700">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-6 pt-4 border-t border-white/10">
             <button
               onClick={handleGenerateAnother}
-              className="text-sm font-semibold text-orange-400 hover:text-orange-300 transition-colors"
+              className="text-sm font-semibold text-primary-on-dark hover:underline transition-colors"
             >
               ↻ Generate Another Variation
             </button>
             {selectedUseCase && USE_CASE_LINKS[selectedUseCase] && (
               <Link
                 href={USE_CASE_LINKS[selectedUseCase].href}
-                className="inline-flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-300 hover:text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors"
+                className="inline-flex items-center gap-1.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors"
               >
-                <span className="text-orange-400">⚡</span>
+                <span className="text-primary-on-dark">⚡</span>
                 Works best with: {USE_CASE_LINKS[selectedUseCase].label} →
               </Link>
             )}

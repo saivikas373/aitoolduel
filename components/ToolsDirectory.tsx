@@ -60,8 +60,8 @@ export default function ToolsDirectory() {
             onClick={() => setActiveCategory("All")}
             className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
               activeCategory === "All"
-                ? "bg-orange-500 text-white"
-                : "bg-white/8 text-slate-300 hover:bg-white/15"
+                ? "bg-primary text-white"
+                : "bg-parchment text-ink-muted-80 hover:bg-hairline"
             }`}
           >
             All ({tools.length})
@@ -74,8 +74,8 @@ export default function ToolsDirectory() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-colors ${
                   activeCategory === cat
-                    ? "bg-orange-500 text-white"
-                    : "bg-white/8 text-slate-300 hover:bg-white/15"
+                    ? "bg-primary text-white"
+                    : "bg-parchment text-ink-muted-80 hover:bg-hairline"
                 }`}
               >
                 {cat} ({count})
@@ -87,13 +87,13 @@ export default function ToolsDirectory() {
 
       {/* Free Tools */}
       <div className="mb-8">
-        <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wide mb-3">Free Tools</h2>
+        <h2 className="text-sm font-bold text-ink-muted-48 uppercase tracking-wide mb-3">Free Tools</h2>
         <div className="grid sm:grid-cols-2 gap-4">
           {FREE_TOOLS.map((t) => (
             <Link
               key={t.slug}
               href={t.href}
-              className="flex items-center gap-4 card p-4 hover:border-orange-400/30 transition-all group"
+              className="flex items-center gap-4 card p-4 hover:border-primary/30 transition-all group"
             >
               <div className={`${t.color} w-10 h-10 rounded-lg flex items-center justify-center text-xl shrink-0`}>
                 {t.icon}
@@ -101,26 +101,26 @@ export default function ToolsDirectory() {
               <div className="min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-sm">{t.name}</span>
-                  <span className="text-xs bg-orange-500/20 text-orange-400 border border-orange-500/30 px-2 py-0.5 rounded-full">{t.badge}</span>
+                  <span className="text-xs bg-parchment text-ink-muted-80 border border-hairline px-2 py-0.5 rounded-full">{t.badge}</span>
                 </div>
-                <p className="text-slate-400 text-xs mt-0.5 leading-snug">{t.tagline}</p>
+                <p className="text-ink-muted-48 text-xs mt-0.5 leading-snug">{t.tagline}</p>
               </div>
-              <span className="text-orange-400 ml-auto shrink-0 group-hover:text-orange-300">→</span>
+              <span className="text-primary ml-auto shrink-0">→</span>
             </Link>
           ))}
         </div>
       </div>
 
       {/* Results count */}
-      <p className="text-sm text-slate-400 mb-6">
-        Showing <span className="font-semibold text-slate-200">{filtered.length}</span> tools
+      <p className="text-sm text-ink-muted-48 mb-6">
+        Showing <span className="font-semibold text-ink">{filtered.length}</span> tools
         {activeCategory !== "All" && ` in ${activeCategory}`}
         {query && ` matching "${query}"`}
       </p>
 
       {/* Grid */}
       {filtered.length === 0 ? (
-        <div className="text-center py-16 text-slate-400">
+        <div className="text-center py-16 text-ink-muted-48">
           No tools found. Try a different search or category.
         </div>
       ) : (
@@ -128,18 +128,18 @@ export default function ToolsDirectory() {
           {filtered.map((tool) => (
             <StaggerItem key={tool.slug}>
               <HoverLift className="h-full">
-                <div className="card hover:border-orange-400/30 transition-all duration-200 flex flex-col h-full">
+                <div className="card hover:border-primary/30 transition-all duration-200 flex flex-col h-full">
                   {/* Card header */}
                   <div className="p-5 flex-1">
                     <div className="flex items-start gap-3 mb-3">
                       {/* Logo placeholder */}
                       <div
-                        className={`${tool.color} w-10 h-10 rounded-lg flex items-center justify-center text-white font-extrabold text-lg shrink-0`}
+                        className={`${tool.color} w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-lg shrink-0`}
                       >
                         {tool.name[0]}
                       </div>
                       <div className="min-w-0">
-                        <h3 className="font-bold text-white text-base leading-tight">
+                        <h3 className="font-bold text-ink text-base leading-tight">
                           {tool.name}
                         </h3>
                         <span
@@ -150,7 +150,7 @@ export default function ToolsDirectory() {
                       </div>
                     </div>
 
-                    <p className="text-slate-400 text-sm leading-relaxed mb-3">
+                    <p className="text-ink-muted-48 text-sm leading-relaxed mb-3">
                       {tool.tagline}
                     </p>
 
@@ -177,7 +177,7 @@ export default function ToolsDirectory() {
                           <Link
                             key={c.href}
                             href={c.href}
-                            className="text-xs text-orange-300 hover:text-orange-200 hover:underline transition-colors"
+                            className="text-xs text-primary hover:underline transition-colors"
                           >
                             See {c.label} →
                           </Link>

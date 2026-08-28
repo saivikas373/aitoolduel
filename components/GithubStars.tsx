@@ -17,7 +17,7 @@ function findRepo(name: string): string | null {
   return key ? REPO_MAP[key] : null;
 }
 
-export default function GithubStars({ toolName }: { toolName: string }) {
+export default function GithubStars({ toolName, dark = false }: { toolName: string; dark?: boolean }) {
   const repo = findRepo(toolName);
   const [stars, setStars] = useState<number | null>(null);
 
@@ -42,9 +42,13 @@ export default function GithubStars({ toolName }: { toolName: string }) {
       href={`https://github.com/${repo}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-1 text-xs font-semibold text-slate-300 bg-white/10 hover:bg-white/15 border border-white/10 rounded-full px-2.5 py-1 transition-colors"
+      className={`inline-flex items-center gap-1 text-xs font-semibold rounded-pill px-2.5 py-1 transition-colors ${
+        dark
+          ? "text-white/70 bg-white/10 hover:bg-white/15 border border-white/10"
+          : "text-ink-muted-80 bg-parchment hover:bg-hairline border border-hairline"
+      }`}
     >
-      <span className="text-yellow-400">★</span> {formatted} on GitHub
+      <span>★</span> {formatted} on GitHub
     </a>
   );
 }

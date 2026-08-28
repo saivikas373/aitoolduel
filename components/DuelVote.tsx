@@ -62,15 +62,15 @@ export default function DuelVote({
 
   if (!configured) {
     return (
-      <div className="glass-panel rounded-2xl p-5 text-center text-sm text-slate-400">
+      <div className="glass-panel rounded-lg p-5 text-center text-sm text-ink-muted-48">
         ⚔ Community voting is coming soon for this matchup.
       </div>
     );
   }
 
   return (
-    <div className="glass-panel rounded-2xl p-6">
-      <p className="text-center text-xs font-semibold text-orange-400 uppercase tracking-wide mb-4">
+    <div className="glass-panel rounded-lg p-6">
+      <p className="text-center text-xs font-semibold text-primary uppercase tracking-wide mb-4">
         ⚔ Cast Your Vote — {total.toLocaleString()} vote{total === 1 ? "" : "s"} so far
       </p>
 
@@ -79,45 +79,45 @@ export default function DuelVote({
           <button
             onClick={() => castVote("tool1")}
             disabled={submitting}
-            className="bg-blue-500/10 hover:bg-blue-500/20 border border-blue-400/25 rounded-xl py-4 px-4 text-center transition-colors disabled:opacity-60"
+            className="bg-canvas hover:bg-parchment border border-hairline hover:border-primary/40 rounded-lg py-4 px-4 text-center transition-colors disabled:opacity-60"
           >
-            <span className="block text-white font-bold text-lg">{tool1Name}</span>
-            <span className="text-blue-300 text-xs font-medium">Vote →</span>
+            <span className="block text-ink font-bold text-lg">{tool1Name}</span>
+            <span className="text-primary text-xs font-semibold">Vote →</span>
           </button>
           <button
             onClick={() => castVote("tool2")}
             disabled={submitting}
-            className="bg-purple-500/10 hover:bg-purple-500/20 border border-purple-400/25 rounded-xl py-4 px-4 text-center transition-colors disabled:opacity-60"
+            className="bg-canvas hover:bg-parchment border border-hairline hover:border-primary/40 rounded-lg py-4 px-4 text-center transition-colors disabled:opacity-60"
           >
-            <span className="block text-white font-bold text-lg">{tool2Name}</span>
-            <span className="text-purple-300 text-xs font-medium">Vote →</span>
+            <span className="block text-ink font-bold text-lg">{tool2Name}</span>
+            <span className="text-primary text-xs font-semibold">Vote →</span>
           </button>
         </div>
       ) : (
         <div className="space-y-3">
           <div>
             <div className="flex items-center justify-between text-sm mb-1">
-              <span className={`font-semibold ${voted === "tool1" ? "text-blue-300" : "text-slate-300"}`}>
+              <span className={`font-semibold ${voted === "tool1" ? "text-primary" : "text-ink-muted-80"}`}>
                 {tool1Name} {voted === "tool1" && "✓"}
               </span>
-              <span className="text-slate-400">{pct1}%</span>
+              <span className="text-ink-muted-48">{pct1}%</span>
             </div>
-            <div className="w-full h-2.5 rounded-full bg-white/10 overflow-hidden">
-              <div className="h-full bg-blue-400 rounded-full transition-all duration-500" style={{ width: `${pct1}%` }} />
+            <div className="w-full h-2.5 rounded-full bg-hairline overflow-hidden">
+              <div className="h-full bg-primary rounded-full transition-all duration-500" style={{ width: `${pct1}%` }} />
             </div>
           </div>
           <div>
             <div className="flex items-center justify-between text-sm mb-1">
-              <span className={`font-semibold ${voted === "tool2" ? "text-purple-300" : "text-slate-300"}`}>
+              <span className={`font-semibold ${voted === "tool2" ? "text-primary" : "text-ink-muted-80"}`}>
                 {tool2Name} {voted === "tool2" && "✓"}
               </span>
-              <span className="text-slate-400">{pct2}%</span>
+              <span className="text-ink-muted-48">{pct2}%</span>
             </div>
-            <div className="w-full h-2.5 rounded-full bg-white/10 overflow-hidden">
-              <div className="h-full bg-purple-400 rounded-full transition-all duration-500" style={{ width: `${pct2}%` }} />
+            <div className="w-full h-2.5 rounded-full bg-hairline overflow-hidden">
+              <div className="h-full bg-primary rounded-full transition-all duration-500" style={{ width: `${pct2}%` }} />
             </div>
           </div>
-          <p className="text-center text-xs text-slate-500 pt-1">Thanks for voting! Results update live.</p>
+          <p className="text-center text-xs text-ink-muted-48 pt-1">Thanks for voting! Results update live.</p>
         </div>
       )}
     </div>

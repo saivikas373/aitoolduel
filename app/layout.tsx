@@ -7,7 +7,8 @@ import Footer from "@/components/Footer";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  // Apple weight ladder: 400 / 600 / 700 only — 500 is banned, no 800.
+  weight: ["400", "600", "700"],
   variable: "--font-dm-sans",
   display: "swap",
 });
