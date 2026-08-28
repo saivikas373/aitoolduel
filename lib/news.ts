@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-jalapeno-model-launch-2026-08-28",
+    "title": "OpenAI Unveil Jalapeño Model, Emphasizing Speed and Efficiency",
+    "metaTitle": "OpenAI Jalapeño Model Sets New Speed Benchmark in 2026",
+    "metaDescription": "OpenAI’s Jalapeño model, launched Aug 25, 2026, highlights strong speed and efficiency in AI inference, marking a major performance leap over prior models.",
+    "date": "2026-08-25",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI announced the first results of its Jalapeño model on August 25, 2026, touting industry‑leading speed and efficiency in AI inference. The release signals a notable performance improvement over the provider’s previous generation of models, positioning OpenAI as a leader in rapid AI deployment.",
+    "sections": [
+      {
+        "h2": "Jalapeño Overview",
+        "paragraphs": [
+          "OpenAI introduced the Jalapeño model as its latest generation of AI systems, announced on August 25, 2026. The model is positioned as a continuation of the company's efforts to push the boundaries of inference performance.",
+          "In its first results release, OpenAI highlights that Jalapeño focuses on delivering faster response times and lower computational requirements compared to earlier offerings. The emphasis is on practical efficiency for real‑world deployment.",
+          "The launch signals OpenAI's intent to prioritize speed and efficiency in future AI products, aligning with growing demand for rapid inference without sacrificing quality. Early industry reaction notes the significance of this shift."
+        ]
+      },
+      {
+        "h2": "Performance Highlights",
+        "paragraphs": [
+          "Jalapeño claims industry‑leading speed, enabling quicker inference loops than previous models. This speed improvement is showcased in initial use‑case demonstrations.",
+          "Efficiency gains are also a core focus, with the model requiring less compute power per inference operation. The reduced resource footprint could lower operational costs for developers.",
+          "These performance attributes are presented as a direct response to user feedback seeking faster, more cost‑effective AI solutions. OpenAI's first results page provides detailed metrics on the improvements."
+        ]
+      },
+      {
+        "h2": "Comparison to Prior Models",
+        "paragraphs": [
+          "When compared to OpenAI's previous generation models, Jalapeño demonstrates a noticeable performance leap in both latency and throughput. The improvements are described as a step forward in the company's roadmap.",
+          "While specific benchmark numbers are not disclosed, the qualitative assessment points to a clear advantage in speed and efficiency. This positions the new model as a strong competitor in the inference market.",
+          "The comparative advantage is expected to influence enterprise adoption decisions, as organizations seek faster AI responses. OpenAI's announcement underscores this shift by highlighting the practical impact of the enhancements."
+        ]
+      },
+      {
+        "h2": "Implications for Developers",
+        "paragraphs": [
+          "Developers can expect shorter inference times with Jalapeño, which may accelerate application workflows and improve user experience. The model's efficiency also means easier scaling on existing hardware.",
+          "The emphasis on speed and lower resource usage could broaden the accessibility of advanced AI capabilities across smaller organizations that previously could not afford high‑compute solutions.",
+          "OpenAI's release invites the community to explore new use‑cases that were previously impractical due to latency constraints. Further updates and tooling will likely follow as adoption grows."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the Jalapeño model?",
+        "answer": "The Jalapeño model is OpenAI's latest AI model introduced on August 25, 2026, focusing on fast and efficient inference performance."
+      },
+      {
+        "question": "When was Jalapeño announced?",
+        "answer": "OpenAI announced the Jalapeño model on August 25, 2026."
+      },
+      {
+        "question": "What makes Jalapeño stand out?",
+        "answer": "Jalapeño is highlighted for its industry‑leading speed and efficiency in AI inference, delivering faster responses with lower computational demands."
+      },
+      {
+        "question": "How does Jalapeño compare to earlier OpenAI models?",
+        "answer": "Jalapeño shows a noticeable performance improvement over previous generations, offering quicker inference and greater efficiency."
+      },
+      {
+        "question": "Where can I find more details?",
+        "answer": "Additional information is available on OpenAI's announcement page at openai.com/index/jalapeno-first-results."
+      }
+    ]
+  },
+
+  {
     "slug": "lfm-2-5-release-august-2026",
     "title": "LFM 2.5 Launch: Liquid AI's Biggest Efficiency Breakthrough",
     "metaTitle": "LFM 2.5 Released Aug 2026 – Faster Inference & Multimodal",
