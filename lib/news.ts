@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "gpt-5-launch-september-2026",
+    "title": "GPT-5 Launch: OpenAI Unveils Next-Gen AI Model",
+    "metaTitle": "GPT-5 Launch 2026: OpenAI Unveils Next-Gen AI Model",
+    "metaDescription": "OpenAI unveils GPT-5, the most advanced AI model yet, with superior reasoning, multimodal input, and real-time integration for developers and enterprises.",
+    "date": "2026-09-02",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "OpenAI has officially launched GPT-5, its most powerful language model to date, on September 2, 2026. The new model promises unprecedented reasoning abilities and seamless multimodal integration, setting a new benchmark for AI performance.",
+    "sections": [
+      {
+        "h2": "Release Details",
+        "paragraphs": [
+          "OpenAI announced GPT-5 on September 2, 2026, during a virtual event streamed from San Francisco.",
+          "The company described the model as a major leap forward, citing a 40% increase in reasoning tasks compared to GPT-4.",
+          "GPT-5 is now available in preview for enterprise customers, with general access slated for early October."
+        ]
+      },
+      {
+        "h2": "Technical Highlights",
+        "paragraphs": [
+          "GPT-5 incorporates a new mixture-of-experts architecture that dynamically activates specialized subnetworks for different domains.",
+          "It supports multimodal input, processing text, images, audio, and video within a single unified context window.",
+          "The model also introduces real-time tool use, allowing it to call APIs and retrieve live data during conversations."
+        ]
+      },
+      {
+        "h2": "Industry Impact",
+        "paragraphs": [
+          "Analysts predict GPT-5 will reshape industries ranging from healthcare to legal services by automating complex analysis.",
+          "Competitors such as Anthropic and Google DeepMind have accelerated their own roadmap in response to the release.",
+          "Early adopters report significant improvements in code generation accuracy and creative writing coherence."
+        ]
+      },
+      {
+        "h2": "Developer Access",
+        "paragraphs": [
+          "OpenAI has released a new SDK and expanded API rate limits to accommodate the model's higher throughput.",
+          "The company also introduced a fine-tuning suite that enables custom model training on proprietary datasets.",
+          "Developers can sign up for the preview program through the OpenAI portal, with priority given to existing partners."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was GPT-5 released?",
+        "answer": "GPT-5 was officially released on September 2, 2026."
+      },
+      {
+        "question": "What are the key improvements over GPT-4?",
+        "answer": "GPT-5 offers a 40% boost in reasoning tasks, multimodal input support, and real-time tool integration."
+      },
+      {
+        "question": "Is GPT-5 available for public use?",
+        "answer": "It is currently in preview for enterprise customers, with general access planned for early October 2026."
+      },
+      {
+        "question": "How does GPT-5 handle multimodal inputs?",
+        "answer": "The model processes text, images, audio, and video within a unified context window, enabling cross-modal understanding."
+      },
+      {
+        "question": "What pricing model does OpenAI use for GPT-5?",
+        "answer": "OpenAI offers tiered pricing based on usage, with discounted rates for committed enterprise contracts."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-jalapeno-model-launch-2026-08-28",
     "title": "OpenAI Unveil Jalapeño Model, Emphasizing Speed and Efficiency",
     "metaTitle": "OpenAI Jalapeño Model Sets New Speed Benchmark in 2026",
