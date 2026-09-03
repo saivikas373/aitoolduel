@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "claude-fable-5-1-mythos-5-1-launch-september-2026",
+    "title": "Anthropic Launches Claude Fable 5.1 and Mythos 5.1",
+    "metaTitle": "Claude Fable 5.1 & Mythos 5.1: Anthropic's New Coding Models",
+    "metaDescription": "Anthropic released Claude Fable 5.1 and Mythos 5.1 on September 1, 2026, cutting cache-read costs 75% and posting 52.6% on Terminal-Bench-Science.",
+    "date": "2026-09-01",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "Anthropic released Claude Fable 5.1 and Claude Mythos 5.1 on September 1, 2026 — the same underlying model shipped at two different safeguard levels, aimed squarely at coding and technical research work. The headline changes are a steep price cut on cached tokens and a big jump on Anthropic's own science-focused coding benchmark.",
+    "sections": [
+      {
+        "h2": "Two Models, One Weight",
+        "paragraphs": [
+          "Fable 5.1 and Mythos 5.1 are the same model released with different levels of safeguards, not two separately trained systems.",
+          "Fable 5.1 is generally available to all Claude users and developers, while Mythos 5.1 is limited to Anthropic's trusted access programs for organizations working in sensitive domains like cybersecurity and the life sciences.",
+          "Anthropic frames the split as letting vetted researchers get more capability in narrow, monitored settings without loosening safeguards for the general public release."
+        ]
+      },
+      {
+        "h2": "Benchmarks and Performance",
+        "paragraphs": [
+          "The headline capability number is 52.6% on Terminal-Bench-Science 0.1, up from 24.7% for Fable 5 and ahead of Opus 5's 29.0% on the same benchmark.",
+          "Anthropic says the gain comes from improvements targeted at long-horizon coding and research tasks rather than a general capability jump across every benchmark.",
+          "Early testers report the model handling multi-step debugging and literature-heavy research questions more reliably than the previous Fable 5 generation."
+        ]
+      },
+      {
+        "h2": "Pricing and Cache Costs",
+        "paragraphs": [
+          "Anthropic cut the price of cached token reads by 75%, from $1.00 to $0.25 per million tokens.",
+          "Base input and output pricing is unchanged at $10 per million input tokens and $50 per million output tokens.",
+          "Anthropic estimates the cache-read cut brings roughly 25% lower cost on typical workloads and up to 45% lower cost on agentic workloads that reuse context heavily, such as coding agents."
+        ]
+      },
+      {
+        "h2": "Safeguard Changes in Claude Code",
+        "paragraphs": [
+          "Anthropic reports the cybersecurity filter inside Claude Code now fires around 60% less often per session, reducing false-positive interruptions for legitimate security work.",
+          "Fable 5.1 is now permitted to identify software vulnerabilities — the defensive side of security research — but Anthropic says it will still refuse to write working exploits for them.",
+          "The change is aimed at making the model more useful to security teams doing code review and vulnerability discovery without opening the door to offensive tooling."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the difference between Claude Fable 5.1 and Mythos 5.1?",
+        "answer": "They are the same underlying model released with different safeguard levels. Fable 5.1 is generally available; Mythos 5.1 is restricted to Anthropic's trusted access programs for sensitive domains like cybersecurity and life sciences."
+      },
+      {
+        "question": "When did Anthropic release Claude Fable 5.1 and Mythos 5.1?",
+        "answer": "Both models launched on September 1, 2026."
+      },
+      {
+        "question": "How much cheaper is Claude Fable 5.1 to run?",
+        "answer": "Cached token reads dropped 75%, from $1.00 to $0.25 per million tokens, which Anthropic estimates as roughly 25% lower cost on typical workloads and up to 45% lower on agentic workloads. Base input/output pricing is unchanged at $10/$50 per million tokens."
+      },
+      {
+        "question": "What is Terminal-Bench-Science?",
+        "answer": "It's an Anthropic benchmark for long-horizon coding and research tasks. Fable 5.1 scores 52.6% on it, versus 24.7% for Fable 5 and 29.0% for Opus 5."
+      },
+      {
+        "question": "Can Claude Fable 5.1 write exploits for security vulnerabilities?",
+        "answer": "No. It can now identify vulnerabilities as part of defensive security work, but Anthropic says it will still refuse to write working exploit code."
+      }
+    ]
+  },
+
+  {
     "slug": "gpt-5-launch-september-2026",
     "title": "GPT-5 Launch: OpenAI Unveils Next-Gen AI Model",
     "metaTitle": "GPT-5 Launch 2026: OpenAI Unveils Next-Gen AI Model",

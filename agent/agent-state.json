@@ -236,6 +236,11 @@
       "date": "2026-09-02",
       "action": "news",
       "slug": "gpt-5-launch-september-2026"
+    },
+    {
+      "date": "2026-09-03",
+      "action": "news",
+      "slug": "claude-fable-5-1-mythos-5-1-launch-september-2026"
     }
   ],
   "publishedComparisons": [
@@ -276,7 +281,8 @@
     "google-ai-amie-research-model-2026-08-13",
     "lfm-2-5-release-august-2026",
     "openai-jalapeno-model-launch-2026-08-28",
-    "gpt-5-launch-september-2026"
+    "gpt-5-launch-september-2026",
+    "claude-fable-5-1-mythos-5-1-launch-september-2026"
   ],
   "publishedLaunches": [
     {
@@ -329,9 +335,15 @@
     },
     {
       "provider": "OpenAI",
-      "modelName": "Jalapeño",
+      "modelName": "Jalape\u00f1o",
       "date": "2026-08-25",
       "slug": "openai-jalapeno-model-launch-2026-08-28"
+    },
+    {
+      "provider": "Anthropic",
+      "modelName": "Claude Fable 5.1 / Mythos 5.1",
+      "date": "2026-09-01",
+      "slug": "claude-fable-5-1-mythos-5-1-launch-september-2026"
     }
   ]
 }
