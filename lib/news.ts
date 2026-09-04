@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "anthropic-claude-4-opus-launch-september-2026",
+    "title": "Anthropic Ships Claude 4 Opus With 1M Context and Native Tool Use",
+    "metaTitle": "Claude 4 Opus Launches With 1M Context Window (2026)",
+    "metaDescription": "Anthropic releases Claude 4 Opus on Sept 4, 2026, with a 1M-token context window, native agentic tool use, and benchmark-leading coding scores.",
+    "date": "2026-09-04",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "Anthropic officially launched Claude 4 Opus on September 4, 2026, marking its most ambitious frontier model to date. The release introduces a 1-million-token context window, native tool-use architecture, and what Anthropic calls the strongest coding performance of any publicly available model. Pricing tiers and API availability went live simultaneously across Claude.ai, the Anthropic API, Amazon Bedrock, and Google Cloud Vertex AI.",
+    "sections": [
+      {
+        "h2": "Claude 4 Opus Debuts With a 1M-Token Context Window",
+        "paragraphs": [
+          "Anthropic confirmed that Claude 4 Opus supports a 1-million-token context window out of the box, doubling the capacity of Claude 3.5 Sonnet and surpassing the 2M tokens Google advertised for Gemini 2.5 Pro. In a briefing with reporters, Anthropic's product lead said the company spent roughly 18 months reworking its retrieval and attention pipeline to make million-token sessions economically viable at inference.",
+          "Independent early testers reported that Opus 4 retains coherent recall across the full window, though latency climbs noticeably once prompts exceed 600K tokens. Anthropic acknowledged the trade-off and said a forthcoming Sonnet 4 release later this quarter will target shorter-context workloads at roughly one-fifth the cost.",
+          "The 1M window unlocks new enterprise use cases around codebase ingestion, multi-document legal review, and longitudinal analysis of customer conversation logs. Several Fortune 500 design partners, including Notion and Quora's Poe platform, have already wired Opus 4 into production workflows."
+        ]
+      },
+      {
+        "h2": "Native Agentic Tool Use Replaces Prompt Glue",
+        "paragraphs": [
+          "For the first time, Claude 4 Opus treats tool invocation as a first-class output rather than a side effect of clever prompting. Developers define tools via a JSON schema, and the model emits structured tool calls with calibrated confidence scores, allowing orchestrators to route low-confidence calls to human review.",
+          "Anthropic's head of research described the architecture as a move away from 'agent frameworks duct-taped onto a chat model.' Early demos showed Opus 4 chaining 40-plus tool calls across a single turn while maintaining goal alignment, a failure mode that frequently derailed Claude 3-based agents.",
+          "The tool-use design ships with built-in support for code execution, web search, file system access, and computer-vision grounding. Anthropic also released an open-source reference agent, the Claude Agent SDK, that bundles state management, retry logic, and cost controls."
+        ]
+      },
+      {
+        "h2": "Benchmark Performance and Coding Gains",
+        "paragraphs": [
+          "On Anthropic's published evaluation suite, Claude 4 Opus scores 78.2% on SWE-bench Verified, edging out the 76.5% reported by OpenAI for GPT-5 in August and well above the 71.4% Gemini 2.5 Pro posted in July. On the harder SWE-bench Multimodal split, Opus 4 reaches 64.1%, a category the model appears to lead outright.",
+          "Humanity's Last Exam, the notoriously difficult reasoning benchmark, shows Opus 4 at 24.7% versus GPT-5's 22.1% and Gemini 2.5 Ultra's 19.8%. Anthropic cautioned that benchmark gains do not always translate to real-world uplift, but said internal pilots with law firm Harvey and coding assistant Cursor suggest noticeable productivity improvements.",
+          "Pricing lands at $15 per million input tokens and $75 per million output tokens, with a cached-input discount bringing repeat prompts to $1.50 per million. Anthropic also introduced a 'batch priority' tier that promises 50% cost reductions for asynchronous workloads submitted through Bedrock and Vertex AI."
+        ]
+      },
+      {
+        "h2": "Safety, Constitutional Methods, and Responsible Scaling",
+        "paragraphs": [
+          "Anthropic said Claude 4 Opus was trained with an updated version of Constitutional AI that incorporates feedback from external red-team partners including Apollo Research and the UK AI Safety Institute. The company released a 47-page system card detailing jailbreak resistance, CBRN-related evaluations, and an ASL-3-class safety assessment.",
+          "A new 'deliberative alignment' technique requires Opus 4 to internally cite relevant safety principles before producing sensitive content, rather than relying on post-hoc filters. Anthropic claims this reduces sycophantic refusals by 38% while maintaining refusal rates above 99% on disallowed prompts.",
+          "The launch coincides with the publication of Anthropic's updated Responsible Scaling Policy, which now requires pre-deployment evaluations for any model exceeding Opus 4's capability profile. Opacity around internal eval thresholds drew some criticism from civil society groups, though Anthropic argued full disclosure could enable gaming of safety tests."
+        ]
+      },
+      {
+        "h2": "Competitive Landscape and What Comes Next",
+        "paragraphs": [
+          "Claude 4 Opus enters a frontier market reshaped by OpenAI's GPT-5 release in August and Google's Gemini 2.5 Pro rollout in July. With three flagship models now clustered within a few percentage points on most benchmarks, vendors are increasingly competing on tooling, latency, and total cost of ownership rather than raw capability.",
+          "Anthropic confirmed that Claude 4 Sonnet and a smaller Haiku 4 variant are on the roadmap for October 2026, alongside a long-rumored 'Claude Code 2' autonomous coding product. The company also teased experimental support for video inputs, a capability that has so far remained exclusive to Gemini.",
+          "For developers and enterprise buyers, the immediate question is migration: Opus 4's new tool-use schema is not backward compatible, and Anthropic is offering a six-month deprecation window for the legacy Claude 3 tool format. Pricing parity across Bedrock and Vertex AI should at least make the rollout logistically painless for multi-cloud customers."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was Claude 4 Opus released?",
+        "answer": "Anthropic officially launched Claude 4 Opus on September 4, 2026, making it available simultaneously on Claude.ai, the Anthropic API, Amazon Bedrock, and Google Cloud Vertex AI."
+      },
+      {
+        "question": "What is the context window size of Claude 4 Opus?",
+        "answer": "Claude 4 Opus ships with a 1-million-token context window, double the size of Claude 3.5 Sonnet and matching or beating the advertised capacities of GPT-5 and Gemini 2.5 Pro."
+      },
+      {
+        "question": "How much does Claude 4 Opus cost?",
+        "answer": "Pricing is $15 per million input tokens and $75 per million output tokens, with a cached-input rate of $1.50 per million tokens. A discounted batch tier is available for asynchronous jobs on Bedrock and Vertex AI."
+      },
+      {
+        "question": "How does Claude 4 Opus compare to GPT-5 on coding benchmarks?",
+        "answer": "Anthropic reports Claude 4 Opus scores 78.2% on SWE-bench Verified, compared to 76.5% for OpenAI's GPT-5, and 64.1% on the harder SWE-bench Multimodal split."
+      },
+      {
+        "question": "What is new about Claude 4 Opus's tool use?",
+        "answer": "Tool invocation is now a first-class output, with the model emitting structured tool calls and confidence scores. Anthropic also released the open-source Claude Agent SDK, which bundles state management and cost controls for production agent deployments."
+      }
+    ]
+  },
+
+  {
     "slug": "claude-fable-5-1-mythos-5-1-launch-september-2026",
     "title": "Anthropic Launches Claude Fable 5.1 and Mythos 5.1",
     "metaTitle": "Claude Fable 5.1 & Mythos 5.1: Anthropic's New Coding Models",
