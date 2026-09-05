@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-6-astra-launch-2026-09-05",
+    "title": "OpenAI Unveils GPT-6 Astra as Major Flagship Upgrade",
+    "metaTitle": "OpenAI GPT-6 Astra AI Model Launch 2026",
+    "metaDescription": "OpenAI announces GPT-6 Astra, a major upgrade to its flagship AI model, marking a new generation of intelligence in artificial intelligence.",
+    "date": "2026-09-03",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI announced GPT-6 Astra on September 3, 2026, describing it as a new generation of intelligence. The release marks a major upgrade to the company's flagship model.",
+    "sections": [
+      {
+        "h2": "Announcement Overview",
+        "paragraphs": [
+          "On September 3, 2026, OpenAI officially announced its latest model, GPT-6 Astra.",
+          "The company described the model as representing a new generation of intelligence.",
+          "It is characterized as a major upgrade to OpenAI's flagship model."
+        ]
+      },
+      {
+        "h2": "Strategic Significance",
+        "paragraphs": [
+          "GPT-6 Astra is positioned as the next step in OpenAI's flagship model lineage.",
+          "The announcement highlights a major upgrade in the model's capabilities.",
+          "This development reflects the company's ongoing effort to improve its AI systems."
+        ]
+      },
+      {
+        "h2": "Industry Context",
+        "paragraphs": [
+          "The release follows a series of advancements in artificial intelligence across the industry.",
+          "OpenAI's previous flagship model was widely adopted in various applications.",
+          "With GPT-6 Astra, the company seeks to build on that foundation."
+        ]
+      },
+      {
+        "h2": "Future Outlook",
+        "paragraphs": [
+          "The announcement did not include pricing or performance benchmarks.",
+          "Further technical details have not yet been disclosed.",
+          "The AI community is monitoring the rollout for additional information."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was GPT-6 Astra announced?",
+        "answer": "It was announced on September 3, 2026."
+      },
+      {
+        "question": "What is GPT-6 Astra?",
+        "answer": "It is a new generation AI model from OpenAI, described as a major upgrade to its flagship model."
+      },
+      {
+        "question": "How does GPT-6 Astra differ from previous models?",
+        "answer": "The announcement states it is a major upgrade, but specific differences have not been detailed."
+      },
+      {
+        "question": "Is pricing information available?",
+        "answer": "Pricing details have not been disclosed."
+      },
+      {
+        "question": "Where can I find more information?",
+        "answer": "More details are available at https://openai.com/index/gpt-6-astra."
+      }
+    ]
+  },
+
+  {
     "slug": "anthropic-claude-4-opus-launch-september-2026",
     "title": "Anthropic Ships Claude 4 Opus With 1M Context and Native Tool Use",
     "metaTitle": "Claude 4 Opus Launches With 1M Context Window (2026)",
