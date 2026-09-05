@@ -246,6 +246,14 @@
       "date": "2026-09-04",
       "action": "news",
       "slug": "anthropic-claude-4-opus-launch-september-2026"
+    },
+    {
+      "date": "2026-09-05",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "openai-gpt-6-astra-launch-2026-09-05"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -288,7 +296,8 @@
     "openai-jalapeno-model-launch-2026-08-28",
     "gpt-5-launch-september-2026",
     "claude-fable-5-1-mythos-5-1-launch-september-2026",
-    "anthropic-claude-4-opus-launch-september-2026"
+    "anthropic-claude-4-opus-launch-september-2026",
+    "openai-gpt-6-astra-launch-2026-09-05"
   ],
   "publishedLaunches": [
     {
@@ -350,6 +359,12 @@
       "modelName": "Claude Fable 5.1 / Mythos 5.1",
       "date": "2026-09-01",
       "slug": "claude-fable-5-1-mythos-5-1-launch-september-2026"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "GPT-6 Astra",
+      "date": "2026-09-03",
+      "slug": "openai-gpt-6-astra-launch-2026-09-05"
     }
   ]
 }
