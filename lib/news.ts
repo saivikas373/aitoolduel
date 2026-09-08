@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "google-amie-enterprise-knowledge-base-model-2026",
+    "title": "Google Launches AI AMIE for Enterprise Knowledge Bases",
+    "metaTitle": "Google AI AMIE 2026 Enterprise Knowledge Base Model Launch",
+    "metaDescription": "Google announces AI AMIE model for enterprise knowledge base applications. Launched August 11 2026.",
+    "date": "2026-08-11",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Google has introduced a new artificial intelligence model called AI AMIE, specifically designed for enterprise knowledge base applications. The announcement was made on August 11 2026, marking Google's continued expansion into specialized AI solutions for business environments.",
+    "sections": [
+      {
+        "h2": "Model Announcement and Target Use",
+        "paragraphs": [
+          "Google officially unveiled the AI AMIE model on August 11 2026. The model is purpose-built for enterprise knowledge base applications, addressing the growing need for intelligent information management systems in corporate environments.",
+          "AMIE represents Google's latest effort to provide tailored AI solutions for specific business functions. The model focuses on enhancing organizational efficiency through improved knowledge organization and retrieval capabilities.",
+          "The release underscores Google's strategy of developing specialized AI models rather than generic platforms. This approach aligns with industry trends toward vertical-specific AI implementations."
+        ]
+      },
+      {
+        "h2": "Enterprise Knowledge Base Focus",
+        "paragraphs": [
+          "The AI AMIE model is designed to integrate with existing enterprise knowledge management systems. Its architecture supports the complex requirements of large-scale corporate information repositories.",
+          "Knowledge bases serve as critical infrastructure for many organizations, housing documentation, procedures, and expertise. AI AMIE aims to enhance these systems through intelligent processing capabilities.",
+          "By targeting this specific application domain, Google positions AMIE as a solution for improving internal search accuracy and reducing time spent locating information within enterprise environments."
+        ]
+      },
+      {
+        "h2": "Google's AI Development Strategy",
+        "paragraphs": [
+          "The introduction of AMIE continues Google's pattern of releasing specialized AI models for distinct use cases. This follows previous releases focused on various business and consumer applications.",
+          "Google has been systematically expanding its AI portfolio with models optimized for different industries and functions. AMIE adds to this ecosystem with its enterprise knowledge base specialization.",
+          "The company's approach reflects a maturation of the AI market, where broad general-purpose models are supplemented by more focused solutions addressing specific operational needs."
+        ]
+      },
+      {
+        "h2": "Market Context and Availability",
+        "paragraphs": [
+          "The August 11 2026 announcement places AMIE among recent enterprise AI developments from major technology providers. Organizations increasingly seek AI solutions that integrate seamlessly with existing workflows.",
+          "Enterprise knowledge base applications represent a significant market opportunity as companies digitize their information assets. AI AMIE enters this space with Google's established infrastructure and platform capabilities.",
+          "While specific technical specifications were not detailed in the initial announcement, the model's enterprise focus suggests integration capabilities with Google Cloud services and other business software ecosystems."
+        ]
+      },
+      {
+        "h2": "Future Implications for Enterprise AI",
+        "paragraphs": [
+          "The launch of AI AMIE may signal Google's intent to deepen its presence in enterprise AI applications. Specialized models often drive broader adoption by addressing concrete business problems.",
+          "As organizations continue to generate vast amounts of documentation and expertise, AI solutions like AMIE become increasingly valuable for knowledge management. This trend supports ongoing demand for specialized AI tools.",
+          "The model's success will likely depend on its ability to deliver practical improvements to existing knowledge base systems. Google's track record with enterprise solutions provides a foundation for market adoption."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the Google AI AMIE model?",
+        "answer": "AI AMIE is an artificial intelligence model developed by Google, designed specifically for enterprise knowledge base applications. It was officially announced on August 11 2026."
+      },
+      {
+        "question": "When was AI AMIE announced?",
+        "answer": "Google announced the AI AMIE model on August 11 2026, as confirmed in the official launch announcement."
+      },
+      {
+        "question": "What applications is AI AMIE designed for?",
+        "answer": "The AI AMIE model is designed for enterprise knowledge base applications, supporting organizations in managing and utilizing their internal information resources."
+      },
+      {
+        "question": "Which company developed AI AMIE?",
+        "answer": "AI AMIE was developed and announced by Google, adding to the company's portfolio of specialized AI models for business applications."
+      },
+      {
+        "question": "What does AMIE stand for in this Google model?",
+        "answer": "The announcement refers to the model as AI AMIE, but specific details about what the acronym represents were not provided in the official launch information."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt-6-astra-launch-2026-09-05",
     "title": "OpenAI Unveils GPT-6 Astra as Major Flagship Upgrade",
     "metaTitle": "OpenAI GPT-6 Astra AI Model Launch 2026",
