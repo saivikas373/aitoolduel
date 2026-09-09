@@ -262,6 +262,11 @@
       "published": [
         "google-amie-enterprise-knowledge-base-model-2026"
       ]
+    },
+    {
+      "date": "2026-09-09",
+      "action": "comparison",
+      "slug": "midjourney-vs-canva-ai"
     }
   ],
   "publishedComparisons": [
@@ -288,7 +293,8 @@
     "chatgpt vs google docs",
     "claude vs cursor",
     "perplexity vs google",
-    "sora vs runway"
+    "sora vs runway",
+    "midjourney vs canva ai"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
