@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "cognition-swe-2-2026-09-10",
+    "title": "Cognition Launches SWE-2, New Rival to Fable 5.1 and GPT-Astra",
+    "metaTitle": "Cognition Announces SWE-2 2026: New Rival to Fable 5.1",
+    "metaDescription": "Cognition unveils SWE-2, a new AI software engineering model announced on 2026-09-10, positioned as a rival to Fable 5.1 and GPT-Astra for software development.",
+    "date": "2026-09-10",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Cognition announced SWE-2 on September 10, 2026, positioning it as a direct competitor to Fable 5.1 and GPT-Astra. The new software engineering model targets developers seeking advanced code generation capabilities.",
+    "sections": [
+      {
+        "h2": "Cognition Announces SWE-2 on September 10, 2026",
+        "paragraphs": [
+          "Cognition unveiled its latest software engineering model, SWE-2, on September 10, 2026.",
+          "The announcement highlights SWE-2 as a new offering aimed at developers seeking advanced code generation capabilities.",
+          "SWE-2 is presented as a direct competitor to established models such as Fable 5.1 and GPT-Astra."
+        ]
+      },
+      {
+        "h2": "Positioning Against Existing Leaders",
+        "paragraphs": [
+          "By targeting the software engineering niche, SWE-2 seeks to challenge the market dominance of Fable 5.1.",
+          "The model is marketed as a rival to GPT-Astra, indicating a focus on competitive performance in code-related tasks.",
+          "This positioning reflects Cognition's strategy to expand its footprint among engineering teams."
+        ]
+      },
+      {
+        "h2": "Technical Focus and Use Cases",
+        "paragraphs": [
+          "As a software engineering model, SWE-2 is designed to assist with coding, debugging, and project management workflows.",
+          "The announcement suggests that SWE-2 will support developers in accelerating software delivery cycles.",
+          "While specific capabilities are not detailed, the context implies a focus on practical engineering applications."
+        ]
+      },
+      {
+        "h2": "Impact on the AI Development Landscape",
+        "paragraphs": [
+          "The launch adds another contender in the rapidly evolving AI model market for software development.",
+          "Competing with Fable 5.1 and GPT-Astra may drive improvements in code quality and tooling integration.",
+          "Industry observers expect SWE-2 to influence how developers evaluate AI assistance in their toolchains."
+        ]
+      },
+      {
+        "h2": "Future Outlook for Cognition Models",
+        "paragraphs": [
+          "SWE-2 marks the latest step in Cognition's progression of specialized AI models for engineering tasks.",
+          "The company may continue to refine its lineup based on user feedback and market response.",
+          "Ongoing releases could further differentiate Cognition's offerings from established competitors."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is SWE-2?",
+        "answer": "SWE-2 is a software engineering model announced by Cognition."
+      },
+      {
+        "question": "When was SWE-2 announced?",
+        "answer": "SWE-2 was announced on September 10, 2026."
+      },
+      {
+        "question": "Which models does SWE-2 compete with?",
+        "answer": "SWE-2 competes with Fable 5.1 and GPT-Astra."
+      },
+      {
+        "question": "Who provides SWE-2?",
+        "answer": "Cognition provides SWE-2."
+      },
+      {
+        "question": "What is the primary purpose of SWE-2?",
+        "answer": "The primary purpose of SWE-2 is to assist software engineers with coding and related tasks."
+      }
+    ]
+  },
+
+  {
     "slug": "chatgpt-images-2-5-launch-2026-09-08",
     "title": "OpenAI Launches ChatGPT Images 2.5, Its Next-Gen Image Model",
     "metaTitle": "ChatGPT Images 2.5: OpenAI 2026 Image Model Release",
