@@ -275,6 +275,14 @@
       "published": [
         "chatgpt-images-2-5-launch-2026-09-08"
       ]
+    },
+    {
+      "date": "2026-09-10",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "cognition-swe-2-2026-09-10"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -321,7 +329,8 @@
     "anthropic-claude-4-opus-launch-september-2026",
     "openai-gpt-6-astra-launch-2026-09-05",
     "google-amie-enterprise-knowledge-base-model-2026",
-    "chatgpt-images-2-5-launch-2026-09-08"
+    "chatgpt-images-2-5-launch-2026-09-08",
+    "cognition-swe-2-2026-09-10"
   ],
   "publishedLaunches": [
     {
@@ -401,6 +410,12 @@
       "modelName": "ChatGPT Images 2.5",
       "date": "2026-09-08",
       "slug": "chatgpt-images-2-5-launch-2026-09-08"
+    },
+    {
+      "provider": "Cognition",
+      "modelName": "SWE-2",
+      "date": "2026-09-10",
+      "slug": "cognition-swe-2-2026-09-10"
     }
   ]
 }
