@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "chatgpt-images-2-5-launch-2026-09-08",
+    "title": "OpenAI Launches ChatGPT Images 2.5, Its Next-Gen Image Model",
+    "metaTitle": "ChatGPT Images 2.5: OpenAI 2026 Image Model Release",
+    "metaDescription": "The OpenAI announces ChatGPT Images 2.5, the latest image generation model, enhancing creative workflows for developers and creators in 2026.",
+    "date": "2026-09-08",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI introduced ChatGPT Images 2.5 on September 8, 2026, marking the latest iteration of its image generation model. The release continues the company's series of updates to its visual AI capabilities.",
+    "sections": [
+      {
+        "h2": "Announcement Overview",
+        "paragraphs": [
+          "OpenAI announced the launch of ChatGPT Images 2.5 on September 8, 2026.",
+          "The new model is described as the latest iteration of the company's image generation system.",
+          "This release follows a series of updates to OpenAI's visual AI offerings."
+        ]
+      },
+      {
+        "h2": "Model Context",
+        "paragraphs": [
+          "ChatGPT Images 2.5 is part of the broader ChatGPT ecosystem that integrates text and image capabilities.",
+          "It succeeds earlier versions of OpenAI's image generation models.",
+          "The model is positioned as an upgrade within OpenAI's portfolio of generative tools."
+        ]
+      },
+      {
+        "h2": "Capabilities",
+        "paragraphs": [
+          "The model is designed to generate images from textual prompts.",
+          "It is intended to be accessed through the ChatGPT interface.",
+          "OpenAI has not disclosed specific performance metrics for this version."
+        ]
+      },
+      {
+        "h2": "Industry Impact",
+        "paragraphs": [
+          "The launch adds to the growing competition in the AI image generation space.",
+          "OpenAI's entry reinforces the trend of integrating multimodal capabilities into conversational agents.",
+          "Observers note that such models are increasingly used in creative and commercial applications."
+        ]
+      },
+      {
+        "h2": "Future Outlook",
+        "paragraphs": [
+          "OpenAI has not provided a roadmap for future versions of ChatGPT Images.",
+          "The company continues to iterate on its generative models.",
+          "Stakeholders anticipate further advancements in image generation from OpenAI."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was ChatGPT Images 2.5 announced?",
+        "answer": "It was announced on September 8, 2026."
+      },
+      {
+        "question": "Who released ChatGPT Images 2.5?",
+        "answer": "OpenAI released the model."
+      },
+      {
+        "question": "What is ChatGPT Images 2.5?",
+        "answer": "It is the latest iteration of OpenAI's image generation model."
+      },
+      {
+        "question": "How does ChatGPT Images 2.5 relate to previous models?",
+        "answer": "It follows earlier versions of OpenAI's image generation models, though specific differences have not been disclosed."
+      },
+      {
+        "question": "Where can I find more information about the launch?",
+        "answer": "More details are available on the OpenAI website at https://openai.com/index/introducing-chatgpt-images-2-5."
+      }
+    ]
+  },
+
+  {
     "slug": "google-amie-enterprise-knowledge-base-model-2026",
     "title": "Google Launches AI AMIE for Enterprise Knowledge Bases",
     "metaTitle": "Google AI AMIE 2026 Enterprise Knowledge Base Model Launch",
