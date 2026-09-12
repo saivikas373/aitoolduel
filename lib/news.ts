@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-live-1-voice-model-2026-09-12",
+    "title": "OpenAI Launches GPT-Live-1, a Voice‑First Conversational Model",
+    "metaTitle": "OpenAI Introduces GPT-Live-1 Voice Model in 2026 API Release",
+    "metaDescription": "OpenAI announces GPT-Live-1, a voice‑oriented model released Sep 10, 2026 via the API to enable more natural conversational experiences for developers.",
+    "date": "2026-09-10",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "On September 10, 2026, OpenAI announced GPT-Live-1, a new voice‑oriented model now available through its API. The model is designed to enable more natural, conversational interactions using voice input and output. It represents OpenAI’s latest step toward richer, real‑time AI communication.",
+    "sections": [
+      {
+        "h2": "Announcement and Availability",
+        "paragraphs": [
+          "OpenAI revealed GPT-Live-1 on September 10, 2026, via its official blog post at https://openai.com/index/introducing-gpt-live-1-in-the-api. The release marks the company’s first dedicated voice‑oriented model offered through the API.",
+          "Developers can access GPT-Live-1 immediately after the announcement, integrating it into applications that require spoken language processing. The model is offered as part of OpenAI’s standard API offerings, subject to existing usage policies.",
+          "The announcement emphasized that GPT-Live-1 aims to improve the quality of voice‑based interactions, making them feel more fluid and human‑like compared to earlier text‑only approaches."
+        ]
+      },
+      {
+        "h2": "Voice‑Oriented Design",
+        "paragraphs": [
+          "GPT-Live-1 is built to accept voice input and produce voice output, allowing developers to create spoken dialogue experiences through a single API call.",
+          "By operating directly in the audio domain, the model can capture aspects of speech such as tone and rhythm that are often lost when relying on separate transcription and synthesis steps.",
+          "OpenAI states that the goal is to deliver more natural conversational experiences, enabling users to interact with AI as they would with another person."
+        ]
+      },
+      {
+        "h2": "Intended Use Cases",
+        "paragraphs": [
+          "Potential use cases include virtual assistants, customer service bots, interactive learning tools, and any application that benefits from real‑time spoken communication.",
+          "The model may be particularly useful in hands‑free environments such as automotive interfaces or accessibility solutions for users with visual impairments.",
+          "Developers are encouraged to experiment with GPT-Live-1 to explore how voice‑first interactions can enhance user engagement and accessibility."
+        ]
+      },
+      {
+        "h2": "Context Within OpenAI’s Model Lineup",
+        "paragraphs": [
+          "GPT-Live-1 joins OpenAI’s lineup of generative models, following earlier releases such as GPT-4 and its variants that focused primarily on text.",
+          "While previous models required developers to handle voice processing outside the model, GPT-Live-1 incorporates voice handling directly within the API offering.",
+          "This launch underscores OpenAI’s strategy to expand the modalities its models support, giving developers more flexibility when building AI‑powered products."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-Live-1?",
+        "answer": "GPT-Live-1 is a voice‑oriented AI model released by OpenAI on September 10, 2026, available through its API to enable natural spoken interactions."
+      },
+      {
+        "question": "How can developers access GPT-Live-1?",
+        "answer": "Developers can access GPT-Live-1 via OpenAI’s standard API, using the same authentication and endpoints as other models, starting from the announcement date."
+      },
+      {
+        "question": "What makes GPT-Live-1 different from OpenAI’s earlier models?",
+        "answer": "Unlike earlier models that primarily process text, GPT-Live-1 is designed to handle voice input and output directly, aiming for more lifelike conversational experiences."
+      },
+      {
+        "question": "What types of applications might benefit from GPT-Live-1?",
+        "answer": "Applications such as virtual assistants, customer service bots, educational tools, and accessibility interfaces can leverage GPT-Live-1 for real‑time voice‑driven interactions."
+      },
+      {
+        "question": "Where can I find the official announcement?",
+        "answer": "The official announcement is posted on OpenAI’s blog at https://openai.com/index/introducing-gpt-live-1-in-the-api."
+      }
+    ]
+  },
+
+  {
     "slug": "cognition-swe-2-2026-09-10",
     "title": "Cognition Launches SWE-2, New Rival to Fable 5.1 and GPT-Astra",
     "metaTitle": "Cognition Announces SWE-2 2026: New Rival to Fable 5.1",
