@@ -297,6 +297,11 @@
       "published": [
         "openai-gpt-live-1-voice-model-2026-09-12"
       ]
+    },
+    {
+      "date": "2026-09-14",
+      "action": "news",
+      "slug": "claude-4-release-september-2026"
     }
   ],
   "publishedComparisons": [
@@ -345,7 +350,8 @@
     "google-amie-enterprise-knowledge-base-model-2026",
     "chatgpt-images-2-5-launch-2026-09-08",
     "cognition-swe-2-2026-09-10",
-    "openai-gpt-live-1-voice-model-2026-09-12"
+    "openai-gpt-live-1-voice-model-2026-09-12",
+    "claude-4-release-september-2026"
   ],
   "publishedLaunches": [
     {
