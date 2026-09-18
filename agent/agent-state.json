@@ -302,6 +302,11 @@
       "date": "2026-09-14",
       "action": "news",
       "slug": "claude-4-release-september-2026"
+    },
+    {
+      "date": "2026-09-18",
+      "action": "comparison",
+      "slug": "chatgpt-vs-notion"
     }
   ],
   "publishedComparisons": [
@@ -329,7 +334,8 @@
     "claude vs cursor",
     "perplexity vs google",
     "sora vs runway",
-    "midjourney vs canva ai"
+    "midjourney vs canva ai",
+    "chatgpt vs notion"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
