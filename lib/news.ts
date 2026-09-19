@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-launches-astra-for-law-2026",
+    "title": "OpenAI Launches Astra for Law for Legal Tasks",
+    "metaTitle": "OpenAI Astra for Law 2026: Legal AI Model Launch",
+    "metaDescription": "OpenAI introduced Astra for Law, a specialized model for contract review and legal research. Discover the latest AI model release of 2026.",
+    "date": "2026-09-17",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI has launched Astra for Law, a specialized AI model tailored for legal domain tasks, expanding its suite of enterprise-focused models. Announced on September 17, 2026, the model targets key legal workflows such as contract review and legal research. This marks another step in OpenAI’s strategy to deliver domain-specific models for high-value industries.",
+    "sections": [
+      {
+        "h2": "Overview of Astra for Law",
+        "paragraphs": [
+          "On September 17, 2026, OpenAI announced the launch of Astra for Law, a specialized variant of its flagship model designed to perform tasks commonly encountered in the legal profession.",
+          "Positioned as a domain-specific model, Astra for Law is optimized to support legal professionals in activities such as reviewing contracts and conducting legal research.",
+          "This release continues OpenAI’s trend of developing tailored versions of its models to serve distinct industries, following successful deployments in healthcare, finance, and customer service."
+        ]
+      },
+      {
+        "h2": "Target Use Cases",
+        "paragraphs": [
+          "Astra for Law is built to assist with two core legal functions: contract review and legal research.",
+          "Law firms and legal departments can leverage the model to streamline the analysis of contracts, identifying key clauses, anomalies, and risk factors more efficiently.",
+          "Additionally, the model supports legal research by parsing through jurisprudential databases and case law to surface relevant precedents and statutory references."
+        ]
+      },
+      {
+        "h2": "Technical Approach",
+        "paragraphs": [
+          "Unlike general-purpose models, Astra for Law has been fine-tuned on a curated dataset of legal texts, including contracts, court rulings, and regulatory documents.",
+          "This specialized training enables the model to better understand the terminology, structure, and nuances common in legal language.",
+          "OpenAI emphasizes that the model adheres to legal compliance and data privacy standards, although specific technical benchmarks were not disclosed in the initial announcement."
+        ]
+      },
+      {
+        "h2": "Positioning Within OpenAI’s Lineup",
+        "paragraphs": [
+          "Astra for Law joins a growing catalog of specialized models from OpenAI, which also includes Astra for Finance and earlier iterations of Astra tailored for enterprise search.",
+          "Each variant reflects OpenAI’s broader push to move beyond generic AI assistants toward more focused tools that align with the operational needs of professional sectors.",
+          "By offering domain-specific models, OpenAI aims to reduce the need for extensive prompt engineering and provide more reliable outputs for complex, field-specific queries."
+        ]
+      },
+      {
+        "h2": "Availability and Access",
+        "paragraphs": [
+          "As of its announcement on September 17, 2026, Astra for Law is available to select enterprise partners through OpenAI’s API platform.",
+          "While broader public access timelines have not been specified, OpenAI indicated that it plans to expand availability based on user feedback and compliance validation.",
+          "Access is expected to require adherence to usage agreements that address confidentiality, data handling, and responsible AI deployment within legal environments."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Astra for Law?",
+        "answer": "Astra for Law is a specialized AI model developed by OpenAI, optimized for legal tasks such as contract review and legal research."
+      },
+      {
+        "question": "When was Astra for Law announced?",
+        "answer": "OpenAI announced Astra for Law on September 17, 2026."
+      },
+      {
+        "question": "What legal tasks can Astra for Law perform?",
+        "answer": "The model is designed to support contract review and legal research, helping legal professionals analyze documents and find relevant case law."
+      },
+      {
+        "question": "Is Astra for Law available to the public?",
+        "answer": "As of now, Astra for Law is available to select enterprise partners via OpenAI’s API, with plans to expand access based on user feedback."
+      },
+      {
+        "question": "How does Astra for Law differ from OpenAI’s general models?",
+        "answer": "Astra for Law is fine-tuned on legal data and optimized for legal workflows, distinguishing it from OpenAI’s general-purpose models."
+      }
+    ]
+  },
+
+  {
     "slug": "claude-4-release-september-2026",
     "title": "Anthropic Unveils Claude 4, the Largest AI Model to Date",
     "metaTitle": "Claude 4 Launch 2026: Anthropic's Biggest AI Model",
