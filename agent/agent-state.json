@@ -307,6 +307,14 @@
       "date": "2026-09-18",
       "action": "comparison",
       "slug": "chatgpt-vs-notion"
+    },
+    {
+      "date": "2026-09-19",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "openai-launches-astra-for-law-2026"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -357,7 +365,8 @@
     "chatgpt-images-2-5-launch-2026-09-08",
     "cognition-swe-2-2026-09-10",
     "openai-gpt-live-1-voice-model-2026-09-12",
-    "claude-4-release-september-2026"
+    "claude-4-release-september-2026",
+    "openai-launches-astra-for-law-2026"
   ],
   "publishedLaunches": [
     {
@@ -449,6 +458,12 @@
       "modelName": "GPT-Live-1",
       "date": "2026-09-10",
       "slug": "openai-gpt-live-1-voice-model-2026-09-12"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "Astra for Law",
+      "date": "2026-09-17",
+      "slug": "openai-launches-astra-for-law-2026"
     }
   ]
 }
