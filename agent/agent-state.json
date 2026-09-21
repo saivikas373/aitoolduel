@@ -315,6 +315,11 @@
       "published": [
         "openai-launches-astra-for-law-2026"
       ]
+    },
+    {
+      "date": "2026-09-21",
+      "action": "comparison",
+      "slug": "github-copilot-vs-tabnine"
     }
   ],
   "publishedComparisons": [
@@ -343,7 +348,8 @@
     "perplexity vs google",
     "sora vs runway",
     "midjourney vs canva ai",
-    "chatgpt vs notion"
+    "chatgpt vs notion",
+    "github copilot vs tabnine"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
