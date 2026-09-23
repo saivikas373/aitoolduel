@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-6-sol-luna-launch-2026-09-23",
+    "title": "OpenAI Unveils GPT-6 Sol and Luna Variants",
+    "metaTitle": "OpenAI Launches GPT-6 Sol and Luna Models in 2026",
+    "metaDescription": "OpenAI introduces GPT-6 Sol and Luna, two new variants that significantly expand the GPT-6 model family, announced September 22, 2026 for AI development.",
+    "date": "2026-09-22",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI has announced GPT-6 Sol and Luna, two new variants that represent a significant expansion of the GPT-6 model family. The company revealed the models on September 22, 2026, via its official blog. Details on specific capabilities and availability are expected to follow.",
+    "sections": [
+      {
+        "h2": "Announcement Overview",
+        "paragraphs": [
+          "OpenAI introduced GPT-6 Sol and Luna on September 22, 2026, through a post on its official website. The announcement frames the release as a significant expansion of the GPT-6 model family, which debuted earlier in the year. No technical specifications, benchmark results, or pricing details were disclosed in the initial announcement.",
+          "The blog post, titled \"Introducing GPT-6 Sol and Luna,\" positions the two variants as complementary additions to the existing GPT-6 lineup. OpenAI described the move as part of its ongoing strategy to offer specialized model configurations for different use cases. The company did not indicate whether Sol and Luna replace or supplement any prior GPT-6 variants.",
+          "Industry observers note that the dual-variant approach mirrors previous OpenAI releases, where distinct models were tailored for reasoning, creativity, or efficiency. However, without further documentation, the exact differentiation between Sol and Luna remains unspecified. OpenAI has promised additional details in forthcoming publications."
+        ]
+      },
+      {
+        "h2": "Model Variants: Sol and Luna",
+        "paragraphs": [
+          "The names Sol and Luna suggest a thematic pairing, potentially indicating contrasting design philosophies such as speed versus depth, or general-purpose versus specialized reasoning. OpenAI has not confirmed any functional differences between the two models in its announcement.",
+          "Previous GPT-6 iterations have been characterized by multimodal capabilities and improved instruction following. It is reasonable to infer that Sol and Luna inherit the core architecture of the GPT-6 base model while introducing variant-specific optimizations. The company has not released model cards or system cards for either variant.",
+          "Developers and researchers will likely await API documentation and access guidelines to understand how to integrate Sol and Luna into existing workflows. OpenAI typically rolls out new models through its API platform with phased access for partners and paying customers."
+        ]
+      },
+      {
+        "h2": "Strategic Significance",
+        "paragraphs": [
+          "The launch of Sol and Luna underscores OpenAI's commitment to expanding its model portfolio rather than relying on a single flagship release. This approach allows the company to address diverse customer needs, from low-latency applications to complex reasoning tasks, without fragmenting its brand.",
+          "By introducing two variants simultaneously, OpenAI may be testing market preference for different performance trade-offs. Such a strategy also creates a foundation for future tiered pricing or specialized enterprise offerings, though no commercial terms have been announced.",
+          "The expansion comes amid intensifying competition from other AI labs releasing families of models with distinct capabilities. OpenAI's decision to grow the GPT-6 line suggests confidence in its underlying architecture and a desire to maintain a broad competitive footprint."
+        ]
+      },
+      {
+        "h2": "Industry Context and Next Steps",
+        "paragraphs": [
+          "The AI community has responded with cautious interest, noting that OpenAI's previous model families have set performance benchmarks across multiple domains. Analysts expect independent evaluations to emerge once API access is granted, which will clarify the practical differences between Sol and Luna.",
+          "OpenAI's announcement did not include a timeline for general availability, fine-tuning support, or integration with tools like ChatGPT. Historically, the company has provided developer access within weeks of a public reveal, followed by broader consumer rollout.",
+          "As with prior releases, safety and alignment research will accompany deployment. OpenAI has emphasized responsible use in recent communications, and it is likely that Sol and Luna will be subject to similar usage policies and monitoring frameworks."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are GPT-6 Sol and Luna?",
+        "answer": "GPT-6 Sol and Luna are two new variants of OpenAI's GPT-6 model family, announced on September 22, 2026, representing a significant expansion of the lineup."
+      },
+      {
+        "question": "How do Sol and Luna differ from each other?",
+        "answer": "OpenAI has not disclosed specific functional differences between Sol and Luna in its initial announcement. The names suggest a thematic pairing, but no technical distinctions have been confirmed."
+      },
+      {
+        "question": "When will developers be able to access these models?",
+        "answer": "No availability timeline was provided in the announcement. OpenAI typically grants API access to new models within weeks of a public reveal, starting with partners and paying customers."
+      },
+      {
+        "question": "Do Sol and Luna replace the original GPT-6 model?",
+        "answer": "The announcement describes Sol and Luna as an expansion of the GPT-6 family, not a replacement. It is unclear whether the original GPT-6 variant will remain available alongside them."
+      },
+      {
+        "question": "Where can I find more technical details about these models?",
+        "answer": "OpenAI has indicated that additional details will be shared in forthcoming publications. The official announcement page at openai.com/index/introducing-gpt-6-sol-and-luna is the primary source for now."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-launches-astra-for-law-2026",
     "title": "OpenAI Launches Astra for Law for Legal Tasks",
     "metaTitle": "OpenAI Astra for Law 2026: Legal AI Model Launch",
