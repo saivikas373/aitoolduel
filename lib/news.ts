@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "gpt-5-1-openai-update-september-2026",
+    "title": "OpenAI Releases GPT-5.1 With Smarter Tools and Multimodal Control",
+    "metaTitle": "GPT-5.1 Update 2026: OpenAI Adds Smarter Tool Use",
+    "metaDescription": "OpenAI's September 22, 2026 GPT-5.1 update brings improved coding, stronger tool orchestration, richer multimodal inputs and expanded enterprise controls.",
+    "date": "2026-09-23",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "OpenAI rolled out GPT-5.1 on September 22, 2026, marking the GPT-5 series' most significant upgrade this year. The release emphasizes more reliable tool use, longer-context reasoning, richer multimodal inputs and enterprise-grade governance.",
+    "sections": [
+      {
+        "h2": "A GPT-5 Series Upgrade Arrives",
+        "paragraphs": [
+          "OpenAI announced GPT-5.1 on September 22, 2026, the latest major release in its GPT-5 model family. The company began rolling the model out to ChatGPT Plus, Pro, Team and Enterprise users, while API access was made available to eligible developers.",
+          "The update is positioned as a practical reliability upgrade rather than a purely frontier-research release. OpenAI highlights stronger multi-step reasoning, more dependable tool execution and better handling of long, mixed-format tasks.",
+          "Availability is staggered by product and region, with the API offering the fastest route for developers. Customers on older GPT-5 models can continue using them, but GPT-5.1 is becoming the default recommendation for complex workflows."
+        ]
+      },
+      {
+        "h2": "Reasoning and Context Get Stronger",
+        "paragraphs": [
+          "OpenAI says GPT-5.1 shows measurable gains on coding, mathematics, scientific question answering and planning benchmarks. The emphasis is on completing extended tasks accurately rather than producing faster one-off answers.",
+          "Its biggest change is tool orchestration. The model can plan a sequence of actions, call tools, inspect their outputs, correct errors and continue without requiring the user to restart the workflow.",
+          "Context handling supports longer documents, codebases, transcripts, images, audio and video in a single workflow. That capability is relevant to legal review, software maintenance, research and customer-support automation."
+        ]
+      },
+      {
+        "h2": "Developers Get Better Automation",
+        "paragraphs": [
+          "The API adds structured output modes, parallel tool calls and resumable runs, reducing retries and state loss in production applications. Developers can also define stricter tool permissions and inspect clearer execution traces.",
+          "Those controls make it easier to enforce approval gates for payments, data exports and other external actions. For organizations building autonomous agents, the update lowers the operational risk of unverified tool use.",
+          "OpenAI is also expanding enterprise controls, including role-based access, audit logging and configurable data-retention settings. Those features are intended to make GPT-5.1 easier to deploy in regulated environments."
+        ]
+      },
+      {
+        "h2": "The AI Race Moves Toward Execution",
+        "paragraphs": [
+          "The launch puts OpenAI in direct competition with Anthropic's Claude 4 family and Google's Gemini 3 Pro, both of which have emphasized reasoning and multimodal workflows. The coming quarter is likely to bring close comparisons across coding, agent tasks and enterprise deployments.",
+          "Unlike a headline benchmark win, GPT-5.1's promise is operational: fewer failed tool calls, more predictable outputs and safer automation. That could influence procurement decisions as companies prioritize models that can complete end-to-end work.",
+          "For developers, the release raises the bar for AI applications. Teams will increasingly expect models to plan, verify and recover autonomously instead of merely generating a polished response."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-5.1?",
+        "answer": "GPT-5.1 is OpenAI's major GPT-5-family update announced on September 22, 2026, focused on stronger reasoning, tool orchestration, multimodal processing and enterprise controls."
+      },
+      {
+        "question": "When did OpenAI release GPT-5.1?",
+        "answer": "OpenAI announced GPT-5.1 on September 22, 2026, and began a phased rollout across ChatGPT products and the OpenAI API that day."
+      },
+      {
+        "question": "What is new in GPT-5.1?",
+        "answer": "Key improvements include more reliable multi-step reasoning, parallel and resumable tool calls, better handling of long mixed-format contexts and expanded governance features."
+      },
+      {
+        "question": "Does GPT-5.1 replace the original GPT-5?",
+        "answer": "No. Older GPT-5 models remain available, while GPT-5.1 is being recommended for new or more complex workflows because of its improved reliability and automation capabilities."
+      },
+      {
+        "question": "Is GPT-5.1 available for enterprise customers?",
+        "answer": "OpenAI is rolling GPT-5.1 out to Team and Enterprise customers, with API access for eligible developers and additional controls such as audit logging and configurable retention."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt-6-sol-luna-launch-2026-09-23",
     "title": "OpenAI Unveils GPT-6 Sol and Luna Variants",
     "metaTitle": "OpenAI Launches GPT-6 Sol and Luna Models in 2026",
