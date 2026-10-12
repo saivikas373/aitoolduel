@@ -355,6 +355,11 @@
       "date": "2026-10-12",
       "action": "comparison",
       "slug": "claude-vs-gemini-advanced"
+    },
+    {
+      "date": "2026-10-12",
+      "action": "news",
+      "slug": "lfm-3.0-launch-2026-industry-news"
     }
   ],
   "publishedComparisons": [
@@ -411,7 +416,8 @@
     "openai-launches-astra-for-law-2026",
     "openai-gpt-6-sol-luna-launch-2026-09-23",
     "gpt-5-1-openai-update-september-2026",
-    "gpt-5-release-september-2026"
+    "gpt-5-release-september-2026",
+    "lfm-3.0-launch-2026-industry-news"
   ],
   "publishedLaunches": [
     {
