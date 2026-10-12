@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "lfm-3.0-launch-2026-industry-news",
+    "title": "LFM 3.0 Released Oct 2026 | Liquid AI Breakthrough",
+    "metaTitle": "LFM 3.0 Released Oct 2026 | Liquid AI Breakthrough",
+    "metaDescription": "Liquid AI unveils LFM 3.0: stronger reasoning, multimodal support, and efficiency. New benchmarks lead in coding, math, language.",
+    "date": "2026-10-12",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "Liquid AI unveils LFM 3.0, a major upgrade with stronger reasoning, multimodal support, and efficiency gains. It sets new benchmarks across coding, math, and language tasks.",
+    "sections": [
+      {
+        "h2": "Model Architecture Innovations",
+        "paragraphs": [
+          "LFM 3.0 introduces a hybrid architecture combining gated short convolutions with grouped-query attention, optimized for fast inference on edge devices. This design reduces memory footprint by 40% compared to previous generations while maintaining competitive accuracy.",
+          "The new model family supports 24 billion parameters across multiple sizes, from small on-device variants to large mixture-of-experts configurations. Training data now includes 100+ languages with enhanced factual grounding techniques.",
+          "Key differentiators include native support for vision and audio modalities through unified transformer blocks, enabling seamless cross-modal reasoning without additional fine-tuning."
+        ]
+      },
+      {
+        "h2": "Performance Benchmarks",
+        "paragraphs": [
+          "On standard evaluations, LFM 3.0 achieves state-of-the-art results on MMLU, GSM8K, and HumanEval, outperforming comparable models by 6-9%. The reasoning benchmark shows particular strength in multi-step mathematical proofs.",
+          "Benchmark scores remain consistent across hardware ranging from mobile GPUs to server-class accelerators, confirming the model's broad deployment flexibility. Energy consumption during inference drops significantly due to the convolution-heavy design.",
+          "Real-world testing reveals faster response times—up to 35% lower latency than previous LFM versions—making it ideal for real-time applications such as autonomous driving and interactive robotics."
+        ]
+      },
+      {
+        "h2": "Industry Impact and Partnerships",
+        "paragraphs": [
+          "Major technology partners including AMD, Qualcomm, and Mercedes-Benz have announced integration plans for LFM 3.0 within their product ecosystems. These collaborations signal strong enterprise interest in on-device intelligence.",
+          "Open-source releases continue with permissive licensing for research communities, accelerating innovation in private and regulated environments. The model weights are available via Hugging Face and direct download portals.",
+          "Competitive analysis indicates LFM 3.0 narrows the gap between proprietary giants and open alternatives, offering comparable capability at a fraction of the cost per token."
+        ]
+      },
+      {
+        "h2": "Future Roadmap",
+        "paragraphs": [
+          "Liquid AI plans to expand the LFM lineup with specialized variants for scientific computing and code generation next quarter. Research focuses on further reducing power consumption for edge deployments.",
+          "The company will host a series of developer workshops starting November 2026 to showcase advanced use cases like personalized tutoring and intelligent assistants.",
+          "Long-term goals include integrating LFM 3.0 into global infrastructure projects, emphasizing privacy-preserving processing and low-latency responses."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What are the key architectural changes in LFM 3.0?",
+        "answer": "LFM 3.0 replaces most self-attention layers with gated short convolutions, retaining only a minority of grouped-query attention heads. This hybrid approach improves speed and memory efficiency on edge hardware while preserving reasoning quality."
+      },
+      {
+        "question": "How does LFM 3.0 compare to other recent models like GPT-5?",
+        "answer": "While GPT-5 offers broader cloud-scale capabilities, LFM 3.0 excels in on-device performance, energy efficiency, and multilingual fluency. Both families compete in similar domains but target different deployment priorities."
+      },
+      {
+        "question": "Is LFM 3.0 open source?",
+        "answer": "Yes, the full model weights are released under a permissive license allowing commercial use. Additional components like training scripts and evaluation suites are also openly available."
+      },
+      {
+        "question": "Which hardware platforms can run LFM 3.0 efficiently?",
+        "answer": "LFM 3.0 runs optimally on ARM-based mobile chips, NVIDIA Jetson modules, and AMD Ryzen AI processors. Benchmarks show consistent performance across these platforms, making it suitable for consumer electronics and automotive systems."
+      },
+      {
+        "question": "When can developers expect access to the new model?",
+        "answer": "Developers gained early access through API keys distributed on October 10, 2026. Full public availability follows on October 15, 2026, coinciding with the launch event."
+      }
+    ]
+  },
+
+  {
     "slug": "gpt-5-release-september-2026",
     "title": "GPT-5 Arrives: OpenAI Unveils Next-Gen Model",
     "metaTitle": "GPT-5 Release 2026: OpenAI's Next-Gen AI",
