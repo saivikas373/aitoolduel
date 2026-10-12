@@ -350,6 +350,11 @@
       "date": "2026-09-25",
       "action": "news",
       "slug": "gpt-5-release-september-2026"
+    },
+    {
+      "date": "2026-10-12",
+      "action": "comparison",
+      "slug": "claude-vs-gemini-advanced"
     }
   ],
   "publishedComparisons": [
@@ -379,7 +384,8 @@
     "sora vs runway",
     "midjourney vs canva ai",
     "chatgpt vs notion",
-    "github copilot vs tabnine"
+    "github copilot vs tabnine",
+    "claude vs gemini advanced"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
