@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-higgsfield-longer-videos-2026-10-13",
+    "title": "OpenAI Announces Higgsfield AI for Videos Longer Than 10 Minutes",
+    "metaTitle": "OpenAI Higgsfield: AI Video Beyond 10 Minutes 2026",
+    "metaDescription": "OpenAI reveals Higgsfield, an AI system generating videos exceeding ten minutes, marking a new era in long-form generative media and expanding content creation capabilities.",
+    "date": "2026-10-13",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI announced Higgsfield on October 13, 2026, a new AI system capable of generating videos longer than ten minutes. The release marks the provider's latest advancement in long-form generative media.",
+    "sections": [
+      {
+        "h2": "Announcement Launch",
+        "paragraphs": [
+          "OpenAI announced the release of Higgsfield on October 13, 2026, introducing a new AI system focused on extended video generation.",
+          "The model was formally introduced through OpenAI's official index blog, confirming its publication as part of the provider's model release schedule.",
+          "Higgsfield's public debut marks the organization's latest step in releasing advanced multimodal AI tools to the broader developer and creator community."
+        ]
+      },
+      {
+        "h2": "Video Generation Capability",
+        "paragraphs": [
+          "Higgsfield is described as an AI system capable of generating videos longer than ten minutes, representing a notable extension of duration limits in AI-produced video content.",
+          "The ten-minute threshold is highlighted in the announcement as a key capability enabling longer-form storytelling without manual segment assembly.",
+          "OpenAI confirmed that the system's primary announced feature centers on producing extended video sequences that surpass prior conventional constraints."
+        ]
+      },
+      {
+        "h2": "Context Within OpenAI's Portfolio",
+        "paragraphs": [
+          "The Higgsfield release continues OpenAI's ongoing development of multimodal artificial intelligence systems capable of processing and generating diverse content types.",
+          "The model joins a suite of OpenAI projects aimed at expanding the practical applications of generative AI beyond text and static imagery.",
+          "By introducing prolonged video generation, Higgsfield broadens the functional scope of autonomous AI systems in creative and professional workflows."
+        ]
+      },
+      {
+        "h2": "Industry and Creative Implications",
+        "paragraphs": [
+          "The announcement is expected to influence how digital content producers approach AI-assisted video production in the near term.",
+          "Longer-generation capabilities may reduce the need for post-generation editing stitching, streamlining workflows for creators requiring extended video output.",
+          "The release signals a shift toward end-to-end generative pipelines in the evolving landscape of AI-mediated media creation."
+        ]
+      },
+      {
+        "h2": "Official Statement and Resources",
+        "paragraphs": [
+          "OpenAI's official blog post confirms the Higgsfield launch, aligning the release with the organization's mission to advance capable and beneficial AI systems.",
+          "The announcement page provides details on the system's video-generation focus, though specific technical metrics were not enumerated in the initial public statement.",
+          "Interested readers can consult the OpenAI index for the full release notes and future updates regarding Higgsfield's development trajectory."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is the name of OpenAI's newly announced AI model?",
+        "answer": "Higgsfield."
+      },
+      {
+        "question": "On what date was Higgsfield announced?",
+        "answer": "October 13, 2026."
+      },
+      {
+        "question": "What is the primary capability attributed to Higgsfield?",
+        "answer": "The system can generate videos longer than ten minutes."
+      },
+      {
+        "question": "Where was the Higgsfield announcement published?",
+        "answer": "On OpenAI's official index blog at openai.com/index/higgsfield-longer-videos-voice."
+      },
+      {
+        "question": "Does Higgsfield represent OpenAI's first system focused on video generation?",
+        "answer": "The announcement introduces Higgsfield as OpenAI's dedicated system for extended-duration video output, marking a specific expansion in the provider's multimodal capabilities."
+      }
+    ]
+  },
+
+  {
     "slug": "lfm-3.0-launch-2026-industry-news",
     "title": "LFM 3.0 Released Oct 2026 | Liquid AI Breakthrough",
     "metaTitle": "LFM 3.0 Released Oct 2026 | Liquid AI Breakthrough",
