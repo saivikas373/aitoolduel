@@ -360,6 +360,15 @@
       "date": "2026-10-12",
       "action": "news",
       "slug": "lfm-3.0-launch-2026-industry-news"
+    },
+    {
+      "date": "2026-10-13",
+      "action": "launch-check",
+      "found": 2,
+      "published": [
+        "openai-higgsfield-longer-videos-2026-10-13",
+        "google-gemini-4-argon-launch-2026-10-13"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -417,7 +426,9 @@
     "openai-gpt-6-sol-luna-launch-2026-09-23",
     "gpt-5-1-openai-update-september-2026",
     "gpt-5-release-september-2026",
-    "lfm-3.0-launch-2026-industry-news"
+    "lfm-3.0-launch-2026-industry-news",
+    "openai-higgsfield-longer-videos-2026-10-13",
+    "google-gemini-4-argon-launch-2026-10-13"
   ],
   "publishedLaunches": [
     {
@@ -521,6 +532,18 @@
       "modelName": "GPT-6 Sol and Luna",
       "date": "2026-09-22",
       "slug": "openai-gpt-6-sol-luna-launch-2026-09-23"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "Higgsfield",
+      "date": "2026-10-13",
+      "slug": "openai-higgsfield-longer-videos-2026-10-13"
+    },
+    {
+      "provider": "Google AI",
+      "modelName": "Gemini 4 Argon",
+      "date": "2026-10-13",
+      "slug": "google-gemini-4-argon-launch-2026-10-13"
     }
   ]
 }
