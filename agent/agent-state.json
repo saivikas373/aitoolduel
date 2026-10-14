@@ -369,6 +369,11 @@
         "openai-higgsfield-longer-videos-2026-10-13",
         "google-gemini-4-argon-launch-2026-10-13"
       ]
+    },
+    {
+      "date": "2026-10-14",
+      "action": "news",
+      "slug": "nexus-9-release-october-2026"
     }
   ],
   "publishedComparisons": [
@@ -428,7 +433,8 @@
     "gpt-5-release-september-2026",
     "lfm-3.0-launch-2026-industry-news",
     "openai-higgsfield-longer-videos-2026-10-13",
-    "google-gemini-4-argon-launch-2026-10-13"
+    "google-gemini-4-argon-launch-2026-10-13",
+    "nexus-9-release-october-2026"
   ],
   "publishedLaunches": [
     {
