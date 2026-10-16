@@ -374,6 +374,11 @@
       "date": "2026-10-14",
       "action": "news",
       "slug": "nexus-9-release-october-2026"
+    },
+    {
+      "date": "2026-10-16",
+      "action": "comparison",
+      "slug": "openai-o3-vs-claude-opus"
     }
   ],
   "publishedComparisons": [
@@ -404,7 +409,8 @@
     "midjourney vs canva ai",
     "chatgpt vs notion",
     "github copilot vs tabnine",
-    "claude vs gemini advanced"
+    "claude vs gemini advanced",
+    "openai o3 vs claude opus"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
