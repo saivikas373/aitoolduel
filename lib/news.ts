@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-rosalind-academic-launch-2026-10-17",
+    "title": "OpenAI Launches GPT-Rosalind for Academic Research",
+    "metaTitle": "GPT-Rosalind: OpenAI's 2026 Academic AI Model Launch",
+    "metaDescription": "OpenAI has introduced GPT-Rosalind, an academic-focused GPT variant built to speed up question answering for research institutions. Announced in October 2026.",
+    "date": "2026-10-15",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI has announced GPT-Rosalind, a new academic-focused variant in its GPT family. The model is designed to help research institutions answer questions faster. It was introduced on October 15, 2026.",
+    "sections": [
+      {
+        "h2": "OpenAI Announces GPT-Rosalind",
+        "paragraphs": [
+          "OpenAI has introduced GPT-Rosalind, a new academic-focused variant of its GPT family.",
+          "The announcement came on October 15, 2026, through OpenAI's official channels.",
+          "The model is intended for use by research institutions."
+        ]
+      },
+      {
+        "h2": "Designed for Faster Question Answering",
+        "paragraphs": [
+          "GPT-Rosalind is designed to speed up question answering within academic environments.",
+          "This capability is aimed at supporting researchers and scholarly workflows.",
+          "OpenAI framed the release around the needs of the research community."
+        ]
+      },
+      {
+        "h2": "Place in the GPT Family",
+        "paragraphs": [
+          "The model belongs to OpenAI's broader GPT family of AI systems.",
+          "It represents a specialized variant rather than a general consumer release.",
+          "OpenAI continues to develop targeted versions of its core technology."
+        ]
+      },
+      {
+        "h2": "Academic Plan and Context",
+        "paragraphs": [
+          "OpenAI shared details through its Rosalind academic plan announcement.",
+          "The provider described GPT-Rosalind as part of its GPT family.",
+          "The release is aimed at research institutions rather than general consumers."
+        ]
+      },
+      {
+        "h2": "Known Details and Scope",
+        "paragraphs": [
+          "The confirmed purpose of GPT-Rosalind is faster question answering in academic settings.",
+          "OpenAI identified research institutions as the intended audience.",
+          "No additional technical specifications were provided in the initial summary."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-Rosalind?",
+        "answer": "GPT-Rosalind is a new academic-focused variant of OpenAI's GPT family, announced on October 15, 2026."
+      },
+      {
+        "question": "Who is GPT-Rosalind for?",
+        "answer": "It is designed for research institutions."
+      },
+      {
+        "question": "What does GPT-Rosalind do?",
+        "answer": "It is designed to speed up question answering for academic users."
+      },
+      {
+        "question": "When was GPT-Rosalind announced?",
+        "answer": "OpenAI announced it on October 15, 2026."
+      },
+      {
+        "question": "Is pricing available for GPT-Rosalind?",
+        "answer": "The announcement details do not include pricing information."
+      }
+    ]
+  },
+
+  {
     "slug": "nexus-9-release-october-2026",
     "title": "Nexus-9 Unveiled: AI Model Shatters Records Oct 2026",
     "metaTitle": "Nexus-9 Released Oct 2026 | AI Industry Breakthrough",
