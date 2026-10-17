@@ -379,6 +379,14 @@
       "date": "2026-10-16",
       "action": "comparison",
       "slug": "openai-o3-vs-claude-opus"
+    },
+    {
+      "date": "2026-10-17",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "openai-gpt-rosalind-academic-launch-2026-10-17"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -440,7 +448,8 @@
     "lfm-3.0-launch-2026-industry-news",
     "openai-higgsfield-longer-videos-2026-10-13",
     "google-gemini-4-argon-launch-2026-10-13",
-    "nexus-9-release-october-2026"
+    "nexus-9-release-october-2026",
+    "openai-gpt-rosalind-academic-launch-2026-10-17"
   ],
   "publishedLaunches": [
     {
@@ -556,6 +565,12 @@
       "modelName": "Gemini 4 Argon",
       "date": "2026-10-13",
       "slug": "google-gemini-4-argon-launch-2026-10-13"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "GPT-Rosalind",
+      "date": "2026-10-15",
+      "slug": "openai-gpt-rosalind-academic-launch-2026-10-17"
     }
   ]
 }
