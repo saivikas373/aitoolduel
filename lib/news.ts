@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "mistral-timestral-2026-10-19",
+    "title": "Mistral Launches Timestral Time-Series Foundation Model",
+    "metaTitle": "Mistral Unveils Timestral 2026 Time-Series AI Model",
+    "metaDescription": "Mistral announced Timestral on October 19, 2026, a time-series foundation model for specialized applications, expanding its AI portfolio toward temporal data.",
+    "date": "2026-10-19",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Mistral announced Timestral, a time‑series foundation model, on October 19, 2026. The new model is built for specialized applications that require accurate temporal data analysis. It expands Mistral’s AI portfolio into the time‑series domain.",
+    "sections": [
+      {
+        "h2": "Announcement Overview",
+        "paragraphs": [
+          "Mistral announced Timestral on October 19, 2026, as detailed in a press release on its website.",
+          "The new model is described as a time‑series foundation model intended for specialized applications.",
+          "This launch marks Mistral’s entry into the time‑series AI segment, expanding its portfolio beyond general‑purpose language models."
+        ]
+      },
+      {
+        "h2": "Purpose and Specialized Applications",
+        "paragraphs": [
+          "Timestral is built to process and analyze temporal data across domains such as finance, manufacturing, and scientific research.",
+          "Its design emphasizes accurate forecasting and pattern recognition in sequential datasets, addressing needs not fully covered by existing models.",
+          "By focusing on time‑series, the model aims to support customers requiring high‑resolution, domain‑specific analytics."
+        ]
+      },
+      {
+        "h2": "Foundation Model Architecture",
+        "paragraphs": [
+          "As a foundation model, Timestral provides a base capability that can be fine‑tuned for particular time‑series tasks.",
+          "It leverages large‑scale training on extensive time‑series corpora to learn general temporal representations.",
+          "The architecture is not disclosed in detail, but the announcement indicates it is a standalone model rather than an extension of a chat‑oriented system."
+        ]
+      },
+      {
+        "h2": "Relation to Mistral's Prior Models",
+        "paragraphs": [
+          "Timestral represents a new category for Mistral, complementing its earlier models such as the Mistral 7B series that target conversational AI.",
+          "The company highlights that the time‑series focus differentiates Timestral from its prior offerings, which primarily address text generation and understanding.",
+          "This expansion underscores Mistral’s strategy to serve niche markets with specialized foundation models."
+        ]
+      },
+      {
+        "h2": "Industry Impact",
+        "paragraphs": [
+          "The launch is expected to enable more precise predictions and insights for industries that rely heavily on sequential data streams.",
+          "Stakeholders can anticipate integration of Timestral into existing analytics pipelines to improve forecasting accuracy.",
+          "While specific performance metrics have not been released, the model’s specialization suggests it may outperform general models on time‑series challenges."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Timestral?",
+        "answer": "Timestral is a time‑series foundation model released by Mistral on October 19, 2026."
+      },
+      {
+        "question": "Who developed Timestral?",
+        "answer": "Mistral AI developed Timestral, as announced in its official press release."
+      },
+      {
+        "question": "When was Timestral announced?",
+        "answer": "Mistral announced Timestral on October 19, 2026."
+      },
+      {
+        "question": "What type of data does Timestral handle?",
+        "answer": "Timestral is designed for time‑series data, supporting specialized applications in domains such as finance, manufacturing, and research."
+      },
+      {
+        "question": "How does Timestral differ from Mistral’s previous models?",
+        "answer": "Unlike Mistral’s earlier conversational models, Timestral is a foundation model focused on temporal data, offering specialized capabilities for forecasting and pattern analysis."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt-rosalind-academic-launch-2026-10-17",
     "title": "OpenAI Launches GPT-Rosalind for Academic Research",
     "metaTitle": "GPT-Rosalind: OpenAI's 2026 Academic AI Model Launch",
