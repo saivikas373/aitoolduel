@@ -395,6 +395,11 @@
       "published": [
         "mistral-timestral-2026-10-19"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "action": "news",
+      "slug": "google-gemini-3-ultra-release-2026-10-19"
     }
   ],
   "publishedComparisons": [
@@ -458,7 +463,8 @@
     "google-gemini-4-argon-launch-2026-10-13",
     "nexus-9-release-october-2026",
     "openai-gpt-rosalind-academic-launch-2026-10-17",
-    "mistral-timestral-2026-10-19"
+    "mistral-timestral-2026-10-19",
+    "google-gemini-3-ultra-release-2026-10-19"
   ],
   "publishedLaunches": [
     {
