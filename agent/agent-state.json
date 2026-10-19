@@ -387,6 +387,14 @@
       "published": [
         "openai-gpt-rosalind-academic-launch-2026-10-17"
       ]
+    },
+    {
+      "date": "2026-10-19",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "mistral-timestral-2026-10-19"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -449,7 +457,8 @@
     "openai-higgsfield-longer-videos-2026-10-13",
     "google-gemini-4-argon-launch-2026-10-13",
     "nexus-9-release-october-2026",
-    "openai-gpt-rosalind-academic-launch-2026-10-17"
+    "openai-gpt-rosalind-academic-launch-2026-10-17",
+    "mistral-timestral-2026-10-19"
   ],
   "publishedLaunches": [
     {
@@ -571,6 +580,12 @@
       "modelName": "GPT-Rosalind",
       "date": "2026-10-15",
       "slug": "openai-gpt-rosalind-academic-launch-2026-10-17"
+    },
+    {
+      "provider": "Mistral",
+      "modelName": "Timestral",
+      "date": "2026-10-19",
+      "slug": "mistral-timestral-2026-10-19"
     }
   ]
 }
