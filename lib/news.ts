@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "google-gemini-3-ultra-release-2026-10-19",
+    "title": "Google’s Gemini 3 Ultra debuts with a 2M-token window",
+    "metaTitle": "Gemini 3 Ultra Launch: Google’s Big AI Model in 2026",
+    "metaDescription": "Google’s Gemini 3 Ultra launched October 15 with a 2M-token context window, stronger coding, and native multimodal tools. See what it means for AI users.",
+    "date": "2026-10-19",
+    "category": "Industry News",
+    "badge": "Hot",
+    "summary": "Google released Gemini 3 Ultra on October 15, 2026, making the flagship the most consequential general-purpose AI model launch of the week. The update pairs a 2-million-token context window with stronger coding, longer-running tool use, and a higher-compute Deep Think mode, sharpening competition with GPT-5.2 and Claude Opus 4.5.",
+    "sections": [
+      {
+        "h2": "Gemini 3 Ultra arrives on October 15",
+        "paragraphs": [
+          "Google began rolling out Gemini 3 Ultra on Thursday, October 15, positioning it as the company’s most capable general-purpose model. The flagship is available to Google AI Ultra subscribers and through the Gemini API, Google AI Studio and Vertex AI, with wider consumer and enterprise access expected to expand during the coming weeks.",
+          "The headline specification is a context window of 2 million tokens, allowing Ultra to process very large code repositories, document collections, meeting archives and multimodal projects in a single request. It supports text, images, audio, video and PDFs, while raising the maximum response length to 128,000 tokens.",
+          "The release is significant beyond its benchmark results because it combines Google’s latest Gemini architecture with infrastructure built around its TPU and cloud platforms. That combination gives the model a distribution advantage through Search, Workspace, Android, Cloud and developer tools that remains difficult for standalone model providers to match."
+        ]
+      },
+      {
+        "h2": "Coding and agents drive the upgrade",
+        "paragraphs": [
+          "Google has positioned Ultra as its strongest model for software engineering and autonomous workflows. In company-reported evaluations, it recorded 78.6% on SWE-bench Verified and 91.2% on Terminal-Bench 2.0, outperforming Gemini 3 Pro on tasks requiring navigation, terminal use and repeated tool calls.",
+          "Ultra can coordinate browser actions, run code, inspect files and call external services over longer sessions instead of stopping after a single response. Its improved retry and checkpoint behavior is aimed particularly at enterprise agents that must complete multi-stage work while preserving context across dozens or hundreds of steps.",
+          "The direct competition is immediate. OpenAI’s GPT-5.2 and Anthropic’s Claude Opus 4.5 remain formidable coding models, and independent evaluations will be needed to determine whether Ultra’s gains hold outside Google’s test harness. For now, Google’s results suggest that fewer manual interventions are required on complex, tool-heavy projects."
+        ]
+      },
+      {
+        "h2": "Deep Think raises the reasoning ceiling",
+        "paragraphs": [
+          "Gemini 3 Ultra launches with an expanded Deep Think mode that spends more time and computation examining difficult questions. It is designed for research, mathematics, strategic planning and ambiguous problems where an immediate answer would otherwise overlook interacting constraints.",
+          "Unlike the standard Ultra response, Deep Think produces a more deliberate process and allows the model to reconsider intermediate conclusions. Google says the mode is especially useful when evidence is spread across lengthy documents, diagrams, images or conflicting data sets.",
+          "The feature does not make errors impossible, and longer reasoning can still produce confident mistakes. Google’s comparison of Ultra with GPT-5.2 and Claude Opus 4.5 shows a meaningful lead in some high-compute reasoning tests, but the practical advantage will depend on latency, cost and whether users can identify the situations that justify the extra computation."
+        ]
+      },
+      {
+        "h2": "Access starts with Google AI Ultra",
+        "paragraphs": [
+          "At launch, priority access is going to Google AI Ultra subscribers, while Gemini API and Vertex AI customers can apply for preview capacity. Free and Google AI Pro users are expected to receive limited access as Google expands capacity, and enterprise administrators can control model use through organizational policies.",
+          "Google has published preview API pricing of $6 per 1 million input tokens and $36 per 1 million output tokens for standard requests. Requests exceeding 200,000 input tokens are priced at $12 and $72 respectively, making efficient prompt design important for companies using the full 2-million-token window.",
+          "The API identifier is gemini-3-ultra-preview, and Google has not said when preview status or pricing will end. Paid API and Vertex AI data is not used to train Google’s models by default, while enterprise customers can apply retention and data-governance controls for regulated workloads."
+        ]
+      },
+      {
+        "h2": "Why this is the week’s biggest release",
+        "paragraphs": [
+          "Gemini 3 Ultra is the biggest model launch of the week because it combines frontier-level reasoning with a major increase in context, stronger agentic execution and immediate access across consumer and enterprise products. A benchmark win alone might have generated less attention; a model that can also operate across Google’s global distribution network is a larger competitive event.",
+          "The release raises the standard for competitors as they respond to Google’s longer context window, higher-compute reasoning and agent tooling. OpenAI and Anthropic still offer strong alternatives, particularly for coding and developer workflows, but Gemini can now make a credible case for enterprise users who want one model across documents, media, code and cloud operations.",
+          "The risks remain substantial. Longer-running agents can execute unwanted actions, retrieve confidential information or amplify errors, while Deep Think’s additional computation raises costs and response times. Nevertheless, Ultra’s October 15 debut gives Google one of its strongest arguments yet that the next phase of AI competition will be won by models embedded in complete platforms, not standalone chat interfaces."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When was Gemini 3 Ultra released?",
+        "answer": "Google began releasing Gemini 3 Ultra on October 15, 2026. It is the company’s flagship general-purpose model and its largest release during the week ending October 18."
+      },
+      {
+        "question": "What is the Gemini 3 Ultra context window?",
+        "answer": "Gemini 3 Ultra supports a 2-million-token context window and can generate up to 128,000 tokens in one response. It can process text, images, audio, video and PDFs within the same context."
+      },
+      {
+        "question": "How does Gemini 3 Ultra differ from Gemini 3 Pro?",
+        "answer": "Ultra adds more computing for difficult reasoning, improved software-engineering performance and stronger long-running agent workflows. It also includes the higher-compute Deep Think mode and a substantially larger context window."
+      },
+      {
+        "question": "Where is Gemini 3 Ultra available?",
+        "answer": "The model is available to Google AI Ultra subscribers and through the Gemini API, Google AI Studio and Vertex AI. Google is staging a wider rollout to Google AI Pro and free users as capacity increases."
+      },
+      {
+        "question": "Does Gemini 3 Ultra beat GPT-5.2 and Claude Opus 4.5?",
+        "answer": "Google reports strong results against both models, particularly in coding, agentic tasks and high-compute reasoning. Independent testing is still needed to confirm those advantages under real-world workloads and pricing constraints."
+      }
+    ]
+  },
+
+  {
     "slug": "mistral-timestral-2026-10-19",
     "title": "Mistral Launches Timestral Time-Series Foundation Model",
     "metaTitle": "Mistral Unveils Timestral 2026 Time-Series AI Model",
