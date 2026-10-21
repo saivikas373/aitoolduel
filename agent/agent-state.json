@@ -400,6 +400,11 @@
       "date": "2026-10-19",
       "action": "news",
       "slug": "google-gemini-3-ultra-release-2026-10-19"
+    },
+    {
+      "date": "2026-10-21",
+      "action": "comparison",
+      "slug": "elevenlabs-vs-murf-ai"
     }
   ],
   "publishedComparisons": [
@@ -431,7 +436,8 @@
     "chatgpt vs notion",
     "github copilot vs tabnine",
     "claude vs gemini advanced",
-    "openai o3 vs claude opus"
+    "openai o3 vs claude opus",
+    "elevenlabs vs murf ai"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
