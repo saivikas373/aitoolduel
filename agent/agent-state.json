@@ -405,6 +405,14 @@
       "date": "2026-10-21",
       "action": "comparison",
       "slug": "elevenlabs-vs-murf-ai"
+    },
+    {
+      "date": "2026-10-22",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "openai-gpt-6-1-terminal-x-eval-2026-10-20"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -470,7 +478,8 @@
     "nexus-9-release-october-2026",
     "openai-gpt-rosalind-academic-launch-2026-10-17",
     "mistral-timestral-2026-10-19",
-    "google-gemini-3-ultra-release-2026-10-19"
+    "google-gemini-3-ultra-release-2026-10-19",
+    "openai-gpt-6-1-terminal-x-eval-2026-10-20"
   ],
   "publishedLaunches": [
     {
@@ -598,6 +607,12 @@
       "modelName": "Timestral",
       "date": "2026-10-19",
       "slug": "mistral-timestral-2026-10-19"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "GPT-6.1",
+      "date": "2026-10-20",
+      "slug": "openai-gpt-6-1-terminal-x-eval-2026-10-20"
     }
   ]
 }
