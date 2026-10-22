@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-6-1-terminal-x-eval-2026-10-20",
+    "title": "OpenAI Launches GPT-6.1 with 88.6% Terminal X Alignment",
+    "metaTitle": "OpenAI GPT-6.1 Launches 2026 with 88.6% Terminal X Alignment",
+    "metaDescription": "OpenAI announced GPT-6.1 on October 20, 2026, achieving 88.6% alignment with senior investor judgments in Terminal X evaluation, advancing AI alignment focus.",
+    "date": "2026-10-20",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI announced GPT-6.1 on October 20, 2026, introducing its latest generative AI model. The release reports an 88.6% alignment score with senior investor judgments in the Terminal X evaluation.",
+    "sections": [
+      {
+        "h2": "GPT-6.1 Announcement",
+        "paragraphs": [
+          "OpenAI officially announced GPT-6.1 on October 20, 2026, through its public blog and index page.",
+          "The model continues OpenAI's series of large-scale generative AI systems, representing the company's most recent iteration.",
+          "GPT-6.1 was unveiled as part of OpenAI's ongoing release schedule for advanced AI systems."
+        ]
+      },
+      {
+        "h2": "Terminal X Evaluation Results",
+        "paragraphs": [
+          "In the Terminal X evaluation, GPT-6.1 achieved 88.6% alignment with senior investor judgments, a key performance metric.",
+          "Terminal X is a standardized framework designed to assess AI model alignment within financial and investment decision-making contexts.",
+          "The 88.6% score provides a quantitative benchmark for the model's ability to match expert investor expectations."
+        ]
+      },
+      {
+        "h2": "Industry Context & Comparison",
+        "paragraphs": [
+          "GPT-6.1 succeeds previous OpenAI models, reflecting the organization's continuous development cycle in the generative AI space.",
+          "Alignment scores such as the Terminal X result are increasingly referenced by analysts and researchers evaluating responsible AI progress.",
+          "The release contributes to ongoing public and academic discussions about the role of quantitative alignment metrics in model governance."
+        ]
+      },
+      {
+        "h2": "Forward-Looking Perspective",
+        "paragraphs": [
+          "OpenAI has stated its intention to continue investing in alignment research following the GPT-6.1 launch.",
+          "Evaluation frameworks like Terminal X may be updated to incorporate emerging model capabilities and new alignment dimensions.",
+          "Stakeholders including policymakers and industry observers are expected to reference the 88.6% result in future AI governance analyses."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Who developed GPT-6.1?",
+        "answer": "GPT-6.1 was developed by OpenAI, the artificial intelligence research organization behind the GPT series of models."
+      },
+      {
+        "question": "What is the Terminal X evaluation?",
+        "answer": "Terminal X is an assessment framework used to measure AI model alignment, specifically tested against senior investor judgments in the GPT-6.1 release."
+      },
+      {
+        "question": "What does the 88.6% alignment score represent?",
+        "answer": "The 88.6% score indicates the degree to which GPT-6.1's outputs matched the judgments of senior investors in the Terminal X assessment, serving as a quantitative alignment metric."
+      },
+      {
+        "question": "When was GPT-6.1 officially announced?",
+        "answer": "GPT-6.1 was announced on October 20, 2026, as confirmed by OpenAI's official index page."
+      },
+      {
+        "question": "How does GPT-6.1 relate to OpenAI's prior model generations?",
+        "answer": "GPT-6.1 is the latest iteration in OpenAI's GPT series, continuing the company's trajectory of successive model releases with a focus on alignment and capabilities."
+      }
+    ]
+  },
+
+  {
     "slug": "google-gemini-3-ultra-release-2026-10-19",
     "title": "Google’s Gemini 3 Ultra debuts with a 2M-token window",
     "metaTitle": "Gemini 3 Ultra Launch: Google’s Big AI Model in 2026",
