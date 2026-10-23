@@ -413,6 +413,11 @@
       "published": [
         "openai-gpt-6-1-terminal-x-eval-2026-10-20"
       ]
+    },
+    {
+      "date": "2026-10-23",
+      "action": "comparison",
+      "slug": "synthesia-vs-heygen"
     }
   ],
   "publishedComparisons": [
@@ -445,7 +450,8 @@
     "github copilot vs tabnine",
     "claude vs gemini advanced",
     "openai o3 vs claude opus",
-    "elevenlabs vs murf ai"
+    "elevenlabs vs murf ai",
+    "synthesia vs heygen"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
