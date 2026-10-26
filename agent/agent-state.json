@@ -418,6 +418,12 @@
       "date": "2026-10-23",
       "action": "comparison",
       "slug": "synthesia-vs-heygen"
+    },
+    {
+      "date": "2026-10-26",
+      "action": "launch-check",
+      "found": 1,
+      "published": []
     }
   ],
   "publishedComparisons": [
