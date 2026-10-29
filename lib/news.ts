@@ -13,6 +13,73 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "openai-gpt-6-1-sol-launch-2026-10-29",
+    "title": "OpenAI Launches GPT-6.1 Sol for Code Security",
+    "metaTitle": "OpenAI GPT-6.1 Sol Code Security Launch 2026",
+    "metaDescription": "OpenAI introduced GPT-6.1 Sol on Oct 26, 2026, to boost code security for CodeRabbit. The launch highlights OpenAI's push for safer development tooling.",
+    "date": "2026-10-26",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "OpenAI announced GPT-6.1 Sol on October 26, 2026, a model built to enhance security across complex codebases for its CodeRabbit platform. The launch reflects OpenAI's focus on safer development tooling and marks a step forward in automated code security.",
+    "sections": [
+      {
+        "h2": "New Model Overview",
+        "paragraphs": [
+          "OpenAI unveiled GPT-6.1 Sol on October 26, 2026, marking a new entry in its model lineup. The announcement was made through the company’s official index page dedicated to code security solutions. GPT-6.1 Sol is positioned as a purpose‑built model for security‑centric tasks.",
+          "The model’s core objective is to strengthen security across complex codebases, particularly for the CodeRabbit ecosystem. By focusing on security, OpenAI signals a strategic shift toward specialized, safety‑oriented AI capabilities. The release follows the company's broader commitment to safer development practices.",
+          "While the official release does not disclose pricing or detailed benchmark figures, the launch underscores OpenAI’s intent to provide developers with more robust security assistance. Stakeholders are watching for how GPT-6.1 Sol will integrate with existing CodeRabbit workflows."
+        ]
+      },
+      {
+        "h2": "Security Focus for CodeRabbit",
+        "paragraphs": [
+          "GPT-6.1 Sol is explicitly designed to bolster security for CodeRabbit, the platform that automates code review and analysis. This targeted approach suggests a deeper integration between OpenAI’s models and CodeRabbit’s existing tooling.",
+          "By centering on security, the model aims to detect and mitigate vulnerabilities in large, intricate codebases more effectively than previous iterations. This focus aligns with industry demand for automated security assessments in software development pipelines.",
+          "The announcement highlights OpenAI’s effort to embed security consciousness directly into its AI offerings. For CodeRabbit users, this means potentially faster, more reliable vulnerability identification without sacrificing developer experience."
+        ]
+      },
+      {
+        "h2": "Strategic Implications",
+        "paragraphs": [
+          "The launch of GPT-6.1 Sol reflects OpenAI’s strategy to address niche security challenges within the broader AI market. It demonstrates how specialized models can serve specific platforms like CodeRabbit more effectively than general-purpose alternatives.",
+          "Industry analysts note that this move may set a precedent for other providers to develop security‑focused models for development tools. The emphasis on safety could influence future AI product roadmaps across the software ecosystem.",
+          "Although details on integration steps and performance metrics are not yet available, the release is expected to spark conversation about the role of AI in proactive security. Stakeholders will likely seek guidance on adoption and best practices."
+        ]
+      },
+      {
+        "h2": "What's Next",
+        "paragraphs": [
+          "Developers using CodeRabbit can anticipate upcoming updates that incorporate GPT-6.1 Sol’s security capabilities into their review workflows. OpenAI is likely to provide documentation and API access soon after the initial announcement.",
+          "The broader OpenAI community may see follow‑on models that extend this security focus to other development environments. Continued emphasis on safety could reshape how AI assistants are evaluated in production settings.",
+          "For now, the industry waits for concrete details on how GPT-6.1 Sol will be rolled out, including any training data changes or compliance updates that accompany the new model. The October 2026 date marks the start of this next chapter in AI‑driven code security."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is GPT-6.1 Sol?",
+        "answer": "GPT-6.1 Sol is a new OpenAI model announced on October 26, 2026, specifically designed to strengthen security across complex codebases, particularly for the CodeRabbit platform."
+      },
+      {
+        "question": "When was GPT-6.1 Sol announced?",
+        "answer": "GPT-6.1 Sol was announced on October 26, 2026."
+      },
+      {
+        "question": "Which provider released GPT-6.1 Sol?",
+        "answer": "The provider is OpenAI."
+      },
+      {
+        "question": "What problem does GPT-6.1 Sol address?",
+        "answer": "It addresses the need for enhanced security in complex codebases by providing targeted security assistance for CodeRabbit."
+      },
+      {
+        "question": "How does GPT-6.1 Sol relate to CodeRabbit?",
+        "answer": "GPT-6.1 Sol is built to bolster security for CodeRabbit, integrating its security capabilities directly into the automated review and analysis workflows of the platform."
+      }
+    ]
+  },
+
+  {
     "slug": "openai-gpt-6-1-terminal-x-eval-2026-10-20",
     "title": "OpenAI Launches GPT-6.1 with 88.6% Terminal X Alignment",
     "metaTitle": "OpenAI GPT-6.1 Launches 2026 with 88.6% Terminal X Alignment",
