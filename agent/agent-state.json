@@ -424,6 +424,14 @@
       "action": "launch-check",
       "found": 1,
       "published": []
+    },
+    {
+      "date": "2026-10-29",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "openai-gpt-6-1-sol-launch-2026-10-29"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -491,7 +499,8 @@
     "openai-gpt-rosalind-academic-launch-2026-10-17",
     "mistral-timestral-2026-10-19",
     "google-gemini-3-ultra-release-2026-10-19",
-    "openai-gpt-6-1-terminal-x-eval-2026-10-20"
+    "openai-gpt-6-1-terminal-x-eval-2026-10-20",
+    "openai-gpt-6-1-sol-launch-2026-10-29"
   ],
   "publishedLaunches": [
     {
@@ -625,6 +634,12 @@
       "modelName": "GPT-6.1",
       "date": "2026-10-20",
       "slug": "openai-gpt-6-1-terminal-x-eval-2026-10-20"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "GPT-6.1 Sol",
+      "date": "2026-10-26",
+      "slug": "openai-gpt-6-1-sol-launch-2026-10-29"
     }
   ]
 }
