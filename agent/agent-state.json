@@ -432,6 +432,11 @@
       "published": [
         "openai-gpt-6-1-sol-launch-2026-10-29"
       ]
+    },
+    {
+      "date": "2026-10-30",
+      "action": "news",
+      "slug": "openai-gpt5-release-october-2026"
     }
   ],
   "publishedComparisons": [
@@ -500,7 +505,8 @@
     "mistral-timestral-2026-10-19",
     "google-gemini-3-ultra-release-2026-10-19",
     "openai-gpt-6-1-terminal-x-eval-2026-10-20",
-    "openai-gpt-6-1-sol-launch-2026-10-29"
+    "openai-gpt-6-1-sol-launch-2026-10-29",
+    "openai-gpt5-release-october-2026"
   ],
   "publishedLaunches": [
     {
