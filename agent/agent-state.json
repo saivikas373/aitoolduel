@@ -437,6 +437,11 @@
       "date": "2026-10-30",
       "action": "news",
       "slug": "openai-gpt5-release-october-2026"
+    },
+    {
+      "date": "2026-11-02",
+      "action": "comparison",
+      "slug": "otter-ai-vs-fireflies-ai"
     }
   ],
   "publishedComparisons": [
@@ -470,7 +475,8 @@
     "claude vs gemini advanced",
     "openai o3 vs claude opus",
     "elevenlabs vs murf ai",
-    "synthesia vs heygen"
+    "synthesia vs heygen",
+    "otter ai vs fireflies ai"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
