@@ -7474,6 +7474,123 @@ export const comparisons: ComparisonData[] = [
       }
     ]
   },
+
+  {
+    "slug": "otter-ai-vs-fireflies-ai",
+    "metaTitle": "Otter AI vs Fireflies AI 2026: Best Transcription Tool Review",
+    "metaDescription": "Compare Otter AI and Fireflies AI in 2026. Explore pricing, speed, features, and real‑world performance to choose the top transcription tool for meetings.",
+    "canonicalPath": "/compare/otter-ai-vs-fireflies-ai",
+    "h1": "Otter AI vs Fireflies AI: 2026 Comparison",
+    "verdict": "Fireflies AI edges out Otter AI for most teams due to superior accuracy and collaboration features.",
+    "verdictWinner": "tool2",
+    "tool1": {
+      "name": "Otter AI",
+      "tagline": "AI-powered transcription and note‑taking for meetings",
+      "pricing": "$16.99 per user/month (Pro) – free tier up to 300 minutes",
+      "freeTier": "300 minutes per month",
+      "speed": "High (1‑2 seconds per minute of audio)",
+      "bestFor": "Small to medium teams needing robust editing and AI summarization",
+      "rating": 4.5,
+      "pros": [
+        "Accurate transcription with speaker diarization",
+        "Intuitive web and mobile apps",
+        "Powerful AI summarization and keyword extraction",
+        "Integrates with Zoom, Teams, Google Meet, Slack",
+        "Collaborative editing and commenting",
+        "Supports multiple languages",
+        "Robust API for custom workflows",
+        "Free tier available"
+      ],
+      "cons": [
+        "Higher price than some competitors",
+        "Limited transcription minutes on free tier",
+        "Occasional mis‑recognition with strong accents",
+        "No offline mode",
+        "Customer support response can be slow",
+        "Requires internet connection for real‑time transcription"
+      ],
+      "ctaUrl": "https://otter.ai/pricing",
+      "ctaLabel": "Start Free Trial"
+    },
+    "tool2": {
+      "name": "Fireflies AI",
+      "tagline": "Automatic meeting transcription with AI-powered insights",
+      "pricing": "$14 per user/month (Premium) – free tier up to 1,000 minutes",
+      "freeTier": "1,000 minutes per month",
+      "speed": "Very high (0.5‑1 second per minute of audio)",
+      "bestFor": "Large teams and enterprises seeking seamless integration and analytics",
+      "rating": 4.6,
+      "pros": [
+        "Highly accurate transcription with speaker identification",
+        "Unlimited recording storage on paid plans",
+        "Live transcription during meetings",
+        "Action item extraction and follow‑up reminders",
+        "Deep integration with CRM and project tools",
+        "Collaborative notes and highlights",
+        "Multi‑language support",
+        "Real‑time alerts and summaries"
+      ],
+      "cons": [
+        "Free tier limited to 1,000 minutes only",
+        "Higher cost for advanced analytics",
+        "Interface can be cluttered",
+        "Limited editing features compared to Otter",
+        "Requires stable internet for live mode",
+        "No native desktop app (web‑only)"
+      ],
+      "ctaUrl": "https://fireflies.ai/pricing",
+      "ctaLabel": "Get Started Free"
+    },
+    "introSections": [
+      {
+        "h2": "Overview",
+        "paragraphs": []
+      }
+    ],
+    "deepDiveSections": [
+      {
+        "h2": "Overview",
+        "paragraphs": []
+      },
+      {
+        "h2": "Overview",
+        "paragraphs": []
+      },
+      {
+        "h2": "Overview",
+        "paragraphs": []
+      },
+      {
+        "h2": "Overview",
+        "paragraphs": []
+      }
+    ],
+    "pickTool1": "Why Choose Otter AI: 1) Strong editing and collaborative tools, 2) Flexible API for custom integrations, 3) Generous free tier with 300 minutes, 4) Multi‑language support, 5) Intuitive UI and mobile apps",
+    "pickTool2": "Why Choose Fireflies AI: 1) Lightning‑fast transcription speed, 2) Automated action‑item extraction and follow‑up reminders, 3) Deep CRM and workflow integrations, 4) Unlimited recording storage on paid plans, 5) Real‑time meeting insights and alerts",
+    "recommendationSummary": "Fireflies AI generally offers the best overall performance for most teams, thanks to its speed, accuracy, and extensive integrations. However, Otter AI remains a solid alternative for smaller groups that prioritize editing flexibility and a generous free tier.",
+    "faqs": [
+      {
+        "question": "Can I use Otter AI for live meeting transcription?",
+        "answer": "Yes, Otter AI provides real‑time transcription during live meetings via its web and mobile apps."
+      },
+      {
+        "question": "Does Fireflies AI support transcription in multiple languages?",
+        "answer": "Fireflies AI transcribes in over 30 languages, with higher accuracy for English."
+      },
+      {
+        "question": "What is the free tier limit for each tool?",
+        "answer": "Otter AI offers 300 minutes of free transcription per month, while Fireflies AI provides 1,000 minutes free per month."
+      },
+      {
+        "question": "How do the pricing plans compare for teams?",
+        "answer": "Otter AI starts at $16.99 per user per month, Fireflies AI at $14 per user per month; Fireflies includes more minutes and advanced analytics in its base plan."
+      },
+      {
+        "question": "Which tool offers better speaker diarization?",
+        "answer": "Otter AI’s speaker diarization is highly accurate, but Fireflies AI also provides reliable speaker identification with additional context."
+      }
+    ]
+  },
 ];
 
 export function getComparison(slug: string): ComparisonData | undefined {
