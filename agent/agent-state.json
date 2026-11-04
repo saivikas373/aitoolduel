@@ -442,6 +442,11 @@
       "date": "2026-11-02",
       "action": "comparison",
       "slug": "otter-ai-vs-fireflies-ai"
+    },
+    {
+      "date": "2026-11-04",
+      "action": "news",
+      "slug": "claude-4-opus-release-november-2026"
     }
   ],
   "publishedComparisons": [
@@ -512,7 +517,8 @@
     "google-gemini-3-ultra-release-2026-10-19",
     "openai-gpt-6-1-terminal-x-eval-2026-10-20",
     "openai-gpt-6-1-sol-launch-2026-10-29",
-    "openai-gpt5-release-october-2026"
+    "openai-gpt5-release-october-2026",
+    "claude-4-opus-release-november-2026"
   ],
   "publishedLaunches": [
     {
