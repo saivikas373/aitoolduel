@@ -7591,6 +7591,144 @@ export const comparisons: ComparisonData[] = [
       }
     ]
   },
+
+  {
+    "slug": "chatpdf-vs-claude",
+    "metaTitle": "ChatPDF vs Claude: AI PDF Chat Comparison (2026)",
+    "metaDescription": "ChatPDF vs Claude: compare AI PDF chat, pricing, speed, features, and best use cases to pick the right assistant in 2026. See which handles PDFs better.",
+    "canonicalPath": "/compare/chatpdf-vs-claude",
+    "h1": "ChatPDF vs Claude: Which AI Tool Excels for PDF Chat?",
+    "verdict": "Claude wins for deep, long-form PDF reasoning, while ChatPDF wins for dedicated PDF Q&A workflows.",
+    "verdictWinner": "tool2",
+    "tool1": {
+      "name": "ChatPDF",
+      "tagline": "AI PDF chat and document Q&A platform.",
+      "pricing": "$5 to $30 per month",
+      "freeTier": "Free basic PDF chat; paid plans from $5/month",
+      "speed": "Fast for most uploads; larger files slower",
+      "bestFor": "Users prioritizing fast PDF chat, summaries, and Q&A",
+      "rating": 4.2,
+      "pros": [
+        "Focused PDF interface",
+        "Quick document upload and chat",
+        "Summarization and Q&A",
+        "OCR for scanned PDFs",
+        "Team sharing and workspaces",
+        "Browser extension"
+      ],
+      "cons": [
+        "Less strong at deep reasoning",
+        "Struggles with complex math and tables",
+        "Limited model customization",
+        "Free tier has limits"
+      ],
+      "ctaUrl": "https://chatpdf.com",
+      "ctaLabel": "Try ChatPDF"
+    },
+    "tool2": {
+      "name": "Claude",
+      "tagline": "Conversational AI for research, writing, and complex reasoning.",
+      "pricing": "Free; Pro $20/month; Team and Enterprise custom",
+      "freeTier": "Free chat with usage limits",
+      "speed": "Medium to slower; nuanced responses",
+      "bestFor": "Deep document analysis, research, long-context reasoning",
+      "rating": 4.7,
+      "pros": [
+        "Strong long-context reasoning",
+        "Excellent writing and analysis",
+        "Good at complex document review",
+        "PDF upload support",
+        "Safety and helpfulness tuning"
+      ],
+      "cons": [
+        "No native PDF-specific workflow like ChatPDF",
+        "Pro pricing is high for individuals",
+        "Rate limits and availability issues",
+        "Consumer UI less PDF-focused"
+      ],
+      "ctaUrl": "https://claude.ai",
+      "ctaLabel": "Try Claude"
+    },
+    "introSections": [
+      {
+        "h2": "Introduction",
+        "paragraphs": [
+          "ChatPDF and Claude both accept PDF uploads and answer questions about documents, but they approach the task differently. ChatPDF is built around PDF chat, while Claude is a general-purpose assistant that can also reason over uploaded files.",
+          "The choice often comes down to whether you want a specialized PDF workflow or a broader AI assistant for research, writing, and complex analysis. In this comparison, we examine features, pricing, speed, usability, and ideal use cases.",
+          "Use the results below to decide if ChatPDF is enough for your PDFs or if Claude's deeper reasoning justifies a higher subscription."
+        ]
+      }
+    ],
+    "deepDiveSections": [
+      {
+        "h2": "PDF Handling and Workflow",
+        "paragraphs": [
+          "ChatPDF is designed for PDFs and offers a chat-first workflow with summaries, Q&A, and OCR. Claude supports PDF uploads and adds general assistant capabilities, but its PDF handling is less workflow-specific."
+        ]
+      },
+      {
+        "h2": "Model Quality and Reasoning",
+        "paragraphs": [
+          "Claude generally provides stronger long-context reasoning and complex analysis. ChatPDF relies on capable models for document Q&A, but it may not match Claude for deep research or nuanced writing tasks."
+        ]
+      },
+      {
+        "h2": "Pricing and Limits",
+        "paragraphs": [
+          "ChatPDF has lower-cost tiers for solo users, while Claude offers a free tier and a $20/month Pro plan. Claude tends to cost more for advanced access, and ChatPDF may charge more for team features."
+        ]
+      },
+      {
+        "h2": "Speed and Usability",
+        "paragraphs": [
+          "ChatPDF is often faster for straightforward PDF chat and summarization. Claude can be slower but delivers more thoughtful responses, making it better for complex tasks."
+        ]
+      }
+    ],
+    "pickTool1": {
+      "heading": "Choose ChatPDF If You Need Fast PDF Q&A",
+      "reasons": [
+        "Dedicated PDF chat interface",
+        "Quick summaries and Q&A",
+        "OCR support for scanned files",
+        "Lower cost for solo users",
+        "Team sharing for document workflows"
+      ]
+    },
+    "pickTool2": {
+      "heading": "Choose Claude If You Need Deep Reasoning",
+      "reasons": [
+        "Superior long-context understanding",
+        "Better complex analysis and writing",
+        "Strong research workflows",
+        "PDF upload plus general assistant features",
+        "Higher reliability for nuanced tasks"
+      ]
+    },
+    "recommendationSummary": "ChatPDF is the more focused PDF tool for fast Q&A, summarization, and team workflows. Claude is the stronger general-purpose AI for deep document reasoning, research, and complex writing tasks. If PDF chat is your primary need, start with ChatPDF; if you need advanced reasoning, choose Claude.",
+    "faqs": [
+      {
+        "question": "Is ChatPDF better than Claude for PDF chat?",
+        "answer": "For fast, dedicated PDF chat, ChatPDF is often better. For deep reasoning and complex document analysis, Claude may be stronger."
+      },
+      {
+        "question": "Does Claude have better PDF support than ChatPDF?",
+        "answer": "Both support PDF uploads. ChatPDF is more PDF-specific, while Claude combines PDF handling with broader reasoning."
+      },
+      {
+        "question": "Which AI tool is more affordable?",
+        "answer": "ChatPDF has lower-cost solo plans, while Claude has a free tier and Pro at $20 per month."
+      },
+      {
+        "question": "Which is faster, ChatPDF or Claude?",
+        "answer": "ChatPDF is generally faster for basic PDF Q&A, while Claude is slower but more nuanced."
+      },
+      {
+        "question": "Should I choose ChatPDF or Claude?",
+        "answer": "Choose ChatPDF for fast PDF workflows. Choose Claude for research, deep analysis, and complex writing over documents."
+      }
+    ]
+  },
 ];
 
 export function getComparison(slug: string): ComparisonData | undefined {
