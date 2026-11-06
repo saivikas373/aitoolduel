@@ -463,6 +463,11 @@
       "published": [
         "openai-images-2-6-nov2026"
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "action": "comparison",
+      "slug": "chatpdf-vs-claude"
     }
   ],
   "publishedComparisons": [
@@ -497,7 +502,8 @@
     "openai o3 vs claude opus",
     "elevenlabs vs murf ai",
     "synthesia vs heygen",
-    "otter ai vs fireflies ai"
+    "otter ai vs fireflies ai",
+    "chatpdf vs claude"
   ],
   "publishedNews": [
     "ai-tools-weekly-roundup-june-29-2026",
