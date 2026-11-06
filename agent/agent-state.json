@@ -455,6 +455,14 @@
       "published": [
         "openai-gpt-6-cyber-launch-2026-11-05"
       ]
+    },
+    {
+      "date": "2026-11-06",
+      "action": "launch-check",
+      "found": 2,
+      "published": [
+        "openai-images-2-6-nov2026"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -527,7 +535,8 @@
     "openai-gpt-6-1-sol-launch-2026-10-29",
     "openai-gpt5-release-october-2026",
     "claude-4-opus-release-november-2026",
-    "openai-gpt-6-cyber-launch-2026-11-05"
+    "openai-gpt-6-cyber-launch-2026-11-05",
+    "openai-images-2-6-nov2026"
   ],
   "publishedLaunches": [
     {
@@ -673,6 +682,12 @@
       "modelName": "GPT-6 Cyber",
       "date": "2026-11-05",
       "slug": "openai-gpt-6-cyber-launch-2026-11-05"
+    },
+    {
+      "provider": "OpenAI",
+      "modelName": "Images 2.6",
+      "date": "2026-11-04",
+      "slug": "openai-images-2-6-nov2026"
     }
   ]
 }

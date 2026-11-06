@@ -13,6 +13,11 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    ",": 0,
+    "sections": []
+  },
+
+  {
     "slug": "openai-images-2-6-nov2026",
     "title": "OpenAI unveils Images 2.6, latest evolution in AI image generation",
     "metaTitle": "OpenAI Images 2.6 Launch 2026 | New AI Model Release",
