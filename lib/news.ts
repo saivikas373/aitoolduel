@@ -13,6 +13,81 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    "slug": "google-gemini-omni-1-2-flash-video-model-release-2026-11-05",
+    "title": "Google Launches Gemini Omni 1.2 Flash for Longer Video Clips",
+    "metaTitle": "Gemini Omni 1.2 Flash Launch by Google (2026)",
+    "metaDescription": "Google AI launched Gemini Omni 1.2 Flash, a fast, cost‑effective model for longer video clips, with better scalability than prior Gemini Omni versions.",
+    "date": "2026-11-05",
+    "category": "Model Release",
+    "badge": "Breaking",
+    "summary": "Google AI unveiled Gemini Omni 1.2 Flash on November 5, 2026, introducing a fast, cost-effective model purpose-built for longer video clips. The new model continues Google's push to expand the Gemini Omni family, offering developers improved scalability for extended visual content.",
+    "sections": [
+      {
+        "h2": "Google Unveils Gemini Omni 1.2 Flash",
+        "paragraphs": [
+          "Google AI announced the launch of Gemini Omni 1.2 Flash on November 5, 2026.",
+          "The new model is part of the broader Gemini Omni family and is highlighted on the official Google AI blog.",
+          "Its primary focus is to handle longer video clips, offering a dedicated solution for extended visual content."
+        ]
+      },
+      {
+        "h2": "Speed and Cost Benefits",
+        "paragraphs": [
+          "Gemini Omni 1.2 Flash is designed to be fast, delivering quicker processing times compared to earlier releases.",
+          "The model is also described as cost-effective, providing an economical option for developers working with large video datasets.",
+          "These performance attributes make it attractive for scaling video workflows in production environments."
+        ]
+      },
+      {
+        "h2": "Optimized for Extended Video",
+        "paragraphs": [
+          "The model’s architecture is tailored for longer video clips, enabling seamless analysis of extended visual sequences.",
+          "This optimization reduces the need for multiple passes on short segments, streamlining the overall pipeline.",
+          "By supporting longer inputs, developers can process more content in single runs, improving efficiency."
+        ]
+      },
+      {
+        "h2": "Developer Tools and Integration",
+        "paragraphs": [
+          "Google provides the model as part of its developer tools suite, accessible via the Google AI blog and documentation.",
+          "The release builds on the existing Omni platform, ensuring compatibility with current APIs and workflows.",
+          "Developers can integrate the model to leverage its speed and cost advantages for video‑centric applications."
+        ]
+      },
+      {
+        "h2": "Positioning vs Earlier Omni Models",
+        "paragraphs": [
+          "Compared to previous Gemini Omni versions, 1.2 Flash emphasizes faster inference and lower operational costs.",
+          "The shift reflects Google’s strategy to expand the Omni family with specialized video capabilities.",
+          "This evolution positions the new model as a next‑step for organizations looking to scale video processing."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is Gemini Omni 1.2 Flash?",
+        "answer": "It is Google AI’s new fast, cost-effective model launched on Nov 5, 2026, designed for longer video clips."
+      },
+      {
+        "question": "Who announced Gemini Omni 1.2 Flash?",
+        "answer": "Google AI announced it via the official blog at blog.google on November 5, 2026."
+      },
+      {
+        "question": "How does Gemini Omni 1.2 Flash differ from earlier Omni models?",
+        "answer": "It focuses on longer video clips and is built for faster processing and lower cost than previous versions."
+      },
+      {
+        "question": "What is the primary use case for Gemini Omni 1.2 Flash?",
+        "answer": "It is intended for developers to process extended visual content and video sequences efficiently."
+      },
+      {
+        "question": "When was Gemini Omni 1.2 Flash launched?",
+        "answer": "The model was launched on November 5, 2026."
+      }
+    ]
+  },
+
+  {
     ",": 0,
     "sections": []
   },
