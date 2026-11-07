@@ -468,6 +468,14 @@
       "date": "2026-11-06",
       "action": "comparison",
       "slug": "chatpdf-vs-claude"
+    },
+    {
+      "date": "2026-11-07",
+      "action": "launch-check",
+      "found": 1,
+      "published": [
+        "google-gemini-omni-1-2-flash-video-model-release-2026-11-05"
+      ]
     }
   ],
   "publishedComparisons": [
@@ -542,7 +550,8 @@
     "openai-gpt5-release-october-2026",
     "claude-4-opus-release-november-2026",
     "openai-gpt-6-cyber-launch-2026-11-05",
-    "openai-images-2-6-nov2026"
+    "openai-images-2-6-nov2026",
+    "google-gemini-omni-1-2-flash-video-model-release-2026-11-05"
   ],
   "publishedLaunches": [
     {
@@ -694,6 +703,12 @@
       "modelName": "Images 2.6",
       "date": "2026-11-04",
       "slug": "openai-images-2-6-nov2026"
+    },
+    {
+      "provider": "Google AI",
+      "modelName": "Gemini Omni 1.2 Flash",
+      "date": "2026-11-05",
+      "slug": "google-gemini-omni-1-2-flash-video-model-release-2026-11-05"
     }
   ]
 }
